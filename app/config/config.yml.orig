@@ -112,8 +112,13 @@ changelog:
 # allow_upscale determines whether small images will be enlarged to fit the requested dimensions.
 # Note: if you change these values, you might need to clear the cache before they show up.
 thumbnails:
-  default_thumbnail: [ 280, 210 ]
+<<<<<<< HEAD
+    default_thumbnail: [ 280, 210 ]
   default_image: [ 1000, 750 ]
+=======
+  default_thumbnail: [ 280, 210 ]
+  default_image: [ 1280, 960 ]
+>>>>>>> fit
   quality: 80
   cropping: crop
   notfound_image: view/img/default_notfound.png

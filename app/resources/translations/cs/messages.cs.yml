@@ -1,7 +1,136 @@
-# app/resources/translations/cs/messages.cs.yml -- generated on 2014/07/07 12:23:09
-# no untranslated strings; good ;-)
+# app/resources/translations/cs/messages.cs.yml -- generated on 2014/10/04 19:30:53
+# 128 untranslated strings
 
-# 396 translated strings
+"Add a brief, optional comment to describe what's changed.":  #
+"Add a comment:":  #
+"Add a new extension using the form below.":  #
+"Add some sample <a href='%url%' class='btn btn-tertiary'>Records with Loripsum text</a>":  #
+"Address lookup":  #
+"Alt":  #
+"Are you sure you wish to unlock the slug? This might break existing links to this record.":  #
+"Before you can start using the theme on your site we need to make a copy to your theme folder.":  #
+"Bolt Extension could not be found. Please check at ":  #
+"Browse Versions":  #
+"Cannot check for updates in read-only mode":  #
+"Cannot check installed packages in read-only mode":  #
+"Check for updates":  #
+"Checking for available updates (this may take up to 60 seconds)":  #
+"Checking installed packages":  #
+"Clear the current log":  #
+"Collapse sidebar":  #
+"Configure Extensions":  #
+"Create a new user, using the form below. The password field is required.":  #
+"Create folder":  #
+"Default status":  #
+"Delete %foldername%":  #
+"Delete selected":  #
+"Depublish selected":  #
+"Description":  #
+"Detail template":  #
+"Details":  #
+"Do you really want to delete %foldername%?":  #
+"Edit an existing user, using the form below. Leave the password fields empty, unless you wish to change the password.":  #
+"Everything is up to date!":  #
+"Expand sidebar":  #
+"Extend ":  #
+"Extension log":  #
+"Extension":  #
+"Extras":  #
+"Filtering":  #
+"Filtering…":  #
+"Find":  #
+"Folder permissions insufficient":  #
+"If you would like to give the theme an alternative name you can add one here.":  #
+"Install a new Extension":  #
+"Install all Packages":  #
+"Install all updates":  #
+"Installation Complete":  #
+"Installing Package":  #
+"Installing package":  #
+"Installing selected package version \n(this may take up to 60 seconds).":  #
+"Kategorie":  #
+"Kategorie1":  #
+"Latitude":  #
+"Listing template":  #
+"Logout":  #
+"Longitude":  #
+"Main configuration":  #
+"Marker placement":  #
+"Matched address":  #
+"Matched video":  #
+"More info / Help":  #
+"No Stable Versions Available":  #
+"No Test Versions Available":  #
+"No relations found!":  #
+"Note, this file has related files:":  #
+"Note: Cookies are required to log on to Bolt. Please allow cookies.":  #
+"Note:":  #
+"Omnisearch":  #
+"Other contenttypes":  #
+"Password (confirm)":  #
+"Path to image file":  #
+"Please enter a new file name":  #
+"Please enter a new folder name":  #
+"Preparing to install package...":  #
+"Preparing to remove package...":  #
+"Preview image":  #
+"Profile":  #
+"Publish selected":  #
+"Related content":  #
+"Rename %foldername%":  #
+"Run all Updates":  #
+"Run update check":  #
+"Running install of all packages...":  #
+"Save & create new record":  #
+"Save user":  #
+"Searching for available updates...":  #
+"Select file …":  #
+"Set the slug to:":  #
+"Sign in to Bolt":  #
+"Stable Versions":  #
+"Statik":  #
+"Statiky":  #
+"Stitek":  #
+"Stitky":  #
+"Street, Zip-code, City or other location":  #
+"The extensions directory (<code>%dir%</code>) does not exist, or it is not writable.":  #
+"The field %field% has been changed to \"%newValue%\"":  #
+"The folder '%s' could not be found, or is not readable.":  #
+"The versions listed below are compatible with the version of Bolt you are using. Since they are unstable versions, we recommend you <strong>do not</strong> use these on production systems.":  #
+"The versions listed below are marked as stable releases by the developer and are compatible with the version of Bolt you are currently using.":  #
+"Theme Installation Complete":  #
+"There are no items on the Stack, yet.":  #
+"There are no users present in the system. Please create the first user, which will be granted root privileges.":  #
+"This record is related to:":  #
+"This will install all available updates.":  #
+"This will make sure all packages listed are installed. Use this if you've recently moved to a new server or if you have manually added an extension.":  #
+"This won't install anything, just show you available updates":  #
+"Type":  #
+"URL of video on Youtube, Vimeo or other video website":  #
+"URL of video to embed":  #
+"Unstable Test Versions":  #
+"Updated user '%s'.":  #
+"Updates":  #
+"Upload a file to this folder":  #
+"Version":  #
+"View (saved version) on site":  #
+"View / Install Extensions":  #
+"View related content":  #
+"Vyberte obsah s detailním popisem":  #
+"Vyberte souvisejici clanek o partnerovi":  #
+"You are currently using SQLite to set up the first user. If you wish to use MySQL or PostgreSQL ":  #
+"You can discover new extensions by visiting":  #
+"You can now start using the installed extension, documentation and implementation instructions can be found using the link below.":  #
+"You don't have correct permissions to edit the file '%s'.":  #
+"You don't have the correct permissions to display the file or directory '%s'.":  #
+"You should set 'homepage:' in your 'app/config/config.yml' to an existing record. Make sure that the content is published, otherwise it will not be shown.":  #
+"Your Currently Installed Extensions":  #
+"no content…":  #
+"no title…":  #
+"pixels":  #
+
+#-----------------------------------------
+# 314 translated strings
 
 "%contenttypes% overview": "%contenttypes% přehled"
 "%contenttypes%": "%contenttypes%"
@@ -11,7 +140,6 @@
 "(no category)": "(bez kategorie)"
 "(no group)": "(nez zařazení do skupiny)"
 "<p>The following file could not be read:</p>%s": "<p>Nelze načíst soubor:</p>%s"
-"A menu with this name already exists...": "Menu s tímto názvem již existuje…"
 "A password reset link has been sent to '%user%'.": "Odkaz na obnovení hesla byl odeslán '%user%'."
 "About Bolt": "Co je Bolt"
 "About": "O"
@@ -20,13 +148,9 @@
 "Actions for this %contenttype%": "Akce pro %contenttype%"
 "Actions": "Nástroje"
 "Activity log": "Záznam aktivit"
-"Add new menu": "Přidat nové menu"
-"Add some sample <a href='%url%' class='btn btn-small'>Records with Loripsum text</a>": "<a href='%url%' class='btn btn-small'>Přidat vzorový obsah</a> se zástupným Loripsum textem."
-"Add to menu": "Přidat do menu"
 "Add …": "Nový"
 "Added to <tt>%key%</tt> '%title%'": "Přidáno do <tt>%key%</tt> '%title%'"
 "Added user '%s'.": "Přidán uživatel '%s'."
-"Address lookup:": "Vyhledání adresy:"
 "Alas, no about!": "Běda, žádná info strana!"
 "All content types": "Všechny typy obsahu"
 "All users": "Všichni uživatelé"
@@ -34,14 +158,10 @@
 "An error occurred.": "Došlo k nějaké chybě."
 "Anonymous": "Anonymous"
 "Are you sure you want to delete %username%?": "Určitě chcete odstranit %username%?"
-"Are you sure you want to revert changes you have made since you last saved your menus?": "Určitě chcete zahodit úpravy v menu, které jste právě udělali a vrátit se k předchozí verzi?"
-"Are you sure you wish to remove this item from the menu, along with all its sub-items?": "Určitě chcete odstranit tuto položku menu, včetně všech vnořených položek?"
 "Are you sure you wish to revert? Your changes will be lost, if you don't save them.": "Určitě chcete zahodit provedené úpravy? Budou ztraceny, pokud je neuložíte."
 "Assigned roles": "Přidělená práva"
 "Author:": "Autor:"
 "Back to login": "Zpět na přihlášení"
-"Backup file could not be found": "Záložní soubor nebyl nalezen"
-"Backup successfully restored": "Obnovení ze zálohy proběhlo úspěšně."
 "Below are the third party libraries that are used by Bolt.": "Níže jsou uveden knihovny třetích stran použité v Bolt."
 "Bolt - Fatal error.": "Bolt - závažná chyba."
 "Bolt documentation on Github": "Dokumetace Bolt na Github"
@@ -53,13 +173,9 @@
 "Built-in superuser role, automatically grants all permissions": "Vestvěné oprávnění superuživatele – jsou přidělena veškerá práva."
 "Can't set %field% in %contenttype%: Not a valid field.": "Nezlez anstavit pole %field% v %contenttype%: Neplatné pole."
 "Cancel": "Zrušit"
-"Categories": "Kategorie"
-"Category": "Kategorie"
 "Change Log": "Změnit záznam"
 "Change status to 'draft'": "Změnit status na 'draft'"
 "Change status to 'held'": "Změnit status na 'held'"
-"Chapter": "Kapitola"
-"Chapters": "Kapitoly"
 "Check again": "Znovu ověřit"
 "Check database": "Ověřit databázi"
 "Choose an entry": "Vybrat záznam (obsah)"
@@ -97,17 +213,14 @@
 "Deleted %s files from cache.": "Z cache smazáno %s souborů."
 "Depublication date:": "Datum expirace:"
 "Deselect all": "Odznačit vše"
-"Details are shown above. The importer will now try again with a different parser...": "Detaily zobrazeny výše. Importér to teď zkusí znovu s jiným parserem..."
 "Disable %username%": "Zablokovat %username%"
 "Display name": "Zobrazovat jméno"
-"Display the file or directory '%s' is forbidden.": "Zobrazení souboru či složky '%s' je zakázáno."
 "Done!": "Hotovo!"
 "Draft": "Koncept"
 "Duplicate %contenttype%": "Duplikovat %contenttype%"
 "Duplicate %filename%": "Duplikovat %filename%"
 "Edit %contenttype%": "Upravit %contenttype%"
 "Edit file": "Upravit soubor"
-"Edit the file '%s' is forbidden.": "Editování souboru '%s' není povoleno."
 "Edit user": "Upravit uživatele"
 "Edit": "Upravit"
 "Email": "Email"
@@ -126,19 +239,15 @@
 "Files in %s": "Soubory v %s"
 "Files on the stack": "Soubory v Zásobníku"
 "Files": "Soubory"
-"Files: %path%": "Soubory: %path%"
 "Filesize": "Velikost souboru"
 "Fill the database with Dummy Content": "Vyplnit databázi náhodným obsahem"
 "Filter": "Filtr"
-"Filtering:": "Vyhledat / filtrovat:"
 "Fixme:": "Oprav mě:"
 "Folder '%s' could not be found, or is not readable.": "Složku '%s' nelze nalézt nebo není přístupná ke čtení."
 "Folders": "Složky"
 "Full list...": "Kompletní výpis…"
-"Generic": "Obecně"
 "Global Permissions": "Globální oprávnění"
 "Hide": "Skrýt"
-"Homepage": "Úvodní strana"
 "I forgot my password…": "Zapomněl jsem své heslo…"
 "IP address": "IP adresa"
 "If there was a Page with 'about' for a slug, it would've been shown here. But there isn't one, so that's why you're seeing this placeholder.": "kdyby zde byla informační strana s trvalým odkazem 'about', zobrazila by se zde. Jenže není. Proto čtete toto hlášení."
@@ -157,19 +266,11 @@
 "Last seen": "Naposledy přihlášen"
 "Latest activity": "Poslední úpravy"
 "Latest entries": "Poslední příspěvky"
-"Latitude:": "Zeměpisná šířka:"
-"Links": "Odkazy"
 "Log on": "Přihlásit se"
 "Login": "Přihlášení"
-"Logout %name%": "Odhlásit %name%"
 "Long messages": "Nápověda"
-"Longitude:": "Zeměpisná délka:"
 "Maintenance": "Údržba"
-"Matched address:": "Odpovídající adresa:"
-"Menu editor": "Editor menu"
 "Menu setup": "Editace menu"
-"Menu successfully saved": "Menu úspěšně uloženo"
-"Menus successfully saved": "Menu úspěšně uložena"
 "Message:": "Zpráva:"
 "Messages": "Prostředí"
 "Meta information": "Metadata"
@@ -178,7 +279,6 @@
 "Modifications needed:": "Potřebné úpravy:"
 "Modified": "Upraveno"
 "More %contenttypes% »": "Více %contenttypes% »"
-"Name of new menu": "Název nového menu"
 "New %contenttype%": "%contenttype%"
 "New user": "Nový uživatel"
 "No %contenttypes% available.": "%contenttypes% nenalezen."
@@ -193,7 +293,6 @@
 "Options": "Možnosti"
 "Order: %sort%": "Pořadí: %sort%"
 "Overview for": "Přehled"
-"Overview of all": "Celkový přehled"
 "Overview": "Přehled"
 "Owner": "Vlastník"
 "Owner:": "Vlastník:"
@@ -210,13 +309,9 @@
 "Permissions": "Oprávnění"
 "Place on stack": "Dát do zásobníku"
 "Please choose the record you want to link to:": "Zvolte prosím záznam pro vytvoření vazby:"
-"Please confirm that you wish to restore the menu": "Potvrďte prosím, že chcete obnovit menu"
 "Please log on.": "Přihlašte se, prosím."
-"Please make sure that the MenuEditor/backups folder is writeable by your webserver or disable the backup-feature in config.yml": "Zkontrolujte prosím, že složka MenuEditor/backups na serveru je zapisovatelná nebo vypněte zálohování v config.yml"
-"Please make sure that there is a MenuEditor/backups folder or disable the backup-feature in config.yml": "Ujistěte se prosím, že existuje složka záloha pro MenuEditor nebo vypněte možnost záloh v souboru config.yml"
 "Please provide a username": "Vyplňte uživatelské jméno, prosím"
 "Prefill database": "Naplnit databázi"
-"Preview video": "Náhled videa"
 "Preview": "Náhled"
 "Provided by:": "Administruje:"
 "Publication date:": "Datum publikace:"
@@ -228,9 +323,7 @@
 "Recently edited %contenttypes%": "Poslední úpravy: %contenttypes%"
 "Related content:": "Související obsah"
 "Relationships": "Související obsah"
-"Req. Bolt": "Ver. Bolt"
 "Reset my password": "Resetovat heslo"
-"Restore %filename%": "Obnovit %filename%"
 "Revert changes": "Zrušit změny"
 "Roles and Permissions": "Nastavení oprávnění"
 "Roles": "Práva"
@@ -241,17 +334,13 @@
 "Saved on:": "Uloženo:"
 "Saved": "Uloženo"
 "Saving…": "Ukládání…"
-"Search for an item to add": "Vyhledat "
 "Search results for <b> %search% </b>.": "Výsledky hledání pro <b> %search% </b>."
 "Search": "Hledat"
 "Search…": "Hledat…"
-"Select a page": "Vybrat stranu"
 "Select all": "Vybrat vše"
-"Select an item to add": "Vyberte položku pro přidání"
 "Select from server": "Vybrat na serveru"
 "Select from stack": "Vybrat ze Zásobníku"
 "Select none": "Odznačit vše"
-"Select zero or more pages": "Vyberte žnádnou, jednu nebo více stran."
 "Select": "Vybrat"
 "Session expires": "Přihlášení ukončeno pro nečinnost."
 "Session resumed.": "Přihlášení bylo obnoveno."
@@ -259,33 +348,25 @@
 "Show": "Zobrazit"
 "Showing %pager_for% %from% - %to% of %count%": "Zobrazuji %pager_for% %from% - %to% z %count%"
 "Showing": "Zobrazuji"
-"Sitemap": "Mapa webu\""
 "Size": "Velikost"
-"Size:": "Velikost:"
 "Skipped <tt>%key%</tt> (already has records)": "Vynecháno <tt>%key%</tt> (již existuje)"
 "Skipped <tt>%key%</tt> (not checked)": "Vynecháno <tt>%key%</tt> (neověřeno)"
 "Slug:": "Odkaz v URL:"
 "Something went wrong": "Něco je špatně"
-"Something went wrong, please reload the page and try again": "Něco je špatně, načtěte stranu znovu a zkuste to ještě jednou"
 "Sophisticated, lightweight & simple CMS": "Sofistikovaný, rychlý a jednoduchý redakční systém"
-"Special elements": "Zvláštní prvky"
 "Stack": "Zásobník"
 "Status:": "Stav:"
-"Tag": "Štítek"
-"Tags": "Štítky"
 "Taxonomy": "Taxonomie"
 "Thanks": "Děkujeme"
 "That user does not exist.": "Neexistující uživatel."
 "The %contenttype% you were looking for does not exist. It was probably deleted, or it never existed.": "Typ obsahu %contenttype%, který hledáte, neexistuje. Buď byl smazán a nebo nikdy neexistoval."
 "The activitylog has been cleared.": "Záznam činností byl vymazán."
 "The activitylog has been trimmed.": "Ze záznamu aktivit byla odstraněna jedna strana."
-"The backup could not be restored: ": "Zálohu nelze obnovit:"
 "The changes to this %contenttype% have been saved.": "Změny byly uloženy (%contenttype%)."
 "The database needs to be updated / repaired. Go to 'Settings' > '<a href=\"%link%\">Check Database</a>' to do this now.": "Databáze potřebuje být aktualizována / opravena. Volbu naleznete v 'Nastavení' > '<a href=\"%link%\">Ověřit databázi</a>'."
 "The file '%s' doesn't exist, or is not readable.": "Soubor '%s' neexistuje nebo nelze přečíst."
 "The file '%s' is not writable. You will have to use your own editor to make modifications to this file.": "Soubor '%s' nelze zapsat. Pro úpravu souboru budete muset použít vlastní editor."
 "The identifier and slug for '%taxonomytype%' are the not the same ('%slug%' vs. '%taxonomytype%'). Please edit taxonomy.yml, and make them match to prevent inconsistencies between database storage and your templates.": "Identifikátor a trvalý odkaz pro '%taxonomytype%' se neshoduji ('%slug%' vs. '%taxonomytype%'). Upravte prosím taxonomy.yml, aby se shodovali. Zabráníte tím zmatkům mezi databází a vaší šablonou."
-"The menu.yml config-file was edited by someone else in the meantime, please reload the page.": "Konfigurační soubor menu.yml byl v mezičase někým pozměněn, prosím, reloadujte stránku."
 "The new %contenttype% has been saved.": "Nový %contenttype% byl uložen."
 "The requested changelog entry doesn't exist.": "Vyžádaný záznam změn neexistuje."
 "The settings for roles and permissions are stored in <code>%permissions%</code>.": "Nastavení uživatelský práv a rolí je v <code>%permissions%</code>."
@@ -295,35 +376,23 @@
 "There are no users in the database. Please create the first user.": "V databázi není žádný uživatel. Vytvořte prosím prvního uživatele."
 "There should always be at least one 'root' user. You have just been promoted. Congratulations!": "Vždy musí být alespoň jeden uživatel s právy 'root'. Gratulujeme! Právě jste byl/a vybrán/a."
 "There was an error saving this %contenttype%.": "Při ukládání %contenttype% nastala chyba."
-"There was an error when reading this WXR file": "Při čtení souboru WXR nastala chyba"
-"There's something wrong with this extension, please report to the author and edit your menu manually until this is fixed.": "S tímto rozšířením není něco v pořádku, informujte prosím autora. Prozatím upravte menu ručně."
 "This %contenttype% has not been saved yet.": "%contenttype% zatím neuloženo."
 "This %contenttype% was created": "Tento %contenttype% byl vytvořen"
 "This displayname is already in use. Choose another displayname.": "Uživatelské jméno již existuje. Zvolte si jiné."
-"This does not appear to be a WXR file, missing/invalid WXR version number": "Toto není patrně WXR soubor – nebylo nalezeno platné číslo verze WXR."
 "This email address is already in use. Choose another email address.": "Tato emailová adresa je již používána. Zvolte jinou."
-"This is a checkbox": "Toto je zašrtávací políčko"
-"This record is related to %contenttype%": "Záznam souvisí s %contenttype%"
 "This username is already in use. Choose another username.": "Toto uživatelské jméno již bohužel existuje. Zvolte jiné."
 "This value is too short. It should have 6 characters or more.": "Příliš krátké zadání. Vložte minimálně 6 znaků."
 "This website is <a href='%url%' target='_blank' title='Sophisticated, lightweight & simple CMS'>Built with Bolt</a>.": "Tento web běží na <a href='%url%' target='_blank' title='Sophisticated, lightweight & simple CMS'>Bolt</a>."
 "Timed publish": "Naplánovat vydání"
 "Tip:": "Tip:"
 "Title": "Nadpis"
-"Title/Alt Text:": "Název/Alt. text"
 "To get started quickly, <a href='%url%'>add some Lorem Ipsum dummy content</a>.": "Pro rychlý začátek si můžete vygenerovat testovací obsah s <a href='%url%'>Lorem Ipsum</a>."
 "Translations": "Překlady"
 "Trim Activitylog": "Zredukovat záznam aktivit"
 "Types": "Typy"
-"URL:": "URL:"
-"Unable to overwrite menu.yml": "menu.yml nelze přepsat."
-"Unable to save backup! Please make sure MenuEditor/backups is writable by your webserver or disable the feature in the extensions configuration.": "Nelze zazálohovat! Ujistěte se prosím, že MenuEditor/backups na vašem webserveru je zapisovatelný nebo vypněte tuto možnost v nastavení rozšíření."
-"Unable to save your menu.": "Menu nelze uložit."
 "Update the database": "Aktualizovat databázi"
 "Upload File": "Nahrát soubor"
-"Upload a file to this folder:": "Uložit soubor do této složky:"
 "Upload file": "Nahrát soubor"
-"Upload files": "Nahrát soubory"
 "Upload image": "Nahrát obrázek"
 "Upload": "Nahrát"
 "Uploaded files": "Nahrané soubory"
@@ -344,7 +413,6 @@
 "Version:": "Verze:"
 "View %contenttypes%": "Zobrazit %contenttypes%"
 "View / edit Templates": "Zobrazit / upravit Šablony"
-"View file '%s'.": "Zobrazit soubor"
 "View file": "Zobrazit soubor"
 "View on site": "Zobrazit na webu"
 "View site": "Zobrazit web"
@@ -363,23 +431,18 @@
 "and edited": "a upraveno"
 "back to editing": "zpět do editace"
 "by": "od"
-"css classes": "css třídy"
 "field": "pole"
-"http://": "http://"
 "in:": "v:"
-"label": "označení"
 "line": "řádek"
 "logged in": "přihlášen/a"
 "logged out": "odhlášen/a"
 "more activity": "více aktivit"
 "new value": "nová hodnota"
-"no label set": "žádná sada označení"
 "no": "ne"
 "none": "žádný"
 "of": "z"
 "old value": "původní hodnota"
 "px.": "px."
 "show all": "zobrazit vše"
-"title": "Název"
 "unknown": "neznámý"
 "yes": "ano"
