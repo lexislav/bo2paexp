@@ -12,9 +12,49 @@
 # Changing these might give unexpected results or even break your website. If
 # possible, only add NEW routes above or below these.
 
+#homepage:
+#  path:               /
+#  defaults:           { _controller: 'Bolt\Controllers\Frontend::homepage' }
+
+#search:
+#  path:               /search
+#  defaults:           { _controller: 'Bolt\Controllers\Frontend::search' }
+
+#preview:
+#  path:               /preview/{contenttypeslug}
+#  defaults:           { _controller: 'Bolt\Controllers\Frontend::preview' }
+#  requirements:
+#    contenttypeslug:  'Bolt\Controllers\Routing::getAnyContentTypeRequirement'
+
+#contentlink:
+#  path:               /{contenttypeslug}/{slug}
+#  defaults:           { _controller: 'Bolt\Controllers\Frontend::record' }
+#  requirements:
+#    contenttypeslug:  'Bolt\Controllers\Routing::getAnyContentTypeRequirement'
+
+#taxonomylink:
+#  path:               /{taxonomytype}/{slug}
+#  defaults:           { _controller: 'Bolt\Controllers\Frontend::taxonomy' }
+#  requirements:
+#    taxonomytype:     'Bolt\Controllers\Routing::getAnyTaxonomyTypeRequirement'
+
+#contentlisting:
+#  path:               /{contenttypeslug}
+#  defaults:           { _controller: 'Bolt\Controllers\Frontend::listing' }
+#  requirements:
+#    contenttypeslug:  'Bolt\Controllers\Routing::getPluralContentTypeRequirement'
+
+# ------------------------------------------------------------------------------
+# Place your own routes here, that have a LOWER priority than the default routes.
+
 homepage:
   path:               /
-  defaults:           { _controller: 'Bolt\Controllers\Frontend::homepage' }
+  defaults:           { _controller: 'Bolt\Controllers\Multilang::i18nFront' }
+  
+somepage:
+  path: /{_locale}/page
+  defaults:
+    _controller: 'My\Controller::test'
 
 search:
   path:               /search
@@ -27,8 +67,10 @@ preview:
     contenttypeslug:  'Bolt\Controllers\Routing::getAnyContentTypeRequirement'
 
 contentlink:
-  path:               /{contenttypeslug}/{slug}
-  defaults:           { _controller: 'Bolt\Controllers\Frontend::record' }
+  path:               /{_locale}/{contenttypeslug}/{slug}
+  defaults:           
+    _controller: 'Bolt\Controllers\Frontend::record'
+    _before: 'Bolt\Controllers\Multilang::before'
   requirements:
     contenttypeslug:  'Bolt\Controllers\Routing::getAnyContentTypeRequirement'
 
@@ -39,15 +81,16 @@ taxonomylink:
     taxonomytype:     'Bolt\Controllers\Routing::getAnyTaxonomyTypeRequirement'
 
 contentlisting:
-  path:               /{contenttypeslug}
+  path:               /{_locale}/{contenttypeslug}
   defaults:           { _controller: 'Bolt\Controllers\Frontend::listing' }
   requirements:
     contenttypeslug:  'Bolt\Controllers\Routing::getPluralContentTypeRequirement'
-
-# ------------------------------------------------------------------------------
-# Place your own routes here, that have a LOWER priority than the default routes.
-
-
+    
+i18n_homepage:
+  path: /{_locale}
+  defaults:
+    _controller: 'Bolt\Controllers\Frontend::homepage'
+    _before: 'Bolt\Controllers\Multilangr::before'
 
 # ------------------------------------------------------------------------------
 # Routes examples:

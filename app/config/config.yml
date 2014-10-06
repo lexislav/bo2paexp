@@ -13,12 +13,16 @@ payoff: Špička české modulární výstavby
 # The theme to use. Be sure to copy the {theme_path}/base-2014 folder, and change the
 # name here accordingly. Don't edit the templates in theme/base-2014, because
 # they _will_ get updated in next releases
-theme: koma-expo2015
+theme: experiment-base2014
 
 # The locale that'll be used by the application. If no locale is set the
 # fallback locale is 'en_GB'. For available options, see: http://docs.bolt.cm/locales
 locale: cs_CZ
 #timezone: UTC
+i18n_locales:
+  - cs
+  - en
+  - it
 
 # Set maintenance mode true or false
 # While in maintenance mode, only users of level editor or higher can access the site.

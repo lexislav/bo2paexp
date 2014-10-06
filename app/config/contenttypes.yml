@@ -1,16 +1,20 @@
 zpravodaj:
     name: Zpravodaj
-    singular_name: Zprava
+    singular_name: blog
     description: |
       Zpravodaj je informačním kanálem pavilonu, jsou zde publikovány všechny možné informace o pavilonu.
     fields:
-        title:
+        title_cs:
             type: text
             class: large
             group: Texty
+        title_en:
+            type: text
+            class: large
+            group: Texty    
         slug:
             type: slug
-            uses: title
+            uses: title_cs
         text:
             type: html
             height: 300px
@@ -53,13 +57,16 @@ sponzori:
     description: |
     Seznam partnerů pavilonu. Třídí se pomocí štítků: Zlatý, Stříbrný, Bronzový
     fields:
-        nazev:
+        nazev_cs:
             type: text
             class: large
             group: Obsah
+        nazev_en:
+            type: text
+            class: large
         slug:
             type: slug
-            uses: nazev
+            uses: nazev_cs
         popis:
             type: textarea
             postfix: Velmi krátký popis partnera - objeví se pod logem.
@@ -84,13 +91,16 @@ historie:
     description: |
       Historie pavilonů EXPO
     fields:
-        title:
+        title_cs:
             type: text
             class: large
-            group: content
+            group: Obsah
+        title_en:
+            type: text
+            class: large
         slug:
             type: slug
-            uses: title
+            uses: title_cs
         rok:
             type: text
         mesto:
@@ -120,13 +130,16 @@ bloky:
     description: |
       Bloky slouží k uchování částí statických onepagerů.  
     fields:
-        title:
+        title_cs:
             type: text
             class: large
             group: Texty
+        title_en:
+            type: text
+            class: large
         slug:
             type: slug
-            uses: title
+            uses: title_cs
         body:
             type: html
             height: 300px
@@ -151,13 +164,19 @@ modaly:
     description: |
       Modaly se starají o obsah vyskakovacích okýnek,
     fields:
-        title:
+        title_cs:
+            type: text
+            class: large
+        title_en:
             type: text
             class: large
         slug:
             type: slug
-            uses: title
-        body:
+            uses: title_cs
+        body_cs:
+            type: html
+            height: 300px
+        body_en:
             type: html
             height: 300px
         image:
@@ -170,6 +189,32 @@ modaly:
     default_status: publish
     recordsperpage: 10
 
+Strany:
+    name: Pages
+    singular_name: Page
+    description: |
+      Slouží k prezentaci onepagerů (pavilon).
+    fields:
+        title_cs:
+            type: text
+            class: large
+            group: Obsah
+        title_en:
+            type: text
+            class: large
+        slug:
+            type: slug
+            uses: title_cs
+        body_cs:
+            type: html
+            height: 100px
+        body_en:
+            type: html
+            height: 100px
+        template:
+            type: templateselect
+            filter: '*.twig'
+    recordsperpage: 100
 
 # This file defines the contenttypes on the website. See the documentation for
 # details: http://docs.bolt.cm/content#defining-contenttypes

@@ -7,7 +7,7 @@
 
         <article>
 
-            <h2>{{ record.title }}</h2>
+            <h2>{{ record['title_' ~ app.locale] }}</h2>
 
             {% if record.image!="" %}
                 <div class="large-4 columns imageholder">
