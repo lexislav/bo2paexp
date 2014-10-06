@@ -22,16 +22,24 @@ zpravodaj:
             type: image
             group: Média
             extensions: [ gif, jpg, png ]
+            label: náhledový obrázek
+            postfix: minimální velikost 620x465px, název souboru bez českých znaků a mezer!
         video:
             type: video
         imagelist:
             type: imagelist
             extensions: [ gif, jpg, png ]
+            label: galerie
+            postfix: ideální velikost 1280x960, minimální velikost 1024x768px, název souboru bez českých znaků a mezer!
         file:
             type: file
             group: Soubory
+            extensions: [ doc, docx, pdf, xls, xlsx, ods, odt ]
+            label: jednotlivý soubor
         filelist:
             type: filelist
+            extensions: [ doc, docx, pdf, xls, xlsx, ods, odt ]
+            label: Více souborů
     relations:
         zpravodaj:
             multiple: false
