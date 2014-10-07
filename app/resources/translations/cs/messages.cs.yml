@@ -79,7 +79,7 @@
 "Sign in to Bolt": "Přihlásit se do Boltu"
 "Stable Versions": "Stabilní Verze"
 "The extensions directory (<code>%dir%</code>) does not exist, or it is not writable.": "Adresář rozšíření (<code>%dir%</code>) neexistuje nebo do něj nelze zapisovat."
-"The field %field% has been changed to \"%newValue%\: "Pole %field% bylo změněno na \"%newValue%\
+"The field %field% has been changed to %newValue%": "Pole %field% bylo změněno na %newValue%"
 "The folder '%s' could not be found, or is not readable.": "Složka '%s' nebyla nalezena nebo nelze přečíst."
 "The versions listed below are compatible with the version of Bolt you are using. Since they are unstable versions, we recommend you <strong>do not</strong> use these on production systems.": "Verze uvedené níže jsou kompatibilní s verzí Boltu, kterou používáte. Jelikož jsou to nestabilní verze doporučujeme, abyste je <strong>nepoužívali<strong> v produkčních systémech."
 "The versions listed below are marked as stable releases by the developer and are compatible with the version of Bolt you are currently using.": "Verze uvedené níže jsou označeny jako stabilní vydání vyvojářem a jsou komptatibilní s verzí Boltu kterou současně požíváte."
