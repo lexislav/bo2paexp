@@ -1,5 +1,5 @@
-# app/resources/translations/cs/messages.cs.yml -- generated on 2014/10/07 11:38:48
-# 43 untranslated strings
+# app/resources/translations/cs/messages.cs.yml -- generated on 2014/10/07 22:07:23
+# 44 untranslated strings
 
 "Are you sure you wish to unlock the slug? This might break existing links to this record.":  #
 "Autor(ři) Pavilonu":  #
@@ -21,7 +21,7 @@
 "Running install of all packages…":  #
 "Search for…":  #
 "Searching for available updates…":  #
-"Select file…":  #
+"Select file…":  "Vybrat sobor…"
 "Set the slug to:":  #
 "Statik":  #
 "Statiky":  #
@@ -41,12 +41,13 @@
 "Více souborů":  #
 "You are currently using SQLite to set up the first user. If you wish to use MySQL or PostgreSQL instead, edit the configuration file at <tt>'app/config/config.yml'</tt> and Bolt will set up the database tables for you. Be sure to reload this page before continuing.":  #
 "You should set 'homepage:' in your 'app/config/config.yml' to an existing record. Make sure that the content is published, otherwise it will not be shown.":  #
+"Zvýraznit zprávu":  #
 "galerie":  #
 "jednotlivý soubor":  #
 "náhledový obrázek":  #
 
 #-----------------------------------------
-# 415 translated strings
+# 416 translated strings
 
 "%contenttypes% overview": "%contenttypes% přehled"
 "%contenttypes%": "%contenttypes%"
@@ -250,6 +251,7 @@
 "No %contenttypes% available.": "%contenttypes% nenalezen."
 "No Stable Versions Available": "Nejsou k dispozici žádné stabilní verze"
 "No Test Versions Available": "Nejsou k dispozici žádné testovací verze"
+"No content found": "Nebyl nalezen žádný obsah"
 "No latest %contenttype%": "Žádný poslední %contenttype%"
 "No recent %contenttype%.": "Prázdný: %contenttype%."
 "No relations found!": "Nenalezena žádná souvislost"
