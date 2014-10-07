@@ -1548,19 +1548,19 @@
         "source": {
             "type": "git",
             "url": "https://github.com/M6Web/Symfony2-coding-standard.git",
-            "reference": "e19ddd8d5897654b2bc09b5ebe0bb6a01ef50b0d"
+            "reference": "51190f81cd40b86b204874b79761ddd5aa2b3023"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/M6Web/Symfony2-coding-standard/zipball/e19ddd8d5897654b2bc09b5ebe0bb6a01ef50b0d",
-            "reference": "e19ddd8d5897654b2bc09b5ebe0bb6a01ef50b0d",
+            "url": "https://api.github.com/repos/M6Web/Symfony2-coding-standard/zipball/51190f81cd40b86b204874b79761ddd5aa2b3023",
+            "reference": "51190f81cd40b86b204874b79761ddd5aa2b3023",
             "shasum": ""
         },
         "suggest": {
             "m6web/coke": "PHP CodeSniffer configurator",
             "squizlabs/php_codesniffer": "PHP CodeSniffer"
         },
-        "time": "2014-08-05 13:21:46",
+        "time": "2014-10-07 08:21:43",
         "type": "library",
         "installation-source": "dist",
         "notification-url": "https://packagist.org/downloads/",
