@@ -8,20 +8,23 @@ cs:
   - label: Prohlídka pavilonu
     title: Prohlédněte si pavilon po jednotlivých patrech
     path: page/o-pavilonu
+  - label: Historie českých expo pavilonů
+    title: Stručná historie českých pavilonů a jejich osudů
+    path: cs/historie
   - label: Zpravodaj pavilonu
     title: Informace o aktuálním dění pavilonu
-    path: blog/
+    path: cs/blog
     submenu:
       - label: vše
-        path: blog/
+        path: cs/blog/
       - label: fotogalerie
-        path: blog/
+        path: cs/blog/
       - label: informace partnerů
-        path: blog/
+        path: cs/blog/
       - label: o pavilonu
-        path: blog/
+        path: cs/blog/
       - label: rozhovory
-        path: blog/
+        path: cs/blog/rozhovory
 
 en:
   - label: Overview of Czech pavilion

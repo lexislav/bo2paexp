@@ -1,8 +1,8 @@
 zpravodaj:
     name: Zpravodaj
     singular_name: Článek
-    slug: news
-    singular_slug: blog
+    slug: blog
+    singular_slug: clanek
     description: |
       Zpravodaj je informačním kanálem pavilonu, jsou zde publikovány všechny možné informace o pavilonu.
     fields:
@@ -64,7 +64,7 @@ zpravodaj:
     default_status: concept
     searchable: true
     record_template: entry.twig
-    listing_template: listing.twig
+    listing_template: zpravodaj.twig
     listing_records: 20
     recordsperpage: 20
     sort: -datepublish
@@ -162,7 +162,7 @@ historie:
         galerie:
             type: imagelist
     record_template: entry.twig
-    listing_template: listing.twig
+    listing_template: historie.twig
     listing_records: 20
     default_status: publish
     sort: -datepublish
