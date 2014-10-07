@@ -38,36 +38,50 @@
     </div>
 </div>
 
+        {% if taxonomytype is defined %}
+            <h1>
+                {{ __('Overview for') }}
+                {% if taxonomy.options[slug] is defined %}
+                    {{ taxonomy.options[slug] }}
+                {% else %}
+                    {{ slug }}
+                {% endif %}
+            </h1>
+            {# taxonomies are fetched unordered by design. If we specified an order in config.yml, sort them here: #}
+            {% set records = records|order(app.config.get('general/listing_sort')) %}
+        {% endif %}
+
 <div class="row">
 
-        <?php for ($i = 1; $i <= 8; $i++) { ?>
-        <div class="small-12 medium-6 large-4 xlarge-3 columns">
+    
+        {% for record in records %}
+        <div class="small-12 medium-6 large-4 xlarge-3 columns {% if loop.last %}end{% endif %}"> 
             <article class="m-blog-item">
                 <header>
-                    <a href="/single.php" title="">
-                        <div class="m-item--image"><img src="/assets/modul.png" alt="" /></div>
-                        <h1 class="m-item--hed"><a href="/single.php" title="">title</a></h1>
+                    <a href="{{ record.link }}" title="{{ record.title }}">
+                    <div class="m-item--image">
+                {% if record.image!="" %}
+                    <img src="{{ thumbnail(record.image) }}" alt="">
+                    {% else %}
+                    <img src="{{ paths.theme }}assets/no_image_thumb_blue.svg" />
+                {% endif %}</div>
+                    <h1 class="m-item--hed"><a href="{{ record.link }}" title="{{ record.title }}">{{ record.title }}</a></h1>
 
-                        <div class="m-item--meta"><a href="/blog.php" class="m-item--section">kategorie</a></div>
+                    <div class="m-item--meta"><a href="" class="m-item--section">kategorie</a></div>
                     </a>
                 </header>
             </article>
         </div>
-    <?php } ?>
+        {% else %}
+            <article>
+                    <h2>{{ __("No content found.") }}</h2>
+                    <p>
+                        Unfortunately, no content could be found. Try another page, or go to the
+                        <a href="{{ paths.root }}">homepage</a>.
+                    </p>
+            </article>
+        {% endfor %}
 
-    <!-- ending-->
-    <div class="small-12 medium-6 large-4 xlarge-3 columns end">
-        <article class="m-blog-item mm-featured">
-            <header>
-                <a href="/single.php" title="">
-                    <div class="m-item--image"><img src="/assets/modul.png" alt="" /></div>
-                    <h1 class="m-item--hed"><a href="/single.php" title="">title</a></h1>
-
-                    <div class="m-item--meta"><a href="/blog.php" class="m-item--section">kategorie</a></div>
-                </a>
-            </header>
-        </article>
-    </div>
 </div>
 
 
