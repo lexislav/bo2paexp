@@ -13,7 +13,7 @@ payoff: Špička české modulární výstavby
 # The theme to use. Be sure to copy the {theme_path}/base-2014 folder, and change the
 # name here accordingly. Don't edit the templates in theme/base-2014, because
 # they _will_ get updated in next releases
-theme: experiment-base2014
+theme: koma-pavilon2015
 
 # The locale that'll be used by the application. If no locale is set the
 # fallback locale is 'en_GB'. For available options, see: http://docs.bolt.cm/locales
@@ -29,8 +29,8 @@ i18n_locales:
 # All other visitors are presented with a notice that the site is currently offline.
 # The default template file can be found in /app/theme_defaults/ and overridden with
 # this option using your own theme.
-maintenance_mode: false
-maintenance_template: maintenance_default.twig
+maintenance_mode: true
+maintenance_template: maintenance.twig
 
 # The hour of the day for the internal cron task scheduler to run daily, weekly,
 # monthly and yearly jobs.  Default: 3 (3 am)

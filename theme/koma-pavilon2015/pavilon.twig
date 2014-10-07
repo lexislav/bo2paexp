@@ -1,6 +1,6 @@
-<?php include "templates/html-header.php"; ?>
+{% include '_header.twig' %}
 <body class="l-page_pavilon">
-<?php include "templates/inc-topbar.php"; ?>
+{% include '_topbar.twig' %}
 
 <div class="l-schema m-schema">
     <div class="m-schema--decoration mm-top"></div>
@@ -286,8 +286,8 @@
         </div>
 
 
-        <?php include "templates/inc-footer-partner.php"; ?>
-        <?php include "templates/inc-footer.php"; ?>
+        {% include '_partners.twig' %}
+        {% include '_inc-footer.twig' %}
 
 
     </div>
@@ -309,9 +309,9 @@
 
 
 
-<script type="text/javascript" src="components/slick/slick/slick.min.js"></script>
-<script type="text/javascript" src="components/foundation/js/foundation/foundation.js"></script>
-<script type="text/javascript" src="components/foundation/js/foundation/foundation.reveal.js"></script>
+<script type="text/javascript" src="{{ paths.theme }}components/slick/slick/slick.min.js"></script>
+<script type="text/javascript" src="{{ paths.theme }}components/foundation/js/foundation/foundation.js"></script>
+<script type="text/javascript" src="{{ paths.theme }}components/foundation/js/foundation/foundation.reveal.js"></script>
 <script type="text/javascript">
 
     $(document).foundation();
@@ -376,7 +376,8 @@
 
 </script>
 
-<script src="/js/app.js"></script>
+<script src="{{ paths.theme }}js/app.js"></script>
 
+{% include '_inc-analytics.twig' %}
 </body>
-<?php include "templates/html-footer.php"; ?>
+{% include '_footer.twig' %}
