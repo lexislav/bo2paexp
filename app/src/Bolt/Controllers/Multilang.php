@@ -33,6 +33,8 @@ class Multilang
         if ($locales) {
             return $app->redirect($app['paths']['root'] . $request->getPreferredLanguage($locales));
         }
+        
+        
     }
 }
 ?>
