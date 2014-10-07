@@ -51,11 +51,6 @@ homepage:
   path:               /
   defaults:           { _controller: 'Bolt\Controllers\Multilang::i18nFront' }
   
-somepage:
-  path: /{_locale}/page
-  defaults:
-    _controller: 'My\Controller::test'
-
 search:
   path:               /search
   defaults:           { _controller: 'Bolt\Controllers\Frontend::search' }
@@ -111,6 +106,10 @@ i18n_homepage:
 #  defaults: { _controller: 'Bolt\Controllers\Frontend::record', 'contenttypeslug': 'page', 'slug': 'example' }
 #  host: 'www.mydomain.org'
 
+pavilonpage:
+  path: /{_locale}/o-pavilonu
+  defaults: { _controller: 'Bolt\Controllers\Frontend::record', 'contenttypeslug': 'page', 'slug': 'o-pavilonu' }
+#  host: 'www.mydomain.org'
 
 # Example override for a specific contenttype
 

@@ -1,6 +1,8 @@
 zpravodaj:
     name: Zpravodaj
-    singular_name: blog
+    singular_name: Článek
+    slug: news
+    singular_slug: blog
     description: |
       Zpravodaj je informačním kanálem pavilonu, jsou zde publikovány všechny možné informace o pavilonu.
     fields:
@@ -8,16 +10,23 @@ zpravodaj:
             type: text
             class: large
             group: Texty
-        title_en:
-            type: text
-            class: large
-            group: Texty    
+            label: Název (CS)
         slug:
             type: slug
             uses: title_cs
-        text:
+        text_cs:
             type: html
             height: 300px
+            label: Text (CS)
+        title_en:
+            type: text
+            class: large
+            group: (EN)
+            label: Název (EN)
+        text_en:
+            type: html
+            height: 300px
+            label: Text (EN)
         image:
             type: image
             group: Média
@@ -102,22 +111,47 @@ historie:
         title_cs:
             type: text
             class: large
-            group: Obsah
-        title_en:
-            type: text
-            class: large
+            group: Texty (CS)
+            label: Název
         slug:
             type: slug
             uses: title_cs
-        rok:
+        rok_cs:
             type: text
-        mesto:
+            label: Rok konání
+        mesto_cs:
             type: text
-        tema:
+            label: Město
+        tema_cs:
             type: text
-        text:
+            label: Téma výstavy
+        autor-pavilonu_cs:
+            type: text
+            label: Autor(ři) Pavilonu
+            postfix: Autory případně oddělte čárkou
+        autor-expozice_cs:
+            type: text
+            label: Autor(ři) expozice
+            postfix: Autory případně oddělte čárkou
+        text_cs:
             type: html
             height: 500px
+            label: Text
+        title_en:
+            type: text
+            class: large
+            group: (EN)
+            label: Název (EN)
+        mesto_en:
+            type: text
+            label: Město (EN)
+        tema_en:
+            type: text
+            label: Téma výstavy (EN)
+        text_en:
+            type: html
+            height: 500px
+            label: Text (EN)
         nahled:
             type: image
             group: media
