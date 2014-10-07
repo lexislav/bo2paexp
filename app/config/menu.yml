@@ -7,7 +7,7 @@ cs:
     path: homepage
   - label: Prohlídka pavilonu
     title: Prohlédněte si pavilon po jednotlivých patrech
-    path: page/1
+    path: page/o-pavilonu
   - label: Zpravodaj pavilonu
     title: Informace o aktuálním dění pavilonu
     path: blog/
@@ -15,11 +15,17 @@ cs:
       - label: vše
         path: blog/
       - label: fotogalerie
-        path: taxonomy
+        path: blog/
+      - label: informace partnerů
+        path: blog/
+      - label: o pavilonu
+        path: blog/
+      - label: rozhovory
+        path: blog/
 
 en:
   - label: Overview of Czech pavilion
-    title: Základní informace o pavilonu a dodavateli
+    title: All the informations about pavilion and stuff
     path: homepage
   - label: Look inside the pavilion
     title: Prohlédněte si pavilon po jednotlivých patrech

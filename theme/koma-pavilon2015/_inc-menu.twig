@@ -1,0 +1,32 @@
+{% macro display_menu_item(item, loop) %}
+<li>
+    <article class="m-item index-{{ loop.index }}">
+    <!-- {% if loop.first %} first{% endif %}{% if loop.last %} last{% endif %} --> 
+    <header>
+        <h1 class="m-item--hed"><a href="{{ item.link }}" title='{{ item.label|escape }}'>{{ item.label }}</a></h1>
+    </header>
+    {% if item.title is defined %}
+    <div class="m-item--description">
+        <p>{{ item.title }}</p>
+    </div>
+    {% endif %}
+    {% if item.submenu is defined %}
+        <div class="m-item--meta">
+            <ul>
+                {% for category in config.get('taxonomy/kategorie/options') %}
+        <li>
+            <a href="{{ paths.root }}Kategorie/{{Kategorie1}}">{{Kategorie1}}</a>
+        </li>
+    {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+</li>
+{% endmacro %}
+
+
+<!-- rinnign macro -->
+
+{% for item in menu %}
+    {{ _self.display_menu_item(item, loop) }}
+{% endfor %}

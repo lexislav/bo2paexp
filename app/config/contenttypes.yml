@@ -251,12 +251,6 @@ Strany:
         slug:
             type: slug
             uses: title_cs
-        body_cs:
-            type: html
-            height: 100px
-        body_en:
-            type: html
-            height: 100px
         template:
             type: templateselect
             filter: '*.twig'
