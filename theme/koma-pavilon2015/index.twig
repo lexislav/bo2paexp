@@ -222,21 +222,21 @@
         </header>
 
         <div class="row">
-
-           <?php
-           // 4x blog item
-           for($b = 0; $b < 4; $b++) { ?>
+        {% setcontent zpravodaj = 'blog/latest/4' %}
+        {% for record in zpravodaj %}
             <article class="small-12 medium-6 large-3 columns m-blog-item">
                 <header>
-                    <a href="pavilon.php">
-                        <img class="m-item--image" src="/assets/modul.png" />
-
-                        <h1 class="m-item--hed">Normální náhled příspěvku s tak nějak decentně dlouhým názvem</h1>
+                    <a href="{{ record.link }}">
+                        {% if record.image!="" %}
+                        <img class="m-item--image" src="{{ thumbnail(record.image, 280, 210) }}" />
+                        {% else %}
+                        <img class="m-item--image" src="{{ paths.theme }}assets/no_image_thumb_blue.svg" />
+                        {% endif %}
+                        <h1 class="m-item--hed">{{ record['title_' ~ app.locale] }}</h1>
                     </a>
                 </header>
             </article>
-           <?php } ?>
-
+        {% endfor %}
         </div>
     </article>
 </div>
