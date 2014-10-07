@@ -14,6 +14,10 @@ zpravodaj:
         slug:
             type: slug
             uses: title_cs
+        featured:
+             type: checkbox
+             label: Zvýraznit zprávu
+             default: unchecked
         text_cs:
             type: html
             height: 300px
