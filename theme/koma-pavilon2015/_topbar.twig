@@ -9,7 +9,9 @@
             </div>
 
             <div class="small-6 columns visible-for-medium-up">
-                <div class="m-nav--lang"><a href="" class="is-active">cz</a>/<a href="">en</a>/<a href="">it</a></div>
+                <div class="m-nav--lang">
+                    <a href="{{paths.root}}{{ paths.current|replace({'/en': "cs", '/it': "cs"}) }}" class="is-active">cz</a>/<a href="{{paths.root}}{{ paths.current|replace({'/cs': "en", '/it': "en"}) }}">en</a>/<a href="{{paths.root}}{{ paths.current|replace({'/cs': "it", '/en': "it"}) }}">it</a>
+                </div>
             </div>
         </div>
     </div>
