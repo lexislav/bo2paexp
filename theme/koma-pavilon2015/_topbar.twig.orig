@@ -10,9 +10,13 @@
 
             <div class="small-6 columns visible-for-medium-up">
                 <div class="m-nav--lang">
+<<<<<<< HEAD
                     <a href="{{paths.root}}{{ paths.current|replace({'/en': "cs", '/it': "cs"}) }}" class="is-active">cz</a>/<a href="{{paths.root}}{{ paths.current|replace({'/cs': "en", '/it': "en"}) }}">en</a>/<a href="{{paths.root}}{{ paths.current|replace({'/cs': "it", '/en': "it"}) }}">it</a>
+=======
+                    <a href="{{paths.root}}{{ paths.current|replace({'/en': "cs", '/it': "cs",'/cs': "cs"}) }}" class="is-active">cz</a>/
                     <a href="{{paths.root}}{{ paths.current|replace({'/cs': "en", '/it': "en", '/en': "en" }) }}">en</a>/
                     <a href="{{paths.root}}{{ paths.current|replace({'/cs': "it", '/en': "it", '/it': "it"}) }}">it</a>
+>>>>>>> přepínání jazyků v topbaru
                 </div>
             </div>
         </div>
