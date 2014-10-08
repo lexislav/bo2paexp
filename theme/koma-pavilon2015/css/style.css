@@ -4709,7 +4709,8 @@ th.hide-for-touch {
     margin: 0; }
     .m-blog-item .m-item--hed a {
       display: block;
-      width: 100%; }
+      width: 100%;
+      color: #4A4A4A; }
   .m-blog-item .m-item--image {
     width: 100%;
     height: auto;
@@ -4719,17 +4720,26 @@ th.hide-for-touch {
     .m-blog-item .m-item--image img {
       width: 100%; }
   .m-blog-item .m-item--section {
+    font-family: "nudista-web";
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    font-size: 1.6rem;
+    font-weight: 600;
     position: absolute;
     top: 14px;
     left: 14px;
-    font-size: 0.8rem;
+    font-size: 0.93333rem;
     display: block;
     background-color: #000;
     color: white;
     text-transform: uppercase;
     padding: 4px 8px; }
-    .m-blog-item .m-item--section:hover {
-      background-color: #c20e1a; }
+    .m-blog-item .m-item--section.fnt-white {
+      font-weight: 300; }
+    .m-blog-item .m-item--section a {
+      color: white; }
+      .m-blog-item .m-item--section a:hover {
+        text-decoration: underline; }
   .m-blog-item:hover a {
     color: white; }
   .m-blog-item:hover .m-item--hed {
@@ -4754,8 +4764,6 @@ th.hide-for-touch {
   .m-blog-item.mm-featured .m-item--section {
     background-color: #c20e1a;
     color: white; }
-    .m-blog-item.mm-featured .m-item--section:hover {
-      background-color: #000000; }
 
 .m-list header > h2 {
   font-size: 1.06667rem;

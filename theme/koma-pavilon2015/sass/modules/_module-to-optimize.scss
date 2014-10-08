@@ -15,6 +15,7 @@
         a {
             display: block;
             width: 100%;
+            color: $koma;
         }
     }
 
@@ -34,22 +35,27 @@
     }
 
     .m-item--section {
+        @include fnt-secondary-headline();
+        font-weight: 600;
         position: absolute;
         top: 14px;
         left: 14px;
 
-        font-size: rem-calc(12);
+        font-size: rem-calc(14);
 
         display: block;
         background-color: #000;
-        color: white;
 
+        color: white;
         text-transform: uppercase;
         padding: 4px 8px;
-
-        &:hover {
-            background-color: $color-koma-red;
+        a {
+            color: white;
+            &:hover {
+                text-decoration: underline;
+            }
         }
+
     }
 
     &:hover {
@@ -95,10 +101,6 @@
         .m-item--section {
             background-color: $color-koma-red;
             color: white;
-
-            &:hover {
-                background-color: $black;
-            }
         }
     }
 
