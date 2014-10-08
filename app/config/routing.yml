@@ -85,7 +85,7 @@ i18n_homepage:
   path: /{_locale}
   defaults:
     _controller: 'Bolt\Controllers\Frontend::homepage'
-    _before: 'Bolt\Controllers\Multilangr::before'
+    _before: 'Bolt\Controllers\Multilang::before'
 
 # ------------------------------------------------------------------------------
 # Routes examples:
