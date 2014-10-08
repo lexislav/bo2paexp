@@ -1,3 +1,34 @@
+@mixin mm-white() {
+    .m-nav--panel {
+        border-bottom: 1px solid $koma;
+        background-color: white;
+        color: $body-font-color;
+
+        @include transition(all 0.3s);
+
+        .m-nav--button {
+            background-image: url("../assets/ikony/menu-button-black.png");
+        }
+
+        a {
+            color: $body-font-color;
+            &:hover {
+                color: $color-koma-red;
+            }
+        }
+
+        .m-nav--lang {
+            color: scale_color($koma, $lightness: 50%);
+            a {
+                color: scale_color($koma, $lightness: 50%);
+                &.is-active {
+                    color: $koma;
+                }
+            }
+        }
+    }
+}
+
 .m-nav {
     position: fixed;
     display: block;
@@ -185,35 +216,7 @@
 
     &.mm-white,
     &[color="mm-white"] {
-
-        .m-nav--panel {
-            border-bottom: 1px solid $koma;
-            background-color: white;
-            color: $body-font-color;
-
-              @include transition(all 0.3s);
-
-            .m-nav--button {
-                background-image: url("../assets/ikony/menu-button-black.png");
-            }
-
-            a {
-                color: $body-font-color;
-                &:hover {
-                    color: $color-koma-red;
-                }
-            }
-
-            .m-nav--lang {
-                color: scale_color($koma, $lightness: 50%);
-                a {
-                    color: scale_color($koma, $lightness: 50%);
-                    &.is-active {
-                        color: $koma;
-                    }
-                }
-            }
-        }
+        @include mm-white();
     }
 
 }
@@ -222,6 +225,8 @@
 
 .touch {
     .m-nav {
+        // default white na touch devicech
+        @include mm-white();
         .m-nav--panel {
         background-color: white !important;
             height: $navbar-height_AB;

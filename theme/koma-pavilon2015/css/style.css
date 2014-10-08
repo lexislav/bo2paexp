@@ -4009,6 +4009,24 @@ th.hide-for-touch {
           color: #4A4A4A; }
 
 .touch .m-nav .m-nav--panel {
+  border-bottom: 1px solid #4A4A4A;
+  background-color: white;
+  color: #4A4A4A;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s; }
+  .touch .m-nav .m-nav--panel .m-nav--button {
+    background-image: url("../assets/ikony/menu-button-black.png"); }
+  .touch .m-nav .m-nav--panel a {
+    color: #4A4A4A; }
+    .touch .m-nav .m-nav--panel a:hover {
+      color: #c20e1a; }
+  .touch .m-nav .m-nav--panel .m-nav--lang {
+    color: #a4a4a4; }
+    .touch .m-nav .m-nav--panel .m-nav--lang a {
+      color: #a4a4a4; }
+      .touch .m-nav .m-nav--panel .m-nav--lang a.is-active {
+        color: #4A4A4A; }
+.touch .m-nav .m-nav--panel {
   background-color: white !important;
   height: 48px;
   font-size: 16px !important; }
