@@ -8,15 +8,7 @@
 
     @include fnt-primary-headline();
     font-size: rem-calc(16);
-
-
     color: white;
-
-    .m-page-footer--content {
-        strong {
-            @include fnt-primary-headline();
-        }
-    }
 
     h5 {
         color: white;

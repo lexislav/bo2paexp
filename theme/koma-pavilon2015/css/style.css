@@ -4581,11 +4581,6 @@ th.hide-for-touch {
   font-size: 2.66667rem;
   font-size: 1.06667rem;
   color: white; }
-  .m-page-footer .m-page-footer--content strong {
-    font-family: "purista-web";
-    font-weight: 400;
-    -webkit-font-smoothing: antialiased;
-    font-size: 2.66667rem; }
   .m-page-footer h5 {
     color: white;
     border-bottom: 1px dotted white;
