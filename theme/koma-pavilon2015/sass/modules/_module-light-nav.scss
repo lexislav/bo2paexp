@@ -15,16 +15,16 @@
         margin: 0 2px;
 
         &.mm-top {
-            background-image: url("/assets/ikony/nav-small-top.png");
+            background-image: url("../assets/ikony/nav-small-top.png");
             width: 21px;
             height: 21px;
             margin-right: 20px;
         }
         &.mm-next {
-            background-image: url("/assets/ikony/nav-small-next.png");
+            background-image: url("../assets/ikony/nav-small-next.png");
         }
         &.mm-prev {
-            background-image: url("/assets/ikony/nav-small-prev.png");
+            background-image: url("../assets/ikony/nav-small-prev.png");
         }
 
         &:hover {
@@ -39,13 +39,13 @@
             margin: 0 8px;
 
             &.mm-top {
-                background-image: url("/assets/ikony/nav-top.png");
+                background-image: url("../assets/ikony/nav-top.png");
             }
             &.mm-next {
-                background-image: url("/assets/ikony/nav-next.png");
+                background-image: url("../assets/ikony/nav-next.png");
             }
             &.mm-prev {
-                background-image: url("/assets/ikony/nav-prev.png");
+                background-image: url("../assets/ikony/nav-prev.png");
             }
         }
     }

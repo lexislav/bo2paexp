@@ -3869,7 +3869,7 @@ th.hide-for-touch {
     text-align: center;
     float: left;
     cursor: pointer;
-    background-image: url("/assets/ikony/menu-button.png");
+    background-image: url("../assets/ikony/menu-button.png");
     background-repeat: no-repeat;
     background-position: center center;
     line-height: 48px;
@@ -3970,7 +3970,7 @@ th.hide-for-touch {
     background-color: transparent;
     color: white; }
     .m-nav.mm-black .m-nav--panel .m-nav--button, .m-nav[color="mm-black"] .m-nav--panel .m-nav--button {
-      background-image: url("/assets/ikony/menu-button.png"); }
+      background-image: url("../assets/ikony/menu-button.png"); }
     .m-nav.mm-black .m-nav--panel a, .m-nav[color="mm-black"] .m-nav--panel a {
       color: white; }
       .m-nav.mm-black .m-nav--panel a:hover, .m-nav[color="mm-black"] .m-nav--panel a:hover {
@@ -3986,7 +3986,7 @@ th.hide-for-touch {
     background-color: white;
     color: #4A4A4A; }
     .m-nav.mm-white .m-nav--panel .m-nav--button, .m-nav[color="mm-white"] .m-nav--panel .m-nav--button {
-      background-image: url("/assets/ikony/menu-button-black.png"); }
+      background-image: url("../assets/ikony/menu-button-black.png"); }
     .m-nav.mm-white .m-nav--panel a, .m-nav[color="mm-white"] .m-nav--panel a {
       color: #4A4A4A; }
       .m-nav.mm-white .m-nav--panel a:hover, .m-nav[color="mm-white"] .m-nav--panel a:hover {
@@ -4057,7 +4057,7 @@ th.hide-for-touch {
       display: block; }
   .ags-slider .ags-bg--content {
     position: absolute;
-    background-image: url("/assets/sky.jpg");
+    background-image: url("../assets/sky.jpg");
     background-size: cover;
     background-position: 50% 50%; }
     .ags-slider .ags-bg--content .title-box {
@@ -4067,7 +4067,7 @@ th.hide-for-touch {
     position: relative;
     width: 100%;
     height: 160%;
-    background-image: url("/assets/pavilon-theme.png");
+    background-image: url("../assets/pavilon-theme.png");
     background-size: auto 100%;
     background-repeat: no-repeat;
     background-position: 50% 50%; }
@@ -4170,19 +4170,19 @@ th.hide-for-touch {
 .m-schema {
   overflow: hidden; }
   .m-schema .np1 {
-    background-image: url("/assets/pavilon-sm/p0-1.png"); }
+    background-image: url("../assets/pavilon-sm/p0-1.png"); }
   .m-schema .np2 {
-    background-image: url("/assets/pavilon-sm/p0-2.png"); }
+    background-image: url("../assets/pavilon-sm/p0-2.png"); }
   .m-schema .np3 {
-    background-image: url("/assets/pavilon-sm/p1-1.png"); }
+    background-image: url("../assets/pavilon-sm/p1-1.png"); }
   .m-schema .np4 {
-    background-image: url("/assets/pavilon-sm/p1-2.png"); }
+    background-image: url("../assets/pavilon-sm/p1-2.png"); }
   .m-schema .np5 {
-    background-image: url("/assets/pavilon-sm/p2-1.png"); }
+    background-image: url("../assets/pavilon-sm/p2-1.png"); }
   .m-schema .np6 {
-    background-image: url("/assets/pavilon-sm/p2-2.png"); }
+    background-image: url("../assets/pavilon-sm/p2-2.png"); }
   .m-schema .np7 {
-    background-image: url("/assets/pavilon-sm/p3-1.png"); }
+    background-image: url("../assets/pavilon-sm/p3-1.png"); }
   .m-schema .m-schema--decoration {
     display: none;
     height: 10%;
@@ -4208,7 +4208,7 @@ th.hide-for-touch {
         .m-schema .m-schema--decoration.mm-bottom i:before {
           display: block;
           content: "";
-          background-image: url("/assets/ikony/arrow-down.png");
+          background-image: url("../assets/ikony/arrow-down.png");
           background-repeat: no-repeat;
           background-position: center center;
           width: 100px;
@@ -4559,15 +4559,15 @@ th.hide-for-touch {
         position: absolute;
         bottom: -28px;
         text-align: center;
-        background-image: url("/assets/triangle-empty.png");
+        background-image: url("../assets/triangle-empty.png");
         background-repeat: no-repeat;
         background-position: center top; }
       .m-progress-bar .m-progress-bar--items li.mm-full:after {
-        background-image: url("/assets/triangle-full.png"); }
+        background-image: url("../assets/triangle-full.png"); }
 
 .m-page-footer {
   padding-top: 50px;
-  background-image: url("/assets/file-a.jpg");
+  background-image: url("../assets/file-a.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -4789,7 +4789,7 @@ th.hide-for-touch {
     margin-bottom: 50px; }
 
 .m-theme {
-  background-image: url("/assets/file-a.jpg");
+  background-image: url("../assets/file-a.jpg");
   background-position: center center;
   background-size: cover;
   height: 472px; }
@@ -4843,16 +4843,16 @@ th.hide-for-touch {
       opacity: 1; }
 
 .i-info:before {
-  background-image: url("/assets/ikony/info.svg"); }
+  background-image: url("../assets/ikony/info.svg"); }
 
 .i-bulb:before {
-  background-image: url("/assets/ikony/zarovka.svg"); }
+  background-image: url("../assets/ikony/zarovka.svg"); }
 
 .i-clock:before {
-  background-image: url("/assets/ikony/stopky.svg"); }
+  background-image: url("../assets/ikony/stopky.svg"); }
 
 .i-elegant:before {
-  background-image: url("/assets/ikony/elegantne.svg"); }
+  background-image: url("../assets/ikony/elegantne.svg"); }
 
 a:hover .svg-button #button {
   opacity: 1; }
@@ -4999,14 +4999,14 @@ aside h2 {
   .m-light-nav .m-icon > i {
     display: none; }
   .m-light-nav .m-icon.mm-top {
-    background-image: url("/assets/ikony/nav-small-top.png");
+    background-image: url("../assets/ikony/nav-small-top.png");
     width: 21px;
     height: 21px;
     margin-right: 20px; }
   .m-light-nav .m-icon.mm-next {
-    background-image: url("/assets/ikony/nav-small-next.png"); }
+    background-image: url("../assets/ikony/nav-small-next.png"); }
   .m-light-nav .m-icon.mm-prev {
-    background-image: url("/assets/ikony/nav-small-prev.png"); }
+    background-image: url("../assets/ikony/nav-small-prev.png"); }
   .m-light-nav .m-icon:hover {
     background-position: bottom center; }
 .m-light-nav.mm-big .m-icon {
@@ -5014,11 +5014,11 @@ aside h2 {
   width: 50px;
   margin: 0 8px; }
   .m-light-nav.mm-big .m-icon.mm-top {
-    background-image: url("/assets/ikony/nav-top.png"); }
+    background-image: url("../assets/ikony/nav-top.png"); }
   .m-light-nav.mm-big .m-icon.mm-next {
-    background-image: url("/assets/ikony/nav-next.png"); }
+    background-image: url("../assets/ikony/nav-next.png"); }
   .m-light-nav.mm-big .m-icon.mm-prev {
-    background-image: url("/assets/ikony/nav-prev.png"); }
+    background-image: url("../assets/ikony/nav-prev.png"); }
 
 @media only screen {
   body .row {

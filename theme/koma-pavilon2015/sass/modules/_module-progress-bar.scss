@@ -74,14 +74,14 @@
                 position: absolute;
                 bottom: -28px;
                 text-align: center;
-                background-image: url("/assets/triangle-empty.png");
+                background-image: url("../assets/triangle-empty.png");
                 background-repeat: no-repeat;
                 background-position: center top;
             }
 
             &.mm-full {
                 &:after {
-                    background-image: url("/assets/triangle-full.png");
+                    background-image: url("../assets/triangle-full.png");
                 }
             }
         }

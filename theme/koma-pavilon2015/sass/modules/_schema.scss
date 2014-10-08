@@ -31,25 +31,25 @@
 .m-schema {
 
     .np1 {
-        background-image: url("/assets/pavilon-sm/p0-1.png")
+        background-image: url("../assets/pavilon-sm/p0-1.png")
     }
     .np2 {
-        background-image: url("/assets/pavilon-sm/p0-2.png")
+        background-image: url("../assets/pavilon-sm/p0-2.png")
     }
     .np3 {
-        background-image: url("/assets/pavilon-sm/p1-1.png")
+        background-image: url("../assets/pavilon-sm/p1-1.png")
     }
     .np4 {
-        background-image: url("/assets/pavilon-sm/p1-2.png")
+        background-image: url("../assets/pavilon-sm/p1-2.png")
     }
     .np5 {
-        background-image: url("/assets/pavilon-sm/p2-1.png")
+        background-image: url("../assets/pavilon-sm/p2-1.png")
     }
     .np6 {
-        background-image: url("/assets/pavilon-sm/p2-2.png")
+        background-image: url("../assets/pavilon-sm/p2-2.png")
     }
     .np7 {
-        background-image: url("/assets/pavilon-sm/p3-1.png")
+        background-image: url("../assets/pavilon-sm/p3-1.png")
     }
 
     overflow: hidden;
@@ -86,7 +86,7 @@
                 &:before {
                     display: block;
                     content: "";
-                    background-image: url("/assets/ikony/arrow-down.png");
+                    background-image: url("../assets/ikony/arrow-down.png");
                     background-repeat: no-repeat;
                     background-position: center center;
                     width: 100px;

@@ -20,7 +20,7 @@
         float: left;
         cursor: pointer;
 
-        background-image: url("/assets/ikony/menu-button.png");
+        background-image: url("../assets/ikony/menu-button.png");
         background-repeat: no-repeat;
         background-position: center center;
 
@@ -166,7 +166,7 @@
             //@include transition(all 0.3s);
 
             .m-nav--button {
-                background-image: url("/assets/ikony/menu-button.png");
+                background-image: url("../assets/ikony/menu-button.png");
             }
 
             a {
@@ -202,7 +202,7 @@
             //  @include transition(all 0.3s);
 
             .m-nav--button {
-                background-image: url("/assets/ikony/menu-button-black.png");
+                background-image: url("../assets/ikony/menu-button-black.png");
             }
 
             a {
