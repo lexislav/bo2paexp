@@ -10,7 +10,11 @@
                 {% endif %}</div>
                     <h1 class="m-item--hed"><a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">{{ record['title_' ~ app.locale] }}</a></h1>
 
-                    <div class="m-item--meta"><a href="{{ record.taxonomy.link }}" class="m-item--section">kategorie</a></div>
+                    <div class="m-item--meta"><a href="{{ record.taxonomy.link }}" class="m-item--section">{% if record.taxonomy.kategorie is defined %}
+                        {% for tag in record.taxonomy.kategorie %}
+                            {{ tag }}{% if not loop.last %}, {% endif %}
+                        {% endfor %}
+                    {% endif %}</a></div>
                     </a>
                 </header>
             </article>
