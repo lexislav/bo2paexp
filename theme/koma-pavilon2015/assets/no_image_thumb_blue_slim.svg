@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="600px" height="430px" viewBox="0 0 600 430" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.1 (8751) - http://www.bohemiancoding.com/sketch -->
+    <title>blue ikon slimmer</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path id="path-1" d="M49.7995249,155.050848 C54.0892646,156.844135 46.478916,203.115537 31.8564392,226.716202 C76.2574247,193.948412 71.7959696,160.926234 76.2574204,161.203262 C77.9673619,161.309439 79.6916155,161.363324 81.4285714,161.363324 C89.0181928,161.363324 96.3652972,160.33451 103.335578,158.409954 C137.667198,148.930695 162.857143,117.720909 162.857143,80.6816622 C162.857143,36.1224106 126.40033,0 81.4285714,0 C36.4568132,0 0,36.1224106 0,80.6816622 C0,114.126491 20.5381296,142.818383 49.7995249,155.050848 Z"></path>
+    </defs>
+    <g id="Ikony,-Loga" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="blue-ikon-slimmer" sketch:type="MSArtboardGroup">
+            <rect id="Rectangle-23" fill="#FBFBFB" sketch:type="MSShapeGroup" x="-5.68434189e-14" y="0" width="600" height="444.957031"></rect>
+            <g id="plachta-s-vlnami-4" sketch:type="MSLayerGroup" transform="translate(212.142857, 98.060993)">
+                <path d="M85.3412729,59.8607304 C72.4378886,33.3131211 49.8194238,19.8027263 49.8194238,19.8027263 C49.8194238,19.8027263 62.4196453,87.1567801 55.4426641,115.448624 C75.8033919,111.641491 88.4195414,101.235494 93.9983749,96.0098786 C93.9983749,94.3756615 95.8635608,81.5094373 85.3412729,59.8607304 Z" id="Path-88" stroke="#00A3DB" stroke-width="2.5" sketch:type="MSShapeGroup" transform="translate(72.486627, 67.470764) scale(-1, 1) rotate(17.000000) translate(-72.486627, -67.470764) "></path>
+                <mask id="mask-2" sketch:name="Oval 2" fill="white">
+                    <use xlink:href="#path-1"></use>
+                </mask>
+                <use id="Oval-2" stroke="#00A3DB" stroke-width="2.5" sketch:type="MSShapeGroup" xlink:href="#path-1"></use>
+                <path d="M9.57983193,126.34705 C38.3970667,126.34705 38.7618418,113.358101 38.7618418,113.358101 C38.7618418,113.358101 38.7618418,126.19242 60.4659617,125.883159 C82.1700815,125.573898 82.6260504,113.358101 82.6260504,113.358101 C82.6260504,113.358101 81.8195554,126.34705 103.881326,126.34705 C125.943096,126.34705 126.307871,113.358101 126.307871,113.358101 C126.307871,113.358101 126.125484,126.19242 155.672269,126.19242" id="Path-90" stroke="#00A3DB" stroke-width="2.5" sketch:type="MSShapeGroup" mask="url(#mask-2)"></path>
+                <path d="M10.7773109,141.697626 C39.3583388,141.697626 39.720124,128.708677 39.720124,128.708677 C39.720124,128.708677 39.720124,141.542996 61.2463412,141.233735 C82.7725585,140.924474 83.2247899,128.708677 83.2247899,128.708677 C83.2247899,128.708677 82.4249055,141.697626 104.305842,141.697626 C126.186778,141.697626 126.548563,128.708677 126.548563,128.708677 C126.548563,128.708677 126.367671,141.542996 155.672269,141.542996" id="Path-90" stroke="#00A3DB" stroke-width="2.5" sketch:type="MSShapeGroup" mask="url(#mask-2)"></path>
+            </g>
+        </g>
+    </g>
+</svg>
