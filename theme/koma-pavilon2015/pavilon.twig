@@ -340,31 +340,6 @@
         });
 
 
-        var menuBreakPoint = $(window).height() * .9;
-
-        $(window).resize(function () {
-            // update menu break point
-            menuBreakPoint = $(window).height() * .9;
-
-            // resize carousel
-
-            // $(".m-carousel").css('height', $(window).height());
-            //$(".m-carousel-holder").css('height', $(window).height());
-            //$(".m-carousel > .m-carousel--item").css('height', $(window).height());
-
-        });
-
-        // menu swithching
-        /*$(window).scroll(function () {
-            console.log('st:' + $(window).scrollTop());
-            if ($(window).scrollTop() > menuBreakPoint) {
-                $(".m-nav").addClass("mm-white");
-                $(".m-nav").removeClass("mm-black");
-            } else {
-                $(".m-nav").addClass("mm-black");
-                $(".m-nav").removeClass("mm-white");
-            }
-        });*/
 
         var s = skrollr.init({
             smoothScrolling: false,
