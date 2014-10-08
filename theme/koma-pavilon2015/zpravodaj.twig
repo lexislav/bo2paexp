@@ -42,7 +42,7 @@
                                 {% endif %}</div>
                                 <h1 class="m-item--hed"><a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">{{ record['title_' ~ app.locale] }}</a></h1>
 
-                                <div class="m-item--meta"><a href="/single.php" class="m-item--section">kategorie</a></div>
+                                <div class="m-item--meta"><a href="{{ paths.root }}/{{ app.locale }}/kategorie/{{ record.taxonomy.label }}" class="m-item--section">{{ record.taxonomy }}</a></div>
                             </a>
                         </header>
                     </article>
@@ -69,41 +69,9 @@
             </div>
         {% elseif loop.index == 3 %}
                 <div class="row">
-                <div class="small-12 medium-6 large-4 xlarge-3 columns {% if loop.last %}end{% endif %}"> 
-            <article class="m-blog-item">
-                <header>
-                    <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">
-                    <div class="m-item--image">
-                {% if record.image!="" %}
-                    <img src="{{ thumbnail(record.image) }}" alt="">
-                    {% else %}
-                    <img src="{{ paths.theme }}assets/no_image_thumb_blue.svg" />
-                {% endif %}</div>
-                    <h1 class="m-item--hed"><a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">{{ record['title_' ~ app.locale] }}</a></h1>
-
-                    <div class="m-item--meta"><a href="" class="m-item--section">kategorie</a></div>
-                    </a>
-                </header>
-            </article>
-        </div>
+                {% include '_inc-blog-post-small.twig' %}
         {% else %}
-            <div class="small-12 medium-6 large-4 xlarge-3 columns {% if loop.last %}end{% endif %}"> 
-            <article class="m-blog-item">
-                <header>
-                    <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">
-                    <div class="m-item--image">
-                {% if record.image!="" %}
-                    <img src="{{ thumbnail(record.image) }}" alt="">
-                    {% else %}
-                    <img src="{{ paths.theme }}assets/no_image_thumb_blue.svg" />
-                {% endif %}</div>
-                    <h1 class="m-item--hed"><a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">{{ record['title_' ~ app.locale] }}</a></h1>
-
-                    <div class="m-item--meta"><a href="" class="m-item--section">kategorie</a></div>
-                    </a>
-                </header>
-            </article>
-        </div>
+            {% include '_inc-blog-post-small.twig' %}
         {% endif %}
 
         

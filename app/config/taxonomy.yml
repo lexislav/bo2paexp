@@ -9,6 +9,7 @@ kategorie:
     behaves_like: categories
     multiple: true
     options: { expozice: "Expozice", partneri: "Zprávy partnerů", fotogalerie: "Fotogalerie", pavilon: "O pavilonu", rozhovory: "Rozhovory" }
+    listing_template: zpravodaj.twig
 
 stitky:
     slug: stitky

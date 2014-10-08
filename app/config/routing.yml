@@ -70,7 +70,7 @@ contentlink:
     contenttypeslug:  'Bolt\Controllers\Routing::getAnyContentTypeRequirement'
 
 taxonomylink:
-  path:               /{taxonomytype}/{slug}
+  path:               /{_locale}/{taxonomytype}/{slug}
   defaults:           { _controller: 'Bolt\Controllers\Frontend::taxonomy' }
   requirements:
     taxonomytype:     'Bolt\Controllers\Routing::getAnyTaxonomyTypeRequirement'

@@ -97,7 +97,7 @@ recordsperpage: 10
 # - authenticated: cache 'templates' and 'request' for logged-on users. In most cases you should *NOT* enable
 #   this, because it will cause side-effects if the website shows different content to authenticated users.
 caching:
-  config: true
+  config: false
   templates: false
   request: false
   duration: 10

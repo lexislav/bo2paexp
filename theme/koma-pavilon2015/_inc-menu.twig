@@ -5,20 +5,22 @@
     <header>
         <h1 class="m-item--hed"><a href="{{ item.link }}" title='{{ item.label|escape }}'>{{ item.label }}</a></h1>
     </header>
-    {% if item.title is defined %}
-    <div class="m-item--description">
-        <p>{{ item.title }}</p>
-    </div>
-    {% endif %}
     {% if item.submenu is defined %}
         <div class="m-item--meta">
             <ul>
-                {% for category in config.get('taxonomy/kategorie/options') %}
-        <li>
-            <a href="{{ paths.root }}Kategorie/{{Kategorie1}}">{{ kategorie1 }}</a>
-        </li>
-    {% endfor %}
+                <!-- {% for category in config.get('taxonomy/kategorie/options') %}
+                    <li>
+                        <a href="">{{ category }}</a>
+                    </li>
+                {% endfor %} -->
+                {% for submenu in item.submenu %}
+                    <li><a href="{{ submenu.link }}">{{ submenu.label }}</a></li>
+                {% endfor %}
             </ul>
+        </div>
+    {% elseif item.title is defined %}
+        <div class="m-item--description">
+            <p>{{ item.title }}</p>
         </div>
     {% endif %}
 </li>

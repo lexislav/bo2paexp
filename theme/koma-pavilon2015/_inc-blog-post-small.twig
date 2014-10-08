@@ -1,0 +1,26 @@
+<div class="small-12 medium-6 large-4 xlarge-3 columns {% if loop.last %}end{% endif %}"> 
+            <article class="m-blog-item">
+                <header>
+                    <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">
+                    <div class="m-item--image">
+                {% if record.image!="" %}
+                    <img src="{{ thumbnail(record.image) }}" alt="">
+                    {% else %}
+                    <img src="{{ paths.theme }}assets/no_image_thumb_blue.svg" />
+                {% endif %}</div>
+                    <h1 class="m-item--hed"><a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">{{ record['title_' ~ app.locale] }}</a></h1>
+
+                    <div class="m-item--meta"><a href="{{ record.taxonomy.link }}" class="m-item--section">kategorie</a></div>
+                    </a>
+                </header>
+            </article>
+            </div>
+            <!-- {% if record.taxonomy is defined %}
+    {% for type, values in record.taxonomy %}
+        <em>{{ type }}:</em>
+        {% for link, value in values %}
+                <a href="{{ link }}">{{ value }}</a>{% if not loop.last %}, {% endif %}
+        {% endfor %}
+        {% if not loop.last %} - {% endif %}
+    {% endfor %}
+{% endif %} --> 

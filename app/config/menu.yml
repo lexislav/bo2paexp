@@ -18,7 +18,7 @@ cs:
       - label: vše
         path: cs/blog/
       - label: fotogalerie
-        path: cs/blog/
+        path: cs/blog/kategorie/fotogalerie
       - label: informace partnerů
         path: cs/blog/
       - label: o pavilonu
@@ -32,15 +32,15 @@ en:
     path: homepage
   - label: Look inside the pavilion
     title: Prohlédněte si pavilon po jednotlivých patrech
-    path: page/1
+    path: page/o-pavilonu
   - label: Blog from pavilion
     title: Informace o aktuálním dění pavilonu
-    path: blog/
+    path: en/blog/
     submenu:
-      - label: vše
-        path: blog/
-      - label: fotogalerie
-        path: taxonomy
+      - label: all
+        path: en/blog/
+      - label: photogallery
+        path: en/fotogalerie/
 
 
 main:
