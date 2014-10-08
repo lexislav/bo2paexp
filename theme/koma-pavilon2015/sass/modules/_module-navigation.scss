@@ -97,6 +97,7 @@
         @media #{size(C)} {
             font-size: rem-calc(30);
             line-height: $navbar-height_CD;
+            margin-top: -2px; // korekce centrování (Purista)
         }
     }
 

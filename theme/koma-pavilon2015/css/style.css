@@ -3905,7 +3905,8 @@ th.hide-for-touch {
     @media only screen and (min-width:781px) {
       .m-nav .m-nav--logo {
         font-size: 2rem;
-        line-height: 74px; } }
+        line-height: 74px;
+        margin-top: -2px; } }
   .m-nav .m-nav--lang {
     text-align: right;
     font-size: 1.06667rem;
