@@ -3922,6 +3922,19 @@ th.hide-for-touch {
     bottom: 0;
     margin: auto;
     background-color: #f5f5f5; }
+    .m-nav .m-nav--overlay:after {
+      display: block;
+      position: fixed;
+      z-index: 202;
+      content: " ";
+      top: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background-image: url("../assets/ikony/nav-top.png");
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      cursor: pointer; }
   .m-nav.is-opened .m-nav--overlay {
     display: block; }
   .m-nav .m-nav--menu {
