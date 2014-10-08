@@ -11,11 +11,9 @@ $(function () {
         $(window).scroll(function () {
             //console.log('st:' + $(window).scrollTop());
             if ($(window).scrollTop() > menuBreakPoint) {
-                $(".m-nav").addClass("mm-white");
-                $(".m-nav").removeClass("mm-black");
+                $(".m-nav.switchable").addClass("mm-white");
             } else {
-                $(".m-nav").addClass("mm-black");
-                $(".m-nav").removeClass("mm-white");
+                $(".m-nav.switchable").removeClass("mm-white");
             }
         });
     };
