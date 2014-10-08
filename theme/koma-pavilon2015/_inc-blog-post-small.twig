@@ -9,12 +9,13 @@
                     <img src="{{ paths.theme }}assets/no_image_thumb_blue.svg" />
                 {% endif %}</div>
                     <h1 class="m-item--hed"><a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">{{ record['title_' ~ app.locale] }}</a></h1>
-
-                    <div class="m-item--meta"><a href="{{ record.taxonomy.link }}" class="m-item--section">{% if record.taxonomy.kategorie is defined %}
+                    {% if record.taxonomy.kategorie is defined %}
+                        <div class="m-item--meta"><a href="{{ record.taxonomy.link }}" class="m-item--section">
                         {% for tag in record.taxonomy.kategorie %}
                             {{ tag }}{% if not loop.last %}, {% endif %}
                         {% endfor %}
-                    {% endif %}</a></div>
+                        </a></div>
+                    {% endif %}
                     </a>
                 </header>
             </article>
