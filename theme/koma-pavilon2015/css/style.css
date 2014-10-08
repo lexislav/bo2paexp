@@ -3968,7 +3968,9 @@ th.hide-for-touch {
   .m-nav.mm-black .m-nav--panel, .m-nav[color="mm-black"] .m-nav--panel {
     border-bottom: none;
     background-color: transparent;
-    color: white; }
+    color: white;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s; }
     .m-nav.mm-black .m-nav--panel .m-nav--button, .m-nav[color="mm-black"] .m-nav--panel .m-nav--button {
       background-image: url("../assets/ikony/menu-button.png"); }
     .m-nav.mm-black .m-nav--panel a, .m-nav[color="mm-black"] .m-nav--panel a {
@@ -3984,7 +3986,9 @@ th.hide-for-touch {
   .m-nav.mm-white .m-nav--panel, .m-nav[color="mm-white"] .m-nav--panel {
     border-bottom: 1px solid #4A4A4A;
     background-color: white;
-    color: #4A4A4A; }
+    color: #4A4A4A;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s; }
     .m-nav.mm-white .m-nav--panel .m-nav--button, .m-nav[color="mm-white"] .m-nav--panel .m-nav--button {
       background-image: url("../assets/ikony/menu-button-black.png"); }
     .m-nav.mm-white .m-nav--panel a, .m-nav[color="mm-white"] .m-nav--panel a {

@@ -163,7 +163,7 @@
             background-color: transparent;
             color: white;
 
-            //@include transition(all 0.3s);
+            @include transition(all 0.3s);
 
             .m-nav--button {
                 background-image: url("../assets/ikony/menu-button.png");
@@ -199,7 +199,7 @@
             background-color: white;
             color: $body-font-color;
 
-            //  @include transition(all 0.3s);
+              @include transition(all 0.3s);
 
             .m-nav--button {
                 background-image: url("../assets/ikony/menu-button-black.png");
