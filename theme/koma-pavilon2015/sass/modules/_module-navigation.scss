@@ -15,6 +15,19 @@
         margin: 0;
     }
 
+    .m-nav--panel {
+        border-bottom: none;
+        background-color: transparent;
+        color: white;
+
+        a {
+            color: white;
+            &:hover {
+                color: $color-koma-red;
+            }
+        }
+    }
+
     .m-nav--button {
         text-align: center;
         float: left;
@@ -56,19 +69,20 @@
     }
 
     .m-nav--lang {
-
         text-align: right;
         font-size: rem-calc(16);
         text-transform: uppercase;
+        color: scale_color(white, $lightness: 50%);
 
         a {
+            color: scale_color(#fff, $lightness: -20%);
             display: inline-block;
             padding: 0 .5em;
             &.is-active {
+                color: white;
                 text-decoration: underline;
             }
         }
-
         line-height: $navbar-height_AB;
         height: $navbar-height_AB;
 
@@ -76,7 +90,6 @@
             line-height: $navbar-height_CD;
             height: $navbar-height_CD;
         }
-
     }
 
     .m-nav--overlay {
@@ -166,43 +179,6 @@
             }
         }
 
-    }
-
-    // dark version
-
-    &.mm-black,
-    &[color="mm-black"] {
-
-        .m-nav--panel {
-
-            border-bottom: none;
-            background-color: transparent;
-            color: white;
-
-            @include transition(all 0.3s);
-
-            .m-nav--button {
-                background-image: url("../assets/ikony/menu-button.png");
-            }
-
-            a {
-                color: white;
-                &:hover {
-                    color: $color-koma-red;
-                }
-            }
-
-            .m-nav--lang {
-                color: scale_color(white, $lightness: 50%);
-                a {
-                    color: scale_color(#fff, $lightness: -20%);
-
-                    &.is-active {
-                        color: white;
-                    }
-                }
-            }
-        }
     }
 
     // white version

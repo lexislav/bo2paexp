@@ -3865,6 +3865,14 @@ th.hide-for-touch {
     width: 100%;
     padding: 0;
     margin: 0; }
+  .m-nav .m-nav--panel {
+    border-bottom: none;
+    background-color: transparent;
+    color: white; }
+    .m-nav .m-nav--panel a {
+      color: white; }
+      .m-nav .m-nav--panel a:hover {
+        color: #c20e1a; }
   .m-nav .m-nav--button {
     text-align: center;
     float: left;
@@ -3901,12 +3909,15 @@ th.hide-for-touch {
     text-align: right;
     font-size: 1.06667rem;
     text-transform: uppercase;
+    color: white;
     line-height: 48px;
     height: 48px; }
     .m-nav .m-nav--lang a {
+      color: #cccccc;
       display: inline-block;
       padding: 0 0.5em; }
       .m-nav .m-nav--lang a.is-active {
+        color: white;
         text-decoration: underline; }
     @media only screen and (min-width:781px) {
       .m-nav .m-nav--lang {
@@ -3978,24 +3989,6 @@ th.hide-for-touch {
       .m-nav .m-nav--menu a:hover {
         color: #c20e1a;
         text-decoration: underline; }
-  .m-nav.mm-black .m-nav--panel, .m-nav[color="mm-black"] .m-nav--panel {
-    border-bottom: none;
-    background-color: transparent;
-    color: white;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s; }
-    .m-nav.mm-black .m-nav--panel .m-nav--button, .m-nav[color="mm-black"] .m-nav--panel .m-nav--button {
-      background-image: url("../assets/ikony/menu-button.png"); }
-    .m-nav.mm-black .m-nav--panel a, .m-nav[color="mm-black"] .m-nav--panel a {
-      color: white; }
-      .m-nav.mm-black .m-nav--panel a:hover, .m-nav[color="mm-black"] .m-nav--panel a:hover {
-        color: #c20e1a; }
-    .m-nav.mm-black .m-nav--panel .m-nav--lang, .m-nav[color="mm-black"] .m-nav--panel .m-nav--lang {
-      color: white; }
-      .m-nav.mm-black .m-nav--panel .m-nav--lang a, .m-nav[color="mm-black"] .m-nav--panel .m-nav--lang a {
-        color: #cccccc; }
-        .m-nav.mm-black .m-nav--panel .m-nav--lang a.is-active, .m-nav[color="mm-black"] .m-nav--panel .m-nav--lang a.is-active {
-          color: white; }
   .m-nav.mm-white .m-nav--panel, .m-nav[color="mm-white"] .m-nav--panel {
     border-bottom: 1px solid #4A4A4A;
     background-color: white;
