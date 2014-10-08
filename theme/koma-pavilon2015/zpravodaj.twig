@@ -43,10 +43,11 @@
                                 <h1 class="m-item--hed"><a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">{{ record['title_' ~ app.locale] }}</a></h1>
 
                                 {% if record.taxonomy.kategorie is defined %}
-                                <div class="m-item--meta"><a href="{{ paths.root }}/{{ app.locale }}/kategorie/{{ record.taxonomy.label }}" class="m-item--section">
+                                <div class="m-item--meta">
                                     {% for tag in record.taxonomy.kategorie %}
-                                        {{ tag }}{% if not loop.last %}, {% endif %}
-                                    {% endfor %}</a></div>
+                                    <a href="{{ paths.root }}{{ app.locale }}/kategorie/{{ tag }}" class="m-item--section">
+                                        {{ tag }}</a>{% if not loop.last %}, {% endif %}
+                                    {% endfor %}</div>
                                 {% endif %}
                             </a>
                         </header>
@@ -67,10 +68,11 @@
                                 <h1 class="m-item--hed"><a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">{{ record['title_' ~ app.locale] }}</a></h1>
 
                                 {% if record.taxonomy.kategorie is defined %}
-                                <div class="m-item--meta"><a href="{{ paths.root }}/{{ app.locale }}/kategorie/{{ record.taxonomy.label }}" class="m-item--section">
+                                <div class="m-item--meta">
                                     {% for tag in record.taxonomy.kategorie %}
-                                        {{ tag }}{% if not loop.last %}, {% endif %}
-                                    {% endfor %}</a></div>
+                                    <a href="{{ paths.root }}{{ app.locale }}/kategorie/{{ tag }}" class="m-item--section">
+                                        {{ tag }}</a>{% if not loop.last %}, {% endif %}
+                                    {% endfor %}</div>
                                 {% endif %}
                             </a>
                         </header>
