@@ -1,0 +1,99 @@
+
+// font styles and mixins
+
+// headlines
+
+@mixin fnt-primary-headline() {
+    // section headline
+    @include fnt-primary-medium();
+    font-size: rem-calc(40);
+}
+.fnt-primary-headline {
+    @include fnt-primary-headline();
+}
+
+
+
+@mixin fnt-primary-headline-small() {
+    @include fnt-primary-medium();
+    font-size: rem-calc(20);
+}
+
+.fnt-primary-headline-small {
+    @include fnt-primary-headline-small();
+}
+
+
+@mixin fnt-secondary-headline() {
+    @include fnt-secondary-light();
+    font-size: rem-calc(24);
+
+    &.fnt-white {
+        font-weight: 300; // bolder for white
+    }
+}
+.fnt-secondary-headline {
+    @include fnt-secondary-headline();
+}
+
+
+
+@mixin fnt-secondary-headline-mid () {
+    @include fnt-secondary-regular();
+    font-size: rem-calc(16);
+    text-transform: uppercase;
+}
+
+.fnt-secondary-headline-mid {
+    @include fnt-secondary-headline-mid();
+}
+
+
+
+// body
+
+@mixin fnt-primary-body-m() {
+    @include fnt-primary-medium();
+    font-size: rem-calc(18);
+}
+.fnt-primary-body-m {
+    @include fnt-primary-body-m();
+}
+
+
+
+
+
+.fnt-white {
+    color: white;
+    a {
+        color: white;
+        &:hover {
+            color: $color-koma-red;
+        }
+    }
+}
+
+.fnt-shadow {
+    text-shadow: 0 1px 1px rgba(0,0,0,0.5);
+}
+
+.fnt-boxed-white,
+.fnt-boxed-black {
+    @include fnt-primary-medium();
+    font-size: rem-calc(24);
+    line-height: 1em;
+    display: inline-block;
+    padding: 6px 12px;
+    padding-bottom: 8px;
+    border: 1px solid #000;
+    vertical-align: middle;
+
+
+}
+
+.fnt-boxed-black {
+    color: white;
+    background-color: #000;
+}
+
