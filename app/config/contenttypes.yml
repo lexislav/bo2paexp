@@ -71,10 +71,9 @@ zpravodaj:
     icon: cubes
     icon_singular: cube
 
-
 sponzori:
     name: Sponzori
-    singular_name: Sponzori
+    singular_name: Sponzor
     description: |
     Seznam partnerů pavilonu. Třídí se pomocí štítků: Zlatý, Stříbrný, Bronzový
     fields:
@@ -105,6 +104,35 @@ sponzori:
             label: Vyberte souvisejici clanek o partnerovi
     taxonomy: [ stitky ]
 
+odkazy:
+    name: Odkazy
+    singular_name: Odkaz
+    fields:
+        nazev_cs:
+            type: text
+            class: large
+            group: Obsah
+        popis_cs:
+            type: text
+            class: large
+            label: Popisek
+            postfix: velmi krátký údaj např. datum publikace, název periodika, odděleno čárkami
+        nazev_en:
+            type: text
+            class: large
+            group: (EN)
+        popis_en:
+            type: text
+            class: large
+            label: Popisek (EN)
+            postfix: velmi krátký údaj např. datum publikace, název periodika, odděleno čárkami
+        slug:
+            type: slug
+            uses: nazev_cs
+        adresa:
+            type: text
+            postfix: Adresa URL
+    taxonomy: [ rozcestnik ]
 
 historie:
     name: Historie

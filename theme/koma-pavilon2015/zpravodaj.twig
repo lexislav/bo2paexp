@@ -132,32 +132,43 @@
         <header>
         <h2>Další články o pavilonu & EXPO2015</h2>
         </header>
-        <?php for ($i = 1; $i <= 9; $i++) { ?>
-            <article class="m-item">
-                <header>
-                    <h1 class="m-item--hed"><a href="/single.php" title="">sgjkhlsf fgkshdfgk gsd fgkjhsdfg sdfklgjhsd fgsd fgsd fgs dfgsd fgsdfgds</a></h1>
-
-                    <div class="m-item--meta">
+        {% setcontent myc = 'odkazy' where { rozcestnik: 'o-pavilonu' } %}
+        {% for olink in myc %}
+           <article class="m-item">
+             <header>
+             <h1 class="m-item--hed">
+             <a href="http://{{olink.adresa}}" title="{{ olink['nazev_' ~ app.locale] }}" target="_new">
+          {{ olink['nazev_' ~ app.locale] }}
+             </a>
+             </h1>
+             <div class="m-item--meta">
                         <div class="m-item--date">datum a dalsi</div>
                     </div>
-                </header>
+            </header>
             </article>
-        <?php } ?>
+        {% endfor %}
+
     </div>
 
     <div class="small-12 medium-6 large-5 xlarge-4 xlarge-offset-1 columns">
         <header>
-            <h2>Další články o pavilonu & EXPO2015</h2>
+            <h2>Více o modulární architektuře</h2>
         </header>
-        <?php for ($i = 1; $i <= 3; $i++) { ?>
-            <article class="m-item mm-featured">
-                <header>
-                    <h1 class="m-item--hed"><a href="/single.php" title="">title</a></h1>
-
-                    <div class="m-item--meta"><div class="m-item--date">datum a dalsi</div></div>
-                </header>
+        {% setcontent myc = 'odkazy' where { rozcestnik: 'modularni-architektura' } %}
+        {% for olink in myc %}
+           <article class="m-item">
+             <header>
+             <h1 class="m-item--hed">
+             <a href="http://{{olink.adresa}}" title="{{ olink['nazev_' ~ app.locale] }}" target="_new">
+          {{ olink['nazev_' ~ app.locale] }}
+             </a>
+             </h1>
+             <div class="m-item--meta">
+                        <div class="m-item--date">datum a dalsi</div>
+                    </div>
+            </header>
             </article>
-        <?php } ?>
+        {% endfor %}
     </div>
 </div>
 

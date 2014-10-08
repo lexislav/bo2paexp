@@ -24,6 +24,14 @@ statiky:
     options: { homepage: "Domácí strana", pavilon: "O pavilonu", historie: "Historie", blog: "Zpravodaj" }
     has_sortorder: true
 
+rozcestnik:
+    slug: rozcestnik
+    singular_slug: ukazatel
+    behaves_like: grouping
+    multiple: false
+    options: { o-pavilonu: "Další články o pavilonu", modularni-architektura: "Více o modulární výstavbě" }
+    has_sortorder: true
+
 # tags:
 #     slug: tags
 #     singular_slug: tag
