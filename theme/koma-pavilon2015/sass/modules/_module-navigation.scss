@@ -40,10 +40,11 @@
 
     @include fnt-primary-headline();
 
-    .m-nav--panel > row {
+    .m-nav--panel > .row {
         width: 100%;
         padding: 0;
-        margin: 0;
+        margin: 0 !important;
+        max-width: none;
     }
 
     .m-nav--panel {
@@ -228,7 +229,7 @@
         // default white na touch devicech
         @include mm-white();
         .m-nav--panel {
-        background-color: white !important;
+            background-color: white !important;
             height: $navbar-height_AB;
             font-size: 16px !important;
             .m-nav--lang,

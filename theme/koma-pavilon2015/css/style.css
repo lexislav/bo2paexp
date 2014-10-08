@@ -3861,10 +3861,11 @@ th.hide-for-touch {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   font-size: 2.66667rem; }
-  .m-nav .m-nav--panel > row {
+  .m-nav .m-nav--panel > .row {
     width: 100%;
     padding: 0;
-    margin: 0; }
+    margin: 0 !important;
+    max-width: none; }
   .m-nav .m-nav--panel {
     border-bottom: none;
     background-color: transparent;
