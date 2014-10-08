@@ -10,9 +10,7 @@
 
             <div class="small-6 columns visible-for-medium-up">
                 <div class="m-nav--lang">
-                    <a href="{{paths.root}}{{ paths.current|replace({'/en': "cs", '/it': "cs"}) }}" class="is-active">cz</a>/<a href="{{paths.root}}{{ paths.current|replace({'/cs': "en", '/it': "en"}) }}">en</a>/<a href="{{paths.root}}{{ paths.current|replace({'/cs': "it", '/en': "it"}) }}">it</a>
-                    <a href="{{paths.root}}{{ paths.current|replace({'/cs': "en", '/it': "en", '/en': "en" }) }}">en</a>/
-                    <a href="{{paths.root}}{{ paths.current|replace({'/cs': "it", '/en': "it", '/it': "it"}) }}">it</a>
+                    <a href="{{paths.root}}{{ paths.current|replace({'/en': "cs", '/it': "cs"}) }}" {% if app.locale == 'cs' %}class="is-active"{% endif %}>cz</a>/<a href="{{paths.root}}{{ paths.current|replace({'/cs': "en", '/it': "en"}) }}" {% if app.locale == 'en' %}class="is-active"{% endif %}>en</a>/<a href="{{paths.root}}{{ paths.current|replace({'/cs': "it", '/en': "it"}) }}" {% if app.locale == 'it' %}class="is-active"{% endif %}>it</a>
                 </div>
             </div>
         </div>
