@@ -1118,17 +1118,17 @@
     },
     {
         "name": "pdepend/pdepend",
-        "version": "2.0.2",
-        "version_normalized": "2.0.2.0",
+        "version": "2.0.3",
+        "version_normalized": "2.0.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/pdepend/pdepend.git",
-            "reference": "5fbe4b9ec9d05057d88b898ac5ba9071f427eeb0"
+            "reference": "dc582a3c0180664a8fbfc5a34efaf4cc13fccc60"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/pdepend/pdepend/zipball/5fbe4b9ec9d05057d88b898ac5ba9071f427eeb0",
-            "reference": "5fbe4b9ec9d05057d88b898ac5ba9071f427eeb0",
+            "url": "https://api.github.com/repos/pdepend/pdepend/zipball/dc582a3c0180664a8fbfc5a34efaf4cc13fccc60",
+            "reference": "dc582a3c0180664a8fbfc5a34efaf4cc13fccc60",
             "shasum": ""
         },
         "require": {
@@ -1140,7 +1140,7 @@
             "phpunit/phpunit": "3.*@stable",
             "squizlabs/php_codesniffer": "@stable"
         },
-        "time": "2014-09-16 14:04:28",
+        "time": "2014-10-08 06:54:50",
         "bin": [
             "src/bin/pdepend"
         ],
