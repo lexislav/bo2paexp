@@ -1,37 +1,53 @@
 {% set link = pager.makelink() %}
 
 {% if pager.totalpages > 1 %}
-<div class="pagination pagination-centered {{class}}">
-  <ul class="pagination">
+<div class="row">
+    <div class="small-12 small-centered columns">
+    	<nav class="m-light-nav mm-centerd mm-big text-right visible-for-large-up">
+        	<div class="m-light-nav--wrap">
 {# 'first' and 'prev' #}
 {% if pager.current > 1 and class!="narrow" %}
-    <li><a href="{{link}}{{pager.current-1}}">&lsaquo; </a></li>
+	<a href="{{link}}{{pager.current-1}}" class="m-icon mm-prev"><i>previous</i></a>
 {% endif %}
-{% if pager.current > surr+1 %}
+<!-- {% if pager.current > surr+1 %}
     <li><a href="{{link}}{{1}}">&laquo; 1</a></li>
-{% endif %}
+{% endif %} -->
 
 {# start with '..' if there are more than surr+1 before currentpage.. #}
-{% if pager.current > surr+2 %}
+<div class="mm-current">{{ pager.current }} / {{ pager.totalpages }}</div>
+
+<!-- {% if pager.current > surr+2 %}
     <li class="disabled"><a href="#">...</a></li>
 {% endif %}
 
 {% for i in max(1, pager.current-surr)..min(pager.current+surr, pager.totalpages) %}
     <li {% if i==pager.current %}class='active'{%endif%}><a href="{{link}}{{i}}">{{i}}</a></li>
-{% endfor %}
+{% endfor %} -->
 
 {# end with '..' if there are more than surr+1 after currentpage.. #}
-{% if pager.current < (pager.totalpages - surr - 1) %}
+<!-- {% if pager.current < (pager.totalpages - surr - 1) %}
     <li class="disabled"><a href="#">...</a></li>
-{% endif %}
+{% endif %} -->
 
 {# 'next' and 'last' #}
-{% if pager.current < pager.totalpages-surr %}
+<!-- {% if pager.current < pager.totalpages-surr %}
     <li><a href="{{link}}{{pager.totalpages}}">{{pager.totalpages}} &raquo; </a></li>
-{% endif %}
+{% endif %} -->
+
 {% if pager.current < pager.totalpages and class!="narrow" %}
-    <li><a href="{{link}}{{pager.current+1}}">&rsaquo;</a></li>
+	<a href="{{link}}{{pager.current+1}}" class="m-icon mm-next"><i>next</i></a>
+    <!-- <li><a href="">&rsaquo;</a></li> -->
 {% endif %}
-  </ul>
+			</div>
+		</nav>
+    </div>
 </div>
 {% endif %}
+
+
+
+            
+            
+            
+            
+        
