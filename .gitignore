@@ -4,3 +4,5 @@
 app/cache/*
 app/database/*
 config.codekit
+
+/theme/koma-pavilon2015/assets/historie/.BridgeSort
