@@ -85,9 +85,9 @@
 
                         {% if record.taxonomy.kategorie is defined %}
                             <div class="m-item--meta">
-                                {% for tag in record.taxonomy.kategorie %}
-                                <a href="{{ paths.root }}{{ app.locale }}/kategorie/{{ tag }}" class="m-item--section">
-                                    {{ tag }}</a>{% if not loop.last %}, {% endif %}
+                                {% for cat in record.taxonomy.kategorie %}
+                                <a href="{{ paths.root }}{{ app.locale }}/kategorie/{{ cat }}" class="m-item--section">
+                                    {{ cat }}</a>{% if not loop.last %}, {% endif %}
                                 {% endfor %}</div>
                         {% endif %}
                     </a>
