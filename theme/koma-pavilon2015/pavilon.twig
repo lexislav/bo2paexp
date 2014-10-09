@@ -1,5 +1,6 @@
 {% include '_header.twig' %}
-<body class="l-page_pavilon">
+<body class="l-page l-page_pavilon">
+{% include '_loader.twig' %}
 {% include '_topbar.twig' with {'menuClasses': 'switchable'} %}
 
 <div class="l-schema m-schema">
@@ -9,7 +10,7 @@
         <div class="m-schema--left">
 
 
-            <div class="m-schema--label label1" data-anchor-target="#animAnchor2"  data-center="opacity:1;z-index:100" data-top="opacity:0;z-index:0">
+            <div class="m-schema--label label1" data-anchor-target="#animAnchor2" data-center="opacity:1;z-index:100" data-top="opacity:0;z-index:0">
                 <h2 class="m-item--hed"><strong>Přízemí:</strong> Země – Voda</h2>
 
                 <div class="m-item--description">
@@ -297,16 +298,28 @@
 
 <!-- modals -->
 <section class="modals">
-    <div id="myModal" class="reveal-modal fixed xlarge" data-reveal>
-        <h2>Awesome. I have it.</h2>
+    <div id="myModal" class="reveal-modal fixed xlarge m-modal" data-reveal>
 
-        <p class="lead">Your couch. It is mine.</p>
+        <article>
+            <header class="row">
+                <div class="small-12 columns">
+                    <h2 class="m-item--hed">Awesome. I have it.</h2>
+                    <div class="m-item--description">Description</div>
+                </div>
+            </header>
+            <div class="row">
+                <div class="small-12 medium-6 columns">
+                    <div class="m-item--copy">
+                        {# article body #}
+                        <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+                    </div>
+                </div>
+            </div>
+        </article>
 
-        <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
         <a class="close-reveal-modal">&#215;</a>
     </div>
 </section>
-
 
 
 <script type="text/javascript" src="{{ paths.theme }}components/slick/slick/slick.min.js"></script>
@@ -316,35 +329,27 @@
 
     $(document).foundation();
 
-
-
-
     $(document).ready(function () {
         $(".m-carousel > .m-carousel--item").css('height', $(window).height() - 100);
-        // $(".m-carousel-holder").css('height', $(window).height());
-
-        /* $('.m-carousel').slick({
-         autoplay: false,
-         speed: 500,
-         fade: true,
-         cssEase: 'linear'
-         });*/
 
         $(".m-schema-spacer").each(function () {
             var el = $(this);
             el.css('height', $(window).height() * 0.76);
         });
+
         $(".m-schema-spacer-half").each(function () {
             var el = $(this);
             el.css('height', ($(window).height() * 0.76) * 0.5);
         });
 
-
-
         var s = skrollr.init({
             smoothScrolling: false,
             mobileDeceleration: 0.01
         });
+
+
+        // debug
+        $('#myModal').foundation('reveal', 'open');
 
     });
 
@@ -354,5 +359,8 @@
 <script src="{{ paths.theme }}js/app.js"></script>
 
 {% include '_inc-analytics.twig' %}
+
+
 </body>
+
 {% include '_footer.twig' %}

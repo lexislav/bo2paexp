@@ -2740,12 +2740,12 @@ select {
   z-index: 1005;
   width: 100vw;
   top: 0;
-  border-radius: 3px;
+  border-radius: 0;
   left: 0;
-  background-color: #FFFFFF;
+  background-color: #fff;
   padding: 1.33333rem;
-  border: solid 1px #666666;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  border: solid 1px #EFEFEF;
+  box-shadow: none;
   padding: 2rem; }
   @media only screen and (max-width: 640px) {
     .reveal-modal {
@@ -2767,9 +2767,9 @@ select {
     .reveal-modal {
       top: 6.66667rem; } }
   .reveal-modal.radius, dialog.radius {
-    border-radius: 3px; }
+    border-radius: 0; }
   .reveal-modal.round, dialog.round {
-    border-radius: 1000px; }
+    border-radius: 0; }
   .reveal-modal.collapse, dialog.collapse {
     padding: 0; }
   @media only screen and (min-width:641px) {
@@ -3849,6 +3849,25 @@ th.hide-for-touch {
   color: white;
   background-color: #000; }
 
+.m-preload {
+  position: fixed;
+  z-index: 10000;
+  background-color: white;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto; }
+  .m-preload .m-item--image {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 45%;
+    bottom: 55%;
+    margin: auto;
+    width: 24px;
+    height: 24px; }
+
 .m-nav {
   position: fixed;
   display: block;
@@ -4796,6 +4815,8 @@ th.hide-for-touch {
   .m-blog-item.mm-featured .m-item--section {
     background-color: #c20e1a;
     color: white; }
+    .m-blog-item.mm-featured .m-item--section:hover {
+      text-decoration: underline; }
 
 .m-list header > h2 {
   font-size: 1.06667rem;
@@ -5055,6 +5076,27 @@ aside h2 {
   .m-light-nav.mm-big .m-icon.mm-prev {
     background-image: url("../assets/ikony/nav-prev.png"); }
 
+.reveal-modal.fixed, dialog.fixed {
+  position: fixed;
+  top: 10% !important;
+  bottom: 10%;
+  margin: auto; }
+
+.reveal-modal .close-reveal-modal, .reveal-modal dialog, .reveal-modal.fixed .close-reveal-modal, .reveal-modal.fixed dialog.fixed {
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  vertical-align: middle;
+  overflow: hidden;
+  font-size: 50px;
+  line-height: 50px; }
+  .reveal-modal .close-reveal-modal:hover, .reveal-modal dialog, .reveal-modal.fixed .close-reveal-modal:hover, .reveal-modal.fixed dialog.fixed {
+    color: #c20e1a; }
+
 @media only screen {
   body .row {
     width: 98%;
@@ -5068,10 +5110,4 @@ aside h2 {
 
 #skrollr-body {
   pointer-events: none; }
-
-.reveal-modal.fixed, dialog.fixed {
-  position: fixed;
-  top: 10% !important;
-  bottom: 10%;
-  margin: auto; }
 /*# sourceMappingURL=style.css.map */
