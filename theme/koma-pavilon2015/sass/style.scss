@@ -86,7 +86,7 @@ $navbar-height: $navbar-height_AB;
     .m-item--hed,
     .m-item--meta {
         color: white;
-        text-shadow: 0 2px 1px rgba(0, 0, 0, 0.8);
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
     }
 
     .m-item--hed {
@@ -152,6 +152,7 @@ $navbar-height: $navbar-height_AB;
 
         a {
             font-size: rem-calc(18);
+            font-weight: 400;
             color: white;
             &:hover {
                 color: white;

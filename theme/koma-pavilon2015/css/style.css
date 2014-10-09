@@ -4414,7 +4414,7 @@ body {
   .m-theme .m-item--hed,
   .m-theme .m-item--meta {
     color: white;
-    text-shadow: 0 2px 1px rgba(0, 0, 0, 0.8); }
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9); }
   .m-theme .m-item--hed {
     text-align: center;
     margin-top: 140px;
@@ -4462,6 +4462,7 @@ body {
             text-align: left; } }
     .m-theme .m-item--meta a {
       font-size: 1.2rem;
+      font-weight: 400;
       color: white; }
       .m-theme .m-item--meta a:hover {
         color: white;
