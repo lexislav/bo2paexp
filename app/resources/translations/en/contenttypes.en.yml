@@ -1,0 +1,476 @@
+# app/resources/translations/cs/messages.cs.yml -- generated on 2014/10/09 16:28:17
+# 474 untranslated strings
+
+"%contenttypes% overview":  #
+"%contenttypes%":  #
+"%name% № %id%":  #
+"%s files could not be deleted. You should delete them manually.":  #
+"(default template)":  #
+"(no category)":  #
+"(no group)":  #
+"<p>The following file could not be read:</p>%s":  #
+"A password reset link has been sent to '%user%'.":  #
+"About Bolt":  #
+"About":  #
+"Actions for %contenttypes%":  #
+"Actions for Users":  #
+"Actions for this %contenttype%":  #
+"Actions":  #
+"Activity log":  #
+"Add a brief, optional comment to describe what's changed.":  #
+"Add a comment:":  #
+"Add a new extension using the form below.":  #
+"Add some sample <a href='%url%' class='btn btn-tertiary'>Records with Loripsum text</a>":  #
+"Add …":  #
+"Added to <tt>%key%</tt> '%title%'":  #
+"Added user '%s'.":  #
+"Address lookup":  #
+"Alas, no about!":  #
+"All content types":  #
+"All users":  #
+"Allowed filetypes are:":  #
+"Alt":  #
+"An error occurred.":  #
+"Anonymous":  #
+"Are you sure you want to delete %username%?":  #
+"Are you sure you wish to revert? Your changes will be lost, if you don't save them.":  #
+"Are you sure you wish to unlock the slug? This might break existing links to this record.":  #
+"Assigned roles":  #
+"Author:":  #
+"Autor(ři) Pavilonu":  #
+"Autor(ři) expozice":  #
+"Autor(ři) expozice:":  #
+"Autor(ři) pavilonu:":  #
+"Back to login":  #
+"Before you can start using the theme on your site we need to make a copy to your theme folder.":  #
+"Below are the third party libraries that are used by Bolt.":  #
+"Bolt - Fatal error.":  #
+"Bolt Extension could not be found. Please check at ":  #
+"Bolt documentation on Github":  #
+"Bolt on Github":  #
+"Browse Versions":  #
+"Browser / platform":  #
+"Built-in role, automatically granted at all times, even if no user is logged in":  #
+"Built-in role, automatically granted to every registered user":  #
+"Built-in role, only valid in the context of a resource, and automatically assigned to the owner of that resource.":  #
+"Built-in superuser role, automatically grants all permissions":  #
+"Can't set %field% in %contenttype%: Not a valid field.":  #
+"Cancel":  #
+"Cannot check for updates in read-only mode":  #
+"Cannot check installed packages in read-only mode":  #
+"Change Log":  #
+"Change status to 'draft'":  #
+"Change status to 'held'":  #
+"Check again":  #
+"Check database":  #
+"Check for updates":  #
+"Checking for available updates (this may take up to 60 seconds)":  #
+"Checking installed packages":  #
+"Class:":  #
+"Clear Activitylog":  #
+"Clear cache again":  #
+"Clear filter":  #
+"Clear sort/filter":  #
+"Clear the cache":  #
+"Clear the current log":  #
+"Click to change current status.":  #
+"Close":  #
+"Code:":  #
+"Collapse sidebar":  #
+"Configuration":  #
+"Configure Extensions":  #
+"Content '%title%' could not be deleted.":  #
+"Content '%title%' could not be modified.":  #
+"Content '%title%' has been changed to '%newStatus%'":  #
+"Content '%title%' has been deleted.":  #
+"Content Type Permissions":  #
+"Content for home not found!":  #
+"Content was duplicated. Click 'Save %contenttype%' to finalize.":  #
+"Content":  #
+"Contenttypes":  #
+"Could not save %contenttype%.":  #
+"Create a new user":  #
+"Create a new user, using the form below. The password field is required.":  #
+"Create folder":  #
+"Create the first user":  #
+"Created on:":  #
+"Current (saved) status:":  #
+"Current sessions":  #
+"Current status:":  #
+"Dashboard":  #
+"Database check / update":  #
+"Default status":  #
+"Delete %contenttype%":  #
+"Delete %filename%":  #
+"Delete %foldername%":  #
+"Delete %username%":  #
+"Delete selected":  #
+"Deleted %s files from cache.":  #
+"Depublication date:":  #
+"Depublish selected":  #
+"Description":  #
+"Deselect all":  #
+"Detail template":  #
+"Details":  #
+"Disable %username%":  #
+"Display name":  #
+"Do you really want to delete %foldername%?":  #
+"Done!":  #
+"Draft":  #
+"Duplicate %contenttype%":  #
+"Duplicate %filename%":  #
+"Edit %contenttype%":  #
+"Edit an existing user, using the form below. Leave the password fields empty, unless you wish to change the password.":  #
+"Edit file":  #
+"Edit user":  #
+"Edit":  #
+"Email":  #
+"Enable %username%":  #
+"Everybody":  #
+"Everything is up to date!":  #
+"Excerpt":  #
+"Expand sidebar":  #
+"Extend ":  #
+"Extension log":  #
+"Extension":  #
+"Extensions":  #
+"Extras":  #
+"File '%file%' could not be uploaded (wrong/disallowed file type). Make sure the file extension is one of the following: ":  #
+"File '%file%' could not be uploaded.":  #
+"File '%file%' was uploaded successfully.":  #
+"File '%s' could not be saved, for some reason.":  #
+"File '%s' could not be saved: ":  #
+"File '%s' has been saved.":  #
+"File Management":  #
+"File is not readable!":  #
+"Files in %s":  #
+"Files on the stack":  #
+"Files":  #
+"Filesize":  #
+"Fill the database with Dummy Content":  #
+"Filter":  #
+"Filtering":  #
+"Filtering…":  #
+"Find":  #
+"Fixme:":  #
+"Folder '%s' could not be found, or is not readable.":  #
+"Folder permissions insufficient":  #
+"Folders":  #
+"Full list…":  #
+"Generální partneři pavilonu":  #
+"Global Permissions":  #
+"Hide":  #
+"Hlavní partneři":  #
+"I forgot my password…":  #
+"IP address":  #
+"If there was a Page with 'about' for a slug, it would've been shown here. But there isn't one, so that's why you're seeing this placeholder.":  #
+"If you would like to give the theme an alternative name you can add one here.":  #
+"Image":  #
+"In the contenttype for '%contenttype%', the field '%field%' has 'type: %type%', which is not a proper fieldtype. Please edit contenttypes.yml, and correct this.":  #
+"In the contenttype for '%contenttype%', the field '%field%' has 'uses: %uses%', but the field '%uses%' does not exist. Please edit contenttypes.yml, and correct this.":  #
+"In the contenttype for '%contenttype%', the field '%field%' is defined, which is a reserved name. Please edit contenttypes.yml, and correct this.":  #
+"Info":  #
+"Install a new Extension":  #
+"Install all Packages":  #
+"Install all updates":  #
+"Installation Complete":  #
+"Installing package":  #
+"Installing selected package version (this may take up to 60 seconds).":  #
+"It seems there's no content in the database.":  #
+"Javascript disabled":  #
+"Javascript is currently disabled in your browser. Most functionality in Bolt will work without it, but for greater ease of use we recommend you enable Javascript in your browser.":  #
+"Kategorie":  #
+"Kategorie1":  #
+"Last IP":  #
+"Last edited on:":  #
+"Last known IP":  #
+"Last modified %contenttypes%":  #
+"Last seen":  #
+"Latest activity":  #
+"Latest entries":  #
+"Latitude":  #
+"Listing template":  #
+"Log on":  #
+"Login":  #
+"Logout":  #
+"Long messages":  #
+"Longitude":  #
+"Main configuration":  #
+"Maintenance":  #
+"Marker placement":  #
+"Matched address":  #
+"Matched video":  #
+"Menu setup":  #
+"Message:":  #
+"Messages":  #
+"Meta information":  #
+"Meta":  #
+"Modifications made to the database:":  #
+"Modifications needed:":  #
+"Modified":  #
+"More %contenttypes% »":  #
+"More info / Help":  #
+"Město (EN)":  #
+"Město":  #
+"New %contenttype%":  #
+"New user":  #
+"No %contenttypes% available.":  #
+"No Stable Versions Available":  #
+"No Test Versions Available":  #
+"No content found":  #
+"No content found.":  #
+"No latest %contenttype%":  #
+"No recent %contenttype%.":  #
+"No relations found!":  #
+"No results found for '%search%'. Please try another search.":  #
+"No such action for content.":  #
+"No such action for user '%s'.":  #
+"No video url is set, no video to show.":  #
+"None":  #
+"Not published":  #
+"Note, this file has related files:":  #
+"Note: Cookies are required to log on to Bolt. Please allow cookies.":  #
+"Note:":  #
+"Název (CS)":  #
+"Název (EN)":  #
+"Název":  #
+"Omnisearch":  #
+"Options":  #
+"Order: %sort%":  #
+"Other contenttypes":  #
+"Overview for":  #
+"Overview":  #
+"Owner":  #
+"Owner:":  #
+"Page":  #
+"Password (confirm)":  #
+"Password (confirmation)":  #
+"Password reset not successful! Either the token was incorrect, or you were too late, or you tried to reset the password from a different IP-address.":  #
+"Password reset successful! You can now log on with the password that was sent to you via email.":  #
+"Password":  #
+"Passwords must match.":  #
+"Path to image file":  #
+"Path":  #
+"Path:":  #
+"Pavilon dále podpořili":  #
+"Permalink":  #
+"Permission denied":  #
+"Permissions":  #
+"Place on stack":  #
+"Please choose the record you want to link to:":  #
+"Please enter a new file name":  #
+"Please enter a new folder name":  #
+"Please log on.":  #
+"Please provide a username":  #
+"Popisek (EN)":  #
+"Popisek":  #
+"Prefill database":  #
+"Preparing to install package…":  #
+"Preparing to remove package…":  #
+"Preview image":  #
+"Preview":  #
+"Profile":  #
+"Provided by:":  #
+"Publication date:":  #
+"Publish %contenttype%":  #
+"Publish selected":  #
+"Published on:":  #
+"Published":  #
+"Read more":  #
+"Recent %contenttypes%":  #
+"Recently edited %contenttypes%":  #
+"Related content":  #
+"Related content:":  #
+"Relationships":  #
+"Rename %foldername%":  #
+"Reset my password":  #
+"Revert changes":  #
+"Rok konání výstavy:":  #
+"Rok konání":  #
+"Roles and Permissions":  #
+"Roles":  #
+"Routing setup":  #
+"Rozcestnik":  #
+"Run all Updates":  #
+"Run update check":  #
+"Running install of all packages…":  #
+"Save %contenttype%":  #
+"Save & create new record":  #
+"Save & return to overview":  #
+"Save user":  #
+"Save":  #
+"Saved on:":  #
+"Saved":  #
+"Saving…":  #
+"Search for…":  #
+"Search results for <b> %search% </b>.":  #
+"Search":  #
+"Searching for available updates…":  #
+"Search…":  #
+"Select all":  #
+"Select file…":  #
+"Select from server":  #
+"Select from stack":  #
+"Select none":  #
+"Select":  #
+"Session expires":  #
+"Session resumed.":  #
+"Set the slug to:":  #
+"Settings":  #
+"Show":  #
+"Showing %pager_for% %from% - %to% of %count%":  #
+"Showing":  #
+"Sign in to Bolt":  #
+"Size":  #
+"Skipped <tt>%key%</tt> (already has records)":  #
+"Skipped <tt>%key%</tt> (not checked)":  #
+"Slug:":  #
+"Something went wrong":  #
+"Sophisticated, lightweight & simple CMS":  #
+"Soubory ke stažení:":  #
+"Spobory(y) ke stažení":  #
+"Stable Versions":  #
+"Stack":  #
+"Statik":  #
+"Statiky":  #
+"Status:":  #
+"Stitek":  #
+"Stitky":  #
+"Street, Zip-code, City or other location":  #
+"Taxonomy":  #
+"Text (CS)":  #
+"Text (EN)":  #
+"Text":  #
+"Thanks":  #
+"That user does not exist.":  #
+"The %contenttype% you were looking for does not exist. It was probably deleted, or it never existed.":  #
+"The activitylog has been cleared.":  #
+"The activitylog has been trimmed.":  #
+"The changes to this %contenttype% have been saved.":  #
+"The database needs to be updated / repaired. Go to 'Settings' > '<a href=\"%link%\">Check Database</a>' to do this now.":  #
+"The extensions directory (<code>%dir%</code>) does not exist, or it is not writable.":  #
+"The field %field% has been changed to \"%newValue%\"":  #
+"The file '%s' doesn't exist, or is not readable.":  #
+"The file '%s' is not writable. You will have to use your own editor to make modifications to this file.":  #
+"The folder '%s' could not be found, or is not readable.":  #
+"The identifier and slug for '%taxonomytype%' are the not the same ('%slug%' vs. '%taxonomytype%'). Please edit taxonomy.yml, and make them match to prevent inconsistencies between database storage and your templates.":  #
+"The new %contenttype% has been saved.":  #
+"The requested changelog entry doesn't exist.":  #
+"The settings for roles and permissions are stored in <code>%permissions%</code>.":  #
+"The slug '%slug%' is used in more than one contenttype. Please edit contenttypes.yml, and make them distinct.":  #
+"The translations file '%s' can't be created. You will have to use your own editor to make modifications to this file.":  #
+"The translations file '%s' is not readable.":  #
+"The versions listed below are compatible with the version of Bolt you are using. Since they are unstable versions, we recommend you <strong>do not</strong> use these on production systems.":  #
+"The versions listed below are marked as stable releases by the developer and are compatible with the version of Bolt you are currently using.":  #
+"Theme Installation Complete":  #
+"There are no items on the Stack, yet.":  #
+"There are no users in the database. Please create the first user.":  #
+"There are no users present in the system. Please create the first user, which will be granted root privileges.":  #
+"There should always be at least one 'root' user. You have just been promoted. Congratulations!":  #
+"There was an error saving this %contenttype%.":  #
+"This %contenttype% has not been saved yet.":  #
+"This %contenttype% was created":  #
+"This displayname is already in use. Choose another displayname.":  #
+"This email address is already in use. Choose another email address.":  #
+"This record is related to:":  #
+"This username is already in use. Choose another username.":  #
+"This value is too short. It should have 6 characters or more.":  #
+"This website is <a href='%url%' target='_blank' title='Sophisticated, lightweight & simple CMS'>Built with Bolt</a>.":  #
+"This will install all available updates.":  #
+"This will make sure all packages listed are installed. Use this if you've recently moved to a new server or if you have manually added an extension.":  #
+"This won't install anything, just show you available updates":  #
+"Timed publish":  #
+"Tip:":  #
+"Title":  #
+"To get started quickly, <a href='%url%'>add some Lorem Ipsum dummy content</a>.":  #
+"Translations":  #
+"Trim Activitylog":  #
+"Type":  #
+"Types":  #
+"Téma výstavy (EN)":  #
+"Téma výstavy":  #
+"Téma výstavy:":  #
+"URL of video on Youtube, Vimeo or other video website":  #
+"URL of video to embed":  #
+"Ukazatel":  #
+"Unstable Test Versions":  #
+"Update the database":  #
+"Updated user '%s'.":  #
+"Updates":  #
+"Upload File":  #
+"Upload a file to this folder":  #
+"Upload file":  #
+"Upload image":  #
+"Upload":  #
+"Uploaded files":  #
+"Uploading to this folder is not allowed.":  #
+"Used Libraries / Components":  #
+"User %s could not be saved, or nothing was changed.":  #
+"User %s has been saved.":  #
+"User '%s' could not be deleted.":  #
+"User '%s' could not be disabled.":  #
+"User '%s' could not be enabled.":  #
+"User '%s' is deleted.":  #
+"User '%s' is disabled.":  #
+"User '%s' is enabled.":  #
+"User is enabled":  #
+"Username or password not correct. Please check your input.":  #
+"Username":  #
+"Users":  #
+"Version":  #
+"Version:":  #
+"View %contenttypes%":  #
+"View (saved version) on site":  #
+"View / Install Extensions":  #
+"View / edit Templates":  #
+"View file":  #
+"View on site":  #
+"View related content":  #
+"View site":  #
+"Vyberte obsah s detailním popisem":  #
+"Vyberte článek":  #
+"Written by <em>%name%</em> on %date%":  #
+"You are currently using SQLite to set up the first user. If you wish to use MySQL or PostgreSQL instead, edit the configuration file at <tt>'app/config/config.yml'</tt> and Bolt will set up the database tables for you. Be sure to reload this page before continuing.":  #
+"You can discover new extensions by visiting":  #
+"You can now start using the installed extension, documentation and implementation instructions can be found using the link below.":  #
+"You do not have the right privileges to create a new record.":  #
+"You do not have the right privileges to edit that record.":  #
+"You do not have the right privileges to view that page.":  #
+"You don't have correct permissions to edit the file '%s'.":  #
+"You don't have the correct permissions to display the file or directory '%s'.":  #
+"You have been logged out.":  #
+"You should set 'homepage:' in your 'app/config/config.yml' to an existing record. Make sure that the content is published, otherwise it will not be shown.":  #
+"You should set 'homepage:' in your 'app/config/config.yml' to an existing record.":  #
+"You've been logged on successfully.":  #
+"Your Currently Installed Extensions":  #
+"Your account is disabled. Sorry about that.":  #
+"Your database is already up to date.":  #
+"Your database is now up to date.":  #
+"Your password":  #
+"Your username":  #
+"Zpravodaj Pavilonu":  #
+"Zvýraznit zprávu":  #
+"and edited":  #
+"back to editing":  #
+"by":  #
+"field":  #
+"galerie":  #
+"in:":  #
+"line":  #
+"logged in":  #
+"logged out":  #
+"more activity":  #
+"new value":  #
+"no content…":  #
+"no title…":  #
+"no":  #
+"none":  #
+"náhledový obrázek":  #
+"of":  #
+"old value":  #
+"pixels":  #
+"px.":  #
+"show all":  #
+"unknown":  #
+"yes":  #
+"Čtěte také:":  #
