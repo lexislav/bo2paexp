@@ -123,7 +123,7 @@ thumbnails:
   notfound_image: view/img/default_notfound.png
   error_image: view/img/default_error.png
   save_files: false
-  allow_upscale: false
+  allow_upscale: true
 
 # File types that are acceptable for upload in either 'file' fields or through the 'files' screen.
 
