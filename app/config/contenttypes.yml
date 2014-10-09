@@ -160,11 +160,11 @@ historie:
         tema_cs:
             type: text
             label: Téma výstavy
-        autor-pavilonu_cs:
+        autor-pavilonu:
             type: text
             label: Autor(ři) Pavilonu
             postfix: Autory případně oddělte čárkou
-        autor-expozice_cs:
+        autor-expozice:
             type: text
             label: Autor(ři) expozice
             postfix: Autory případně oddělte čárkou

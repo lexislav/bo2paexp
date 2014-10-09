@@ -1,6 +1,56 @@
 <aside class="small-12 large-6 columns">
 
-            {% if record.taxonomy.kategorie is defined %}
+            {% if record.rok!="" %}
+            <div class="row">
+                <div class="mgr-full">
+                    <h2 class="large-4 columns">{{ __('Rok konání výstavy:') }}</h2>
+                    <div class="large-8 columns">
+                        {{ record.rok }}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if record.mesto_cs!="" %}
+            <div class="row">
+                <div class="mgr-full">
+                    <h2 class="large-4 columns">{{ __('Místo:') }}</h2>
+                    <div class="large-8 columns">
+                        {{ record['mesto_' ~ app.locale] }}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if record.tema_cs!="" %}
+            <div class="row">
+                <div class="mgr-full">
+                    <h2 class="large-4 columns">{{ __('Téma výstavy:') }}</h2>
+                    <div class="large-8 columns">
+                        {{ record['tema' ~ app.locale] }}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if record.autor-pavilonu!="" %}
+            <div class="row">
+                <div class="mgr-full">
+                    <h2 class="large-4 columns">{{ __('Autor(ři) pavilonu:') }}</h2>
+                    <div class="large-8 columns">
+                        {{ record.autor-pavilonu }}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% if record.autor-expozice!="" %}
+            <div class="row">
+                <div class="mgr-full">
+                    <h2 class="large-4 columns">{{ __('Autor(ři) expozice:') }}</h2>
+                    <div class="large-8 columns">
+                        {{ record.autor-expozice }}
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+                        {% if record.taxonomy.kategorie is defined %}
             <div class="row">
                 <div class="mgr-full">
                     <h2 class="large-4 columns">{{ __('Kategorie') }}</h2>
@@ -52,7 +102,5 @@
                 </div>
             </div>
             {% endif %}
-
-
 
         </aside>
