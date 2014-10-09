@@ -3,12 +3,12 @@
 <!-- {% include '_loader.twig' %} -->
 {% include '_topbar.twig' with {'menuClasses': 'mm-white'} %}
 
-<div class="row">
+<div id="top" class="row">
 
 <div class="row">
     <div class="small-12 columns">
         <nav class="breadcrumbs">
-            <a href="blog.php">ZRAVODAJ PAVILONU</a>
+            <a href="{{paths.root}}{{ app.locale }}/blog">ZRAVODAJ PAVILONU</a>
             <a class="current" href="#">KATEGORIE</a>
         </nav>
     </div>
@@ -24,9 +24,21 @@
                 <div class="m-item--date-published">Datum vydání: {{ record.publishdate }}</div>
             </div>
         </header>
-
+     
         <div class="small-6 large-4 columns">
-            {% include '_inc-entry-nav.twig' with {'navClasses': 'mm-big text-right visible-for-large-up'} %}
+            <nav class="m-light-nav mm-big text-right visible-for-large-up">
+                <div class="m-light-nav--warp">
+                {% set previous = record.previous('id') %}
+                {% if previous %}
+                    <a href="{{ previous.link }}" class="m-icon mm-prev" title="{{ previous.title }}"><i>previous</i></a>
+                {% endif %}
+                <a href="{{paths.root}}{{ app.locale }}/blog" class="m-icon mm-top"><i>top</i></a>
+                {% set next = record.next('id') %}
+                {% if next %}
+                    <a href="{{ next.link }}" class="m-icon mm-next" title="{{ next.title }}"><i>next</i></a>
+                {% endif %}            
+                </div>
+            </nav>
         </div>
 
     </div>
