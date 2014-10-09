@@ -4838,6 +4838,9 @@ aside h2 {
     margin-left: 50%; }
     .m-light-nav.mm-centerd .m-light-nav--wrap {
       transform: translateX(-50%); }
+      @media only screen {
+        .m-light-nav.mm-centerd .m-light-nav--wrap {
+          min-width: 240px; } }
 
 .reveal-modal.fixed, dialog.fixed {
   position: fixed;

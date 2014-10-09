@@ -80,13 +80,23 @@
     }
 
     &.mm-centerd {
-        width: auto;
-        display: inline-block;
-        position: relative;
-        margin-left: 50%;
-        .m-light-nav--wrap {
-            transform: translateX(-50%);
-        }
+        //@media #{size(B)} {
+            width: auto;
+            display: inline-block;
+            position: relative;
+            margin-left: 50%;
+
+            .m-light-nav--wrap {
+                transform: translateX(-50%);
+                @media #{size(A)} {
+                    min-width: 240px;
+                }
+            }
+
+
+
+          //  }
+
     }
 
 }
