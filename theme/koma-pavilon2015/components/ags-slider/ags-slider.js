@@ -23,6 +23,7 @@ var cover = root.find(".cover");
 var rootWidth;
 var rootHeight;
 var id;
+var isTouch = true;
 
 var skewOffset;
 
@@ -30,6 +31,10 @@ root.css('height', Math.round($(window).height() * 0.72 )  );
 
 overlayLeft.css("opacity", 0);
 overlayRight.css("opacity", 0);
+
+if($("html").hasClass("no-touch")) {
+    isTouch = false;
+}
 
 
 function setSize() {
@@ -72,8 +77,11 @@ function setPos(dragPos) {
     inner.width((rootWidth + skewOffset) * perc);
 
     // background overlay transition
-    //overlayLeft.css("opacity", perc - 0.3);
-    //overlayRight.css("opacity", (1 - perc) -0.3);
+    if(!isTouch) {
+        console.log("notouch");
+        overlayLeft.css("opacity", perc - 0.3);
+        overlayRight.css("opacity", (1 - perc) -0.3);
+    }
 }
 
 function doneResizing() {
