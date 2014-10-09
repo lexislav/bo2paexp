@@ -7,6 +7,14 @@
     h1 {
         margin-top: -0.2em;
     }
+
+
+    &.mm-dark {
+        background: #D8D8D8;
+    }
+    &.mm-bluish {
+        background: rgba(165,192,233,0.32);
+    }
 }
 
 // basic section overides
@@ -17,6 +25,12 @@
 .l-section.m-section_pavilondark {}
 .l-section.m-section_text {}
 .l-section.m-section_grid {}
+.l-section.m-section_partner {
+
+    &.mm-gold {}
+    &.mm-silver {}
+
+}
 
 
 
@@ -44,16 +58,21 @@
 
 }
 
-// text section
+.m-section_partner {
+    &.mm-gold {}
+    &.mm-silver {
+        & > header h1 {
+            @include fnt-primary-medium();
+            font-size: rem-calc(20);
+            text-decoration: underline;
+        }
 
-.l-section {
-    &.mm-dark {
-        background: #D8D8D8;
-    }
-    &.mm-bluish {
-        background: rgba(165,192,233,0.32);
     }
 }
+
+
+
+// text section
 
 .m-data-stats {
 
@@ -129,3 +148,5 @@
         }
     }
 }
+
+

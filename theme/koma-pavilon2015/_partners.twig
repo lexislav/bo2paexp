@@ -1,77 +1,71 @@
 <!-- partners gold -->
 {% setcontent sponzors = 'sponzori/first/2' where { stitky: 'gold' } %}
 {% for sponzor in sponzors %}
-{% if loop.first %}
-<div class="l-section mm-dark">
-    <article>
-        <header class="clearfix mgr-full row">
-            <div class="small-12 columns">
-                <h1 class="fnt-primary-headline">{{ __('Generální partneři pavilonu') }}</h1>
-            </div>
-        </header>
-        <div class="row l-partner_large">
-{% endif %}
-            <article class="small-6 columns m-partner">
-                <header>
-                {% if sponzor.related %}
-                    <a href="{{ sponzor.related }}">
-                    {% else %}
-                    <a href="http://{{ sponzor.odkaz }}">
-                {% endif %}
+    {% if loop.first %}
+        <div class="l-section m-section_partner mm-gold mm-dark">
 
-                        {% if sponzor.image!="" %}
-                        <img class="m-item--image" src="{{ thumbnail(sponzor.logo, 280,210, fit)}}" />
+            <header class="clearfix mgr-full row">
+                <div class="small-12 columns">
+                    <h1 class="fnt-primary-headline">{{ __('Generální partneři pavilonu') }}</h1>
+                </div>
+            </header>
+
+            <div class="row l-partner_large">
+            {% endif %}
+
+                <article class="small-6 columns m-partner">
+                    <header>
+                        {% set partnerLink = sponzor.related %}
+                        {% if sponzor.odkaz %}
+                            {% set partnerLink = sponzor.odkaz %}
                         {% endif %}
-                        <h1 class="m-item--hed">{{ sponzor['nazev_' ~ app.locale] }}</h1>
-                        <div class="m-item--description">{{ sponzor['popis_' ~ app.locale] }}</div>
-                    </a>
-                </header>
-            </article>
-{% if loop.last %}
-        </div>
-    </article>
-</div>
-{% endif %}
-{% endfor %}
-<!-- partners gold -->
+                        <a href="{{ partnerLink }}">
+                            {% if sponzor.image!="" %}<img class="m-item--image" src="{{ thumbnail(sponzor.logo, 280,210, fit) }}" />{% endif %}
+                            <h1 class="m-item--hed">{{ sponzor['nazev_' ~ app.locale] }}</h1>
+                            <div class="m-item--description">{{ sponzor['popis_' ~ app.locale] }}</div>
+                        </a>
+                    </header>
+                </article>
 
-<!-- Partners silver -->
+            {% if loop.last %}
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
+<!-- end partners gold -->
+
+<!-- partners silver -->
 {% setcontent sponzors = 'sponzori/first/6' where { stitky: 'silver' } %}
 {% for sponzor in sponzors %}
-{% if loop.first %}
-<div class="l-section">
-    <article>
-        <header class="clearfix mgr-full row">
-            <div class="small-12 columns">
-                <h1 class="fnt-primary-headline">{{ __('Hlavní partneři') }}</h1>
-            </div>
-        </header>
-        <div class="row l-partner_xsmall">
-            <ul class="small-block-grid-6">
-{% endif %}
-               
+    {% if loop.first %}
+        <div class="l-section m-section_partner mm-silver">
+
+            <header class="clearfix mgr-full row">
+                <div class="small-12 columns">
+                    <h1>{{ __('Hlavní partneři') }}</h1>
+                </div>
+            </header>
+            <div class="row l-partner_xsmall">
+                <ul class="small-block-grid-6">
+                {% endif %}
                     <li>
-                        {% if sponzor.related %}
-                            <a href="{{ sponzor.related }}">
-                            {% else %}
-                            <a href="http://{{ sponzor.odkaz }}">
+                        {% set partnerLink = sponzor.related %}
+                        {% if sponzor.odkaz %}
+                            {% set partnerLink = sponzor.odkaz %}
                         {% endif %}
-                        <article class="m-partner">
-                            <header>
-                                {% if sponzor.image!="" %}
-                                    <img class="m-item--image" src="{{ thumbnail(sponzor.logo, 197,148, fit)}}" />
-                                {% endif %}
-                                <h1 class="m-item--hed">{{ sponzor['nazev_' ~ app.locale] }}</h1>
-                                <div class="m-item--description">{{ sponzor['popis_' ~ app.locale] }}</div>
-                            </header>
-                        </article>
+                        <a href="{{ partnerLink }}">
+                            <article class="m-partner">
+                                <header>
+                                    {% if sponzor.image!="" %}<img class="m-item--image" src="{{ thumbnail(sponzor.logo, 197,148, fit) }}" />{% endif %}
+                                    <h1 class="m-item--hed">{{ sponzor['nazev_' ~ app.locale] }}</h1>
+                                    <div class="m-item--description">{{ sponzor['popis_' ~ app.locale] }}</div>
+                                </header>
+                            </article>
                         </a>
                     </li>
-                
-{% if loop.last %}
-            </ul>
+                {% if loop.last %}
+                </ul>
+            </div>
         </div>
-    </article>
-</div>
-{% endif %}
+    {% endif %}
 {% endfor %}
