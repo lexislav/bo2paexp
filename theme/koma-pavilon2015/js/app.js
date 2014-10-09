@@ -7,6 +7,7 @@
 });*/
 
 $( window ).load(function() {
+    $("body").css('overflow','auto');
     $("#preloader").fadeOut(300);
 });
 
