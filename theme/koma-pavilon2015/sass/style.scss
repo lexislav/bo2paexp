@@ -46,7 +46,6 @@ $navbar-height: $navbar-height_AB;
     margin-bottom: $base-spacing / 2;
 }
 
-
 .l-page {
 
     padding-top: $navbar-height;
@@ -69,17 +68,27 @@ $navbar-height: $navbar-height_AB;
     }
 }
 
-@import "modules/module-to-optimize";
+.m-theme {
+    background-image: url("../assets/file-a.jpg");
+    background-position: center center;
+    background-size: cover;
+    height: 472px;
+}
+
+// move this
+.l-page_blog .pagination {
+    padding: 0 50px;
+}
+
+@import "modules/module-blog";
+@import "modules/module-list";
 @import "modules/module-icons";
 @import "modules/module-content-partner";
 @import "modules/module-content-story";
 @import "modules/module-breadcrumbs";
 @import "modules/module-light-nav";
 
-
-
 @import "modules/override-row";
-
 
 #skrollr-body {
     pointer-events: none;

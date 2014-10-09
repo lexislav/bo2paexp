@@ -1,0 +1,111 @@
+
+// optimize
+.m-blog-item {
+
+    margin-bottom: $base-spacing / 2;
+    position: relative;
+
+    .m-item--hed {
+        @include fnt-primary-body-m();
+        padding: 8px 16px;
+        padding-bottom: 12px;
+        background: #FBFBFB;
+        margin: 0;
+        height: 92px;
+        overflow: hidden;
+
+
+        a {
+            display: block;
+            width: 100%;
+            color: $koma;
+        }
+    }
+
+    .m-item--image {
+        width: 100%;
+        height: auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .m-item--meta {
+    }
+
+    .m-item--section {
+        @include fnt-secondary-headline();
+        font-weight: 600;
+        position: absolute;
+        top: 14px;
+        left: 14px;
+
+        font-size: rem-calc(14);
+
+        display: block;
+        background-color: #000;
+
+        color: white;
+        text-transform: uppercase;
+        padding: 4px 8px;
+        a {
+            color: white;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+    }
+
+    &:hover {
+        a {
+            color: white;
+        }
+        .m-item--hed {
+            background-color: $color-koma-red;
+            color: white;
+        }
+    }
+
+    &.mm-subhero {
+
+        .m-item--hed {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+
+            font-size: rem-calc(20);
+            color: white;
+            background-color: rgba(0, 0, 0, .56);
+
+            a {
+                color: white;
+            }
+        }
+
+        .m-item--section {
+            font-size: rem-calc(15);
+        }
+
+        &:hover {
+            .m-item--hed {
+                background-color: $color-koma-red;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &.mm-featured {
+        .m-item--section {
+            background-color: $color-koma-red;
+            color: white;
+        }
+    }
+
+}
