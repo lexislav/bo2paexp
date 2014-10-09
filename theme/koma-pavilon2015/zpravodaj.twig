@@ -112,10 +112,11 @@
                 <a href="{{ paths.root }}">homepage</a>. </p>
         </article>
     {% endfor %}
-
 </div>
 
 <!-- Paginace -->
+{{ pager('', 2, '_zpravodaj_pager.twig') }}
+
 <div class="row">
     <div class="small-12 small-centered columns">
         <nav class="m-light-nav mm-centerd mm-big text-right visible-for-large-up"><div class="m-light-nav--wrap">

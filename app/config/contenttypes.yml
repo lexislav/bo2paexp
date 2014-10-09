@@ -65,8 +65,8 @@ zpravodaj:
     searchable: true
     record_template: entry.twig
     listing_template: zpravodaj.twig
-    listing_records: 20
-    recordsperpage: 20
+    listing_records: 14
+    recordsperpage: 14
     sort: -datepublish
     icon: cubes
     icon_singular: cube
