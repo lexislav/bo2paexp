@@ -1,63 +1,77 @@
 <!-- partners gold -->
+{% setcontent sponzors = 'sponzori/first/2' where { stitky: 'gold' } %}
+{% for sponzor in sponzors %}
+{% if loop.first %}
 <div class="l-section mm-dark">
     <article>
         <header class="clearfix mgr-full row">
             <div class="small-12 columns">
-                <h1 class="fnt-primary-headline">Hlavní partneři pavilonu (gold)</h1>
+                <h1 class="fnt-primary-headline">{{ __('Generální partneři pavilonu') }}</h1>
             </div>
         </header>
-
         <div class="row l-partner_large">
-
+{% endif %}
             <article class="small-6 columns m-partner">
                 <header>
-                    <a href="pavilon.php">
-                        <img class="m-item--image" src="/assets/modul.png" />
-                        <h1 class="m-item--hed">Patner</h1>
-                        <div class="m-item--description">Normální náhled příspěvku s tak nějak decentně dlouhým názvem</div>
+                {% if sponzor.related %}
+                    <a href="{{ sponzor.related }}">
+                    {% else %}
+                    <a href="http://{{ sponzor.odkaz }}">
+                {% endif %}
+
+                        {% if sponzor.image!="" %}
+                        <img class="m-item--image" src="{{ thumbnail(sponzor.logo, 280,210, fit)}}" />
+                        {% endif %}
+                        <h1 class="m-item--hed">{{ sponzor['nazev_' ~ app.locale] }}</h1>
+                        <div class="m-item--description">{{ sponzor['popis_' ~ app.locale] }}</div>
                     </a>
                 </header>
             </article>
-
-            <article class="small-6 columns m-partner">
-                <header>
-                    <a href="pavilon.php">
-                        <img class="m-item--image" src="/assets/modul.png" />
-                        <h1 class="m-item--hed fnt-primary-body-m">Patner</h1>
-                        <div class="m-item--description">Normální náhled příspěvku s tak nějak decentně dlouhým názvem</div>
-                    </a>
-                </header>
-            </article>
-
+{% if loop.last %}
         </div>
     </article>
 </div>
-
+{% endif %}
+{% endfor %}
 <!-- partners gold -->
+
+<!-- Partners silver -->
+{% setcontent sponzors = 'sponzori/first/6' where { stitky: 'silver' } %}
+{% for sponzor in sponzors %}
+{% if loop.first %}
 <div class="l-section">
     <article>
         <header class="clearfix mgr-full row">
             <div class="small-12 columns">
-                <h1 class="fnt-primary-headline">Další pratneři</h1>
+                <h1 class="fnt-primary-headline">{{ __('Hlavní partneři') }}</h1>
             </div>
         </header>
-
         <div class="row l-partner_xsmall">
             <ul class="small-block-grid-6">
-
-                <?php for($i=0; $i<6; $i++) { ?>
+{% endif %}
+               
                     <li>
+                        {% if sponzor.related %}
+                            <a href="{{ sponzor.related }}">
+                            {% else %}
+                            <a href="http://{{ sponzor.odkaz }}">
+                        {% endif %}
                         <article class="m-partner">
                             <header>
-                                <img class="m-item--image" src="/assets/modul.png" />
-                                <h1 class="m-item--hed">firma</h1>
-                                <div class="m-item--description">firma</div>
+                                {% if sponzor.image!="" %}
+                                    <img class="m-item--image" src="{{ thumbnail(sponzor.logo, 197,148, fit)}}" />
+                                {% endif %}
+                                <h1 class="m-item--hed">{{ sponzor['nazev_' ~ app.locale] }}</h1>
+                                <div class="m-item--description">{{ sponzor['popis_' ~ app.locale] }}</div>
                             </header>
                         </article>
+                        </a>
                     </li>
-                <?php }  ?>
-
+                
+{% if loop.last %}
             </ul>
         </div>
     </article>
 </div>
+{% endif %}
+{% endfor %}

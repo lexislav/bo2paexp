@@ -56,7 +56,7 @@ zpravodaj:
     relations:
         zpravodaj:
             multiple: false
-            label: Choose an entry
+            label: Vyberte článek
             order: -id
             format: "{{ item.title|escape }} <span>(№ {{ item.id }})</span>"
     taxonomy: [ kategorie ]
@@ -81,13 +81,10 @@ sponzori:
             type: text
             class: large
             group: Obsah
-        nazev_en:
-            type: text
-            class: large
         slug:
             type: slug
             uses: nazev_cs
-        popis:
+        popis_cs:
             type: textarea
             postfix: Velmi krátký popis partnera - objeví se pod logem.
         odkaz:
@@ -97,12 +94,22 @@ sponzori:
         logo:
             type: image
             extensions: [ gif, jpg, png ]
-            postfix: UPOZORNĚNÍ: Upravte logo aby mělo průhledné pozadí !!!
+            postfix: UPOZORNĚNÍ: Upravte logo aby mělo průhledné pozadí !!!    
+        nazev_en:
+            type: text
+            class: large
+            group: (EN)
+        popis_en:
+            type: textarea
+            postfix: Velmi krátký popis partnera - objeví se pod logem.
     relations:
         zpravodaj:
             multiple: false
-            label: Vyberte souvisejici clanek o partnerovi
+            label: Vyberte článek
+            order: -id
+            format: "{{ item.title|escape }} <span>(№ {{ item.id }})</span>"
     taxonomy: [ stitky ]
+    default_status: published
 
 odkazy:
     name: Odkazy
