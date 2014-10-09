@@ -5,10 +5,10 @@
 
 <div class="m-theme mgr-full">
     <div class="row">
-        <div class="large-6 columns">{{ __('Zpravodaj Pavilonu') }}</div>
-        <div class="large-6 columns">
-            {# Výpis kategorií #}
-            <ul>
+        <div class="small-12 columns">
+            <h1 class="m-item--hed">{{ __('Zpravodaj Pavilonu') }}</h1>
+            <div class="m-item--meta">
+            <ul class="inline-list">
                 <li><a href="{{ paths.root }}{{ app.locale }}/blog">Vše</a></li>
                 {% for category in config.get('taxonomy/kategorie/options') %}
                     <li>
@@ -16,6 +16,7 @@
                     </li>
                 {% endfor %}
             </ul>
+            </div>
         </div>
     </div>
 </div>

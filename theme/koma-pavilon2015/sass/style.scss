@@ -29,7 +29,6 @@ $navbar-height: $navbar-height_AB;
 @import "modules/module-page-footer";
 @import "modules/module-carousel";
 
-
 // html spacing classes
 .mgr-full {
     margin-bottom: $base-spacing;
@@ -70,12 +69,105 @@ $navbar-height: $navbar-height_AB;
 }
 
 .m-theme {
-    background-image: url("../assets/file-a.jpg");
+    background-image: url("../assets/zpravodaj/zp01_header_construction.jpg");
     background-position: center center;
     background-size: cover;
     height: 472px;
-}
+    color: white;
+    position: relative;
 
+    & > .row {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        max-width: none;
+    }
+
+    .m-item--hed,
+    .m-item--meta {
+        color: white;
+        text-shadow: 0 2px 1px rgba(0, 0, 0, 0.8);
+    }
+
+    .m-item--hed {
+        text-align: center;
+        margin-top: 140px;
+        margin-bottom: 30px;
+        font-size: rem-calc(36);
+
+        @media #{size(B)} {
+            margin-top: 170px;
+            margin-bottom: 10px;
+            font-size: rem-calc(64);
+            font-weight: 400;
+        }
+
+    }
+
+    .m-item--meta {
+        @include fnt-secondary-regular();
+        font-weight: 300;
+        position: relative;
+        display: block;
+
+        > ul {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            li {
+
+                display: block;
+                float: none;
+                text-align: center;
+                padding: 0;
+                margin: 0;
+
+                @media #{size(B)} {
+                    margin: 0;
+                    padding: 0 6px;
+                    float: left;
+
+                    &:first-of-type {
+                        a:before {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media #{size(B)} {
+            margin-left: 50%;
+            margin-right: -50%;
+            display: inline-block;
+
+            > ul {
+                width: auto;
+                transform: translateX(-50%);
+                li {
+                    text-align: left;
+                }
+            }
+        }
+
+        a {
+            font-size: rem-calc(18);
+            color: white;
+            &:hover {
+                color: white;
+                text-decoration: underline;
+            }
+
+            @media #{size(B)} {
+                &:before {
+                    content: "/";
+                    display: inline-block;
+                    width: 16px;
+                }
+            }
+        }
+    }
+}
 
 @import "modules/module-blog";
 @import "modules/module-list";
@@ -96,7 +188,7 @@ $navbar-height: $navbar-height_AB;
 .m-pagination {
     & > div {
         display: inline-block;
-        padding: 20px 30px ;
+        padding: 20px 30px;
         font-size: rem-calc(18);
     }
     .current {
