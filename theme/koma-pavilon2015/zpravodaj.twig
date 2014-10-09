@@ -1,6 +1,5 @@
 {% include '_header.twig' %}
 <body class="l-page l-page_blog">
-{% include '_loader.twig' %}
 {% include '_topbar.twig' with {'menuClasses': 'switchable'} %}
 
 <div class="m-theme mgr-full">
@@ -9,118 +8,121 @@
         <div class="large-6 columns">
             {# Výpis kategorií #}
             <ul>
-            <li><a href="{{ paths.root }}{{app.locale}}/blog">Vše</a></li>
-            {% for category in config.get('taxonomy/kategorie/options') %}
-                <li>
-                    <a href="{{ paths.root }}{{app.locale}}/kategorie/{{category}}">{{category}}</a>
-                </li>
-            {% endfor %}
+                <li><a href="{{ paths.root }}{{ app.locale }}/blog">Vše</a></li>
+                {% for category in config.get('taxonomy/kategorie/options') %}
+                    <li>
+                        <a href="{{ paths.root }}{{ app.locale }}/kategorie/{{ category }}">{{ category }}</a>
+                    </li>
+                {% endfor %}
             </ul>
         </div>
     </div>
 </div>
 
 
-        {% if taxonomytype is defined %}
-            <h1>
-                {{ __('Overview for') }}
-                {% if taxonomy.options[slug] is defined %}
-                    {{ taxonomy.options[slug] }}
-                {% else %}
-                    {{ slug }}
-                {% endif %}
-            </h1>
-            {# taxonomies are fetched unordered by design. If we specified an order in config.yml, sort them here: #}
-            {% set records = records|order(app.config.get('general/listing_sort')) %}
-        {% endif %}
-
-        {% for record in records %}
-
-        {% if loop.index == 1 %}
-
-            <div class="row">
-                <div class="small-12 large-6 columns">
-                    <article class="m-blog-item mm-subhero">
-                        <header>
-                            <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">
-                                <div class="m-item--image">
-                                {% if record.image!="" %}
-                                    <img src="{{ thumbnail(record.image, 600, 420, crop) }}" alt="">
-                                    {% else %}
-                                    <img src="{{ paths.theme }}assets/no_image_thumb_blue_slim.svg" />
-                                {% endif %}</div>
-                                <h1 class="m-item--hed"><a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">{{ record['title_' ~ app.locale]|excerpt(13) }}</a></h1>
-
-                                {% if record.taxonomy.kategorie is defined %}
-                                <div class="m-item--meta">
-                                <div  class="m-item--section">
-                                    {% for tag in record.taxonomy.kategorie %}
-                                    <a href="{{ paths.root }}{{ app.locale }}/kategorie/{{ tag }}">
-                                        {{ tag }}</a>{% if not loop.last %}, {% endif %}
-                                    {% endfor %}
-                                </div></div>
-                                {% endif %}
-                            </a>
-                        </header>
-                    </article>
-                </div>
-
-        {% elseif loop.index == 2 %}
-                <div class="small-12 large-6 columns">
-                    <article class="m-blog-item mm-subhero mm-featured">
-                        <header>
-                            <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">
-                                <div class="m-item--image">
-                                {% if record.image!="" %}
-                                    <img src="{{ thumbnail(record.image, 600, 420, crop) }}" alt="">
-                                    {% else %}
-                                    <img src="{{ paths.theme }}assets/no_image_thumb_blue_slim.svg" />
-                                {% endif %}</div>
-                                <h1 class="m-item--hed"><a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">{{ record['title_' ~ app.locale] }}</a></h1>
-
-                                {% if record.taxonomy.kategorie is defined %}
-                                <div class="m-item--meta">
-                                    {% for tag in record.taxonomy.kategorie %}
-                                    <a href="{{ paths.root }}{{ app.locale }}/kategorie/{{ tag }}" class="m-item--section">
-                                        {{ tag }}</a>{% if not loop.last %}, {% endif %}
-                                    {% endfor %}</div>
-                                {% endif %}
-                            </a>
-                        </header>
-                    </article>
-                </div>
-            </div>
-        {% elseif loop.index == 3 %}
-                <div class="row">
-                {% include '_inc-blog-post-small.twig' %}
+{% if taxonomytype is defined %}
+    <h1>
+        {{ __('Overview for') }}
+        {% if taxonomy.options[slug] is defined %}
+            {{ taxonomy.options[slug] }}
         {% else %}
-            {% include '_inc-blog-post-small.twig' %}
+            {{ slug }}
         {% endif %}
+    </h1>
+    {# taxonomies are fetched unordered by design. If we specified an order in config.yml, sort them here: #}
+    {% set records = records|order(app.config.get('general/listing_sort')) %}
+{% endif %}
 
+{% for record in records %}
 
-        {% else %}
-            <article>
-                    <h2>{{ __("No content found.") }}</h2>
-                    <p>
-                        Unfortunately, no content could be found. Try another page, or go to the
-                        <a href="{{ paths.root }}">homepage</a>.
-                    </p>
+    {% if loop.index == 1 %}
+
+    <div class="row">
+    <div class="small-12 large-6 columns">
+        <article class="m-blog-item mm-subhero">
+            <header>
+                <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">
+                    <div class="m-item--image">
+                        {% if record.image!="" %}
+                            <img src="{{ thumbnail(record.image, 600, 420, crop) }}" alt="">
+                        {% else %}
+                            <img src="{{ paths.theme }}assets/no_image_thumb_blue_slim.svg" />
+                        {% endif %}</div>
+                    <h1 class="m-item--hed">
+                        <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">{{ record['title_' ~ app.locale]|excerpt(13) }}</a>
+                    </h1>
+
+                    {% if record.taxonomy.kategorie is defined %}
+                        <div class="m-item--meta">
+                            <div class="m-item--section">
+                                {% for tag in record.taxonomy.kategorie %}
+                                <a href="{{ paths.root }}{{ app.locale }}/kategorie/{{ tag }}">
+                                    {{ tag }}</a>{% if not loop.last %}, {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+                </a>
+            </header>
+        </article>
+    </div>
+
+    {% elseif loop.index == 2 %}
+        <div class="small-12 large-6 columns">
+            <article class="m-blog-item mm-subhero mm-featured">
+                <header>
+                    <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">
+                        <div class="m-item--image">
+                            {% if record.image!="" %}
+                                <img src="{{ thumbnail(record.image, 600, 420, crop) }}" alt="">
+                            {% else %}
+                                <img src="{{ paths.theme }}assets/no_image_thumb_blue_slim.svg" />
+                            {% endif %}</div>
+                        <h1 class="m-item--hed">
+                            <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">{{ record['title_' ~ app.locale] }}</a>
+                        </h1>
+
+                        {% if record.taxonomy.kategorie is defined %}
+                            <div class="m-item--meta">
+                                {% for tag in record.taxonomy.kategorie %}
+                                <a href="{{ paths.root }}{{ app.locale }}/kategorie/{{ tag }}" class="m-item--section">
+                                    {{ tag }}</a>{% if not loop.last %}, {% endif %}
+                                {% endfor %}</div>
+                        {% endif %}
+                    </a>
+                </header>
             </article>
-        {% endfor %}
+        </div>
+        </div>
+{% elseif loop.index == 3 %}
+<div class="row">
+    {% include '_inc-blog-post-small.twig' %}
+    {% else %}
+        {% include '_inc-blog-post-small.twig' %}
+    {% endif %}
+
+
+    {% else %}
+        <article>
+            <h2>{{ __("No content found.") }}</h2>
+
+            <p>
+                Unfortunately, no content could be found. Try another page, or go to the
+                <a href="{{ paths.root }}">homepage</a>. </p>
+        </article>
+    {% endfor %}
 
 </div>
 
 
 <div class="row">
-    <div class="small-12 large-3 small-centered columns">
-        <ul class="pagination">
-            <li class="arrow unavailable"><a href="">&laquo;</a></li>
-            <li class="current"><a href="">1</a></li>
-            <li><a href="">2</a></li>
-            <li class="unavailable"><a href="">&hellip;</a></li>
-            <li><a href="">13</a></li>
-            <li class="arrow"><a href="">&raquo;</a></li>
-        </ul>
+    <div class="small-12 small-centered columns">
+        <nav class="m-light-nav mm-centerd mm-big text-right visible-for-large-up"><div class="m-light-nav--wrap">
+            <a href="" class="m-icon mm-prev"><i>previous</i></a>
+            <div class="mm-current">1 / 10</div>
+            <a href="" class="m-icon mm-next"><i>next</i></a>
+            </div>
+        </nav>
     </div>
 </div>
 
@@ -131,21 +133,22 @@
     </div>
     <div class="small-12 medium-6 large-5 xlarge-4 columns">
         <header>
-        <h2>Další články o pavilonu & EXPO2015</h2>
+            <h2>Další články o pavilonu & EXPO2015</h2>
         </header>
         {% setcontent myc = 'odkazy' where { rozcestnik: 'o-pavilonu' } %}
         {% for olink in myc %}
-           <article class="m-item">
-             <header>
-             <h1 class="m-item--hed">
-             <a href="http://{{olink.adresa}}" title="{{ olink['nazev_' ~ app.locale] }}" target="_new">
-          {{ olink['nazev_' ~ app.locale] }}
-             </a>
-             </h1>
-             <div class="m-item--meta">
+            <article class="m-item">
+                <header>
+                    <h1 class="m-item--hed">
+                        <a href="http://{{ olink.adresa }}" title="{{ olink['nazev_' ~ app.locale] }}" target="_new">
+                            {{ olink['nazev_' ~ app.locale] }}
+                        </a>
+                    </h1>
+
+                    <div class="m-item--meta">
                         <div class="m-item--date">datum a dalsi</div>
                     </div>
-            </header>
+                </header>
             </article>
         {% endfor %}
 
@@ -157,17 +160,18 @@
         </header>
         {% setcontent myc = 'odkazy' where { rozcestnik: 'modularni-architektura' } %}
         {% for olink in myc %}
-           <article class="m-item">
-             <header>
-             <h1 class="m-item--hed">
-             <a href="http://{{olink.adresa}}" title="{{ olink['nazev_' ~ app.locale] }}" target="_new">
-          {{ olink['nazev_' ~ app.locale] }}
-             </a>
-             </h1>
-             <div class="m-item--meta">
+            <article class="m-item">
+                <header>
+                    <h1 class="m-item--hed">
+                        <a href="http://{{ olink.adresa }}" title="{{ olink['nazev_' ~ app.locale] }}" target="_new">
+                            {{ olink['nazev_' ~ app.locale] }}
+                        </a>
+                    </h1>
+
+                    <div class="m-item--meta">
                         <div class="m-item--date">datum a dalsi</div>
                     </div>
-            </header>
+                </header>
             </article>
         {% endfor %}
     </div>
@@ -181,5 +185,4 @@
 <!-- page custom JS -->
 <script src="{{ paths.theme }}js/app.js"></script>
 
-</body>
-{% include '_footer.twig' %}
+</body>{% include '_footer.twig' %}
