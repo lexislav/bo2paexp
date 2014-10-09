@@ -18,6 +18,7 @@ $navbar-height: $navbar-height_AB;
 // custom components
 @import "modules/module-fonts";
 @import "modules/module-font-styles";
+@import "modules/module-preload";
 
 @import "modules/module-navigation";
 @import "modules/angle-slider";
@@ -88,6 +89,7 @@ $navbar-height: $navbar-height_AB;
 @import "modules/module-breadcrumbs";
 @import "modules/module-light-nav";
 
+@import "modules/override-modal";
 @import "modules/override-row";
 
 #skrollr-body {
@@ -95,13 +97,5 @@ $navbar-height: $navbar-height_AB;
 }
 
 
-// modal
 
-.reveal-modal {
-    &.fixed {
-    position: fixed;
-    top: 10% !important;
-    bottom: 10%;
-    margin: auto;
-    }
-}
+

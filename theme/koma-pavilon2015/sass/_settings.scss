@@ -104,7 +104,7 @@ $koma: #4A4A4A;
 // $snow        : #F9F9F9;
 // $vapor       : #F6F6F6;
 // $white-smoke : #F5F5F5;
-// $silver      : #EFEFEF;
+ $silver      : #EFEFEF;
 // $smoke       : #EEEEEE;
 // $gainsboro   : #DDDDDD;
 // $iron        : #CCCCCC;
@@ -1097,15 +1097,15 @@ $large: $large-up;
 // $include-html-reveal-classes: $include-html-classes;
 
 // We use these to control the style of the reveal overlay.
-// $reveal-overlay-bg: rgba($black, .45);
+ $reveal-overlay-bg: rgba(0,0,0,.45);
 // $reveal-overlay-bg-old: $black;
 
 // We use these to control the style of the modal itself.
-// $reveal-modal-bg: $white;
+ $reveal-modal-bg: #fff;
 // $reveal-position-top: rem-calc(100);
 // $reveal-default-width: 80%;
 // $reveal-modal-padding: rem-calc(20);
-// $reveal-box-shadow: 0 0 10px rgba($black,.4);
+ $reveal-box-shadow: none;
 
 // We use these to style the reveal close button
 // $reveal-close-font-size: rem-calc(40);
@@ -1115,13 +1115,13 @@ $large: $large-up;
 // $reveal-close-weight: $font-weight-bold;
 
 // We use this to set the default radius used throughout the core.
-// $reveal-radius: $global-radius;
-// $reveal-round: $global-rounded;
+ $reveal-radius: 0;
+ $reveal-round: 0;
 
 // We use these to control the modal border
-// $reveal-border-style: solid;
+ $reveal-border-style: solid;
 // $reveal-border-width: 1px;
-// $reveal-border-color: $steel;
+ $reveal-border-color: $silver;
 
 // $reveal-modal-class: "reveal-modal";
 // $close-reveal-modal-class: "close-reveal-modal";

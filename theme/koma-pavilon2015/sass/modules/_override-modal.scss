@@ -1,0 +1,38 @@
+
+//
+// check modal section in _settings.scss first !!!
+//
+
+.reveal-modal {
+    &.fixed {
+        position: fixed;
+        top: 10% !important;
+        bottom: 10%;
+        margin: auto;
+    }
+}
+
+
+.reveal-modal,
+.reveal-modal.fixed {
+
+    // close button
+    .close-reveal-modal {
+        top:20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        vertical-align: middle;
+        overflow: hidden;
+        font-size: 50px;
+        line-height: 50px;
+
+        &:hover {
+            color: $color-koma-red;
+        }
+    }
+}
+
