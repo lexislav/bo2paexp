@@ -76,10 +76,6 @@ $navbar-height: $navbar-height_AB;
     height: 472px;
 }
 
-// move this
-.l-page_blog .pagination {
-    padding: 0 50px;
-}
 
 @import "modules/module-blog";
 @import "modules/module-list";
@@ -91,6 +87,24 @@ $navbar-height: $navbar-height_AB;
 
 @import "modules/override-modal";
 @import "modules/override-row";
+
+// pagination
+.l-page_blog .pagination {
+    padding: 0 50px;
+}
+
+.m-pagination {
+    & > div {
+        display: inline-block;
+        padding: 20px 30px ;
+        font-size: rem-calc(18);
+    }
+    .current {
+        border: 1px solid black;
+    }
+}
+
+//
 
 #skrollr-body {
     pointer-events: none;
