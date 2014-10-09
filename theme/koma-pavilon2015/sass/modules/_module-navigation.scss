@@ -125,8 +125,11 @@
         }
     }
 
+    // overlay menu
+
     .m-nav--overlay {
         display: none;
+
         position: fixed;
         z-index: 201;
         top: 0;
@@ -136,6 +139,7 @@
         margin: auto;
         background-color: #f5f5f5;
 
+        // close button
         &:after {
             display: block;
             position: fixed;
@@ -166,13 +170,13 @@
         position: absolute;
         z-index: 210;
         width: 90%;
-        height: 840px;
+        height: auto;
         overflow: auto;
         margin: auto;
-        top: 0;
         left: 0;
-        bottom: 0;
         right: 0;
+        top: 50% - 3%; // 10% optical compensation
+        transform: translateY(-50%);
 
         @media #{size(B)} {
             width: 80%;
@@ -189,6 +193,9 @@
             margin-bottom: $base-spacing / 2;
 
             li {
+                @include fnt-secondary-headline();
+                font-size: rem-calc(16);
+                font-weight: 500;
                 display: block;
                 float: left;
 
@@ -235,9 +242,9 @@
             font-size: 16px !important;
             .m-nav--lang,
             .m-nav--logo,
-            .m-nav--button{
+            .m-nav--button {
                 max-height: $navbar-height_AB;
-            font-size: 16px !important;
+                font-size: 16px !important;
                 line-height: $navbar-height_AB !important;
             }
         }
@@ -250,8 +257,8 @@
 
         a {
 
-            font-weight: 800;
-            font-size: rem-calc(30);
+            font-weight: 600;
+            font-size: rem-calc(32);
 
             text-align: left;
             display: block;
@@ -264,13 +271,11 @@
     }
 
     .m-item--description p {
-        font-weight: 600;
-
+        @include fnt-secondary-headline();
+        font-size: rem-calc(16);
+        font-weight: 500;
     }
 
-    .m-item--meta {
-
-    }
 
 }
 

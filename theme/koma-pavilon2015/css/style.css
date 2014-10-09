@@ -3632,13 +3632,13 @@ body {
     position: absolute;
     z-index: 210;
     width: 90%;
-    height: 840px;
+    height: auto;
     overflow: auto;
     margin: auto;
-    top: 0;
     left: 0;
-    bottom: 0;
-    right: 0; }
+    right: 0;
+    top: 47%;
+    transform: translateY(-50%); }
     @media only screen and (min-width: 641px) {
       .m-nav .m-nav--menu {
         width: 80%; } }
@@ -3656,8 +3656,16 @@ body {
       .m-nav .m-nav--menu ul:after {
         clear: both; }
       .m-nav .m-nav--menu ul li {
+        font-family: "nudista-web";
+        font-weight: 300;
+        -webkit-font-smoothing: antialiased;
+        font-size: 1.6rem;
+        font-size: 1.06667rem;
+        font-weight: 500;
         display: block;
         float: left; }
+        .m-nav .m-nav--menu ul li.fnt-white {
+          font-weight: 300; }
         .m-nav .m-nav--menu ul li:before {
           content: "/";
           display: inline;
@@ -3720,15 +3728,22 @@ body {
     line-height: 48px !important; }
 
 .m-nav .m-item .m-item--hed a {
-  font-weight: 800;
-  font-size: 2rem;
+  font-weight: 600;
+  font-size: 2.13333rem;
   text-align: left;
   display: block;
   color: #000; }
   .m-nav .m-item .m-item--hed a:hover {
     color: #c20e1a; }
 .m-nav .m-item .m-item--description p {
-  font-weight: 600; }
+  font-family: "nudista-web";
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  font-size: 1.6rem;
+  font-size: 1.06667rem;
+  font-weight: 500; }
+  .m-nav .m-item .m-item--description p.fnt-white {
+    font-weight: 300; }
 
 .ags-slider {
   width: 100%;
