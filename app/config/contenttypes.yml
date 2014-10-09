@@ -44,18 +44,14 @@ zpravodaj:
             extensions: [ gif, jpg, png ]
             label: galerie
             postfix: ideální velikost 1280x960, minimální velikost 1024x768px, název souboru bez českých znaků a mezer!
-        file:
-            type: file
-            group: Soubory
-            extensions: [ doc, docx, pdf, xls, xlsx, ods, odt ]
-            label: jednotlivý soubor
         filelist:
             type: filelist
+            group: Soubory
             extensions: [ doc, docx, pdf, xls, xlsx, ods, odt ]
-            label: Více souborů
+            label: Spobory(y) ke stažení
     relations:
         zpravodaj:
-            multiple: false
+            multiple: true
             label: Vyberte článek
             order: -id
             format: "{{ item.title|escape }} <span>(№ {{ item.id }})</span>"
