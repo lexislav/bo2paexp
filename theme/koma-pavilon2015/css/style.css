@@ -4187,7 +4187,7 @@ body {
   text-decoration: underline; }
 
 .m-section_pavilondark {
-  height: 540px;
+  height: 520px;
   background-position: 0% 0%;
   background-attachment: fixed; }
   .m-section_pavilondark article {
@@ -4204,7 +4204,7 @@ body {
       margin-bottom: 0; }
     .m-section_pavilondark article .m-item--summary {
       position: absolute;
-      bottom: 40px;
+      bottom: 60px;
       margin-bottom: 0; }
       .m-section_pavilondark article .m-item--summary nav {
         text-align: right; }
