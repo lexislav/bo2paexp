@@ -10,10 +10,10 @@
 
 
     &.mm-dark {
-        background: #D8D8D8;
+        background-color: #D8D8D8;
     }
     &.mm-bluish {
-        background: rgba(165,192,233,0.32);
+        background-color: rgba(165,192,233,0.32);
     }
 }
 
@@ -71,6 +71,11 @@
 }
 
 .m-section_pavilondark {
+    height: 540px;
+    //background-size: cover;
+    background-position: 0% 0%;
+    background-attachment: fixed;
+
     article {
         @include clearfix();
         height: 100%;
