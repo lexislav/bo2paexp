@@ -17,7 +17,7 @@ theme: koma-pavilon2015
 
 # The locale that'll be used by the application. If no locale is set the
 # fallback locale is 'en_GB'. For available options, see: http://docs.bolt.cm/locales
-locale: en_GB
+locale: cs_CZ
 #timezone: UTC
 i18n_locales:
   - cs
