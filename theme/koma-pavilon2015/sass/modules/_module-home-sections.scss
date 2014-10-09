@@ -70,7 +70,29 @@
     }
 }
 
+.m-section_pavilondark {
+    article {
+        @include clearfix();
+        height: 100%;
+        position: relative;
+        .m-item--meta {
+            height: 100%;
+            position: relative;
+            margin-bottom: 0;
+        }
+        .m-item--summary {
+            position: absolute;
+            bottom: 40px;
+            margin-bottom: 0;
 
+            nav {
+                text-align: right;
+            }
+        }
+
+    }
+
+}
 
 // text section
 

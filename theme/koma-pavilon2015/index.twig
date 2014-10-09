@@ -6,7 +6,7 @@
 
 <div class="l-section m-section_pavilon">
 
-        <div class="row">
+    <div class="row">
         <div class="small-12 large-6 columns">
             <h1>Vítejte na stránkách věnovaných českému pavilonu EXPO2015</h1>
         </div>
@@ -127,34 +127,32 @@
 </div>
 
 <div class="l-section m-section_pavilondark mm-dark" style="background-image: url({{ paths.theme }}/assets/homepage/hp04_pavilon_at_night.jpg); height: 540px;">
-    <div class="row">
-        <article style="position: relative; " class="clearfix">
-            <header class="small-12 large-6 columns mgr-half">
+    <article>
+
+        <div class="row">
+            <header class="small-12 large-6 columns">
                 <h1 class="fnt-primary-headline fnt-white">Nahlédněte do pavilonu</h1>
-
-                    <div class="fnt-secondary-headline fnt-white fnt-shadow" style="padding-top: 200px">
-                        Prohlédněte si koncepci českého pavilonu,
-                        jeho nejzajímavější části či fotogalerie z prostor pavilonu a expozic na následující straně
-                    </div>
             </header>
+        </div>
 
-            <footer style="position: absolute; right: 20px; bottom: 0">
-                <a href="/pavilon.php" title="Pavilon">
-                    <div class="svg-button mm-white">
-                        <svg width="54px" height="54px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-                            <g id="button" sketch:type="MSArtboardGroup" stroke="#000000" stroke-width="4">
-                                <g sketch:type="MSLayerGroup" transform="translate(2.000000, 2.000000)">
-                                    <circle id="Oval-10" sketch:type="MSShapeGroup" cx="25" cy="25" r="25" fill="none"></circle>
-                                    <path d="M10.7253085,25.5555554 L39.2851168,25.5555554" id="Line" fill="none"></path>
-                                    <path d="M26.5941654,10.8213824 L40.5320305,24.7102713 L26.5941654,38.6481364" fill="none"></path>
-                                </g>
-                            </g>
-                        </svg>
+        <div class="row m-item--meta">
+            <div class="m-item--summary">
+                <div class="small-12 large-6 columns">
+                    <div class="m-item--copy">
+                        <div class="fnt-secondary-headline fnt-white fnt-shadow">
+                            Prohlédněte si koncepci českého pavilonu,
+                            jeho nejzajímavější části či fotogalerie z prostor pavilonu a expozic na následující straně
+                        </div>
                     </div>
-                </a>
-            </footer>
-        </article>
-    </div>
+                </div>
+
+                <footer class="small-12 large-6 columns">
+                    <nav><a href="/pavilon.php" title="Pavilon"><i class="m-icon i-arrow x4 "></i></a></nav>
+                </footer>
+
+            </div>
+        </div>
+    </article>
 </div>
 
 
@@ -225,15 +223,15 @@
         </header>
 
         <div class="row">
-        {% setcontent zpravodaj = 'blog/latest/4' %}
-        {% for record in zpravodaj %}
-            {% include '_inc-blog-post-small.twig' %}
-        {% else %}
-            <h2>{{ __("No content found") }}.</h2>
-                    <p>
-                        Unfortunately, no content could be found. Try another page, or go to the <a href="{{ paths.root }}">homepage</a>.
-                    </p>
-        {% endfor %}
+            {% setcontent zpravodaj = 'blog/latest/4' %}
+            {% for record in zpravodaj %}
+                {% include '_inc-blog-post-small.twig' %}
+            {% else %}
+                <h2>{{ __("No content found") }}.</h2>
+                <p>
+                    Unfortunately, no content could be found. Try another page, or go to the
+                    <a href="{{ paths.root }}">homepage</a>. </p>
+            {% endfor %}
         </div>
     </article>
 </div>
@@ -248,5 +246,4 @@
 <script src="{{ paths.theme }}js/app.js"></script>
 
 {% include '_inc-analytics.twig' %}
-</body>
-{% include '_footer.twig' %}
+</body>{% include '_footer.twig' %}

@@ -4186,6 +4186,25 @@ body {
   font-size: 1.33333rem;
   text-decoration: underline; }
 
+.m-section_pavilondark article {
+  height: 100%;
+  position: relative; }
+  .m-section_pavilondark article:before, .m-section_pavilondark article:after {
+    content: " ";
+    display: table; }
+  .m-section_pavilondark article:after {
+    clear: both; }
+  .m-section_pavilondark article .m-item--meta {
+    height: 100%;
+    position: relative;
+    margin-bottom: 0; }
+  .m-section_pavilondark article .m-item--summary {
+    position: absolute;
+    bottom: 40px;
+    margin-bottom: 0; }
+    .m-section_pavilondark article .m-item--summary nav {
+      text-align: right; }
+
 @media only screen {
   .m-data-stats .rbox,
   .m-data-stats .lbox {
@@ -4629,10 +4648,9 @@ body {
     background-size: contain; }
 
 .m-icon {
-  width: 1em;
-  height: 1em;
+  width: 20px;
+  height: 20px;
   display: inline-block;
-  margin-left: 8px;
   cursor: pointer; }
   .m-icon span {
     display: none; }
@@ -4640,9 +4658,10 @@ body {
     content: " ";
     width: 20px;
     height: 20px;
+    float: right;
     position: relative;
     display: block;
-    background-position: 0% 50%;
+    background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: contain; }
   .m-icon.mm-hover {
@@ -4652,6 +4671,25 @@ body {
       -moz-transition: opacity 0.3s;
       transition: opacity 0.3s;
       opacity: 1; }
+  .m-icon.x2 {
+    width: 40px;
+    height: 40px;
+    line-height: 40px; }
+    .m-icon.x2:before {
+      width: 40px;
+      height: 40px;
+      line-height: 40px; }
+  .m-icon.x4 {
+    width: 100px;
+    height: 100px;
+    line-height: 100px; }
+    .m-icon.x4:before {
+      width: 100px;
+      height: 100px;
+      line-height: 100px; }
+
+.i-arrow:before {
+  background-image: url("../assets/ikony/sipka-big.png"); }
 
 .i-info:before {
   background-image: url("../assets/ikony/info.svg"); }
