@@ -2,6 +2,14 @@
  * Created by hotovec on 25.9.2014.
  */
 
+/*$( document ).ready(function() {
+    console.log( "document loaded" );
+});*/
+
+$( window ).load(function() {
+    $("#preloader").fadeOut(300);
+});
+
 $(function () {
 
     // menu color swithching
