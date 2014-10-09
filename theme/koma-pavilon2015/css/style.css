@@ -4499,12 +4499,12 @@ body {
     background-position: 50% 50%; }
     .m-blog-item .m-item--image img {
       width: 100%; }
-  .m-blog-item .m-item--section {
+  .m-blog-item .m-item--meta {
     font-family: "nudista-web";
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     font-size: 1.6rem;
-    font-weight: 600;
+    font-weight: 400;
     position: absolute;
     top: 14px;
     left: 14px;
@@ -4514,37 +4514,41 @@ body {
     color: white;
     text-transform: uppercase;
     padding: 4px 8px; }
-    .m-blog-item .m-item--section.fnt-white {
+    .m-blog-item .m-item--meta.fnt-white {
       font-weight: 300; }
-    .m-blog-item .m-item--section a {
+    .m-blog-item .m-item--meta a {
       color: white; }
-      .m-blog-item .m-item--section a:hover {
+      .m-blog-item .m-item--meta a:hover {
         text-decoration: underline; }
   .m-blog-item:hover a {
     color: white; }
   .m-blog-item:hover .m-item--hed {
     background-color: #c20e1a;
     color: white; }
-  .m-blog-item.mm-subhero .m-item--hed {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    margin: auto;
-    font-size: 1.33333rem;
-    color: white;
-    background-color: rgba(0, 0, 0, 0.56); }
-    .m-blog-item.mm-subhero .m-item--hed a {
-      color: white; }
-  .m-blog-item.mm-subhero .m-item--section {
-    font-size: 1rem; }
-  .m-blog-item.mm-subhero:hover .m-item--hed {
-    background-color: #c20e1a;
-    text-decoration: underline; }
-  .m-blog-item.mm-featured .m-item--section {
+  .m-blog-item.mm-subhero {
+    max-height: 420px;
+    overflow: hidden; }
+    .m-blog-item.mm-subhero .m-item--hed {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: auto;
+      height: auto;
+      font-size: 1.33333rem;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.56); }
+      .m-blog-item.mm-subhero .m-item--hed a {
+        color: white; }
+    .m-blog-item.mm-subhero .m-item--meta {
+      font-size: 1rem; }
+    .m-blog-item.mm-subhero:hover .m-item--hed {
+      background-color: #c20e1a;
+      text-decoration: underline; }
+  .m-blog-item.mm-featured .m-item--meta {
     background-color: #c20e1a;
     color: white; }
-    .m-blog-item.mm-featured .m-item--section:hover {
+    .m-blog-item.mm-featured .m-item--meta a:hover {
       text-decoration: underline; }
 
 .m-list header > h2 {

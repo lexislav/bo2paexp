@@ -33,11 +33,8 @@
     }
 
     .m-item--meta {
-    }
-
-    .m-item--section {
         @include fnt-secondary-headline();
-        font-weight: 600;
+        font-weight: 400;
         position: absolute;
         top: 14px;
         left: 14px;
@@ -72,12 +69,17 @@
 
     &.mm-subhero {
 
+        max-height: 420px;
+        overflow: hidden;
+
         .m-item--hed {
             position: absolute;
             bottom: 0;
             right: 0;
             left: 0;
             margin: auto;
+
+            height: auto;
 
             font-size: rem-calc(20);
             color: white;
@@ -89,7 +91,7 @@
             }
         }
 
-        .m-item--section {
+        .m-item--meta {
             font-size: rem-calc(15);
         }
 
@@ -102,11 +104,11 @@
     }
 
     &.mm-featured {
-        .m-item--section {
+        .m-item--meta {
             background-color: $color-koma-red;
 
             color: white;
-            &:hover {
+            a:hover {
                 text-decoration: underline;
             }
 
