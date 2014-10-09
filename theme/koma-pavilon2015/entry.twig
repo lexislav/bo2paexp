@@ -8,12 +8,15 @@
 <div class="row">
     <div class="small-12 columns">
         <nav class="breadcrumbs">
+            {% if record.contenttype.name == "Zpravodaj" %}
             <a href="{{paths.root}}{{ app.locale }}/blog">ZRAVODAJ PAVILONU</a>
             <a class="current" href="#">KATEGORIE</a>
+            {% elseif record.contenttype.name == "Historie" %}
+            <a href="{{paths.root}}{{ app.locale }}/historie">Historie českých pavilonů EXPO</a>{% endif %}
         </nav>
     </div>
 </div>
-{{ dump(record.values) }}
+
 <article class="m-story">
 
     <div class="row">
@@ -21,7 +24,9 @@
             <h1 class="m-item--hed">{{ record['title_' ~ app.locale] }}</h1>
 
             <div class="m-item--meta">
-                <div class="m-item--date-published">Datum vydání: {{ record.publishdate }}</div>
+                {% if record.contenttype.name != "Historie" %}
+                <div class="m-item--date-published">Datum vydání: {{ record.datepublish }}</div>
+                {% endif %}
             </div>
         </header>
      
@@ -32,7 +37,11 @@
                 {% if previous %}
                     <a href="{{ previous.link }}" class="m-icon mm-prev" title="{{ previous.title }}"><i>previous</i></a>
                 {% endif %}
+                {% if record.contenttype.name == "Zpravodaj" %}
                 <a href="{{paths.root}}{{ app.locale }}/blog" class="m-icon mm-top"><i>top</i></a>
+                {% elseif record.contenttype.name == "Historie" %}
+                <a href="{{paths.root}}{{ app.locale }}/historie" class="m-icon mm-top"><i>top</i></a>
+                {% endif %}
                 {% set next = record.next('id') %}
                 {% if next %}
                     <a href="{{ next.link }}" class="m-icon mm-next" title="{{ next.title }}"><i>next</i></a>
