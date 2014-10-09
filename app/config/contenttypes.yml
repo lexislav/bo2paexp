@@ -151,7 +151,7 @@ historie:
         slug:
             type: slug
             uses: title_cs
-        rok_cs:
+        rok:
             type: text
             label: Rok konání
         mesto_cs:
@@ -194,10 +194,10 @@ historie:
             type: imagelist
     record_template: entry.twig
     listing_template: historie.twig
-    listing_records: 20
+    listing_records: 60
     default_status: publish
     sort: -datepublish
-    recordsperpage: 20
+    recordsperpage: 60
     show_on_dashboard: false
 
 

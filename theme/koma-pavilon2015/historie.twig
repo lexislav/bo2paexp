@@ -26,24 +26,28 @@
 
 </div>
 
-
 <div class="row">
-    <?php for ($i = 1; $i <= 20; $i++) { ?>
-        <div class="small-6 large-3 columns">
+    {% for record in records %}
+    <div class="small-6 large-3 columns {% if loop.last %}end{% endif%}">
             <div class="m-story mm-history">
                 <header>
-                    <div class="m-item--image" style="background-image: url('http://foundation.zurb.com/docs/assets/img/examples/satelite.jpg')">
-                        <a href="single.php"><img src="http://foundation.zurb.com/docs/assets/img/examples/satelite.jpg"></a>
+                    <div class="m-item--image" style="background-image: url('{% if record.image!="" %}{{ thumbnail(record.image) }}{% endif %}')">
+                        <a href="{{ record.link }}">
+                            {% if record.image!="" %}
+                                <img src="{{ thumbnail(record.image) }}" alt="">
+                                {% else %}
+                                <img src="{{ paths.theme }}assets/no_image_thumb_blue.svg" />
+                            {% endif %}
+                        </a>
                     </div>
                     <div class="m-item--summary">
-                        <h1 class="m-item--hed">1968</h1>
-
-                        <div class="m-item--description">Paříž</div>
+                        <h1 class="m-item--hed">{{ record.rok }}</h1>
+                        <div class="m-item--description">{{ record['mesto_' ~ app.locale ] }}</div>
                     </div>
                 </header>
             </div>
         </div>
-    <?php } ?>
+    {% endfor %}
 </div>
 
 
