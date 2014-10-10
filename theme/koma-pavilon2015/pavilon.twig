@@ -325,12 +325,20 @@
 <script type="text/javascript" src="{{ paths.theme }}components/slick/slick/slick.min.js"></script>
 <script type="text/javascript" src="{{ paths.theme }}components/foundation/js/foundation/foundation.js"></script>
 <script type="text/javascript" src="{{ paths.theme }}components/foundation/js/foundation/foundation.reveal.js"></script>
+
+<script src="{{ paths.theme }}js/app.js"></script>
+
 <script type="text/javascript">
 
-    $(document).foundation();
-
     $(document).ready(function () {
-        $(".m-carousel > .m-carousel--item").css('height', $(window).height() - 100);
+
+        if(isTouch) {
+            $(".m-carousel > .m-carousel--item").css('height', 420);
+            $(".m-carousel").css('height', 420);
+        } else {
+            $(".m-carousel").css('height', 'auto');
+            $(".m-carousel > .m-carousel--item").css('height', $(window).height());
+        }
 
         $(".m-schema-spacer").each(function () {
             var el = $(this);
@@ -347,6 +355,15 @@
             mobileDeceleration: 0.01
         });
 
+
+        $(window).resize(function() {
+           if(!isTouch) {
+               $(".m-carousel > .m-carousel--item").css('height', $(window).height());
+           }
+        });
+
+
+
         // debug
         //$('#myModal').foundation('reveal', 'open');
 
@@ -354,12 +371,6 @@
 
 
 </script>
-
-<script src="{{ paths.theme }}js/app.js"></script>
-
 {% include '_inc-analytics.twig' %}
-
-
 </body>
-
 {% include '_footer.twig' %}
