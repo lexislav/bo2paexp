@@ -184,7 +184,7 @@
         }
 
         ul, ol {
-            margin: 0 30px;
+            margin: 0 34px;
             padding: 0;
             list-style: none;
             li {
@@ -214,10 +214,13 @@
                     position: relative;
                     span {
                         position: absolute;
-                        width: 20px;
-                        left: -30px;
+                        width: 24px;
+                        line-height: 24px;
+                        left: -34px;
                         z-index: 100;
+                        margin-top: -1px;
                         text-align: center;
+                        font-size: rem-calc(14);
                     }
 
                 }
@@ -234,19 +237,19 @@
             }
             &.mm-blue {
                 li h3 span {
-                    background-color: #0323cc;
+                    background-color: #09a6dc;
                     color: white;
                 }
             }
             &.mm-green {
                 li h3 span {
-                    background-color: #0d5b27;
+                    background-color: #427506;
                     color: white;
                 }
             }
             &.mm-yellow {
                 li h3 span {
-                    background-color: #cc8007;
+                    background-color: #df9a26;
                     color: white;
                 }
             }

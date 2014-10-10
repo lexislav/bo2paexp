@@ -4017,7 +4017,7 @@ body {
           margin-right: -100px;
           margin-bottom: 60px; } }
     .m-schema .m-schema--label ul, .m-schema .m-schema--label ol {
-      margin: 0 30px;
+      margin: 0 34px;
       padding: 0;
       list-style: none; }
       .m-schema .m-schema--label ul li, .m-schema .m-schema--label ol li {
@@ -4045,23 +4045,26 @@ body {
           position: relative; }
           .m-schema .m-schema--label ul li h3 span, .m-schema .m-schema--label ol li h3 span {
             position: absolute;
-            width: 20px;
-            left: -30px;
+            width: 24px;
+            line-height: 24px;
+            left: -34px;
             z-index: 100;
-            text-align: center; }
+            margin-top: -1px;
+            text-align: center;
+            font-size: 0.93333rem; }
         .m-schema .m-schema--label ul li:last-of-type, .m-schema .m-schema--label ol li:last-of-type {
           border-bottom: none; }
       .m-schema .m-schema--label ul.mm-red li h3 span, .m-schema .m-schema--label ol.mm-red li h3 span {
         background-color: #c00;
         color: white; }
       .m-schema .m-schema--label ul.mm-blue li h3 span, .m-schema .m-schema--label ol.mm-blue li h3 span {
-        background-color: #0323cc;
+        background-color: #09a6dc;
         color: white; }
       .m-schema .m-schema--label ul.mm-green li h3 span, .m-schema .m-schema--label ol.mm-green li h3 span {
-        background-color: #0d5b27;
+        background-color: #427506;
         color: white; }
       .m-schema .m-schema--label ul.mm-yellow li h3 span, .m-schema .m-schema--label ol.mm-yellow li h3 span {
-        background-color: #cc8007;
+        background-color: #df9a26;
         color: white; }
   .m-schema .m-schema--overlay {
     position: absolute;
