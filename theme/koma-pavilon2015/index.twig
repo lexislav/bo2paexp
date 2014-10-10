@@ -22,7 +22,7 @@
         </div>
 
         <div class="small-12 large-4 columns ">
-            {% setcontent blok = 'bloky' where { id: '2' } %}
+        {% setcontent blok = 'bloky' where { id: '2' } %}
             <h3>{{ blok['title_' ~ app.locale] }}
                 {% if blok.related %}
                 {% set relatedmodals = blok.related() %}
@@ -34,14 +34,26 @@
         </div>
 
         <div class="small-12 medium-6 large-4 columns ">
-            <h3>Green</h3>
-
-            <p>Možnost rozebiratelnosti pavilonu umožňuje využít neobnovitelné zdroje mnohem efektivněji. Celý pavilon bude edukativně představovat možnosti obnovitelnosti, přečisťování a znovuvyužití bežných elementů jako je voda.</p>
+        {% setcontent blok = 'bloky' where { id: '3' } %}
+            <h3>{{ blok['title_' ~ app.locale] }}
+                {% if blok.related %}
+                {% set relatedmodals = blok.related() %}
+                {% for related in relatedmodals|order('id') %}
+                <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                {%  endfor %}
+                {% endif %}</h3>
+            <p>{{ blok['body_' ~ app.locale] }}</p>
         </div>
         <div class="small-12 medium-6 large-4 columns ">
-            <h3>Inteligent</h3>
-
-            <p>Návrh umožňuje pavilonu zastoupit několik funkcí. Po návratu do vlasti se tak bazén může stát plovoucím pontonem u pražských náplavek a pomoci rozvíjet koncepci oživovaní městských břehů. Modulární část se stane jednoduchým zásahem mateřskou školkou.</p>
+        {% setcontent blok = 'bloky' where { id: '4' } %}
+            <h3>{{ blok['title_' ~ app.locale] }}
+                {% if blok.related %}
+                {% set relatedmodals = blok.related() %}
+                {% for related in relatedmodals|order('id') %}
+                <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                {%  endfor %}
+                {% endif %}</h3>
+            <p>{{ blok['body_' ~ app.locale] }}</p>
         </div>
     </div>
 
