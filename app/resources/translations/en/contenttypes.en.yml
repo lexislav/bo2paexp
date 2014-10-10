@@ -1,5 +1,5 @@
 # app/resources/translations/cs/messages.cs.yml -- generated on 2014/10/09 16:28:17
-# 474 untranslated strings
+# 469 untranslated strings
 
 "%contenttypes% overview":  #
 "%contenttypes%":  #
@@ -157,7 +157,6 @@
 "Folder permissions insufficient":  #
 "Folders":  #
 "Full list…":  #
-"Generální partneři pavilonu":  #
 "Global Permissions":  #
 "Hide":  #
 "Hlavní partneři":  #
@@ -211,7 +210,6 @@
 "More %contenttypes% »":  #
 "More info / Help":  #
 "Město (EN)":  #
-"Město":  #
 "New %contenttype%":  #
 "New user":  #
 "No %contenttypes% available.":  #
@@ -448,7 +446,6 @@
 "Your database is now up to date.":  #
 "Your password":  #
 "Your username":  #
-"Zpravodaj Pavilonu":  #
 "Zvýraznit zprávu":  #
 "and edited":  #
 "back to editing":  #
@@ -473,4 +470,13 @@
 "show all":  #
 "unknown":  #
 "yes":  #
-"Čtěte také:":  #
+
+
+
+#-----------------------------------------
+# 4 translated strings
+
+"Čtěte také:":  "Related readings:"
+"Generální partneři pavilonu":  "General partners of pavilion"
+"Město":  "City"
+"Zpravodaj Pavilonu":  "News from pavilion"
