@@ -29,7 +29,7 @@
                 {% endif %}
             </div>
         </header>
-     
+
         <div class="small-6 large-4 columns">
             <nav class="m-light-nav mm-big text-right visible-for-large-up">
                 <div class="m-light-nav--warp">
@@ -45,7 +45,7 @@
                 {% set next = record.next('id') %}
                 {% if next %}
                     <a href="{{ next.link }}" class="m-icon mm-next" title="{{ next.title }}"><i>next</i></a>
-                {% endif %}            
+                {% endif %}
                 </div>
             </nav>
         </div>
@@ -75,14 +75,14 @@
                 <div class="m-item--image mgr-full">
                         <a href="{{ image(record.image) }}">
                         <img src="{{ thumbnail(record.image, 620, 465, crop) }}">
-                        </a> 
+                        </a>
                 </div>
             </div>
         </div>
         {% endif %}
 
         {% include "_inc-entry-aside.twig" %}
-        
+
     </div>
     <div class="row">
         <div class="large-12 columns mgr-full">
@@ -135,8 +135,9 @@
 {% include '_partners.twig' %}
 {% include '_inc-footer.twig' %}
 
-<script src="{{ paths.theme }}js/app.js"></script>
+{% include '_inc-global-scripts.twig' %}
+<!-- page custom JS -->
 
-{% include '_inc-analytics.twig' %}
+
 </body>
 {% include '_footer.twig' %}
