@@ -8,21 +8,29 @@
 
     <div class="row">
         <div class="small-12 large-6 columns">
-            <h1>Vítejte na stránkách věnovaných českému pavilonu EXPO2015</h1>
+        {% setcontent blok = 'bloky' where { id: '1' } %}
+            <h1>
+                {{ blok['title_' ~ app.locale] }}
+                {% if blok.related %}<i class="m-icon i-info mm-hover" data-reveal-id="{{blok.related.slug}}"><span>moreinfo</span></i>{% endif %}
+            </h1>
         </div>
         <div class="small-12 medium-10 large-6 columns mgr-third">
-            <h2>Český pavilon EXPO2015 představuje špičku české modulární architektury. Způsob výstavby umožní stavbě existovat na více místech a najít uplatnění i po skončení výstavy.</h2>
+            <h2>{{ blok['body_' ~ app.locale] }}</h2>
         </div>
         <div class="small-12 columns mgr-half">
             <img src="{{ paths.theme }}/assets/pavilon-skica.png" alt="" />
         </div>
 
         <div class="small-12 large-4 columns ">
-            <h3>Inteligent</h3>
-
-            <p>Unikátní koncept architektonického řešení umožňují
-               principy modulární výstavby. Právě její využití
-               umožní recyklaci pavilonu v budoucnosti.</p>
+            {% setcontent blok = 'bloky' where { id: '2' } %}
+            <h3>{{ blok['title_' ~ app.locale] }}
+                {% if blok.related %}
+                {% set relatedmodals = blok.related() %}
+                {% for related in relatedmodals|order('id') %}
+                <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                {%  endfor %}
+                {% endif %}</h3>
+            <p>{{ blok['body_' ~ app.locale] }}</p>
         </div>
 
         <div class="small-12 medium-6 large-4 columns ">
@@ -235,6 +243,34 @@
         </div>
     </article>
 </div>
+
+<!-- Modals -->
+<section class="modals">
+    
+    {% setcontent modaly = 'modaly' where { statiky: 'Domácí strana' } %}
+    {% for modal in modaly %}
+    <div id="myModal" class="reveal-modal fixed xlarge m-modal" data-reveal>
+        <article>
+            <header class="row">
+                <div class="small-12 columns">
+                    <h2 class="m-item--hed">Awesome. I have it.</h2>
+                    <div class="m-item--description">Description</div>
+                </div>
+            </header>
+            <div class="row">
+                <div class="small-12 medium-6 columns">
+                    <div class="m-item--copy">
+                        {# article body #}
+                        <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <a class="close-reveal-modal">&#215;</a>
+    </div>
+    {% endfor %}
+</section>
 
 
 {% include '_partners.twig' %}

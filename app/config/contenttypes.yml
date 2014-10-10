@@ -223,11 +223,8 @@ bloky:
         body_en:
             type: textarea
             height: 300px
-        template:
-            type: templateselect
-            filter: '*.twig'
     relations:
-        modals:
+        modaly:
             multiple: false
             label: Vyberte obsah s detailním popisem
             order: -id
@@ -247,20 +244,21 @@ modaly:
         title_cs:
             type: text
             class: large
-        title_en:
-            type: text
-            class: large
+            group: Texty
         slug:
             type: slug
             uses: title_cs
         body_cs:
             type: html
             height: 300px
+        image:
+            type: image
+        title_en:
+            type: text
+            class: large
         body_en:
             type: html
             height: 300px
-        image:
-            type: image
     taxonomy: [ statiky ]
     show_on_dashboard: false
     record_template: entry.twig
