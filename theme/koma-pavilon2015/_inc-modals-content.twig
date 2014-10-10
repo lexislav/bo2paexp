@@ -1,5 +1,5 @@
 <section class="modals">  
-{% setcontent modaly = 'modaly' where { statiky: '{{ taxonomie }}' } %}
+{% setcontent modaly = 'modaly' where { statiky: taxonomie } %}
 {% for modal in modaly %}
 <div id="{{modal.slug}}" class="reveal-modal fixed xlarge m-modal" data-reveal>
     <article>
@@ -19,7 +19,9 @@
             <div class="small-12 medium-6 columns">
                 <div class="m-item--image">
                     {# article image #}
+                    {% if modal.image %}
                     <img src="{{ thumbnail(modal.image, 320, 240, fit) }}">
+                    {% endif %}
                 </div>
             </div>
         </div>
