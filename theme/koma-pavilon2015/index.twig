@@ -245,7 +245,7 @@
 </div>
 
 <!-- Modals -->
-<section class="modals">  
+<section class="modals">
 {% setcontent modaly = 'modaly' where { statiky: 'Domácí strana' } %}
 {% for modal in modaly %}
 <div id="{{modal.slug}}" class="reveal-modal fixed xlarge m-modal" data-reveal>
@@ -280,11 +280,18 @@
 {% include '_partners.twig' %}
 {% include '_inc-footer.twig' %}
 
+
+<script type="text/javascript" src="{{ paths.theme }}components/foundation/js/foundation/foundation.js"></script>
+<script type="text/javascript" src="{{ paths.theme }}components/foundation/js/foundation/foundation.reveal.js"></script>
+<script src="{{ paths.theme }}js/app.js"></script>
+
 <!-- page custom JS -->
+
 <script src="{{ paths.theme }}components/ags-slider/ags-slider.js"></script>
 <script src="{{ paths.theme }}js/progress-bar-scroll.js"></script>
-<script type="text/javascript">
-<script src="{{ paths.theme }}js/app.js"></script>
+
+
+
 
 {% include '_inc-analytics.twig' %}
 </body>{% include '_footer.twig' %}
