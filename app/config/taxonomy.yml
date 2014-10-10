@@ -20,7 +20,8 @@ stitky:
 statiky:
     slug: statiky
     singular_slug: statik
-    behaves_like: grouping
+    behaves_like: categories
+    multiple: true
     options: { homepage: "Domácí strana", pavilon: "O pavilonu", historie: "Historie", blog: "Zpravodaj" }
     has_sortorder: true
 

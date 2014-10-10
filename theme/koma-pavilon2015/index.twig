@@ -11,7 +11,12 @@
         {% setcontent blok = 'bloky' where { id: '1' } %}
             <h1>
                 {{ blok['title_' ~ app.locale] }}
-                {% if blok.related %}<i class="m-icon i-info mm-hover" data-reveal-id="{{blok.related.slug}}"><span>moreinfo</span></i>{% endif %}
+                {% if blok.related %}
+                {% set relatedmodals = blok.related() %}
+                {% for related in relatedmodals|order('id') %}
+                <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                {%  endfor %}
+                {% endif %}</h3>
             </h1>
         </div>
         <div class="small-12 medium-10 large-6 columns mgr-third">
@@ -53,7 +58,7 @@
                 <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
                 {%  endfor %}
                 {% endif %}</h3>
-            <p>{{ blok['body_' ~ app.locale] }}</p>
+            {{ blok['body_' ~ app.locale] }}
         </div>
     </div>
 
@@ -107,10 +112,20 @@
     <article>
         <header class="row mgr-half">
             <div class="small-12 large-5 columns">
-                <h1 class="fnt-primary-headline">Pavilon v kostce</h2>
+            {% setcontent blok = 'bloky' where { id: '5' } %}
+            <h1 class="fnt-primary-headline">
+                {{ blok['title_' ~ app.locale] }}
+            </h1>
             </div>
             <div class="small-12 large-7 columns">
-                <h3 class="fnt-secondary-headline">Přehled nejzákladnějších údajů o budově pavilonu a jeho aktuálním provozu na výstavišti v Miláně. Statistické údaje budou / jsou průběžně aktualizovány.</h3>
+                <h3 class="fnt-secondary-headline">{{ blok['body_' ~ app.locale] }}
+                {% if blok.related %}
+                {% set relatedmodals = blok.related() %}
+                {% for related in relatedmodals|order('id') %}
+                <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                {%  endfor %}
+                {% endif %}
+                </h3>
             </div>
         </header>
 
@@ -150,8 +165,9 @@
     <article>
 
         <div class="row">
+        {% setcontent blok = 'bloky' where { id: '6' } %}
             <header class="small-12 large-6 columns">
-                <h1 class="fnt-primary-headline fnt-white">Nahlédněte do pavilonu</h1>
+                <h1 class="fnt-primary-headline fnt-white">{{ blok['title_' ~ app.locale] }}</h1>
             </header>
         </div>
 
@@ -160,8 +176,13 @@
                 <div class="small-12 medium-9 large-8 columns">
                     <div class="m-item--copy">
                         <div class="fnt-secondary-headline fnt-white fnt-shadow">
-                            Prohlédněte si koncepci českého pavilonu,
-                            jeho nejzajímavější části či fotogalerie z prostor pavilonu a expozic na následující straně
+                            {{ blok['body_' ~ app.locale] }}
+                            {% if blok.related %}
+                            {% set relatedmodals = blok.related() %}
+                            {% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                            {%  endfor %}
+                            {% endif %}
                         </div>
                     </div>
                 </div>
