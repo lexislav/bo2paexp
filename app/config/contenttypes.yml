@@ -160,6 +160,9 @@ historie:
         tema_cs:
             type: text
             label: Téma výstavy
+        cztema_cs:
+            type: text
+            label: Téma české expozice
         autor-pavilonu:
             type: text
             label: Autor(ři) Pavilonu
@@ -183,6 +186,9 @@ historie:
         tema_en:
             type: text
             label: Téma výstavy (EN)
+        cztema_en:
+            type: text
+            label: Téma české expozice (EN)
         text_en:
             type: html
             height: 500px
