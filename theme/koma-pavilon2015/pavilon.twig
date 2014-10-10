@@ -297,29 +297,7 @@
 
 
 <!-- modals -->
-<section class="modals">
-    <div id="myModal" class="reveal-modal fixed xlarge m-modal" data-reveal>
-
-        <article>
-            <header class="row">
-                <div class="small-12 columns">
-                    <h2 class="m-item--hed">Awesome. I have it.</h2>
-                    <div class="m-item--description">Description</div>
-                </div>
-            </header>
-            <div class="row">
-                <div class="small-12 medium-6 columns">
-                    <div class="m-item--copy">
-                        {# article body #}
-                        <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-                    </div>
-                </div>
-            </div>
-        </article>
-
-        <a class="close-reveal-modal">&#215;</a>
-    </div>
-</section>
+{% include '_inc-modals-content.twig' with {'taxonomie': 'O pavilonu'} %}
 
 {% include '_inc-global-scripts.twig' %}
 <!-- page custom JS -->
