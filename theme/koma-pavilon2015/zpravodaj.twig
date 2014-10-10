@@ -56,7 +56,7 @@
                             <img src="{{ paths.theme }}assets/no_image_thumb_blue_slim.svg" />
                         {% endif %}</div>
                     <h1 class="m-item--hed">
-                        <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">{{ record['title_' ~ app.locale]|excerpt(13) }}</a>
+                        <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">{{ record['title_' ~ app.locale] }}</a>
                     </h1>
 
                     {% if record.taxonomy.kategorie is defined %}
