@@ -220,6 +220,7 @@ bloky:
         title_en:
             type: text
             class: large
+            group: (EN)      
         body_en:
             type: textarea
             height: 300px
@@ -266,6 +267,23 @@ modaly:
     listing_records: 10
     default_status: publish
     recordsperpage: 10
+
+
+Numbers:
+    name: Čísla
+    singular_name: číslo
+    fields:
+        title:
+            type: text
+            class: large
+            label: Název proměnné
+        slug:
+            type: slug
+        integerfield:
+             type: integer
+             label: Hodnota
+    show_on_dashboard: false
+
 
 Strany:
     name: Pages

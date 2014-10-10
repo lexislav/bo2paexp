@@ -136,8 +136,10 @@
                 </div>
             </div>
             <div class="small-12 medium-6 columns fnt-primary-body-m">
-                <div class="rbox"><span class="fnt-boxed-white">5200</span>počet návštěvníků za den:</div>
-                <div class="rbox"><span class="fnt-boxed-black">1 000 000</span>celkový počet návštěvníků</div>
+                {% setcontent numero = 'Čísla' where { id: '1' } %}
+                <div class="rbox"><span class="fnt-boxed-white">{{ numero.integerfield }}</span>počet návštěvníků za den:</div>
+                {% setcontent numero = 'Čísla' where { id: '2' } %}
+                <div class="rbox"><span class="fnt-boxed-black">{{ numero.integerfield }}</span>celkový počet návštěvníků</div>
             </div>
         </div>
 
@@ -202,21 +204,31 @@
     <article>
         <header class="row mgr-full">
             <div class="small-12 large-5 columns">
-                <h1 class="fnt-primary-headline">Za konceptem</h1>
+            {% setcontent blok = 'bloky' where { id: '7' } %}
+                <h1 class="fnt-primary-headline">{{ blok['title_' ~ app.locale] }}</h1>
             </div>
             <div class="small-12 large-7 columns">
-                <h3 class="fnt-secondary-headline">Koncept pavilonu přinesl přední výrobce modulární výstavby společnost KOMA Modular ve spolupráci s architektonickým atelierem CHYBIK KRISTOF AA. </h3>
+                <h3 class="fnt-secondary-headline">{{ blok['body_' ~ app.locale] }}
+                    {% if blok.related %}
+                    {% set relatedmodals = blok.related() %}
+                    {% for related in relatedmodals|order('id') %}
+                    <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                    {%  endfor %}
+                    {% endif %}
+                </h3>
             </div>
         </header>
         <div class="row">
             <div class="small-12 medium-4 large-4 columns mgr-half">
-                <img src="{{ paths.theme }}/assets/modul.png" alt="modul" />
+                <a href="#" data-reveal-id="city-modul" ><img src="{{ paths.theme }}/assets/modul.png" alt="modul" /></a>
             </div>
+            {% setcontent blok = 'bloky' where { id: '8' } %}
             <div class="small-12 medium-8 large-4 columns">
-                <p>Původní česká firma KOMA MODULAR s.r.o. s více než 20-ti letou tradicí je specialistou na modulární výstavbu a má za sebou realizace po celém světě. Získala četná ocenění pro svůj inovativní přístup a technologie. V posledních letech se orientuje na vývoj nízkoenergetických modulů i architektonicky atraktivních návrhů.</p>
+                <p>{{ blok['body_' ~ app.locale] }}</p>
             </div>
+            {% setcontent blok = 'bloky' where { id: '9' } %}
             <div class="small-12 large-4 columns">
-                <p>V tomto oboru úzce spolupracuje s CHYBIK KRISTOF ASSOCIATED ARCHITECTS, progresivním mladým architektonickým ateliérem s řadou zajímavých realizací a ocenění.</p>
+                <p>{{ blok['body_' ~ app.locale] }}</p>
             </div>
         </div>
     </article>
@@ -228,28 +240,53 @@
     <article class="row">
         <header class="clearfix mgr-full">
             <div class="small-12 large-5 columns">
-                <h1 class="fnt-primary-headline">po("Výhody modulární výstavby")</h1>
+            {% setcontent blok = 'bloky' where { id: '10' } %}
+                <h1 class="fnt-primary-headline">{{ blok['title_' ~ app.locale] }}</h1>
             </div>
             <div class="small-12 large-7 columns">
-                <h3 class="fnt-secondary-headline">Modulární architektura je založena na třech základních principech, které vycházejí z potřeb lidí - prefabrikace, mobilita a variabilita.</h3>
+                <h3 class="fnt-secondary-headline">{{ blok['body_' ~ app.locale] }}
+                    {% if blok.related %}
+                    {% set relatedmodals = blok.related() %}
+                    {% for related in relatedmodals|order('id') %}
+                    <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                    {%  endfor %}
+                    {% endif %}</h3>
             </div>
         </header>
 
         <div class="small-12 medium-6 large-4  columns ">
-            <h3 class="fnt-secondary-headline-mid icon-outside i-clock">RYCHLE</h3>
+            {% setcontent blok = 'bloky' where { id: '11' } %}
+            <h3 class="fnt-secondary-headline-mid icon-outside i-clock">{{ blok['title_' ~ app.locale] }}{% if blok.related %}
+                    {% set relatedmodals = blok.related() %}
+                    {% for related in relatedmodals|order('id') %}
+                    <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                    {%  endfor %}
+                    {% endif %}</h3>
 
-            <p>Hlavní devizou modulárních staveb je rychlost jejich výstavby. Díky převážně suchému procesu stavění totiž odpadají dlouhé technologické přestávky. Je tak možné vidět dům růst přímo před očima. Například mateřskou školku můžete postavit během letních prázdnin. </p>
+            <p>{{ blok['body_' ~ app.locale] }} </p>
         </div>
 
         <div class="small-12 medium-6 large-4  columns ">
-            <h3 class="fnt-secondary-headline-mid icon-outside i-bulb ">CHYTŘE</h3>
+            {% setcontent blok = 'bloky' where { id: '12' } %}
+            <h3 class="fnt-secondary-headline-mid icon-outside i-bulb ">{{ blok['title_' ~ app.locale] }}{% if blok.related %}
+                    {% set relatedmodals = blok.related() %}
+                    {% for related in relatedmodals|order('id') %}
+                    <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                    {%  endfor %}
+                    {% endif %}</h3>
 
-            <p>Snadná demontovatelnost modulárních staveb umožňuje neustálý vývoj. Modulární stavba není nikdy jednoznačná a definitivní. Můžete přidávat, ubírat, měnít fasádu - prostě dům přizpůsobit aktuálním potřebám.</p>
+            <p>{{ blok['body_' ~ app.locale] }}</p>
         </div>
         <div class="small-12 small-12 large-4  columns">
-            <h3 class="fnt-secondary-headline-mid icon-outside i-elegant">ELEGANTNĚ</h3>
+            {% setcontent blok = 'bloky' where { id: '13' } %}
+            <h3 class="fnt-secondary-headline-mid icon-outside i-elegant">{{ blok['title_' ~ app.locale] }}{% if blok.related %}
+                    {% set relatedmodals = blok.related() %}
+                    {% for related in relatedmodals|order('id') %}
+                    <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                    {%  endfor %}
+                    {% endif %}</h3>
 
-            <p>Modulární stavby mají schopnost vytvářet rozličné kombinace uspořádání. Působivé momenty jako jsou konzoly vznikají jednoduchým posunutím modulu. Samozřejmostí je prakticky libovolné pojednání fasády a tím architektonická rozmanitost. </p>
+            <p>{{ blok['body_' ~ app.locale] }}</p>
         </div>
     </article>
 </div>

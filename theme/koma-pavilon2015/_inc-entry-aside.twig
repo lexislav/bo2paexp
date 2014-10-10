@@ -3,7 +3,7 @@
             {% if record.rok!="" %}
             <div class="row">
                 <div class="mgr-full">
-                    <h2 class="large-4 columns">{{ __('Rok konání výstavy:') }}</h2>
+                    <h2 class="large-4 columns">Rok konání výstavy:</h2>
                     <div class="large-8 columns">
                         {{ record.rok }}
                     </div>
@@ -13,7 +13,7 @@
             {% if record.mesto_cs!="" %}
             <div class="row">
                 <div class="mgr-full">
-                    <h2 class="large-4 columns">{{ __('Místo:') }}</h2>
+                    <h2 class="large-4 columns">Místo:</h2>
                     <div class="large-8 columns">
                         {{ record['mesto_' ~ app.locale] }}
                     </div>
@@ -23,7 +23,7 @@
             {% if record.tema_cs!="" %}
             <div class="row">
                 <div class="mgr-full">
-                    <h2 class="large-4 columns">{{ __('Téma výstavy:') }}</h2>
+                    <h2 class="large-4 columns">Téma výstavy:</h2>
                     <div class="large-8 columns">
                         {{ record['tema_' ~ app.locale] }}
                     </div>
@@ -33,7 +33,7 @@
             {% if record.autor-pavilonu!="" %}
             <div class="row">
                 <div class="mgr-full">
-                    <h2 class="large-4 columns">{{ __('Autor(ři) pavilonu:') }}</h2>
+                    <h2 class="large-4 columns">Autor(ři) pavilonu:</h2>
                     <div class="large-8 columns">
                         {{ record.autor-pavilonu }}
                     </div>
@@ -43,7 +43,7 @@
             {% if record.autor-expozice!="" %}
             <div class="row">
                 <div class="mgr-full">
-                    <h2 class="large-4 columns">{{ __('Autor(ři) expozice:') }}</h2>
+                    <h2 class="large-4 columns">'Autor(ři) expozice:</h2>
                     <div class="large-8 columns">
                         {{ record.autor-expozice }}
                     </div>
@@ -53,7 +53,7 @@
                         {% if record.taxonomy.kategorie is defined %}
             <div class="row">
                 <div class="mgr-full">
-                    <h2 class="large-4 columns">{{ __('Kategorie') }}</h2>
+                    <h2 class="large-4 columns">Kategorie</h2>
 
                     <div class="large-8 columns">
                         {% for tag in record.taxonomy.kategorie %}
@@ -68,7 +68,7 @@
             {% if record.related!="" %}
             <div class="row">
                 <div class="mgr-full">
-                    <h2 class="large-4 columns">{{ __('Čtěte také:') }}</h2>
+                    <h2 class="large-4 columns">Čtěte také:</h2>
                     <div class="large-8 columns">
                         {% for odkaz in record.related %}
                         <article class="m-story">
@@ -87,7 +87,7 @@
             {% if record.filelist %}
             <div class="row">
                 <div class="mgr-full">
-                    <h2 class="large-4 columns">{{ __('Soubory ke stažení:') }}</h2>
+                    <h2 class="large-4 columns">Soubory ke stažení:</h2>
                     <div class="large-8 columns">
                         {% for soubor in record.filelist %}
                         <article class="m-story">
