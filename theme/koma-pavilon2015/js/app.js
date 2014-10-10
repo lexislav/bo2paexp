@@ -6,6 +6,15 @@
     console.log( "document loaded" );
 });*/
 
+$(document).foundation();
+
+
+var isTouch = true;
+if( $("html").hasClass("no-touch")) {
+    isTouch = false;
+};
+
+
 $( window ).load(function() {
     $("body").css('overflow','auto');
     $("#preloader").fadeOut(300);
