@@ -46,7 +46,7 @@
 
     <div class="row">
     <div class="small-12 large-6 columns">
-        <article class="m-blog-item mm-subhero">
+        <article class="m-blog-item mm-subhero {% if record.featured %}mm-featured{% endif %}">
             <header>
                 <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">
                     <div class="m-item--image">
@@ -76,7 +76,7 @@
 
     {% elseif loop.index == 2 %}
         <div class="small-12 large-6 columns">
-            <article class="m-blog-item mm-subhero mm-featured">
+            <article class="m-blog-item mm-subhero {% if record.featured %}mm-featured{% endif %}">
                 <header>
                     <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">
                         <div class="m-item--image">
@@ -183,5 +183,5 @@
 {% include '_inc-global-scripts.twig' %}
 <!-- page custom JS -->
 
-
+{% include '_analytics.twig' %}
 </body>{% include '_footer.twig' %}

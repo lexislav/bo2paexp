@@ -1,5 +1,5 @@
 <div class="small-12 medium-6 large-4 xlarge-3 columns {% if loop.last %}end{% endif %}"> 
-            <article class="m-blog-item">
+            <article class="m-blog-item {% if record.featured %}mm-featured{% endif %}">
                 <header>
                     <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">
                     <div class="m-item--image">
@@ -23,12 +23,3 @@
                 </header>
             </article>
             </div>
-            <!-- {% if record.taxonomy is defined %}
-    {% for type, values in record.taxonomy %}
-        <em>{{ type }}:</em>
-        {% for link, value in values %}
-                <a href="{{ link }}">{{ value }}</a>{% if not loop.last %}, {% endif %}
-        {% endfor %}
-        {% if not loop.last %} - {% endif %}
-    {% endfor %}
-{% endif %} --> 
