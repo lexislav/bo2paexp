@@ -276,14 +276,9 @@
 {% endfor %}
 </section>
 
-
 {% include '_partners.twig' %}
 {% include '_inc-footer.twig' %}
-
-
-<script type="text/javascript" src="{{ paths.theme }}components/foundation/js/foundation/foundation.js"></script>
-<script type="text/javascript" src="{{ paths.theme }}components/foundation/js/foundation/foundation.reveal.js"></script>
-<script src="{{ paths.theme }}js/app.js"></script>
+{% include '_inc-global-scripts.twig' %}
 
 <!-- page custom JS -->
 
@@ -291,7 +286,4 @@
 <script src="{{ paths.theme }}js/progress-bar-scroll.js"></script>
 
 
-
-
-{% include '_inc-analytics.twig' %}
 </body>{% include '_footer.twig' %}
