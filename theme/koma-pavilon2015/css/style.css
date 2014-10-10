@@ -4657,6 +4657,9 @@ body {
   width: 20px;
   height: 20px;
   display: inline-block;
+  margin-left: 8px;
+  line-height: 1em;
+  vertical-align: text-bottom;
   cursor: pointer; }
   .m-icon span {
     display: none; }
