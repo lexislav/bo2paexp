@@ -322,12 +322,11 @@
 </section>
 
 
+{% include '_inc-global-scripts.twig' %}
+
+<!-- page custom JS -->
+
 <script type="text/javascript" src="{{ paths.theme }}components/slick/slick/slick.min.js"></script>
-<script type="text/javascript" src="{{ paths.theme }}components/foundation/js/foundation/foundation.js"></script>
-<script type="text/javascript" src="{{ paths.theme }}components/foundation/js/foundation/foundation.reveal.js"></script>
-
-<script src="{{ paths.theme }}js/app.js"></script>
-
 <script type="text/javascript">
 
     $(document).ready(function () {
@@ -355,14 +354,11 @@
             mobileDeceleration: 0.01
         });
 
-
         $(window).resize(function() {
            if(!isTouch) {
                $(".m-carousel > .m-carousel--item").css('height', $(window).height());
            }
         });
-
-
 
         // debug
         //$('#myModal').foundation('reveal', 'open');
@@ -371,6 +367,5 @@
 
 
 </script>
-{% include '_inc-analytics.twig' %}
 </body>
 {% include '_footer.twig' %}
