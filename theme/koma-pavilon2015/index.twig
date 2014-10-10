@@ -245,31 +245,35 @@
 </div>
 
 <!-- Modals -->
-<section class="modals">
-    
-    {% setcontent modaly = 'modaly' where { statiky: 'Domácí strana' } %}
-    {% for modal in modaly %}
-    <div id="myModal" class="reveal-modal fixed xlarge m-modal" data-reveal>
-        <article>
-            <header class="row">
-                <div class="small-12 columns">
-                    <h2 class="m-item--hed">Awesome. I have it.</h2>
-                    <div class="m-item--description">Description</div>
-                </div>
-            </header>
-            <div class="row">
-                <div class="small-12 medium-6 columns">
-                    <div class="m-item--copy">
-                        {# article body #}
-                        <p>I'm a cool paragraph that lives inside of an even cooler modal. Wins!</p>
-                    </div>
+<section class="modals">  
+{% setcontent modaly = 'modaly' where { statiky: 'Domácí strana' } %}
+{% for modal in modaly %}
+<div id="{{modal.slug}}" class="reveal-modal fixed xlarge m-modal" data-reveal>
+    <article>
+        <header class="row">
+            <div class="small-12 columns">
+                <h2 class="m-item--hed">{{ modal['title_' ~ app.locale]}}</h2>
+                <!-- <div class="m-item--description">Description</div> -->
+            </div>
+        </header>
+        <div class="row">
+            <div class="small-12 medium-6 columns">
+                <div class="m-item--copy">
+                    {# article body #}
+                    {{ modal['body_' ~ app.locale]}}
                 </div>
             </div>
-        </article>
-
-        <a class="close-reveal-modal">&#215;</a>
-    </div>
-    {% endfor %}
+            <div class="small-12 medium-6 columns">
+                <div class="m-item--image">
+                    {# article image #}
+                    <img src="{{ thumbnail(modal.image, 320, 240, fit) }}">
+                </div>
+            </div>
+        </div>
+    </article>
+    <a class="close-reveal-modal">&#215;</a>
+</div>
+{% endfor %}
 </section>
 
 
@@ -279,6 +283,7 @@
 <!-- page custom JS -->
 <script src="{{ paths.theme }}components/ags-slider/ags-slider.js"></script>
 <script src="{{ paths.theme }}js/progress-bar-scroll.js"></script>
+<script type="text/javascript">
 <script src="{{ paths.theme }}js/app.js"></script>
 
 {% include '_inc-analytics.twig' %}
