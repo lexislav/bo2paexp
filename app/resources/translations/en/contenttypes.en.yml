@@ -1,5 +1,5 @@
 # app/resources/translations/cs/messages.cs.yml -- generated on 2014/10/09 16:28:17
-# 469 untranslated strings
+# 468 untranslated strings
 
 "%contenttypes% overview":  #
 "%contenttypes%":  #
@@ -229,7 +229,6 @@
 "Note, this file has related files:":  #
 "Note: Cookies are required to log on to Bolt. Please allow cookies.":  #
 "Note:":  #
-"Název (CS)":  #
 "Název (EN)":  #
 "Název":  #
 "Omnisearch":  #
@@ -275,7 +274,6 @@
 "Published on:":  #
 "Published":  #
 "Read more":  #
-"Recent %contenttypes%":  #
 "Recently edited %contenttypes%":  #
 "Related content":  #
 "Related content:":  #
@@ -474,9 +472,12 @@
 
 
 #-----------------------------------------
-# 4 translated strings
+# 6 translated strings
 
 "Čtěte také:":  "Related readings:"
 "Generální partneři pavilonu":  "General partners of pavilion"
+"Název (CS)":  "Name (CZ)"
 "Město":  "City"
+"Odkaz:": "Link"
+"Recent %contenttypes%": "Čerstvé %contenttypes%"
 "Zpravodaj Pavilonu":  "News from pavilion"
