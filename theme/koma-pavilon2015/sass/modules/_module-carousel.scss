@@ -9,6 +9,9 @@
 
 
     .m-carousel--item {
+
+        cursor: default;
+
         position: relative;
         background-color: #000;
         width: 100%;
@@ -72,7 +75,7 @@
         height: 80px;
         border-top-left-radius: 100px;
         border-top-right-radius: 100px;
-
+        text-align: center;
         img {
             width: auto;
             margin: 0 auto;
