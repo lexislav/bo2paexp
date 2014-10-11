@@ -315,6 +315,7 @@ Strany:
             type: templateselect
             filter: '*.twig'
     recordsperpage: 100
+    show_on_dashboard: false
 
 # This file defines the contenttypes on the website. See the documentation for
 # details: http://docs.bolt.cm/content#defining-contenttypes

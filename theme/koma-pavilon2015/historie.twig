@@ -7,17 +7,11 @@
     <div class="item">
         <img src="/assets/sky.jpg" alt="slide 1" />
 
-        <div class="orbit-caption">
-            <div>Seznamte se s historií
-                 českých pavilonů EXPO
-            </div>
-            <div class="fnt-primary-body-m">
-                Sestavili jsme pro vás historii
-                všech českých pavilonů expo od roku 1822.
-                Jsou zahrnuty i detaily o architektech a dobové fotografie!
-            </div>
-
+        <div class="orbit-caption">{% setcontent blok = 'bloky' where { id: '38' } %}
+            <div>{{ blok['title_' ~ app.locale] }}</div>
+            <div class="fnt-primary-body-m">{{ blok['body_' ~ app.locale] }}</div>
         </div>
+
         <div class="m-carousel--arrow-down">
             <img src="/assets/ikony/arrow-down.png" alt="" />
         </div>
