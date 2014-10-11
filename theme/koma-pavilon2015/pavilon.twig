@@ -189,13 +189,12 @@
 
         <div class="l-section mm-dark" style="background-image: url('{{ paths.theme }}/assets/photos/pavilon/cze-expozice.jpg');">
             <article>
-                <div class="row">
+                <div class="row">{% setcontent blok = 'bloky' where { id: '35' } %}
                     <header class="medium-5 columns" style="position: relative; height: 400px;">
-                        <h1 class="m-item--hed fnt-white">Prohlédněte si české expozice</h1>
+                        <h1 class="m-item--hed fnt-white">{{ blok['title_' ~ app.locale] }}</h1>
 
                         <div class="fnt-secondary-headline fnt-white fnt-shadow" style="position: absolute; bottom: 20px;">
-                            UPOZORNĚNÍ:<br />
-                            Prohlížení fotogalerie z expozic bude možné až po oficiálním otevření pavilonu 1. ledna 2015.
+                            {{ blok['body_' ~ app.locale] }}
                         </div>
                     </header>
                     <footer class="medium-2 columns">
@@ -224,8 +223,8 @@
             <div class="medium-6 columns">
                 <article class="m-story">
                     <header>
-                        <div class="small-12 columns">
-                            <h1 class="m-item--hed">Budoucnost pavilonu</h1>
+                        <div class="small-12 columns">{% setcontent blok = 'bloky' where { id: '36' } %}
+                            <h1 class="m-item--hed">{{ blok['title_' ~ app.locale] }}</h1>
                         </div>
                         <div class="small-4 columns">
                             <div class="m-item--image">
@@ -234,7 +233,7 @@
                         </div>
                         <div class="small-8 columns">
                             <div class="m-item--description">
-                                <p>Lorem ipsum základní výhody modulární výstavby lorem ipsum Hendis alition secus. Ebitem fugitectu- sda dolupta volorei untissi ra sum venda consedi sedist, volorehenes autem ut que volore veles.</p>
+                                <p>{{ blok['body_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}<i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>{%  endfor %}{% endif %}</p>
                             </div>
                         </div>
                     </header>
@@ -245,8 +244,8 @@
 
                 <article class="m-story">
                     <header>
-                        <div class="small-12 columns">
-                            <h1 class="m-item--hed">Budoucnost pavilonu</h1>
+                        <div class="small-12 columns">{% setcontent blok = 'bloky' where { id: '37' } %}
+                            <h1 class="m-item--hed">{{ blok['title_' ~ app.locale] }}</h1>
                         </div>
                         <div class="small-4 columns">
                             <div class="m-item--image">
@@ -255,7 +254,7 @@
                         </div>
                         <div class="small-8 columns">
                             <div class="m-item--description">
-                                <p>Lorem ipsum základní výhody modulární výstavby lorem ipsum Hendis alition secus. Ebitem fugitectu- sda dolupta volorei untissi ra sum venda consedi sedist, volorehenes autem ut que volore veles.</p>
+                                <p>{{ blok['body_' ~ app.locale] }}</p>
                             </div>
                         </div>
                     </header>
