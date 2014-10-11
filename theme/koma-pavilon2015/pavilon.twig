@@ -79,33 +79,31 @@
             </div>
 
 
-            <div class="m-schema--label label3" data-anchor-target="#animAnchor4" data-bottom="opacity:0;z-index:1" data-center="opacity:1;z-index:100" data-top="opacity:0;z-index:1">
-                <h2 class="m-item--hed">2. patro: Laboratoř života</h2>
+            <div class="m-schema--label label3" data-anchor-target="#animAnchor4" data-bottom="opacity:0;z-index:1" data-center="opacity:1;z-index:100" data-top="opacity:0;z-index:1">{% setcontent blok = 'bloky' where { id: '26' } %}
+                <h2 class="m-item--hed"><strong>{{ blok['title_' ~ app.locale] }}</strong> {{ blok['body_' ~ app.locale] }}</h2>{% setcontent blok = 'bloky' where { id: '27' } %}
 
-                <div class="m-item--description">
-                    Patru dominuje originální stálá expozice z dílen studentů ČVUT, umělců a tak dále, a tak dále.
-                </div>
+                <div class="m-item--description">{{ blok['body_' ~ app.locale] }}
+                            {% if blok.related %}
+                            {% set relatedmodals = blok.related() %}
+                            {% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                            {%  endfor %}
+                            {% endif %}</div>
                 <ul class="mm-green">
                     <li>
-                        <h3>
-                            <span>8.</span>TRVALÁ EXPOZICE<i class="m-icon i-info mm-hover" data-reveal-id="myModal"><span>moreinfo</span></i>
-                        </h3>
-
-                        <p>Stálá expozice bude prezentovat výsledky vědy doplněné uměleckými předměty předních českých umělců.</p>
+                        <h3>{% setcontent blok = 'bloky' where { id: '28' } %}
+                            <span>8.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}<i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>{%  endfor %}{% endif %}</i></h3>
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
                     </li>
                     <li>
-                        <h3>
-                            <span>9.</span>UMĚLECKÝ OBJEKT<i class="m-icon i-info mm-hover" data-reveal-id="myModal"><span>moreinfo</span></i>
-                        </h3>
-
-                        <p>Kinetická plastika společnosti Lasvit, která byla premiérově představena na výstavě v Miláně 2014 Salone Internazionale del Mobile.</p>
+                        <h3>{% setcontent blok = 'bloky' where { id: '29' } %}
+                            <span>9.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}<i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>{%  endfor %}{% endif %}</i></h3>
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
                     </li>
                     <li>
-                        <h3>
-                            <span>10.</span>V.I.P. SALONEK<i class="m-icon i-info mm-hover" data-reveal-id="myModal"><span>moreinfo</span></i>
-                        </h3>
-
-                        <p>VIP salonek, který bude sloužit partnerům k prezentacím, konferencím a schůzkám.</p>
+                        <h3>{% setcontent blok = 'bloky' where { id: '30' } %}
+                            <span>10.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}<i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>{%  endfor %}{% endif %}</i></h3>
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
                     </li>
 
                 </ul>
