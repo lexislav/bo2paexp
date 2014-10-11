@@ -36,7 +36,7 @@
                             {% if record.image!="" %}
                                 <img src="{{ thumbnail(record.image) }}" alt="">
                                 {% else %}
-                                <img src="{{ paths.theme }}assets/no_image_thumb_blue.svg" />
+                                <img src="{{ paths.theme }}assets/no_image_thumb_blue.svg" alt="Article has no image attached"/>
                             {% endif %}
                         </a>
                     </div>
