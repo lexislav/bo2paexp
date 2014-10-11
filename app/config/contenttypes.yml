@@ -120,6 +120,9 @@ odkazy:
             class: large
             label: Popisek
             postfix: velmi krátký údaj např. datum publikace, název periodika, odděleno čárkami
+        adresa:
+            type: text
+            postfix: Adresa URL
         nazev_en:
             type: text
             class: large
@@ -132,9 +135,6 @@ odkazy:
         slug:
             type: slug
             uses: nazev_cs
-        adresa:
-            type: text
-            postfix: Adresa URL
     taxonomy: [ rozcestnik ]
 
 historie:
