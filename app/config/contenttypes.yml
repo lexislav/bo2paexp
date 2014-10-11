@@ -217,19 +217,23 @@ bloky:
             type: text
             class: large
             group: Texty
+            label: Nadpis
         slug:
             type: slug
             uses: title_cs
         body_cs:
             type: textarea
             height: 300px
+            label: Text
         title_en:
             type: text
             class: large
-            group: (EN)      
+            group: (EN)
+            label: Nadpis (EN)    
         body_en:
             type: textarea
             height: 300px
+            label: Text (EN)
     relations:
         modaly:
             multiple: false
