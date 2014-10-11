@@ -23,6 +23,9 @@ roles:
     chief-editor:
         description: This user can edit any content in the system.
         label: Chief Editor
+    redactor:
+        description: This user can log on and is allowed to edit some content.
+        label: Redactor
     admin:
         description: User-level administrator.
         label: Administrator
@@ -146,6 +149,12 @@ contenttype-default:
     frontend: [ anonymous ]
 
 contenttypes:
+    historie:
+        edit: [ developer, admin, redactor, chief-editor ]
+        create: [ developer, admin, redactor, chief-editor ]
+        publish: [ developer, admin, redactor, chief-editor ]
+        delete: [ developer, admin, chief-editor ]
+        view: [ developer, admin, redactor, chief-editor ]
 
 # This is an example of how to define Contenttype specific permissions
 #

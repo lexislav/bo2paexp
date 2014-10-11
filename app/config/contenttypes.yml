@@ -34,16 +34,16 @@ zpravodaj:
         image:
             type: image
             group: Média
-            extensions: [ gif, jpg, png ]
+            extensions: [ gif, jpg, png, jpeg ]
             label: náhledový obrázek
-            postfix: minimální velikost 620x465px, název souboru bez českých znaků a mezer!
+            postfix: minimální velikost 620x465px | Název souboru bez českých znaků a mezer! Povolené typy souborů: gif, png, jpg, jpeg
         video:
             type: video
         imagelist:
             type: imagelist
-            extensions: [ gif, jpg, png ]
+            extensions: [ gif, jpg, png, jpeg ]
             label: galerie
-            postfix: ideální velikost 1280x960, minimální velikost 1024x768px, název souboru bez českých znaků a mezer!
+            postfix: ideální velikost 1280x960 | minimální velikost 1024x768px | název souboru bez českých znaků a mezer! Povolené typy souborů: gif, png, jpg, jpeg
         filelist:
             type: filelist
             group: Soubory
