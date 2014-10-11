@@ -155,6 +155,12 @@ contenttypes:
         publish: [ developer, admin, redactor, chief-editor ]
         delete: [ developer, admin, chief-editor ]
         view: [ developer, admin, redactor, chief-editor ]
+    Strany:
+        edit: [ developer, admin ]
+        create: [ developer, admin ]
+        publish: [ developer, admin ]
+        delete: [ developer, admin ]
+        view: [ developer, admin ]
 
 # This is an example of how to define Contenttype specific permissions
 #
