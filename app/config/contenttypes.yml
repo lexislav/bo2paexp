@@ -300,9 +300,9 @@ Numbers:
 
 
 ProgressBar:
-    name: casovaosa
-    singular_name: bodcasoveosy
-    fileds:
+    name: Časová osa
+    singular_name: Bod časové osy
+    fields:
         title_cs:
             type: text
             class: large
@@ -316,7 +316,7 @@ ProgressBar:
         image:
             type: image
             label: ikona
-            label: ikona 60x60px
+            postfix: ikona 60x60px
         title_en:
             type: text
             class: large

@@ -73,10 +73,9 @@
                 </header>{% setcontent bodyosy = 'ProgressBar' %}
                 <div id="drg-progress-bar" class="m-progress-bar--container">
                     <ul class="m-progress-bar--items">{% for bodosy in bodyosy|order('id') %}
-                        <li style="left: {{ (loop.index-1) * 200}}" class="mm-full">
+                        <li style="left: {{ (loop.index) * 200}}px" class="mm-full">
                             {% if bodosy.image!="" %}<img class="m-progress-bar--image" src="{{ thumbnail(bodosy.image, 60, 60, fit) }}">{% endif %}
-                            {% if bodosy.related %}{% set bodlink = bodosy.related|first %}<a url="{{bodlink.link}}" title="{{bodlink.slug}}">
-                <span><strong>{{ bodosy.poloha }}</strong> {{ bodosy['title_' ~ app.locale] }}</span>{% if bodosy.related %}</a>{% endif %}
+                            {% if bodosy.related %}{% set bodlink = bodosy.related|first %}<a url="{{bodlink.link}}" title="{{bodlink.slug}}">{% endif %}<span><strong>{{ bodosy.polohadate|date("d. m. Y", "Europe/Prague")  }}</strong> {{ bodosy['title_' ~ app.locale] }}</span>{% if bodosy.related %}</a>{% endif %}
                         </li>{% endfor %}
                     </ul>
                     <div class="m-progress-bar--bar-bg">
