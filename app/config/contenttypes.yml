@@ -196,8 +196,11 @@ historie:
         nahled:
             type: image
             group: media
-        galerie:
+        imagelist:
             type: imagelist
+            extensions: [ gif, jpg, png, jpeg ]
+            label: galerie
+            postfix: ideální velikost 1280x960 | minimální velikost 1024x768px | název souboru bez českých znaků a mezer! Povolené typy souborů: gif, png, jpg, jpeg
     record_template: entry.twig
     listing_template: historie.twig
     listing_records: 60
