@@ -6,6 +6,13 @@ database:
   driver: sqlite
   databasename: bolt
 
+#driver: mysql
+#  databasename: pavilonexpo2015
+#  username: pavilonexpo2015
+#  password: ffca8b05
+#  host: pavilon-expo2015.cz
+#  port: 3306
+
 # The name of the website
 sitename: Český pavilon EXPO2015
 payoff: Špička české modulární výstavby
