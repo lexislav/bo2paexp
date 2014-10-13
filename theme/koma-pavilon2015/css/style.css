@@ -4454,7 +4454,7 @@ body {
 
 .l-page {
   padding-top: 48px; }
-  .l-page.l-page_home, .l-page.l-page_pavilon, .l-page.l-page_blog {
+  .l-page.l-page_home, .l-page.l-page_pavilon, .l-page.l-page_history, .l-page.l-page_blog {
     padding-top: 0; }
 
 .m-theme {
@@ -4790,24 +4790,40 @@ a:hover .svg-button #button {
 
 .m-story.mm-history {
   position: relative;
-  margin-bottom: 60px;
-  cursor: pointer; }
+  cursor: pointer;
+  margin-bottom: 30px; }
+  @media only screen and (min-width: 781px) {
+    .m-story.mm-history {
+      margin-bottom: 60px; } }
   .m-story.mm-history .m-item--image {
     width: 100%;
-    height: 180px;
+    height: 140px;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    opacity: 0;
+    opacity: .2;
     -webkit-transition: opacity 0.8s;
     -moz-transition: opacity 0.8s;
     transition: opacity 0.8s; }
+    @media only screen and (min-width: 781px) {
+      .m-story.mm-history .m-item--image {
+        opacity: 0;
+        height: 180px; } }
     .m-story.mm-history .m-item--image a {
       display: block;
       width: 100%;
       height: 100%; }
     .m-story.mm-history .m-item--image img {
       display: none; }
+    .m-story.mm-history .m-item--image:after {
+      display: block;
+      position: absolute;
+      content: " ";
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.4); }
   .m-story.mm-history .m-item--summary {
     pointer-events: none;
     position: absolute;
@@ -4820,8 +4836,14 @@ a:hover .svg-button #button {
     color: #000;
     font-weight: 600;
     text-align: center;
-    line-height: 1em;
-    margin-top: 42px; }
+    margin-top: 30px;
+    font-size: 2.26667rem;
+    line-height: 1em; }
+    @media only screen and (min-width: 781px) {
+      .m-story.mm-history .m-item--hed {
+        font-size: 2.93333rem;
+        line-height: 1em;
+        margin-top: 42px; } }
   .m-story.mm-history .m-item--description {
     font-size: 1.6rem;
     text-align: center;
