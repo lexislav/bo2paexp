@@ -4668,8 +4668,8 @@ body {
   height: 20px;
   display: inline-block;
   margin-left: 8px;
-  line-height: 1em;
-  vertical-align: text-bottom;
+  line-height: inherit;
+  vertical-align: baseline;
   cursor: pointer; }
   .m-icon span {
     display: none; }
@@ -4680,16 +4680,19 @@ body {
     float: right;
     position: relative;
     display: block;
-    background-position: 50% 50%;
+    background-position: top left;
     background-repeat: no-repeat;
-    background-size: contain; }
-  .m-icon.mm-hover {
-    opacity: .5; }
-    .m-icon.mm-hover:hover {
-      -webkit-transition: opacity 0.3s;
-      -moz-transition: opacity 0.3s;
-      transition: opacity 0.3s;
-      opacity: 1; }
+    background-size: 100% auto; }
+  .m-icon:hover:before {
+    background-position: bottom left; }
+  .m-icon.xs {
+    height: 16px;
+    width: 16px;
+    margin-left: 0; }
+    .m-icon.xs:before {
+      margin-top: 1px;
+      height: 16px;
+      width: 16px; }
   .m-icon.x2 {
     width: 40px;
     height: 40px;
@@ -4711,7 +4714,7 @@ body {
   background-image: url("../assets/ikony/sipka-big.png"); }
 
 .i-info:before {
-  background-image: url("../assets/ikony/info.svg"); }
+  background-image: url("../assets/ikony/info-icon.png"); }
 
 .i-bulb:before {
   background-image: url("../assets/ikony/zarovka.svg"); }
@@ -4965,9 +4968,6 @@ dialog.fixed .close-reveal-modal {
   font-size: 1.2rem; }
 .m-pagination .current {
   border: 1px solid black; }
-
-#skrollr-body {
-  pointer-events: none; }
 
 body {
   height: auto; }

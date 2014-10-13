@@ -17,10 +17,10 @@
             <h2>{{ blok['body_' ~ app.locale] }}{% if blok.related %}
                 {% set relatedmodals = blok.related() %}
                 {% for related in relatedmodals|order('id') %}
-                <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                <i class="m-icon i-info " data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
                 {%  endfor %}
                 {% endif %}</h2>
-        </div>
+        </div>š
         <div class="small-12 columns mgr-half">
             <img src="{{ paths.theme }}/assets/pavilon-skica.png" alt="" />
         </div>
@@ -31,7 +31,7 @@
                 {% if blok.related %}
                 {% set relatedmodals = blok.related() %}
                 {% for related in relatedmodals|order('id') %}
-                <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                <i class="m-icon xs i-info " data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
                 {%  endfor %}
                 {% endif %}</h3>
             <p>{{ blok['body_' ~ app.locale] }}</p>
@@ -43,7 +43,7 @@
                 {% if blok.related %}
                 {% set relatedmodals = blok.related() %}
                 {% for related in relatedmodals|order('id') %}
-                <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                <i class="m-icon xs i-info " data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
                 {%  endfor %}
                 {% endif %}</h3>
             <p>{{ blok['body_' ~ app.locale] }}</p>
@@ -54,7 +54,7 @@
                 {% if blok.related %}
                 {% set relatedmodals = blok.related() %}
                 {% for related in relatedmodals|order('id') %}
-                <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                <i class="m-icon xs i-info " data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
                 {%  endfor %}
                 {% endif %}</h3>
             {{ blok['body_' ~ app.locale] }}
@@ -121,7 +121,7 @@
                 {% if blok.related %}
                 {% set relatedmodals = blok.related() %}
                 {% for related in relatedmodals|order('id') %}
-                <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                <i class="m-icon i-info " data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
                 {%  endfor %}
                 {% endif %}
                 </h3>
@@ -181,7 +181,7 @@
                             {% if blok.related %}
                             {% set relatedmodals = blok.related() %}
                             {% for related in relatedmodals|order('id') %}
-                            <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                            <i class="m-icon i-info " data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
                             {%  endfor %}
                             {% endif %}
                         </div>
@@ -212,7 +212,7 @@
                     {% if blok.related %}
                     {% set relatedmodals = blok.related() %}
                     {% for related in relatedmodals|order('id') %}
-                    <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                    <i class="m-icon i-info " data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
                     {%  endfor %}
                     {% endif %}</h3>
             </div>
@@ -223,7 +223,7 @@
             <h3 class="fnt-secondary-headline-mid icon-outside i-clock">{{ blok['title_' ~ app.locale] }}{% if blok.related %}
                     {% set relatedmodals = blok.related() %}
                     {% for related in relatedmodals|order('id') %}
-                    <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                    <i class="m-icon i-info " data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
                     {%  endfor %}
                     {% endif %}</h3>
 
@@ -235,7 +235,7 @@
             <h3 class="fnt-secondary-headline-mid icon-outside i-bulb ">{{ blok['title_' ~ app.locale] }}{% if blok.related %}
                     {% set relatedmodals = blok.related() %}
                     {% for related in relatedmodals|order('id') %}
-                    <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                    <i class="m-icon i-info " data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
                     {%  endfor %}
                     {% endif %}</h3>
 
@@ -246,7 +246,7 @@
             <h3 class="fnt-secondary-headline-mid icon-outside i-elegant">{{ blok['title_' ~ app.locale] }}{% if blok.related %}
                     {% set relatedmodals = blok.related() %}
                     {% for related in relatedmodals|order('id') %}
-                    <i class="m-icon i-info mm-hover" data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
+                    <i class="m-icon i-info " data-reveal-id="{{related.slug}}"><span>moreinfo</span></i>
                     {%  endfor %}
                     {% endif %}</h3>
 

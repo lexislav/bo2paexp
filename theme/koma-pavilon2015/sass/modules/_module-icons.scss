@@ -43,8 +43,9 @@
 
     display: inline-block;
     margin-left: 8px;
-    line-height: 1em;
-    vertical-align: text-bottom;
+    line-height: inherit;
+    vertical-align: baseline;
+
 
     cursor: pointer;
 
@@ -56,18 +57,28 @@
         position: relative;
         display: block;
 
-        background-position: 50% 50%;
+        background-position: top left;
         background-repeat: no-repeat;
-        background-size: contain;
-
+        background-size: 100% auto ;
     }
 
-    &.mm-hover {
-        opacity: .5;
-        &:hover {
-            @include transition(opacity 0.3s);
-            opacity: 1;
+    &:hover {
+        &:before {
+        background-position: bottom left;
+        }
+    }
 
+
+
+    &.xs {
+        height: 16px;
+        width: 16px;
+        margin-left: 0;
+
+        &:before {
+            margin-top: 1px;
+            height: 16px;
+            width: 16px;
         }
     }
 
@@ -104,7 +115,7 @@
 
 .i-info {
     &:before {
-        background-image: url("../assets/ikony/info.svg");
+        background-image: url("../assets/ikony/info-icon.png");
     }
 }
 
