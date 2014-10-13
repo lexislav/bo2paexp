@@ -71,17 +71,20 @@
 
         {% if record.image!="" %}
         <div class="visible-for-large-up">
+
             <div class="large-6  columns">
                 <div class="m-item--image mgr-full">
                         <a href="{{ image(record.image) }}">
                         <img src="{{ thumbnail(record.image, 620, 465, crop) }}">
                         </a>
                 </div>
+
+            {% include "_inc-entry-aside.twig" %}
+
             </div>
         </div>
         {% endif %}
 
-        {% include "_inc-entry-aside.twig" %}
 
     </div>
     <div class="row">
