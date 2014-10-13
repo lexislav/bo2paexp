@@ -10,7 +10,7 @@
 
             <div class="m-item--meta">
                 <ul class="inline-list">
-                    <li><a href="{{ paths.root }}{{ app.locale }}/blog">Vše</a></li>
+                    <li class="mm-active"><a href="{{ paths.root }}{{ app.locale }}/blog">Vše</a></li>
                     {% for category in config.get('taxonomy/kategorie/options') %}
                         <li>
                             <a href="{{ paths.root }}{{ app.locale }}/kategorie/{{ category }}">{{ category }}</a>
@@ -124,8 +124,8 @@
 {{ pager('', 2, '_zpravodaj_pager.twig') }}
 <!-- Konec paginace  -->
 
-
-<div class="row m-list">
+<div class="m-list mm-dark">
+<div class="row">
     <div class="small-12 medium-12 large-2 xlarge-3 columns">
         <img src="{{ paths.theme }}/assets/ikony/web-ikona.svg" alt="" />
     </div>
@@ -173,6 +173,7 @@
             </article>
         {% endfor %}
     </div>
+</div>
 </div>
 
 

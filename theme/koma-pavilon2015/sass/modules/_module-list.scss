@@ -2,10 +2,17 @@
 //optimize
 .m-list {
 
+    padding-top: $base-spacing;
+
     header > h2 {
-        font-size: rem-calc(16);
+        font-size: rem-calc(18);
+        font-weight: 600;
         text-decoration: underline;
         margin-bottom: $base-spacing / 2;
+    }
+
+    &.mm-dark {
+        background-color: #FBFBFB;
     }
 
     .m-item {

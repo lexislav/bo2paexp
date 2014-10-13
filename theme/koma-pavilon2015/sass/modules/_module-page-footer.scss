@@ -33,12 +33,15 @@
         background-color: #000;
         line-height: 30px;
         padding: $base-spacing/3;
+        color: #ccc;
 
         .text-right {
             text-align: center !important;
         }
         .text-center {
             text-align: right !important;
+            font-size: rem-calc(20);
+            font-weight: 600;
         }
 
         @media #{$large-up} {

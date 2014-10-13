@@ -3914,7 +3914,8 @@ body {
         display: block; } }
     .m-schema .m-schema--decoration.mm-top {
       top: 0;
-      border-bottom: 1px dashed #ccc; }
+      border-bottom: 1px dashed #ccc;
+      display: none; }
     .m-schema .m-schema--decoration.mm-bottom {
       border-top: 1px dashed #ccc;
       bottom: 0;
@@ -4384,11 +4385,14 @@ body {
     font-weight: 400;
     background-color: #000;
     line-height: 30px;
-    padding: 20px; }
+    padding: 20px;
+    color: #ccc; }
     .m-page-footer .m-page-footer--copyright .text-right {
       text-align: center !important; }
     .m-page-footer .m-page-footer--copyright .text-center {
-      text-align: right !important; }
+      text-align: right !important;
+      font-size: 1.33333rem;
+      font-weight: 600; }
     @media only screen and (min-width: 781px) {
       .m-page-footer .m-page-footer--copyright {
         font-size: 1.06667rem;
@@ -4533,6 +4537,12 @@ body {
             float: left; }
             .m-theme .m-item--meta > ul li:first-of-type a:before {
               display: none; } }
+        .m-theme .m-item--meta > ul li.mm-active {
+          color: #c20e1a;
+          text-decoration: underline; }
+          .m-theme .m-item--meta > ul li.mm-active a {
+            color: #c20e1a;
+            text-decoration: underline; }
     @media only screen and (min-width: 641px) {
       .m-theme .m-item--meta {
         margin-left: 50%;
@@ -4634,40 +4644,45 @@ body {
     .m-blog-item.mm-featured .m-item--meta a:hover {
       text-decoration: underline; }
 
-.m-list header > h2 {
-  font-size: 1.06667rem;
-  text-decoration: underline;
-  margin-bottom: 30px; }
-.m-list .m-item {
-  font-size: 1.06667rem;
-  border-bottom: 1px solid #eee;
-  padding: 10px 0;
-  padding-bottom: 8px; }
-  .m-list .m-item * {
-    display: inline; }
-  .m-list .m-item .m-item--hed {
-    line-height: 1.2em;
-    font-size: 1.06667rem; }
-    .m-list .m-item .m-item--hed a {
-      color: #4A4A4A; }
-      .m-list .m-item .m-item--hed a:hover {
-        color: #c20e1a; }
-  .m-list .m-item .m-item--meta {
-    font-family: "purista-web";
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
-    font-size: 2.66667rem;
-    line-height: 1.2em;
+.m-list {
+  padding-top: 60px; }
+  .m-list header > h2 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-decoration: underline;
+    margin-bottom: 30px; }
+  .m-list.mm-dark {
+    background-color: #FBFBFB; }
+  .m-list .m-item {
     font-size: 1.06667rem;
-    display: inline;
-    color: #777; }
-    .m-list .m-item .m-item--meta > *:before {
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    padding-bottom: 8px; }
+    .m-list .m-item * {
+      display: inline; }
+    .m-list .m-item .m-item--hed {
+      line-height: 1.2em;
+      font-size: 1.06667rem; }
+      .m-list .m-item .m-item--hed a {
+        color: #4A4A4A; }
+        .m-list .m-item .m-item--hed a:hover {
+          color: #c20e1a; }
+    .m-list .m-item .m-item--meta {
+      font-family: "purista-web";
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+      font-size: 2.66667rem;
+      line-height: 1.2em;
+      font-size: 1.06667rem;
       display: inline;
-      content: "/";
-      padding-right: .22em; }
-  .m-list .m-item:last-of-type {
-    border-bottom: none;
-    margin-bottom: 60px; }
+      color: #777; }
+      .m-list .m-item .m-item--meta > *:before {
+        display: inline;
+        content: "/";
+        padding-right: .22em; }
+    .m-list .m-item:last-of-type {
+      border-bottom: none;
+      margin-bottom: 60px; }
 
 .svg-button {
   width: 54px;
@@ -4849,6 +4864,7 @@ a:hover .svg-button #button {
       height: 100%;
       top: 0;
       left: 0;
+      pointer-events: none;
       background-color: rgba(0, 0, 0, 0.4); }
   .m-story.mm-history .m-item--summary {
     pointer-events: none;
@@ -4934,8 +4950,7 @@ aside h2 {
   .m-light-nav .m-icon.mm-top {
     background-image: url("../assets/ikony/nav-small-top.png");
     width: 21px;
-    height: 21px;
-    margin-right: 20px; }
+    height: 21px; }
   .m-light-nav .m-icon.mm-next {
     background-image: url("../assets/ikony/nav-small-next.png"); }
   .m-light-nav .m-icon.mm-prev {

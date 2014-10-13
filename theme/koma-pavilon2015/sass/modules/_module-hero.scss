@@ -66,6 +66,15 @@
                         }
                     }
                 }
+
+                &.mm-active {
+                    color: $color-koma-red;
+                    text-decoration: underline;
+                    a {
+                        color: $color-koma-red;
+                        text-decoration: underline;
+                    }
+                }
             }
         }
 
