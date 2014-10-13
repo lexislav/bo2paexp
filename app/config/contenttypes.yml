@@ -270,6 +270,7 @@ modaly:
         title_en:
             type: text
             class: large
+            group: (EN)
         body_en:
             type: html
             height: 300px
