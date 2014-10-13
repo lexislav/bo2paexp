@@ -2,14 +2,21 @@
 body {
     @media #{size(A)} {
         .row {
-            width: 98%;
+            width: 90%;
             overflow: hidden;
         }
     }
     @media #{size(B)} {
         .row {
+            width: 90%;
+        }
+
+    }
+    @media #{size(C)} {
+        .row {
             width: 96%;
         }
+
     }
     @media #{size(D)} {
 

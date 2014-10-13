@@ -4781,8 +4781,9 @@ a:hover .svg-button #button {
   margin-bottom: 60px; }
 .m-story .m-item--image {
   position: relative;
-  width: 100%; }
-  .m-story .m-item--image > img {
+  width: 100%;
+  margin-bottom: 30px; }
+  .m-story .m-item--image img {
     width: 100%;
     height: auto; }
 .m-story h5 {
@@ -4981,9 +4982,12 @@ dialog.fixed .close-reveal-modal {
 
 @media only screen {
   body .row {
-    width: 98%;
+    width: 90%;
     overflow: hidden; } }
 @media only screen and (min-width: 641px) {
+  body .row {
+    width: 90%; } }
+@media only screen and (min-width: 781px) {
   body .row {
     width: 96%; } }
 @media only screen and (min-width: 1411px) {

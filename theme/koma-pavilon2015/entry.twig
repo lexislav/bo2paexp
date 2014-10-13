@@ -67,6 +67,11 @@
 
         <div class="large-6 columns m-item--copy">
             {{ record['text_' ~ app.locale] }}
+
+            <div class="visible-for-medium-down">
+                {% include "_inc-entry-aside.twig" %}
+            </div>
+
         </div>
 
         {% if record.image!="" %}
