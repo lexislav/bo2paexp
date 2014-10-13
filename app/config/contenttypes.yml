@@ -299,6 +299,39 @@ Numbers:
     show_on_dashboard: false
 
 
+ProgressBar:
+    name: casovaosa
+    singular_name: bodcasoveosy
+    fileds:
+        title_cs:
+            type: text
+            class: large
+            label: Popis bodu časové osy
+            group: Bod na časové ose
+        slug:
+            type: slug
+        poloha:
+            type: datetime
+            default: "2014-10-01"
+        image:
+            type: image
+            label: ikona
+            label: ikona 60x60px
+        title_en:
+            type: text
+            class: large
+            label: Popis bodu časové osy (EN)
+            group: (EN)
+    relations:
+        zpravodaj:
+            multiple: false
+            label: Vyberte článek
+            order: -id
+            format: "{{ item.title|escape }} <span>(№ {{ item.id }})</span>"
+    show_on_dashboard: false
+    default_status: publish
+
+
 Strany:
     name: Pages
     singular_name: Page
