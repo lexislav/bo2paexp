@@ -5,7 +5,31 @@
 
 <div class="m-carousel">
     <div class="item">
-        <img src="/assets/sky.jpg" alt="slide 1" />
+        <img src="{{ paths.theme }}/assets/historie/he_slideshow-expo-history-01.jpg" alt="slide 1" />
+
+        <div class="orbit-caption">{% setcontent blok = 'bloky' where { id: '38' } %}
+            <div>{{ blok['title_' ~ app.locale] }}</div>
+            <div class="fnt-primary-body-m">{{ blok['body_' ~ app.locale] }}</div>
+        </div>
+
+        <div class="m-carousel--arrow-down">
+            <img src="/assets/ikony/arrow-down.png" alt="" />
+        </div>
+    </div>
+    <div class="item">
+        <img src="{{ paths.theme }}/assets/historie/he_slideshow-expo-history-02.jpg" alt="slide 1" />
+
+        <div class="orbit-caption">{% setcontent blok = 'bloky' where { id: '38' } %}
+            <div>{{ blok['title_' ~ app.locale] }}</div>
+            <div class="fnt-primary-body-m">{{ blok['body_' ~ app.locale] }}</div>
+        </div>
+
+        <div class="m-carousel--arrow-down">
+            <img src="/assets/ikony/arrow-down.png" alt="" />
+        </div>
+    </div>
+    <div class="item">
+        <img src="{{ paths.theme }}/assets/historie/he_slideshow-expo-history-03.jpg" alt="slide 1" />
 
         <div class="orbit-caption">{% setcontent blok = 'bloky' where { id: '38' } %}
             <div>{{ blok['title_' ~ app.locale] }}</div>
