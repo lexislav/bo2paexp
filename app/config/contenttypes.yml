@@ -311,7 +311,7 @@ ProgressBar:
         slug:
             type: slug
         poloha:
-            type: datetime
+            type: date
             default: "2014-10-01"
         image:
             type: image
