@@ -40,85 +40,19 @@
     {% set records = records|order(app.config.get('general/listing_sort')) %}
 {% endif %}
 
-{% for record in records %}
-
-    {% if loop.index == 1 %}
 
     <div class="row mgr-full">
-    <div class="small-12 large-6 columns">
-        <article class="m-blog-item mm-subhero {% if record.featured %}mm-featured{% endif %}">
-            <header>
-                <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">
-                    <div class="m-item--image">
-                        {% if record.image!="" %}
-                            <img src="{{ thumbnail(record.image, 600, 420, crop) }}" alt="">
-                        {% else %}
-                            <img src="{{ paths.theme }}assets/no_image_thumb_blue_slim.svg" />
-                        {% endif %}</div>
-                    <h1 class="m-item--hed">
-                        <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">{{ record['title_' ~ app.locale] }}</a>
-                    </h1>
+    <div class="small-12 large-12 columns">
 
-                    {% if record.taxonomy.kategorie is defined %}
-                        <div class="m-item--meta">
-                            <div class="m-item--section">
-                                {% for tag in record.taxonomy.kategorie %}
-                                <a href="{{ paths.root }}{{ app.locale }}/kategorie/{{ tag }}">
-                                    {{ tag }}</a>{% if not loop.last %}, {% endif %}
-                                {% endfor %}
-                            </div>
-                        </div>
-                    {% endif %}
-                </a>
-            </header>
+
+        <article>
+            <h2>{{ __("No content found.") }}</h2>
+
+            <p>
+                Unfortunately, no content could be found. Try another page, or go to the
+                <a href="{{ paths.root }}">homepage</a>. </p>
         </article>
     </div>
-
-    {% elseif loop.index == 2 %}
-        <div class="small-12 large-6 columns">
-            <article class="m-blog-item mm-subhero {% if record.featured %}mm-featured{% endif %}">
-                <header>
-                    <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">
-                        <div class="m-item--image">
-                            {% if record.image!="" %}
-                                <img src="{{ thumbnail(record.image, 600, 420, crop) }}" alt="">
-                            {% else %}
-                                <img src="{{ paths.theme }}assets/no_image_thumb_blue_slim.svg" />
-                            {% endif %}</div>
-                        <h1 class="m-item--hed">
-                            <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">{{ record['title_' ~ app.locale] }}</a>
-                        </h1>
-
-                        {% if record.taxonomy.kategorie is defined %}
-                            <div class="m-item--meta">
-                                {% for cat in record.taxonomy.kategorie %}
-                                <a href="{{ paths.root }}{{ app.locale }}/kategorie/{{ cat }}" class="m-item--section">
-                                    {{ cat }}</a>{% if not loop.last %}, {% endif %}
-                                {% endfor %}</div>
-                        {% endif %}
-                    </a>
-                </header>
-            </article>
-        </div>
-        </div>
-    {% elseif loop.index == 3 %}
-    <div class="row">
-        {% if record.image!="" %}
-            {% include '_inc-blog-post-small.twig' %}
-        {% else %}
-            {% include '_inc-blog-post-small.twig' %}
-        {% endif %}
-    {% endif %}
-
-    {% else %}
-            <article>
-                <h2>{{ __("No content found.") }}</h2>
-
-                <p>
-                    Unfortunately, no content could be found. Try another page, or go to the
-                    <a href="{{ paths.root }}">homepage</a>. </p>
-            </article>
-    {% endfor %}
     </div>
 
 <!-- Paginace -->
