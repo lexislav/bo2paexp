@@ -1,7 +1,8 @@
 .m-page-footer {
 
     padding-top: $base-spacing;
-    background-image: url("../assets/file-a.jpg");
+    background-color: #37373b;
+    background-image: url("../assets/footer-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top center;
@@ -18,8 +19,13 @@
         font-weight: 600;
 
         text-shadow: 0 1px 1px rgba(0, 0, 0, .8);
-
+        margin-bottom: $base-spacing / 2;
     }
+
+    .inline-list {
+        li {margin-right: $base-spacing;}
+    }
+
 
     .m-page-footer--copyright {
         font-size: rem-calc(14);

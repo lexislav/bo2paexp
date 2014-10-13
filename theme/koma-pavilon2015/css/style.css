@@ -4338,7 +4338,8 @@ body {
 
 .m-page-footer {
   padding-top: 60px;
-  background-image: url("../assets/file-a.jpg");
+  background-color: #37373b;
+  background-image: url("../assets/footer-bg.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top center;
@@ -4354,7 +4355,10 @@ body {
     font-size: 1.06667rem;
     padding-bottom: 4px;
     font-weight: 600;
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8); }
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.8);
+    margin-bottom: 30px; }
+  .m-page-footer .inline-list li {
+    margin-right: 60px; }
   .m-page-footer .m-page-footer--copyright {
     font-size: 0.93333rem;
     font-weight: 400;
