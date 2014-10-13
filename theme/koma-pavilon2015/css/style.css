@@ -4435,6 +4435,9 @@ body {
       margin: 0 auto;
       margin-top: 40px; }
 
+.m-gallery .m-item {
+  margin-bottom: 30px; }
+
 .mgr-full {
   margin-bottom: 60px; }
 

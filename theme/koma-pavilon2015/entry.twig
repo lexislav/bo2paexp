@@ -92,15 +92,21 @@
 
     <!-- fotogalerie -->
     {% if record.imagelist %}
-    <div class="mgr-double">
+    <div class="m-gallery mgr-double">
         <div class="row">
             <h5 class="small-12 columns">Fotogalerie</h5>
             {% for imago in record.imagelist %}
                 <div class="small-6 medium-4 large-3 xlarge-2 columns {% if loop.last %}end{% endif %}">
-                    <a href="{{ imago.filename|image }}" title="{{ imago.title }}">
-                      <img src="{{ imago.filename|thumbnail(280,210, crop) }}">
-                    </a>
+                    <article class="m-item">
+                        <header>
+                            <div class="m-item--image"><a href="{{ imago.filename|image }}" title="{{ imago.title }}">
+                                    <img src="{{ imago.filename|thumbnail(280,210, crop) }}">
+                                </a></div>
+                        </header>
+
+                    </article>
                 </div>
+
             {% endfor %}
         </div>
     </div>
@@ -138,6 +144,5 @@
 {% include '_inc-global-scripts.twig' %}
 <!-- page custom JS -->
 
-{% include '_analytics.twig' %}
 </body>
 {% include '_footer.twig' %}
