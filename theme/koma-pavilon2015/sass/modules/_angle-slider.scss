@@ -46,12 +46,13 @@ $ags-height:860px;
     .title-box {
         position: absolute;
         bottom: 90px;
-        font-size: rem-calc(40);
+        font-size: rem-calc(24);
         line-height: 1.2em;
 
         span {
             font-weight: bold;
             display: block;
+            font-size: rem-calc(52);
         }
     }
 
