@@ -289,11 +289,13 @@
 }
 
 #skrollr-body {
+    pointer-events: none;
     position: relative;
     z-index: 50;
 }
 
 .skrollr-wrap {
+    pointer-events:auto;
     background-color: white;
     @include clearfix();
 }

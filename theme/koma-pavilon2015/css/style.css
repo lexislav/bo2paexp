@@ -4099,10 +4099,12 @@ body {
     clear: both; }
 
 #skrollr-body {
+  pointer-events: none;
   position: relative;
   z-index: 50; }
 
 .skrollr-wrap {
+  pointer-events: auto;
   background-color: white; }
   .skrollr-wrap:before, .skrollr-wrap:after {
     content: " ";
@@ -4686,13 +4688,13 @@ body {
   .m-icon:hover:before {
     background-position: bottom left; }
   .m-icon.xs {
-    height: 16px;
-    width: 16px;
-    margin-left: 0; }
+    height: 17px;
+    width: 17px;
+    margin-left: 6px; }
     .m-icon.xs:before {
-      margin-top: 1px;
-      height: 16px;
-      width: 16px; }
+      margin-top: 2px;
+      height: 17px;
+      width: 17px; }
   .m-icon.x2 {
     width: 40px;
     height: 40px;
