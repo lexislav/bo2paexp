@@ -70,33 +70,14 @@
             <article>
                 <header>
                     <h2 class="fnt-primary-headline">Aktuální stav pavilonu</h2>
-                </header>
+                </header>{% setcontent bodyosy = 'ProgressBar' %}
                 <div id="drg-progress-bar" class="m-progress-bar--container">
-                    <ul class="m-progress-bar--items">
-                        <li style="left: 0px" class="mm-full">
-                            <img class="m-progress-bar--image" src="http://foundation.zurb.com/docs/assets/img/examples/satelite.jpg">
-                            <span><strong>24. 5. 2008</strong> popisek popisek popisek popisek popisek popisek</span>
-                        </li>
-                        <li style="left: 300px" class="mm-full">
-                            <img class="m-progress-bar--image" src="http://foundation.zurb.com/docs/assets/img/examples/satelite.jpg">
-                            <span>popisek popisek popisek</span>
-                        </li>
-                        <li style="left: 500px">
-                            <img class="m-progress-bar--image" src="http://foundation.zurb.com/docs/assets/img/examples/satelite.jpg">
-                            <span>popisek popisek popisek</span>
-                        </li>
-                        <li style="left: 650px">
-                            <img class="m-progress-bar--image" src="http://foundation.zurb.com/docs/assets/img/examples/satelite.jpg">
-                            <span>popisek popisek popisek</span>
-                        </li>
-                        <li style="left: 1200px">
-                            <img class="m-progress-bar--image" src="http://foundation.zurb.com/docs/assets/img/examples/satelite.jpg">
-                            <span>popisek popisek popisek</span>
-                        </li>
-                        <li style="left: 2200px">
-                            <img class="m-progress-bar--image" src="http://foundation.zurb.com/docs/assets/img/examples/satelite.jpg">
-                            <span>popisek popisek popisek</span>
-                        </li>
+                    <ul class="m-progress-bar--items">{% for bodosy in bodyosy|order('id') %}
+                        <li style="left: {{ (loop.index-1) * 200}}" class="mm-full">
+                            {% if bodosy.image!="" %}<img class="m-progress-bar--image" src="{{ thumbnail(bodosy.image, 60, 60, fit) }}">{% endif %}
+                            {% if bodosy.related %}{% set bodlink = bodosy.related|first %}<a url="{{bodlink.link}}" title="{{bodlink.slug}}">
+                <span><strong>{{ bodosy.poloha }}</strong> {{ bodosy['title_' ~ app.locale] }}</span>{% if bodosy.related %}</a>{% endif %}
+                        </li>{% endfor %}
                     </ul>
                     <div class="m-progress-bar--bar-bg">
                         <div class="m-progress-bar--bar"></div>
