@@ -3447,7 +3447,7 @@ th.hide-for-touch {
     display: table-cell !important; } }
 .fnt-primary-headline {
   font-family: "purista-web";
-  font-weight: 400;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   font-size: 2.66667rem; }
 
@@ -3536,7 +3536,7 @@ body {
   z-index: 200;
   margin: auto;
   font-family: "purista-web";
-  font-weight: 400;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   font-size: 2.66667rem; }
   .m-nav .m-nav--panel > .row {
@@ -4279,9 +4279,27 @@ body {
 .m-progress-bar {
   background: #22D3D3;
   height: 470px; }
+  .m-progress-bar .row {
+    overflow: visible; }
+  .m-progress-bar article {
+    position: relative; }
+  .m-progress-bar .arrow-left,
+  .m-progress-bar .arrow-right {
+    display: block;
+    position: absolute;
+    width: 15px;
+    height: 50px;
+    background-image: url("../assets/ikony/nav-prev-white.png");
+    background-repeat: no-repeat;
+    top: 160px;
+    left: -24px; }
+  .m-progress-bar .arrow-right {
+    left: auto;
+    right: -24px;
+    background-image: url("../assets/ikony/nav-next-white.png"); }
   .m-progress-bar h2 {
     font-family: "purista-web";
-    font-weight: 400;
+    font-weight: 300;
     -webkit-font-smoothing: antialiased;
     font-size: 2.66667rem;
     font-size: 2.66667rem;
@@ -4346,7 +4364,7 @@ body {
   background-size: cover;
   background-position: top center;
   font-family: "purista-web";
-  font-weight: 400;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   font-size: 2.66667rem;
   font-size: 1.06667rem;
@@ -4636,7 +4654,7 @@ body {
         color: #c20e1a; }
   .m-list .m-item .m-item--meta {
     font-family: "purista-web";
-    font-weight: 400;
+    font-weight: 300;
     -webkit-font-smoothing: antialiased;
     font-size: 2.66667rem;
     line-height: 1.2em;
@@ -4754,7 +4772,7 @@ a:hover .svg-button #button {
   margin-bottom: 30px; }
 .l-partner_large .m-partner .m-item--hed {
   font-family: "purista-web";
-  font-weight: 400;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   font-size: 2.66667rem; }
 .l-partner_large .m-partner .m-item--description {
@@ -4883,7 +4901,7 @@ aside .m-story {
 
 aside h2 {
   font-family: "purista-web";
-  font-weight: 400;
+  font-weight: 300;
   -webkit-font-smoothing: antialiased;
   font-size: 2.66667rem;
   font-size: 1.06667rem;

@@ -5,7 +5,7 @@
 
 @mixin fnt-primary-headline() {
     // section headline
-    @include fnt-primary-medium();
+    @include fnt-primary-light();
     font-size: rem-calc(40);
 }
 .fnt-primary-headline {

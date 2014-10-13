@@ -8,6 +8,33 @@
     background: #22D3D3;
     height: 470px;
 
+    .row {
+        overflow: visible;
+
+    }
+
+    article {
+        position: relative;
+    }
+
+    .arrow-left,
+    .arrow-right {
+        display: block;
+        position: absolute;
+        width: 15px;
+        height: 50px;
+        background-image: url("../assets/ikony/nav-prev-white.png");
+        background-repeat: no-repeat;
+        top: 160px;
+        left: -24px;
+    }
+
+    .arrow-right {
+        left: auto;
+        right: -24px;
+        background-image: url("../assets/ikony/nav-next-white.png");
+    }
+
 
     h2 {
         @include fnt-primary-headline();
