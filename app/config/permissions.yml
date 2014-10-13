@@ -133,34 +133,76 @@ global:
 # - frontend: allows front-end access to records (note that this requires the
 #             'frontend_permission_checks' global configuration setting, for
 #             backwards-compatibility reasons as well as performance)
-contenttype-all:
-    edit: [ developer, admin, chief-editor ]
-    create: [ developer, admin, chief-editor ]
-    publish: [ developer, admin, chief-editor ]
-    depublish: [ developer, admin, chief-editor ]
-    delete: [ developer, admin ]
-    change-ownership: [ developer, admin ]
+# contenttype-all:
+#     edit: [ developer, admin, chief-editor ]
+#     create: [ developer, admin, chief-editor ]
+#     publish: [ developer, admin, chief-editor ]
+#     depublish: [ developer, admin, chief-editor ]
+#     delete: [ developer, admin ]
+#     change-ownership: [ developer, admin ]
 
 contenttype-default:
-    edit: [ editor ]
-    create: [ editor ]
-    change-ownership: [ owner ]
-    view: [ anonymous ]
+    edit: [ developer, admin ]
+    create: [ developer, admin ]
+    change-ownership: [ developer, admin, owner ]
+    view: [ developer, redactor ]
     frontend: [ anonymous ]
 
 contenttypes:
-    historie:
-        edit: [ developer, admin, redactor, chief-editor ]
-        create: [ developer, admin, redactor, chief-editor ]
-        publish: [ developer, admin, redactor, chief-editor ]
+    blog:
+        edit: [ developer, admin, editor, chief-editor ]
+        create: [ developer, admin, editor, chief-editor ]
+        publish: [ developer, admin, editor, chief-editor ]
         delete: [ developer, admin, chief-editor ]
-        view: [ developer, admin, redactor, chief-editor ]
-    Strany:
-        edit: [ developer, admin ]
-        create: [ developer, admin ]
-        publish: [ developer, admin ]
+        view: [ developer, admin, chief-editor, editor ]
+    sponzori:
+        edit: [ developer, admin, editor, chief-editor ]
+        create: [ developer, admin, editor, chief-editor ]
+        publish: [ developer, admin, editor, chief-editor ]
+        delete: [ developer, admin, chief-editor ]
+        view: [ developer, admin, chief-editor, editor ]
+    odkazy:
+        edit: [ developer, admin, editor, chief-editor ]
+        create: [ developer, admin, editor, chief-editor ]
+        publish: [ developer, admin, editor, chief-editor ]
+        delete: [ developer, admin, chief-editor ]
+        view: [ developer, admin, chief-editor, editor ]
+    bloky:
+        edit: [ developer, admin, editor, chief-editor ]
+        create: [ developer, admin, editor, chief-editor ]
+        publish: [ developer, admin, editor, chief-editor ]
         delete: [ developer, admin ]
-        view: [ developer, admin ]
+        view: [ developer, admin, chief-editor, editor ]
+    modaly:
+        edit: [ developer, admin, editor, chief-editor ]
+        create: [ developer, admin, editor, chief-editor ]
+        publish: [ developer, admin, editor, chief-editor ]
+        delete: [ developer, admin, chief-editor ]
+        view: [ developer, admin, editor, chief-editor ]
+    numbers:
+        edit: [ developer, admin, editor, chief-editor ]
+        create: [ developer, admin ]
+        publish: [ developer, admin, editor, chief-editor ]
+        delete: [ developer, admin ]
+        view: [ developer, admin, chief-editor, editor ]
+    progressbar:
+        edit: [ developer, admin, editor, chief-editor ]
+        create: [ developer, admin, chief-editor ]
+        publish: [ developer, admin, editor, chief-editor ]
+        delete: [ developer, admin ]
+        view: [ developer, admin, chief-editor, editor ]
+    historie:
+        edit: [ developer, admin, redactor, chief-editor, editor ]
+        create: [ developer, admin, redactor, chief-editor, editor ]
+        publish: [ developer, admin, redactor, chief-editor, editor ]
+        delete: [ developer, admin, chief-editor, editor ]
+        view: [ developer, admin, redactor, chief-editor, editor ]
+    Strany:
+        edit: [ developer, admin, root ]
+        create: [ developer, admin, root ]
+        publish: [ developer, admin, root ]
+        delete: [ developer, admin, root ]
+        view: [ developer, admin, root ]
 
 # This is an example of how to define Contenttype specific permissions
 #
