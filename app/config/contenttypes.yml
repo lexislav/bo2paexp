@@ -89,8 +89,8 @@ sponzori:
             postfix: Vlozte webovou adresu partnera
         logo:
             type: image
-            extensions: [ gif, jpg, png ]
-            postfix: UPOZORNĚNÍ: Upravte logo aby mělo průhledné pozadí !!!    
+            extensions: [ gif, png, tif ]
+            postfix: UPOZORNĚNÍ: Upravte logo aby mělo průhledné pozadí !!!  Logo musí být vystředěné na plátně o velikosti 280x210 !!!  
         nazev_en:
             type: text
             class: large

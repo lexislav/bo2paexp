@@ -126,7 +126,7 @@ changelog:
 # allow_upscale determines whether small images will be enlarged to fit the requested dimensions.
 # Note: if you change these values, you might need to clear the cache before they show up.
 thumbnails:
-  default_thumbnail: [ 280, 210 ]
+  default_thumbnail: [ 280, 210, crop ]
   default_image: [ 1000, 750 ]
   quality: 80
   cropping: crop
