@@ -6,8 +6,6 @@
     height: 900px;
     overflow: hidden;
 
-
-
     .m-carousel--item {
 
         cursor: default;
@@ -28,19 +26,32 @@
         }
 
         .m-item--hed {
-            width: 600px;
+
+            width: 300px;
             margin: 0 auto;
             margin-top: 200px;
             line-height: 1.3em;
+            font-size: rem-calc(40);
+
+            @media #{size(C)} {
+                width: 600px;
+                font-size: rem-calc(60);
+            }
+
         }
 
         .m-item--description {
+
+            width: 300px;
             position: absolute;
             bottom: 120px;
-            width: 400px;
             left: 0;
             right: 0;
             margin: auto;
+
+            @media #{size(C)} {
+                width: 400px;
+            }
         }
 
         .orbit-caption {
@@ -54,13 +65,9 @@
             color: white;
             text-align: center;
 
-            font-size: rem-calc(60);
             text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
         }
     }
-
-
-
 
     .m-carousel--arrow-down {
 

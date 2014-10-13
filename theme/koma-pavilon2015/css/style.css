@@ -4398,17 +4398,25 @@ body {
       background-position: center;
       background-size: cover; }
     .m-carousel .m-carousel--item .m-item--hed {
-      width: 600px;
+      width: 300px;
       margin: 0 auto;
       margin-top: 200px;
-      line-height: 1.3em; }
+      line-height: 1.3em;
+      font-size: 2.66667rem; }
+      @media only screen and (min-width: 781px) {
+        .m-carousel .m-carousel--item .m-item--hed {
+          width: 600px;
+          font-size: 4rem; } }
     .m-carousel .m-carousel--item .m-item--description {
+      width: 300px;
       position: absolute;
       bottom: 120px;
-      width: 400px;
       left: 0;
       right: 0;
       margin: auto; }
+      @media only screen and (min-width: 781px) {
+        .m-carousel .m-carousel--item .m-item--description {
+          width: 400px; } }
     .m-carousel .m-carousel--item .orbit-caption {
       position: absolute;
       left: 0;
@@ -4418,7 +4426,6 @@ body {
       margin: auto;
       color: white;
       text-align: center;
-      font-size: 4rem;
       text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5); }
   .m-carousel .m-carousel--arrow-down {
     position: absolute;
