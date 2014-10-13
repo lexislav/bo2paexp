@@ -3777,7 +3777,8 @@ body {
     .ags-slider .title-box span {
       font-weight: bold;
       display: block;
-      font-size: 3.46667rem; }
+      font-size: 3.46667rem;
+      line-height: 1.2em; }
   .ags-slider .ags-bg--content {
     position: absolute;
     background-image: url("../assets/homepage/hp02_skolka.jpg");
