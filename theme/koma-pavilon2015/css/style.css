@@ -3622,7 +3622,7 @@ body {
       right: 20px;
       width: 50px;
       height: 50px;
-      background-image: url("../assets/ikony/nav-top.png");
+      background-image: url("../assets/ikony/nav-close.png");
       background-repeat: no-repeat;
       background-position: 0 0;
       cursor: pointer; }
@@ -4292,10 +4292,10 @@ body {
     background-image: url("../assets/ikony/nav-prev-white.png");
     background-repeat: no-repeat;
     top: 160px;
-    left: -24px; }
+    left: -34px; }
   .m-progress-bar .arrow-right {
     left: auto;
-    right: -24px;
+    right: -34px;
     background-image: url("../assets/ikony/nav-next-white.png"); }
   .m-progress-bar h2 {
     font-family: "purista-web";
