@@ -72,12 +72,17 @@
                     <h2 class="fnt-primary-headline">Aktuální stav pavilonu</h2>
                 </header>{% setcontent bodyosy = 'ProgressBar' %}
                 <div id="drg-progress-bar" class="m-progress-bar--container">
-                    <ul class="m-progress-bar--items">{% for bodosy in bodyosy|order('id') %}
-                        <li style="left: {{ (loop.index) * 200}}px" class="mm-full">
+
+                    <ul class="m-progress-bar--items">
+
+                        {% for bodosy in bodyosy|order('id') %}
+                        <li data-stamp="{{ bodosy.poloha| date('U') }}" data-offset="" style="left: {{ (loop.index) * 200}}px" class="mm-full data-item">
                             {% if bodosy.image!="" %}<img class="m-progress-bar--image" src="{{ thumbnail(bodosy.image, 60, 60, fit) }}">{% endif %}
                             {% if bodosy.related %}{% set bodlink = bodosy.related|first %}<a url="{{bodlink.link}}" title="{{bodlink.slug}}">{% endif %}<span><strong>{{ bodosy.poloha|date("d. m. Y") }}</strong> {{ bodosy['title_' ~ app.locale] }}</span>{% if bodosy.related %}</a>{% endif %}
-                        </li>{% endfor %}
+                        </li>
+                        {% endfor %}
                     </ul>
+
                     <div class="m-progress-bar--bar-bg">
                         <div class="m-progress-bar--bar"></div>
                     </div>
