@@ -333,6 +333,7 @@ ProgressBar:
             format: "{{ item.title|escape }} <span>(№ {{ item.id }})</span>"
     show_on_dashboard: false
     default_status: publish
+    recordsperpage: 100
 
 
 Strany:
