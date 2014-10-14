@@ -2,22 +2,15 @@
  * Created by hotovec on 25.9.2014.
  */
 
-/*$( document ).ready(function() {
-    console.log( "document loaded" );
-});*/
-
 $(document).foundation();
 
-
 var isTouch = true;
-if( $("html").hasClass("no-touch")) {
-    isTouch = false;
-};
-
-
-
 
 $(function () {
+
+    if( $("html").hasClass("no-touch")) {
+        isTouch = false;
+    };
 
     // menu color swithching
 
