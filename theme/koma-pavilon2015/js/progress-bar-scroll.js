@@ -43,6 +43,7 @@ $(function () {
     barBg.css("width", maxWidthOfBar);
     bar.css("width", maxWidthOfBar * tsOffset);
 
+
     dataItems.forEach(function() {
         var tPerc = ((dataItems[idx].stamp - minStamp) / perc) / 100;
         dataItems[idx].offset = tPerc;
@@ -53,7 +54,7 @@ $(function () {
 
 
     // make dragable
-
+    $("#drg-progress-bar").scrollLeft( maxWidthOfBar * tsOffset - (pb.width() / 2));
     Draggable.create("#drg-progress-bar", {
         type: "scrollLeft",
         edgeResistance: .5,
