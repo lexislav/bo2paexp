@@ -15,10 +15,7 @@ if( $("html").hasClass("no-touch")) {
 };
 
 
-$( window ).load(function() {
-    $("body").css('overflow','auto');
-    $("#preloader").fadeOut(300);
-});
+
 
 $(function () {
 
