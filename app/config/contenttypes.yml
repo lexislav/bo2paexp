@@ -318,7 +318,8 @@ ProgressBar:
         image:
             type: image
             label: ikona
-            postfix: ikona 60x60px
+            extensions: [ gif, png, svg ]
+            postfix: ikona 60x60px, povolené formáty png, gif, svg
         title_en:
             type: text
             class: large
