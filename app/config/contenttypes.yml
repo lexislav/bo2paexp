@@ -313,6 +313,9 @@ ProgressBar:
         poloha:
             type: date
             default: "2014-10-01"
+        korekce:
+            type: integer
+            label: Korekce polohy na Časové ose    
         image:
             type: image
             label: ikona
