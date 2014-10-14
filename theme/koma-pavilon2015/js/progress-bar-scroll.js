@@ -19,6 +19,7 @@ $(function () {
     dataHolders.each(function () {
         var iHolder = $(this);
         var iStamp = iHolder.data("stamp");
+        var iCorrection = iHolder.data("correction");
 
         if (iStamp != null) {
             console.log("s: " + iStamp);
@@ -28,6 +29,7 @@ $(function () {
             var dataItem = {
                 holder: iHolder,
                 stamp: iStamp,
+                correction: iCorrection,
                 offset: 0
             };
             dataItems.push(dataItem);
@@ -48,7 +50,7 @@ $(function () {
         var tPerc = ((dataItems[idx].stamp - minStamp) / perc) / 100;
         dataItems[idx].offset = tPerc;
         //console.log(idx + ": " + dataItems[idx].stamp + " %"+dataItems[idx].offset);
-        dataItems[idx].holder.css("left", (maxWidthOfBar * dataItems[idx].offset) - 60); // 60 polovina šířky elementu
+        dataItems[idx].holder.css("left", (maxWidthOfBar * dataItems[idx].offset) - 60 + dataItems[idx].correction); // 60 polovina šířky elementu
         idx++;
     });
 
