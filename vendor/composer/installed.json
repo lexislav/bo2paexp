@@ -357,6 +357,77 @@
         ]
     },
     {
+        "name": "rossriley/flysystem53",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/rossriley/flysystem.git",
+            "reference": "34ac7169b127eff3aa8a8e7048f6ec3caf3fd45c"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/rossriley/flysystem/zipball/34ac7169b127eff3aa8a8e7048f6ec3caf3fd45c",
+            "reference": "34ac7169b127eff3aa8a8e7048f6ec3caf3fd45c",
+            "shasum": ""
+        },
+        "require-dev": {
+            "aws/aws-sdk-php": "~2.4",
+            "dropbox/dropbox-sdk": "~1.1.1",
+            "league/event": "~0.2.0",
+            "league/phpunit-coverage-listener": "~1.1",
+            "mockery/mockery": "~0.9@dev",
+            "phpseclib/phpseclib": "~0.3.5",
+            "phpunit/phpunit": "~4.0",
+            "predis/predis": "~0.8.4",
+            "rackspace/php-opencloud": "~1.9.1",
+            "sabre/dav": "~2.0.2"
+        },
+        "suggest": {
+            "aws/aws-sdk-php": "Allows you to use AWS S3 storage",
+            "dropbox/dropbox-sdk": "Allows you to use Dropbox storage",
+            "league/event": "Required for EventableFilesystem",
+            "phpseclib/phpseclib": "Allows SFTP server storage",
+            "predis/predis": "Allows you to use Predis for caching",
+            "rackspace/php-opencloud": "Allows you to use Rackspace Cloud Files",
+            "sabre/dav": "Enables WebDav support"
+        },
+        "time": "2014-10-11 11:49:20",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.5-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "League\\Flysystem\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Frank de Jonge",
+                "email": "info@frenky.net"
+            }
+        ],
+        "description": "Filesystem abstraction, but easy.",
+        "keywords": [
+            "WebDAV",
+            "aws",
+            "dropbox",
+            "filesystem",
+            "ftp",
+            "remote",
+            "s3",
+            "sftp"
+        ]
+    },
+    {
         "name": "rossriley/validation",
         "version": "1.2.1",
         "version_normalized": "1.2.1.0",
@@ -2587,88 +2658,6 @@
         ]
     },
     {
-        "name": "league/flysystem",
-        "version": "0.5.7",
-        "version_normalized": "0.5.7.0",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/thephpleague/flysystem.git",
-            "reference": "63759ca1f3bb25d52946f684b54fe3821d084215"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/63759ca1f3bb25d52946f684b54fe3821d084215",
-            "reference": "63759ca1f3bb25d52946f684b54fe3821d084215",
-            "shasum": ""
-        },
-        "require": {
-            "php": ">=5.4.0"
-        },
-        "require-dev": {
-            "aws/aws-sdk-php": "~2.4",
-            "barracuda/copy": "~1.1.4",
-            "dropbox/dropbox-sdk": "~1.1.1",
-            "guzzlehttp/guzzle": "~4.0",
-            "league/event": "~1.0",
-            "league/phpunit-coverage-listener": "~1.1",
-            "mockery/mockery": "~0.9",
-            "phpseclib/phpseclib": "~0.3.5",
-            "phpspec/phpspec": "~2.0",
-            "phpunit/phpunit": "~4.0",
-            "predis/predis": "~1.0",
-            "rackspace/php-opencloud": "~1.10.0",
-            "sabre/dav": "~2.0.2"
-        },
-        "suggest": {
-            "aws/aws-sdk-php": "Allows you to use AWS S3 storage",
-            "barracuda/copy": "Allows you to use Copy.com storage",
-            "dropbox/dropbox-sdk": "Allows you to use Dropbox storage",
-            "guzzlehttp/guzzle": "Allows you to use http files (reading only)",
-            "league/event": "Required for EventableFilesystem",
-            "phpseclib/phpseclib": "Allows SFTP server storage",
-            "predis/predis": "Allows you to use Predis for caching",
-            "rackspace/php-opencloud": "Allows you to use Rackspace Cloud Files",
-            "sabre/dav": "Enables WebDav support"
-        },
-        "time": "2014-09-16 06:55:04",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "0.5-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "League\\Flysystem\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Frank de Jonge",
-                "email": "info@frenky.net"
-            }
-        ],
-        "description": "Filesystem abstraction, but easy.",
-        "keywords": [
-            "WebDAV",
-            "aws",
-            "dropbox",
-            "file systems",
-            "files",
-            "filesystem",
-            "ftp",
-            "remote",
-            "s3",
-            "sftp",
-            "storage"
-        ]
-    },
-    {
         "name": "symfony/stopwatch",
         "version": "v2.5.5",
         "version_normalized": "2.5.5.0",
@@ -2719,23 +2708,23 @@
     },
     {
         "name": "twig/twig",
-        "version": "v1.16.0",
-        "version_normalized": "1.16.0.0",
+        "version": "v1.16.1",
+        "version_normalized": "1.16.1.0",
         "source": {
             "type": "git",
             "url": "https://github.com/fabpot/Twig.git",
-            "reference": "8ce37115802e257a984a82d38254884085060024"
+            "reference": "7c4c01dcf578523cfcddf383641a4f12790270ec"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/fabpot/Twig/zipball/8ce37115802e257a984a82d38254884085060024",
-            "reference": "8ce37115802e257a984a82d38254884085060024",
+            "url": "https://api.github.com/repos/fabpot/Twig/zipball/7c4c01dcf578523cfcddf383641a4f12790270ec",
+            "reference": "7c4c01dcf578523cfcddf383641a4f12790270ec",
             "shasum": ""
         },
         "require": {
             "php": ">=5.2.4"
         },
-        "time": "2014-07-05 12:19:05",
+        "time": "2014-10-10 14:09:53",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -4686,17 +4675,17 @@
     },
     {
         "name": "fabpot/goutte",
-        "version": "v1.0.6",
-        "version_normalized": "1.0.6.0",
+        "version": "v1.0.7",
+        "version_normalized": "1.0.7.0",
         "source": {
             "type": "git",
             "url": "https://github.com/fabpot/Goutte.git",
-            "reference": "06a5451288ffddd204b10fa6c6f9ab2b86dd515d"
+            "reference": "794b196e76bdd37b5155cdecbad311f0a3b07625"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/fabpot/Goutte/zipball/06a5451288ffddd204b10fa6c6f9ab2b86dd515d",
-            "reference": "06a5451288ffddd204b10fa6c6f9ab2b86dd515d",
+            "url": "https://api.github.com/repos/fabpot/Goutte/zipball/794b196e76bdd37b5155cdecbad311f0a3b07625",
+            "reference": "794b196e76bdd37b5155cdecbad311f0a3b07625",
             "shasum": ""
         },
         "require": {
@@ -4713,7 +4702,7 @@
             "guzzle/plugin-history": "~3.1",
             "guzzle/plugin-mock": "~3.1"
         },
-        "time": "2014-03-14 13:02:09",
+        "time": "2014-10-09 15:52:51",
         "type": "application",
         "extra": {
             "branch-alias": {
@@ -4733,9 +4722,7 @@
         "authors": [
             {
                 "name": "Fabien Potencier",
-                "email": "fabien@symfony.com",
-                "homepage": "http://fabien.potencier.org",
-                "role": "Lead Developer"
+                "email": "fabien@symfony.com"
             }
         ],
         "description": "A simple PHP Web Scraper",

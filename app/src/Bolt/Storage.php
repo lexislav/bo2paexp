@@ -152,20 +152,7 @@ class Storage
 
         $content['ownerid'] = $user['id'];
 
-        switch (rand(1, 20)) {
-            case 1:
-                $content['status'] = "timed";
-                break;
-            case 2:
-                $content['status'] = "draft";
-                break;
-            case 3:
-                $content['status'] = "held";
-                break;
-            default:
-                $content['status'] = "published";
-                break;
-        }
+        $content['status'] = "published";
 
         foreach ($contenttype['fields'] as $field => $values) {
 
@@ -1265,8 +1252,16 @@ class Storage
         // Make the query for the pager..
         $pagerquery = "SELECT COUNT(*) AS count FROM $tablename" . $where;
 
+        // Sort on either 'ascending' or 'descending'
+        // Make sure we set the order.
+        if ($this->app['config']->get('general/taxonomy_sort') == 'desc') {
+            $order = 'desc';
+        } else {
+            $order = 'asc';
+        }
+        
         // Add the limit
-        $query = "SELECT * FROM $tablename" . $where . " ORDER BY id ASC";
+        $query = "SELECT * FROM $tablename" . $where . " ORDER BY id " . $order;
         $query = $this->app['db']->getDatabasePlatform()->modifyLimitQuery($query, $limit, ($page - 1) * $limit);
 
         $taxorows = $this->app['db']->fetchAll($query);

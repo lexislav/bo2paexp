@@ -1,0 +1,20 @@
+{
+    "require": {
+
+    },
+    "repositories": {
+        "bolt": {
+            "type": "composer",
+            "url": "http://extensions.bolt.cm/satis/"
+        },
+        "packagist": false
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "provide": {
+        "bolt/bolt": "2.0.0"
+    },
+    "extra": {
+        "bolt-web-path": ".."
+    }
+}

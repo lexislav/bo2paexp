@@ -8,7 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Seld\\JsonLint\\' => array($vendorDir . '/seld/jsonlint/src/Seld/JsonLint'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
-    'League\\Flysystem\\' => array($vendorDir . '/league/flysystem/src'),
+    'League\\Flysystem\\' => array($vendorDir . '/rossriley/flysystem53/src'),
     'Bolt\\Thumbs\\Tests\\' => array($vendorDir . '/bolt/thumbs/tests'),
     'Bolt\\Thumbs\\' => array($vendorDir . '/bolt/thumbs/src'),
 );

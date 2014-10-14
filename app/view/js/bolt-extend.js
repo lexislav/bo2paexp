@@ -206,7 +206,14 @@ var BoltExtender = Object.extend(Object, {
     
     checkPackage: function(e) {
         var controller = this;
+
+        // Depending on whether we 'autocompleted' an extension name or not, either
+        // pick the value from the input itself, or from the data attribute.
         var ext = this.find('input[name="check-package"]').val();
+        var packagename = this.find('input[name="check-package"]').data('packagename');
+        if (packagename) { 
+            ext = packagename;
+        }
         active_console = false;
         jQuery.get(baseurl+'installInfo?package='+ext, function(data) {
             
@@ -371,8 +378,10 @@ var BoltExtender = Object.extend(Object, {
                     cont.html("").show();
                     for(var p in data['packages']) {
                         var t = data['packages'][p];
-                        cont.append("<a data-action='prefill-package' class='btn btn-block btn-default prefill-package' style='text-align: left;'>" 
-                                + t.title + " <small>(" + t.authors + " - " + t.name + ")</small></a>");
+                        var dataattr = "data-action='prefill-package' data-packagename='"+ t.name + "'";
+                        cont.append("<a class='btn btn-block btn-default prefill-package' " + 
+                            dataattr + "style='text-align: left;'>" + t.title + 
+                            " <small " + dataattr +">(" + t.authors + " - " + t.name + ")</small></a>");
                     }
                     livesearch.on('blur', function(){
                        cont.fadeOut(); 
@@ -384,8 +393,9 @@ var BoltExtender = Object.extend(Object, {
     
     prefill: function(e) {
         var target = jQuery(e.target);
-        this.find('input[name="check-package"]').val( target.text());
-        target.parent().hide();
+        this.find('input[name="check-package"]').val(target.closest('a').text());
+        this.find('input[name="check-package"]').data('packagename', target.data('packagename'));
+        this.find('.auto-search').hide();
     },
     
     updateLog: function() {
@@ -409,19 +419,20 @@ var BoltExtender = Object.extend(Object, {
         
         click: function(e, t){
             var controller = e.data;
-            switch(jQuery(e.target).data('action')) {
-                case "update-check"     : controller.updateCheck(); break;
-                case "update-run"       : controller.updateRun(); break;
-                case "update-package"   : controller.updatePackage(e.originalEvent); break;
-                case "check-package"    : controller.checkPackage(e.originalEvent); break;
-                case "uninstall-package": controller.uninstall(e.originalEvent); break;
-                case "install-package"  : controller.install(e.originalEvent); break;
-                case "prefill-package"  : controller.prefill(e.originalEvent); break;
-                case "install-run"      : controller.installRun(e.originalEvent); break;
-                case "generate-theme"   : controller.generateTheme(e.originalEvent); break;
-                case "package-readme"   : controller.packageReadme(e.originalEvent); break;
-                case "package-config"   : controller.packageConfig(e.originalEvent); break;
-                case "clear-log"   : controller.clearLog(e.originalEvent); break;
+            var action = jQuery(e.target).data('action');
+            switch(action) {
+                case "update-check"      : controller.updateCheck(); break;
+                case "update-run"        : controller.updateRun(); break;
+                case "update-package"    : controller.updatePackage(e.originalEvent); break;
+                case "check-package"     : controller.checkPackage(e.originalEvent); break;
+                case "uninstall-package" : controller.uninstall(e.originalEvent); break;
+                case "install-package"   : controller.install(e.originalEvent); break;
+                case "prefill-package"   : controller.prefill(e.originalEvent); break;
+                case "install-run"       : controller.installRun(e.originalEvent); break;
+                case "generate-theme"    : controller.generateTheme(e.originalEvent); break;
+                case "package-readme"    : controller.packageReadme(e.originalEvent); break;
+                case "package-config"    : controller.packageConfig(e.originalEvent); break;
+                case "clear-log"         : controller.clearLog(e.originalEvent); break;
             }
         }
 
