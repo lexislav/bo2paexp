@@ -285,14 +285,13 @@
                             <div class="m-item--description">
                                 <p>{{ blok['body_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}
                                         {% for related in relatedmodals|order('id') %}
-                                        <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
+                                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
                                         {% endfor %}
                                     {% endif %}
                                 </p>
                             </div>
                         </div>
-                        <div class="small-1 columns">
-                        </div>
+                        <div class="small-1 columns"></div>
 
                     </header>
                 </article>
@@ -343,10 +342,18 @@
 
     $(document).ready(function () {
 
+        var canInitSkrollr = false;
+
         if (isTouch) {
             $(".m-carousel > .m-carousel--item").css('height', 680);
             $(".m-carousel").css('height', 680);
+
+          //  if ($(window).width() > 800) {
+                canInitSkrollr = true;
+          //  }
+
         } else {
+            canInitSkrollr = true;
             $(".m-carousel").css('height', 'auto');
             $(".m-carousel > .m-carousel--item").css('height', $(window).height());
         }
@@ -361,10 +368,12 @@
             el.css('height', ($(window).height() * 0.76) * 0.5);
         });
 
-        var s = skrollr.init({
-            smoothScrolling: false,
-            mobileDeceleration: 0.01
-        });
+        if (canInitSkrollr) {
+            var s = skrollr.init({
+                smoothScrolling: false,
+                mobileDeceleration: 0.01
+            });
+        }
 
         $(window).resize(function () {
             if (!isTouch) {
