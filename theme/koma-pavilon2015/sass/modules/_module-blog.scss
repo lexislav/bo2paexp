@@ -88,13 +88,21 @@
 
             height: auto;
 
-            font-size: rem-calc(20);
+
+            font-size: rem-calc(16);
             color: white;
             background-color: rgba(0, 0, 0, .56);
 
             a {
                 color: white;
 
+            }
+
+            @media #{size(B)} {
+                font-size: rem-calc(18);
+                }
+            @media #{size(D)} {
+                font-size: rem-calc(20);
             }
         }
 

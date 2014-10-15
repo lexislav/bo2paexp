@@ -4705,11 +4705,17 @@ body {
       left: 0;
       margin: auto;
       height: auto;
-      font-size: 1.33333rem;
+      font-size: 1.06667rem;
       color: white;
       background-color: rgba(0, 0, 0, 0.56); }
       .m-blog-item.mm-subhero .m-item--hed a {
         color: white; }
+      @media only screen and (min-width: 641px) {
+        .m-blog-item.mm-subhero .m-item--hed {
+          font-size: 1.2rem; } }
+      @media only screen and (min-width: 1411px) {
+        .m-blog-item.mm-subhero .m-item--hed {
+          font-size: 1.33333rem; } }
     .m-blog-item.mm-subhero .m-item--meta {
       font-size: 1rem; }
     .m-blog-item.mm-subhero:hover .m-item--hed {
