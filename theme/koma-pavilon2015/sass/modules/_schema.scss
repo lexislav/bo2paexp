@@ -1,6 +1,8 @@
 
 .l-schema {
 
+
+
     @include grid-row();
 
     position: fixed;
@@ -29,6 +31,9 @@
 
 
 .m-schema {
+
+    display: none;
+
     .np1 { background-image: url("../assets/pavilon_schema-sm/p0-1_ground-floor-pool-pavilon-schema.png"); }
     .np2 { background-image: url("../assets/pavilon_schema-sm/p0-2_ground-floor-pool-pavilon-schema.png"); }
     .np3 { background-image: url("../assets/pavilon_schema-sm/p1-1_first-floor-pavilon-schema.png"); }
@@ -278,6 +283,42 @@
         @include linear-gradient(to top, rgba(255, 255, 255, 0), white, $fallback: transparent);
     }
 
+
+    &.mm-mobile {
+
+
+
+        .m-item--section {
+            margin-bottom: $base-spacing;
+        }
+
+        .m-schema--image {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            background-position: 50% 50%;
+            background-size: contain;
+        }
+
+        .m-schema--label {
+            position: relative;
+            z-index: 1;
+
+            .m-item--hed,
+            .m-item--description{
+                font-size: rem-calc(22);
+                width: 100%;
+                strong {
+                    display: block;
+                }
+            }
+
+            .m-item--description {
+                font-size: rem-calc(16);
+            }
+        }
+    }
+
 }
 
 .m-schema-control {
@@ -299,6 +340,13 @@
     height: 600px;
     @include clearfix();
 }
+
+.m-schema-control,
+.m-schema-spacer,
+.m-schema-spacer-half {
+
+}
+
 
 #skrollr-body {
     pointer-events: none;

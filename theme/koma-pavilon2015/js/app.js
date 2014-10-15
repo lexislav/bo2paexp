@@ -38,5 +38,11 @@ $(function () {
         $(".m-nav--overlay").fadeOut(60);
     });
 
+    $(window).resize(function () {
+        if( $("html").hasClass("no-touch")) {
+            isTouch = false;
+        };
+    });
+
 
 });
