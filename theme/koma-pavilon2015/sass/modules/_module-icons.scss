@@ -109,7 +109,13 @@
 
 .i-arrow {
     &:before {
-        background-image: url("../assets/ikony/sipka-big.png");
+        background-image: url("../assets/ikony/sipka-big-black.png");
+    }
+
+    &.mm-white {
+        &:before {
+            background-image: url("../assets/ikony/sipka-big-white.png");
+        }
     }
 }
 

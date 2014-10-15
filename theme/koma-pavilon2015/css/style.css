@@ -4755,7 +4755,9 @@ body {
       line-height: 100px; }
 
 .i-arrow:before {
-  background-image: url("../assets/ikony/sipka-big.png"); }
+  background-image: url("../assets/ikony/sipka-big-black.png"); }
+.i-arrow.mm-white:before {
+  background-image: url("../assets/ikony/sipka-big-white.png"); }
 
 .i-info:before {
   background-image: url("../assets/ikony/info-icon.png"); }
