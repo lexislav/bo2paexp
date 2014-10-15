@@ -1,8 +1,6 @@
 
 .l-schema {
 
-
-
     @include grid-row();
 
     position: fixed;
@@ -27,30 +25,54 @@
 
 }
 
-
-
-
 .m-schema {
 
     display: none;
 
-    .np1 { background-image: url("../assets/pavilon_schema-sm/p0-1_ground-floor-pool-pavilon-schema.png"); }
-    .np2 { background-image: url("../assets/pavilon_schema-sm/p0-2_ground-floor-pool-pavilon-schema.png"); }
-    .np3 { background-image: url("../assets/pavilon_schema-sm/p1-1_first-floor-pavilon-schema.png"); }
-    .np4 { background-image: url("../assets/pavilon_schema-sm/p1-2_first-floor-pavilon-schema.png"); }
-    .np5 { background-image: url("../assets/pavilon_schema-sm/p2-1_second-floor-pavilon-schema.png"); }
-    .np6 { background-image: url("../assets/pavilon_schema-sm/p2-2_second-floor-pavilon-schema.png"); }
-    .np7 { background-image: url("../assets/pavilon_schema-sm/p3-1_roof-garden-pavilon-schema.png"); }
-
+    .np1 {
+        background-image: url("../assets/pavilon_schema-sm/p0-1_ground-floor-pool-pavilon-schema.png");
+    }
+    .np2 {
+        background-image: url("../assets/pavilon_schema-sm/p0-2_ground-floor-pool-pavilon-schema.png");
+    }
+    .np3 {
+        background-image: url("../assets/pavilon_schema-sm/p1-1_first-floor-pavilon-schema.png");
+    }
+    .np4 {
+        background-image: url("../assets/pavilon_schema-sm/p1-2_first-floor-pavilon-schema.png");
+    }
+    .np5 {
+        background-image: url("../assets/pavilon_schema-sm/p2-1_second-floor-pavilon-schema.png");
+    }
+    .np6 {
+        background-image: url("../assets/pavilon_schema-sm/p2-2_second-floor-pavilon-schema.png");
+    }
+    .np7 {
+        background-image: url("../assets/pavilon_schema-sm/p3-1_roof-garden-pavilon-schema.png");
+    }
 
     @media #{size(D)} {
-        .np1 { background-image: url("../assets/pavilon_schema/p0-1_ground-floor-pool-pavilon-schema.png"); }
-        .np2 { background-image: url("../assets/pavilon_schema/p0-2_ground-floor-pool-pavilon-schema.png"); }
-        .np3 { background-image: url("../assets/pavilon_schema/p1-1_first-floor-pavilon-schema.png"); }
-        .np4 { background-image: url("../assets/pavilon_schema/p1-2_first-floor-pavilon-schema.png"); }
-        .np5 { background-image: url("../assets/pavilon_schema/p2-1_second-floor-pavilon-schema.png"); }
-        .np6 { background-image: url("../assets/pavilon_schema/p2-2_second-floor-pavilon-schema.png"); }
-        .np7 { background-image: url("../assets/pavilon_schema/p3-1_roof-garden-pavilon-schema.png"); }
+        .np1 {
+            background-image: url("../assets/pavilon_schema/p0-1_ground-floor-pool-pavilon-schema.png");
+        }
+        .np2 {
+            background-image: url("../assets/pavilon_schema/p0-2_ground-floor-pool-pavilon-schema.png");
+        }
+        .np3 {
+            background-image: url("../assets/pavilon_schema/p1-1_first-floor-pavilon-schema.png");
+        }
+        .np4 {
+            background-image: url("../assets/pavilon_schema/p1-2_first-floor-pavilon-schema.png");
+        }
+        .np5 {
+            background-image: url("../assets/pavilon_schema/p2-1_second-floor-pavilon-schema.png");
+        }
+        .np6 {
+            background-image: url("../assets/pavilon_schema/p2-2_second-floor-pavilon-schema.png");
+        }
+        .np7 {
+            background-image: url("../assets/pavilon_schema/p3-1_roof-garden-pavilon-schema.png");
+        }
 
     }
 
@@ -68,7 +90,7 @@
 
         @media #{size(B)} {
             display: block;
-            }
+        }
 
         &.mm-top {
             top: 0;
@@ -192,7 +214,6 @@
             margin-right: -100%;
             margin-bottom: 30px;
 
-
             // desktop
             @media #{$xlarge-up} {
                 margin-right: -100px;
@@ -215,8 +236,7 @@
                     margin: 0;
 
                     @media #{$large-up} {
-                        font-size: rem-calc(12);
-
+                        font-size: rem-calc(14);
                     }
 
                     @media #{$xlarge-up} {
@@ -283,10 +303,7 @@
         @include linear-gradient(to top, rgba(255, 255, 255, 0), white, $fallback: transparent);
     }
 
-
     &.mm-mobile {
-
-
 
         .m-item--section {
             margin-bottom: $base-spacing;
@@ -305,7 +322,7 @@
             z-index: 1;
 
             .m-item--hed,
-            .m-item--description{
+            .m-item--description {
                 font-size: rem-calc(22);
                 width: 100%;
                 strong {
@@ -347,7 +364,6 @@
 
 }
 
-
 #skrollr-body {
     pointer-events: none;
     position: relative;
@@ -355,7 +371,7 @@
 }
 
 .skrollr-wrap {
-    pointer-events:auto;
+    pointer-events: auto;
     background-color: white;
     @include clearfix();
 }
@@ -398,8 +414,12 @@
         .m-schema--label {
             .m-item--description {
                 @include fnt-secondary-headline();
-            font-size: rem-calc(22);
+                font-size: rem-calc(22);
                 line-height: 1.3em;
+            }
+
+            ul > li p {
+                font-size: rem-calc(12);
             }
         }
     }

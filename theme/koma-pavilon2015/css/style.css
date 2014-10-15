@@ -4087,7 +4087,7 @@ body {
           margin: 0; }
           @media only screen and (min-width: 781px) {
             .m-schema .m-schema--label ul li p, .m-schema .m-schema--label ol li p {
-              font-size: 0.8rem; } }
+              font-size: 0.93333rem; } }
           @media only screen and (min-width: 1411px) {
             .m-schema .m-schema--label ul li p, .m-schema .m-schema--label ol li p {
               font-size: 1rem; } }
@@ -4225,6 +4225,8 @@ body {
       line-height: 1.3em; }
       .touch .l-schema .m-schema--frame .m-schema--label .m-item--description.fnt-white {
         font-weight: 300; }
+    .touch .l-schema .m-schema--frame .m-schema--label ul > li p {
+      font-size: 0.8rem; }
 
 .l-section {
   padding-top: 60px;
