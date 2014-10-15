@@ -150,15 +150,49 @@ $ags-height:860px;
         left: 0;
         width: 100%;
         text-align: center;
-        padding-top: 260px;
-        height: 300px;
 
         color: white;
-        font-size: rem-calc(70);
+
+        font-size: rem-calc(46);
         line-height: 1.2em;
+        padding-top: 160px;
+        height: 300px;
+
+
+        @media #{size(B)} {
+            font-size: rem-calc(50);
+            line-height: 1.2em;
+            padding-top: 220px;
+            height: 300px;
+        }
+        @media #{size(C)} {
+            font-size: rem-calc(70);
+            line-height: 1.2em;
+            padding-top: 260px;
+            height: 300px;
+        }
+
     }
 
 }
+
+.touch .ags-slider {
+
+    .title-box {
+        bottom: 50px;
+    }
+
+    .ags-text-overlay {
+        @media #{size(A)} {
+            font-size: rem-calc(60);
+            line-height: 1.2em;
+            padding-top: 160px;
+            height: 300px;
+            }
+    }
+}
+
+
 
 // ags content
 

@@ -3841,11 +3841,32 @@ body {
     left: 0;
     width: 100%;
     text-align: center;
-    padding-top: 260px;
-    height: 300px;
     color: white;
-    font-size: 4.66667rem;
-    line-height: 1.2em; }
+    font-size: 3.06667rem;
+    line-height: 1.2em;
+    padding-top: 160px;
+    height: 300px; }
+    @media only screen and (min-width: 641px) {
+      .ags-slider .ags-text-overlay {
+        font-size: 3.33333rem;
+        line-height: 1.2em;
+        padding-top: 220px;
+        height: 300px; } }
+    @media only screen and (min-width: 781px) {
+      .ags-slider .ags-text-overlay {
+        font-size: 4.66667rem;
+        line-height: 1.2em;
+        padding-top: 260px;
+        height: 300px; } }
+
+.touch .ags-slider .title-box {
+  bottom: 50px; }
+@media only screen {
+  .touch .ags-slider .ags-text-overlay {
+    font-size: 4rem;
+    line-height: 1.2em;
+    padding-top: 160px;
+    height: 300px; } }
 
 .infobox,
 .infobox2 {

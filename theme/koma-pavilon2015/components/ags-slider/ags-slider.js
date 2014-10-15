@@ -36,6 +36,9 @@ if($("html").hasClass("no-touch")) {
     isTouch = false;
 }
 
+if(isTouch) {
+    var draggerButtonBottomOffset = 142;
+}
 
 function setSize() {
     console.log("setsize");
