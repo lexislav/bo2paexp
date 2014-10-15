@@ -85,7 +85,7 @@
 
             > ul {
                 width: auto;
-                transform: translateX(-50%);
+                @include transform(translateX(-50%));
                 li {
                     text-align: left;
                 }

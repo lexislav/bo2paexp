@@ -37,9 +37,9 @@
     margin-bottom: $base-spacing / 2;
 
     @media #{size(C)} {
-    margin-bottom: $base-spacing;
+        margin-bottom: $base-spacing;
 
-        }
+    }
 
     .m-item--image {
         width: 100%;
@@ -53,8 +53,7 @@
         @media #{size(C)} {
             opacity: 0;
             height: 180px;
-            }
-
+        }
 
         a {
             display: block;
@@ -76,7 +75,7 @@
             left: 0;
             pointer-events: none;
 
-            background-color: rgba(0,0,0,.4);
+            background-color: rgba(0, 0, 0, .4);
         }
 
         @include transition(opacity 0.8s);
@@ -102,11 +101,11 @@
         line-height: 1em;
 
         @media #{size(C)} {
-        font-size: rem-calc(44);
-        line-height: 1em;
-        margin-top: 42px;
+            font-size: rem-calc(44);
+            line-height: 1em;
+            margin-top: 42px;
 
-            }
+        }
     }
 
     .m-item--description {
@@ -159,14 +158,26 @@ aside h2 {
 }
 
 .l-section .m-story {
+    padding-bottom: $base-spacing / 2;
     .m-item--hed {
-        @media #{size(B)} {
-        font-size: rem-calc(28);
+        font-size: rem-calc(24);
+        line-height: 1.2em;
 
-            }
-        font-size: rem-calc(40);
-        line-height: 1.4em;
-        padding-bottom: 1em;
+
+        @media #{size(C)} {
+            font-size: rem-calc(24);
+            min-height: 2.6em;
+            line-height: 1.2em;
+        }
+
+        @media #{size(D)} {
+            font-size: rem-calc(40);
+            line-height: 1.2em;
+        }
+
+
+        //padding-bottom: 1em;
+
     }
 }
 

@@ -6,9 +6,10 @@
 
     .m-item--hed {
         @include fnt-primary-body-m();
+
         padding: 8px 16px;
         padding-bottom: 12px;
-        background: #FBFBFB;
+        background: #fbfbfb;
         margin: 0;
         height: 92px;
         overflow: hidden;
@@ -17,6 +18,12 @@
             display: block;
             width: 100%;
             color: $koma;
+        }
+        @media #{size(B)} {
+            font-size: rem-calc(16);
+        }
+        @media #{size(D)} {
+            font-size: rem-calc(18);
         }
     }
 
