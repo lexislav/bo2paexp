@@ -3619,7 +3619,7 @@ body {
       z-index: 202;
       content: " ";
       top: 20px;
-      right: 20px;
+      left: 20px;
       width: 50px;
       height: 50px;
       background-image: url("../assets/ikony/nav-close.png");
@@ -3637,14 +3637,17 @@ body {
     margin: auto;
     left: 0;
     right: 0;
-    top: 47%;
+    top: 52%;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     -o-transform: translateY(-50%);
-    transform: translateY(-50%); }
+    transform: translateY(-50%);
+    font-size: 0.93333rem; }
     @media only screen and (min-width: 641px) {
       .m-nav .m-nav--menu {
+        font-size: 1.06667rem;
+        top: 47%;
         width: 80%; } }
     @media only screen and (min-width: 781px) {
       .m-nav .m-nav--menu {
@@ -3664,12 +3667,15 @@ body {
         font-weight: 300;
         -webkit-font-smoothing: antialiased;
         font-size: 1.6rem;
-        font-size: 1.06667rem;
+        font-size: 0.93333rem;
         font-weight: 500;
         display: block;
         float: left; }
         .m-nav .m-nav--menu ul li.fnt-white {
           font-weight: 300; }
+        @media only screen and (min-width: 641px) {
+          .m-nav .m-nav--menu ul li {
+            font-size: 1.06667rem; } }
         .m-nav .m-nav--menu ul li:before {
           content: "/";
           display: inline;
@@ -3733,12 +3739,15 @@ body {
 
 .m-nav .m-item .m-item--hed a {
   font-weight: 600;
-  font-size: 2.13333rem;
+  font-size: 1.33333rem;
   text-align: left;
   display: block;
   color: #000; }
   .m-nav .m-item .m-item--hed a:hover {
     color: #c20e1a; }
+  @media only screen and (min-width: 641px) {
+    .m-nav .m-item .m-item--hed a {
+      font-size: 2.13333rem; } }
 .m-nav .m-item .m-item--description p {
   font-family: "nudista-web";
   font-weight: 300;
@@ -3776,13 +3785,18 @@ body {
   .ags-slider .title-box {
     position: absolute;
     bottom: 90px;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     line-height: 1.2em; }
     .ags-slider .title-box span {
       font-weight: bold;
       display: block;
-      font-size: 3.46667rem;
+      font-size: 2rem;
       line-height: 1.2em; }
+    @media only screen and (min-width: 641px) {
+      .ags-slider .title-box {
+        font-size: 1.6rem; }
+        .ags-slider .title-box span {
+          font-size: 3.46667rem; } }
   .ags-slider .ags-bg--content {
     position: absolute;
     background-image: url("../assets/homepage/hp02_skolka.jpg");
@@ -3846,7 +3860,7 @@ body {
     width: 100%;
     text-align: center;
     color: white;
-    font-size: 3.06667rem;
+    font-size: 2rem;
     line-height: 1.2em;
     padding-top: 160px;
     height: 300px; }
@@ -3867,9 +3881,8 @@ body {
   bottom: 50px; }
 @media only screen {
   .touch .ags-slider .ags-text-overlay {
-    font-size: 4rem;
     line-height: 1.2em;
-    padding-top: 160px;
+    padding-top: 100px;
     height: 300px; } }
 
 .infobox,
@@ -4224,7 +4237,7 @@ body {
   .l-section h1 {
     margin-top: -0.2em; }
   .l-section.mm-dark {
-    background-color: #D8D8D8; }
+    background-color: #d8d8d8; }
   .l-section.mm-bluish {
     background-color: rgba(165, 192, 233, 0.32); }
 
@@ -4235,12 +4248,18 @@ body {
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
   font-size: 1.6rem;
-  font-size: 2.4rem; }
+  font-size: 1.73333rem; }
   .m-section_pavilon h1.fnt-white, .m-section_pavilon h2.fnt-white {
     font-weight: 300; }
+  @media only screen and (min-width: 641px) {
+    .m-section_pavilon h1, .m-section_pavilon h2 {
+      font-size: 2.4rem; } }
 .m-section_pavilon h2 {
-  font-size: 1.6rem;
-  line-height: 33px; }
+  font-size: 1.2rem;
+  line-height: 1.5em; }
+  @media only screen and (min-width: 641px) {
+    .m-section_pavilon h2 {
+      font-size: 1.6rem; } }
 .m-section_pavilon h3 {
   font-family: "nudista-web";
   font-weight: 600;

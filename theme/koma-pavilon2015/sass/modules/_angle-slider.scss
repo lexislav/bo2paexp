@@ -46,15 +46,23 @@ $ags-height:860px;
     .title-box {
         position: absolute;
         bottom: 90px;
-        font-size: rem-calc(24);
+        font-size: rem-calc(18);
         line-height: 1.2em;
 
         span {
             font-weight: bold;
             display: block;
-            font-size: rem-calc(52);
+            font-size: rem-calc(30);
             line-height: 1.2em;
         }
+
+        @media #{size(B)} {
+        font-size: rem-calc(24);
+            span {
+            font-size: rem-calc(52);
+
+            }
+            }
     }
 
     .ags-bg--content {
@@ -153,7 +161,7 @@ $ags-height:860px;
 
         color: white;
 
-        font-size: rem-calc(46);
+        font-size: rem-calc(30);
         line-height: 1.2em;
         padding-top: 160px;
         height: 300px;
@@ -184,9 +192,8 @@ $ags-height:860px;
 
     .ags-text-overlay {
         @media #{size(A)} {
-            font-size: rem-calc(60);
             line-height: 1.2em;
-            padding-top: 160px;
+            padding-top: 100px;
             height: 300px;
             }
     }

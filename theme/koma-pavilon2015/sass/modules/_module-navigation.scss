@@ -146,7 +146,7 @@
             z-index: 202;
             content: " ";
             top: 20px;
-            right: 20px;
+            left: 20px;
             width: 50px;
             height: 50px;
             background-image: url("../assets/ikony/nav-close.png");
@@ -175,11 +175,13 @@
         margin: auto;
         left: 0;
         right: 0;
-        top: 50% - 3%; // 10% optical compensation
+        top: 52%;
         @include transform(translateY(-50%));
-
+        font-size: rem-calc(14);
 
         @media #{size(B)} {
+            font-size: rem-calc(16);
+            top: 50% - 3%; // 10% optical compensation
             width: 80%;
         }
         @media #{size(C)} {
@@ -195,10 +197,15 @@
 
             li {
                 @include fnt-secondary-headline();
-                font-size: rem-calc(16);
+                font-size: rem-calc(14);
                 font-weight: 500;
                 display: block;
                 float: left;
+
+                @media #{size(B)} {
+
+                font-size: rem-calc(16);
+                    }
 
                 &:before {
                     content: "/";
@@ -263,7 +270,7 @@
         a {
 
             font-weight: 600;
-            font-size: rem-calc(32);
+            font-size: rem-calc(20);
 
             text-align: left;
             display: block;
@@ -272,6 +279,11 @@
             &:hover {
                 color: $color-koma-red;
             }
+
+            @media #{size(B)} {
+
+            font-size: rem-calc(32);
+                }
         }
     }
 
