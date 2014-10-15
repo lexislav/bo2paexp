@@ -124,9 +124,8 @@
             <h5>Videa</h5>
 
             <div class="flex-video widescreen vimeo">
-                {{record.video}}
-                <!-- <iframe src="http://player.vimeo.com/video/60122989" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> -->
-                }
+                {{ record.video.responsive }}
+                <!-- <iframe src="{{record.video.url}}" width="400" height="225" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe> -->
             </div>
         </div>
     </div>
