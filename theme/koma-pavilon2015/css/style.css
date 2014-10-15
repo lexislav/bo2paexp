@@ -4745,6 +4745,14 @@ body {
       width: 40px;
       height: 40px;
       line-height: 40px; }
+  .m-icon.x3 {
+    width: 60px;
+    height: 60px;
+    line-height: 60px; }
+    .m-icon.x3:before {
+      width: 60px;
+      height: 60px;
+      line-height: 60px; }
   .m-icon.x4 {
     width: 100px;
     height: 100px;
@@ -4929,6 +4937,11 @@ aside h2 {
 
 .l-page_single .m-story {
   margin-top: 60px; }
+
+.l-section .m-story .m-item--hed {
+  font-size: 2.66667rem;
+  line-height: 1.4em;
+  padding-bottom: 1em; }
 
 .l-page_single .breadcrumbs {
   margin-top: 60px; }

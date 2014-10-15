@@ -158,4 +158,12 @@ aside h2 {
     margin-top: $base-spacing;
 }
 
+.l-section .m-story {
+    .m-item--hed {
+        font-size: rem-calc(40);
+        line-height: 1.4em;
+        padding-bottom: 1em;
+    }
+}
+
 //

@@ -93,6 +93,19 @@
             line-height: 40px;
         }
     }
+
+    &.x3 {
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+
+        &:before {
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+        }
+    }
+
     &.x4 {
         width: 100px;
         height: 100px;

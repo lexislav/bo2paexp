@@ -1,0 +1,25 @@
+<!-- blog -->
+<div class="l-section m-section_grid">
+    <article>
+        <header class="clearfix mgr-full row">
+            <div class="small-11 large-6 columns">
+                <h1 class="fnt-primary-headline">Zpravodaj pavilonu</h1>
+            </div>
+            <div class="small-1 columns">
+                <i class="m-icon i-arrow x2"><span>more</span></i>
+            </div>
+        </header>
+
+        <div class="row">
+            {% setcontent zpravodaj = 'blog/latest/4' %}
+            {% for record in zpravodaj %}
+                {% include '_inc-blog-post-small.twig' %}
+            {% else %}
+                <h2>{{ __("No content found") }}.</h2>
+                <p>
+                    Unfortunately, no content could be found. Try another page, or go to the
+                    <a href="{{ paths.root }}">homepage</a>. </p>
+            {% endfor %}
+        </div>
+    </article>
+</div>
