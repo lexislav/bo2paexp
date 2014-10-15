@@ -29,12 +29,15 @@ cs:
 en:
   - label: Overview of Czech pavilion
     title: All the informations about pavilion and stuff
-    path: homepage
+    path: en/
   - label: Look inside the pavilion
     title: Prohlédněte si pavilon po jednotlivých patrech
     path: page/o-pavilonu
+  - label: History of czech expo pavilions
+    title: Brief history in context of reuse
+    path: en/historie
   - label: Blog from pavilion
-    title: Informace o aktuálním dění pavilonu
+    title: Recent updates from pavilion
     path: en/blog/
     submenu:
       - label: all
