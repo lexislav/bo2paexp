@@ -100,11 +100,13 @@
 
     <!-- fotogalerie -->
     {% if record.imagelist %}
-    <div class="m-gallery mgr-double">
+    <div class="xm-gallery mgr-double">
         <div class="row">
             <h5 class="small-12 columns">Fotogalerie</h5>
+                <ul class="clearing-thumbs" data-clearing>
+
             {% for imago in record.imagelist %}
-                <div class="small-6 medium-4 large-3 xlarge-2 columns {% if loop.last %}end{% endif %}">
+                {#<div class="small-6 medium-4 large-3 xlarge-2 columns {% if loop.last %}end{% endif %}">
                     <article class="m-item">
                         <header>
                             <div class="m-item--image"><a href="{{ imago.filename|image }}" title="{{ imago.title }}">
@@ -113,9 +115,15 @@
                         </header>
 
                     </article>
-                </div>
+                </div>#}
+
+                    <li><a href="{{ imago.filename|image }}"><img src="{{imago.filename|thumbnail(280,210, crop) }}"></a></li>
+
 
             {% endfor %}
+                </ul>
+
+
         </div>
     </div>
     <div class="row">
