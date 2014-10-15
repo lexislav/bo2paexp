@@ -49,10 +49,17 @@
         background-position: center;
 
         opacity: .2;
-
+        @media #{size(B)} {
+            height: 120px;
+            }
         @media #{size(C)} {
             opacity: 0;
             height: 180px;
+        }
+
+        @media #{size(D)} {
+            opacity: 0;
+            height: 210px;
         }
 
         a {
@@ -100,10 +107,22 @@
         font-size: rem-calc(34);
         line-height: 1em;
 
+        @media #{size(B)} {
+            margin-top: 23px;
+            margin-bottom: 10px;
+            }
+
         @media #{size(C)} {
-            font-size: rem-calc(44);
+            font-size: rem-calc(42);
             line-height: 1em;
             margin-top: 42px;
+
+        }
+
+        @media #{size(D)} {
+            font-size: rem-calc(44);
+            line-height: 1em;
+            margin-top: 60px;
 
         }
     }

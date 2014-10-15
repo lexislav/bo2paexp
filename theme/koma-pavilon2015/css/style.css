@@ -4939,10 +4939,17 @@ a:hover .svg-button #button {
     -webkit-transition: opacity 0.8s;
     -moz-transition: opacity 0.8s;
     transition: opacity 0.8s; }
+    @media only screen and (min-width: 641px) {
+      .m-story.mm-history .m-item--image {
+        height: 120px; } }
     @media only screen and (min-width: 781px) {
       .m-story.mm-history .m-item--image {
         opacity: 0;
         height: 180px; } }
+    @media only screen and (min-width: 1411px) {
+      .m-story.mm-history .m-item--image {
+        opacity: 0;
+        height: 210px; } }
     .m-story.mm-history .m-item--image a {
       display: block;
       width: 100%;
@@ -4974,11 +4981,20 @@ a:hover .svg-button #button {
     margin-top: 30px;
     font-size: 2.26667rem;
     line-height: 1em; }
+    @media only screen and (min-width: 641px) {
+      .m-story.mm-history .m-item--hed {
+        margin-top: 23px;
+        margin-bottom: 10px; } }
     @media only screen and (min-width: 781px) {
+      .m-story.mm-history .m-item--hed {
+        font-size: 2.8rem;
+        line-height: 1em;
+        margin-top: 42px; } }
+    @media only screen and (min-width: 1411px) {
       .m-story.mm-history .m-item--hed {
         font-size: 2.93333rem;
         line-height: 1em;
-        margin-top: 42px; } }
+        margin-top: 60px; } }
   .m-story.mm-history .m-item--description {
     font-size: 1.6rem;
     text-align: center;
