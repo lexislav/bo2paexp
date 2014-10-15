@@ -3638,6 +3638,10 @@ body {
     left: 0;
     right: 0;
     top: 47%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
     transform: translateY(-50%); }
     @media only screen and (min-width: 641px) {
       .m-nav .m-nav--menu {
@@ -3726,8 +3730,6 @@ body {
     max-height: 48px;
     font-size: 16px !important;
     line-height: 48px !important; }
-.touch .m-nav .m-nav--menu {
-  top: 18%; }
 
 .m-nav .m-item .m-item--hed a {
   font-weight: 600;
@@ -3914,19 +3916,34 @@ body {
 .m-schema {
   overflow: hidden; }
   .m-schema .np1 {
-    background-image: url("../assets/pavilon_schema/p0-1_ground-floor-pool-pavilon-schema.png"); }
+    background-image: url("../assets/pavilon_schema-sm/p0-1_ground-floor-pool-pavilon-schema.png"); }
   .m-schema .np2 {
-    background-image: url("../assets/pavilon_schema/p0-2_ground-floor-pool-pavilon-schema.png"); }
+    background-image: url("../assets/pavilon_schema-sm/p0-2_ground-floor-pool-pavilon-schema.png"); }
   .m-schema .np3 {
-    background-image: url("../assets/pavilon_schema/p1-1_first-floor-pavilon-schema.png"); }
+    background-image: url("../assets/pavilon_schema-sm/p1-1_first-floor-pavilon-schema.png"); }
   .m-schema .np4 {
-    background-image: url("../assets/pavilon_schema/p1-2_first-floor-pavilon-schema.png"); }
+    background-image: url("../assets/pavilon_schema-sm/p1-2_first-floor-pavilon-schema.png"); }
   .m-schema .np5 {
-    background-image: url("../assets/pavilon_schema/p2-1_second-floor-pavilon-schema.png"); }
+    background-image: url("../assets/pavilon_schema-sm/p2-1_second-floor-pavilon-schema.png"); }
   .m-schema .np6 {
-    background-image: url("../assets/pavilon_schema/p2-2_second-floor-pavilon-schema.png"); }
+    background-image: url("../assets/pavilon_schema-sm/p2-2_second-floor-pavilon-schema.png"); }
   .m-schema .np7 {
-    background-image: url("../assets/pavilon_schema/p3-1_roof-garden-pavilon-schema.png"); }
+    background-image: url("../assets/pavilon_schema-sm/p3-1_roof-garden-pavilon-schema.png"); }
+  @media only screen and (min-width: 1411px) {
+    .m-schema .np1 {
+      background-image: url("../assets/pavilon_schema/p0-1_ground-floor-pool-pavilon-schema.png"); }
+    .m-schema .np2 {
+      background-image: url("../assets/pavilon_schema/p0-2_ground-floor-pool-pavilon-schema.png"); }
+    .m-schema .np3 {
+      background-image: url("../assets/pavilon_schema/p1-1_first-floor-pavilon-schema.png"); }
+    .m-schema .np4 {
+      background-image: url("../assets/pavilon_schema/p1-2_first-floor-pavilon-schema.png"); }
+    .m-schema .np5 {
+      background-image: url("../assets/pavilon_schema/p2-1_second-floor-pavilon-schema.png"); }
+    .m-schema .np6 {
+      background-image: url("../assets/pavilon_schema/p2-2_second-floor-pavilon-schema.png"); }
+    .m-schema .np7 {
+      background-image: url("../assets/pavilon_schema/p3-1_roof-garden-pavilon-schema.png"); } }
   .m-schema .m-schema--decoration {
     display: none;
     height: 10%;
