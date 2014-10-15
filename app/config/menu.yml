@@ -4,7 +4,7 @@
 cs:
   - label: Český pavilon v kostce
     title: Základní informace o pavilonu a dodavateli
-    path: homepage
+    path: cs/
   - label: Prohlídka pavilonu
     title: Prohlédněte si pavilon po jednotlivých patrech
     path: page/o-pavilonu
