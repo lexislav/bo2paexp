@@ -176,7 +176,8 @@
         left: 0;
         right: 0;
         top: 50% - 3%; // 10% optical compensation
-        transform: translateY(-50%);
+        @include transform(translateY(-50%));
+
 
         @media #{size(B)} {
             width: 80%;
@@ -250,7 +251,7 @@
         }
 
         .m-nav--menu {
-            top: 18%;
+            //top: 18%;
         }
     }
 }
