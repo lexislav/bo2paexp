@@ -57,7 +57,7 @@
 
                 @media #{size(B)} {
                     margin: 0;
-                    padding: 0 6px;
+                    padding: 0 2px;
                     float: left;
 
                     &:first-of-type {
@@ -66,6 +66,10 @@
                         }
                     }
                 }
+
+                @media #{size(C)} {
+                    padding: 0 6px;
+                    }
 
                 &.mm-active {
                     color: $color-koma-red;
@@ -102,9 +106,16 @@
             }
 
             @media #{size(B)} {
+                font-size: rem-calc(16);
                 &:before {
                     content: "/";
                     display: inline-block;
+                    width: 10px;
+                }
+            }
+            @media #{size(C)} {
+                font-size: rem-calc(18);
+                &:before {
                     width: 16px;
                 }
             }
