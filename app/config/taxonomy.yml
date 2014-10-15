@@ -8,7 +8,7 @@ kategorie:
     singular_slug: kategorie1
     behaves_like: categories
     multiple: true
-    options: { expozice: "Expozice", partneri: "Zprávy partnerů", fotogalerie: "Fotogalerie", pavilon: "O pavilonu", rozhovory: "Rozhovory" }
+    options: { expozice: "Expozice", fotogalerie: "Fotogalerie", pavilon: "O pavilonu", rozhovory: "Rozhovory", partneri: "Zprávy partnerů" }
     listing_template: zpravodaj.twig
 
 stitky:

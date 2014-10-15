@@ -17,14 +17,17 @@ cs:
     submenu:
       - label: vše
         path: cs/blog/
-      - label: fotogalerie
-        path: cs/blog/kategorie/fotogalerie
-      - label: informace partnerů
-        path: cs/blog/
-      - label: o pavilonu
-        path: cs/blog/
-      - label: rozhovory
-        path: cs/blog/rozhovory
+      - label: Expozice
+        path: cs/kategorie/expozice
+      - label: Fotogalerie
+        path: cs/kategorie/fotogalerie
+      - label: O pavilonu
+        path: cs/kategorie/O pavilonu
+#      - label: Rozhovory
+#        path: cs/kategorie/rozhovory
+      - label: Zprávy partnerů
+        path: cs/blog/Zpravy partneru
+
 
 en:
   - label: Overview of Czech pavilion
@@ -40,10 +43,18 @@ en:
     title: Recent updates from pavilion
     path: en/blog/
     submenu:
-      - label: all
+      - label: All
         path: en/blog/
-      - label: photogallery
-        path: en/fotogalerie/
+      - label: Exhibitions
+        path: en/kategorie/expozice
+      - label: Photogalleries
+        path: en/kategorie/fotogalerie
+      - label: Pavilon
+        path: en/kategorie/O pavilonu
+#      - label: Rozhovory
+#        path: cs/kategorie/rozhovory
+      - label: Partners
+        path: en/blog/Zpravy partneru
 
 
 main:
