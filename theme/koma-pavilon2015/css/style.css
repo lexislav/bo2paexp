@@ -2387,7 +2387,7 @@ select {
     opacity: 0.3; }
 
   .clearing-assembled .clearing-container .carousel {
-    background: rgba(51, 51, 51, 0.8);
+    background: rgba(31, 31, 31, 0.3);
     height: 120px;
     margin-top: 10px;
     text-align: center; }
@@ -5151,6 +5151,22 @@ aside h2 {
       @media only screen {
         .m-light-nav.mm-centerd .m-light-nav--wrap {
           min-width: 240px; } }
+
+.clearing-thumbs {
+  width: 100%;
+  position: relative; }
+  .clearing-thumbs li {
+    display: block;
+    float: left;
+    margin: 0;
+    padding: 20px;
+    width: 50%; }
+    @media only screen and (min-width: 641px) {
+      .clearing-thumbs li {
+        width: 33.3333%; } }
+    @media only screen and (min-width: 781px) {
+      .clearing-thumbs li {
+        width: 20%; } }
 
 .reveal-modal.fixed, dialog.fixed {
   position: fixed;
