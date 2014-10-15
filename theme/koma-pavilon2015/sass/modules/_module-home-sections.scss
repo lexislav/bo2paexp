@@ -72,6 +72,10 @@
     height: 520px;
     background-position: 0% 0%;
     background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-image: url('../assets/pavilon/pp02_czech-expo-face-seredova_expositions.jpg');
 
     article {
         @include clearfix();
@@ -93,7 +97,21 @@
         }
 
     }
+}
 
+.touch .m-section_pavilondark {
+    background-position: top right !important;
+    background-attachment: local;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 420px;
+    width: 100%;
+    .m-item--summary {
+        position: absolute;
+        bottom: 80px;
+        margin-bottom: 0;
+
+    }
 }
 
 // text section

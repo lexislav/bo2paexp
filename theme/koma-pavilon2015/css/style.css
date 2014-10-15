@@ -3726,6 +3726,8 @@ body {
     max-height: 48px;
     font-size: 16px !important;
     line-height: 48px !important; }
+.touch .m-nav .m-nav--menu {
+  top: 18%; }
 
 .m-nav .m-item .m-item--hed a {
   font-weight: 600;
@@ -4218,7 +4220,10 @@ body {
 .m-section_pavilondark {
   height: 520px;
   background-position: 0% 0%;
-  background-attachment: fixed; }
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../assets/pavilon/pp02_czech-expo-face-seredova_expositions.jpg"); }
   .m-section_pavilondark article {
     height: 100%;
     position: relative; }
@@ -4237,6 +4242,18 @@ body {
       margin-bottom: 0; }
       .m-section_pavilondark article .m-item--summary nav {
         text-align: right; }
+
+.touch .m-section_pavilondark {
+  background-position: top right !important;
+  background-attachment: local;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 420px;
+  width: 100%; }
+  .touch .m-section_pavilondark .m-item--summary {
+    position: absolute;
+    bottom: 80px;
+    margin-bottom: 0; }
 
 @media only screen {
   .m-data-stats .rbox,
@@ -4963,6 +4980,9 @@ aside h2 {
   font-size: 2.66667rem;
   line-height: 1.4em;
   padding-bottom: 1em; }
+  @media only screen and (min-width: 641px) {
+    .l-section .m-story .m-item--hed {
+      font-size: 1.86667rem; } }
 
 .l-page_single .breadcrumbs {
   margin-top: 60px; }
