@@ -235,14 +235,14 @@
 
                 <div class="row">
                     {% setcontent blok = 'bloky' where { id: '35' } %}
-                    <header class="small-12 large-7 columns">
+                    <header class="small-12 large-9 columns">
                         <h1 class="fnt-primary-headline fnt-white">{{ blok['title_' ~ app.locale] }}</h1>
                     </header>
                 </div>
 
                 <div class="row m-item--meta">
                     <div class="m-item--summary">
-                        <div class="small-12  large-7 columns">
+                        <div class="small-12  large-8 xlarge-6 columns">
                             <div class="m-item--copy">
                                 <div class="fnt-secondary-headline fnt-white fnt-shadow">
                                     {{ blok['body_' ~ app.locale] }}
@@ -276,12 +276,12 @@
                             {% setcontent blok = 'bloky' where { id: '36' } %}
                             <h1 class="m-item--hed">{{ blok['title_' ~ app.locale] }}</h1>
                         </div>
-                        <div class=" small-12 medium-4 columns">
+                        <div class=" small-12 xlarge-4 columns">
                             <div class="m-item--image">
                                 <img src="{{ paths.theme }}assets/pavilon/city_modul_statue.jpg" alt="" />
                             </div>
                         </div>
-                        <div class="small-12 medium-7 columns">
+                        <div class="small-12 xlarge-7 columns">
                             <div class="m-item--description">
                                 <p>{{ blok['body_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}
                                         {% for related in relatedmodals|order('id') %}
@@ -305,19 +305,18 @@
                         <div class="small-12 columns">{% setcontent blok = 'bloky' where { id: '37' } %}
                             <h1 class="m-item--hed">{{ blok['title_' ~ app.locale] }}</h1>
                         </div>
-                        <div class="small-12 medium-4 columns">
+                        <div class="small-12 xlarge-4 columns">
                             <div class="m-item--image">
                                 <img src="{{ paths.theme }}assets/pavilon/budouci_podoba_pavilonu_jako_plovarna.jpg" alt="" />
                             </div>
                         </div>
-                        <div class="small-12 medium-7 columns">
+                        <div class="small-12 xlarge-7 columns end">
                             <div class="m-item--description">
                                 <p>{{ blok['body_' ~ app.locale] }}</p>
                             </div>
-                        </div>
-
-                        <div class="small-1 columns">
-                            <i class="m-icon i-arrow x2"><span>more</span></i>
+                            <div class="visible-phone">
+                                <i class="m-icon i-arrow x2"><span>more</span></i>
+                            </div>
                         </div>
                     </header>
                 </article>
