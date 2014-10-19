@@ -8,11 +8,7 @@ use Guzzle\Http\QueryAggregator\CommaAggregator;
 
 class QueryStringTest extends \Guzzle\Tests\GuzzleTestCase
 {
-    /**
-     * The query string object to test
-     *
-     * @var \Guzzle\Http\QueryString
-     */
+    /** @var \Guzzle\Http\QueryString The query string object to test */
     protected $q;
 
     public function setup()
@@ -96,13 +92,13 @@ class QueryStringTest extends \Guzzle\Tests\GuzzleTestCase
             'test4'  => null,
         );
         $this->q->replace($params);
-        $this->assertEquals('test=value&test%202=this%20is%20a%20test%3F&test3%5B0%5D=v1&test3%5B1%5D=v2&test3%5B2%5D=v3&test4=', $this->q->__toString());
+        $this->assertEquals('test=value&test%202=this%20is%20a%20test%3F&test3%5B0%5D=v1&test3%5B1%5D=v2&test3%5B2%5D=v3&test4', $this->q->__toString());
         $this->q->useUrlEncoding(false);
-        $this->assertEquals('test=value&test 2=this is a test?&test3[0]=v1&test3[1]=v2&test3[2]=v3&test4=', $this->q->__toString());
+        $this->assertEquals('test=value&test 2=this is a test?&test3[0]=v1&test3[1]=v2&test3[2]=v3&test4', $this->q->__toString());
 
         // Use an alternative aggregator
         $this->q->setAggregator(new CommaAggregator());
-        $this->assertEquals('test=value&test 2=this is a test?&test3=v1,v2,v3&test4=', $this->q->__toString());
+        $this->assertEquals('test=value&test 2=this is a test?&test3=v1,v2,v3&test4', $this->q->__toString());
     }
 
     public function testAllowsMultipleValuesPerKey()
@@ -138,26 +134,20 @@ class QueryStringTest extends \Guzzle\Tests\GuzzleTestCase
     {
         return array(
             // Ensure that multiple query string values are allowed per value
-            array('q=a&q=b', array(
-                'q' => array('a', 'b')
-            )),
+            array('q=a&q=b', array('q' => array('a', 'b'))),
             // Ensure that PHP array style query string values are parsed
-            array('q[]=a&q[]=b', array(
-                'q' => array('a', 'b')
-            )),
+            array('q[]=a&q[]=b', array('q' => array('a', 'b'))),
+            // Ensure that a single PHP array style query string value is parsed into an array
+            array('q[]=a', array('q' => array('a'))),
             // Ensure that decimals are allowed in query strings
             array('q.a=a&q.b=b', array(
                 'q.a' => 'a',
                 'q.b' => 'b'
             )),
             // Ensure that query string values are percent decoded
-            array('q%20a=a%20b', array(
-                'q a' => 'a b'
-            )),
-            // Ensure that values can be set without have a value
-            array('q', array(
-                'q' => null
-            )),
+            array('q%20a=a%20b', array('q a' => 'a b')),
+            // Ensure null values can be added
+            array('q&a', array('q' => false, 'a' => false)),
         );
     }
 
@@ -180,7 +170,7 @@ class QueryStringTest extends \Guzzle\Tests\GuzzleTestCase
     public function testAllowsBlankQueryStringValues()
     {
         $query = QueryString::fromString('foo');
-        $this->assertEquals('foo=', (string) $query);
+        $this->assertEquals('foo', (string) $query);
         $query->set('foo', QueryString::BLANK);
         $this->assertEquals('foo', (string) $query);
     }
@@ -188,7 +178,7 @@ class QueryStringTest extends \Guzzle\Tests\GuzzleTestCase
     public function testAllowsFalsyQueryStringValues()
     {
         $query = QueryString::fromString('0');
-        $this->assertEquals('0=', (string) $query);
+        $this->assertEquals('0', (string) $query);
         $query->set('0', QueryString::BLANK);
         $this->assertSame('0', (string) $query);
     }
@@ -217,14 +207,27 @@ class QueryStringTest extends \Guzzle\Tests\GuzzleTestCase
             'foo' => 0,
             'baz' => '0',
             'bar' => null,
-            'boo' => false
+            'boo' => false,
+            'bam' => ''
         ));
-        $this->assertEquals('foo=0&baz=0&bar=&boo=', (string) $query);
+        $this->assertEquals('foo=0&baz=0&bar&boo&bam=', (string) $query);
     }
 
     public function testFromStringDoesntStripTrailingEquals()
     {
         $query = QueryString::fromString('data=mF0b3IiLCJUZWFtIERldiJdfX0=');
         $this->assertEquals('mF0b3IiLCJUZWFtIERldiJdfX0=', $query->get('data'));
+    }
+
+    public function testGuessesIfDuplicateAggregatorShouldBeUsed()
+    {
+        $query = QueryString::fromString('test=a&test=b');
+        $this->assertEquals('test=a&test=b', (string) $query);
+    }
+
+    public function testGuessesIfDuplicateAggregatorShouldBeUsedAndChecksForPhpStyle()
+    {
+        $query = QueryString::fromString('test[]=a&test[]=b');
+        $this->assertEquals('test%5B0%5D=a&test%5B1%5D=b', (string) $query);
     }
 }

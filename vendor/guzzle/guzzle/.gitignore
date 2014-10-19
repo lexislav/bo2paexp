@@ -1,6 +1,7 @@
 # Ingore common cruft
 .DS_STORE
 coverage
+.idea
 
 # Ignore binary files
 guzzle.phar
@@ -21,3 +22,6 @@ phing/build.properties
 
 # Ignore subsplit working directory
 .subsplit
+
+docs/_build
+docs/*.pyc

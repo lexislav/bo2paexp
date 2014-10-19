@@ -243,8 +243,11 @@ class OperationTest extends \Guzzle\Tests\GuzzleTestCase
         $o = $this->getOperation();
         $o->setServiceDescription(new ServiceDescription(array('models' => array('Foo' => array()))));
         $this->assertEquals('primitive', $o->getResponseType());
-        $this->assertEquals('primitive', $o->setResponseClass('foo')->getResponseType());
         $this->assertEquals('primitive', $o->setResponseClass('boolean')->getResponseType());
+        $this->assertEquals('primitive', $o->setResponseClass('array')->getResponseType());
+        $this->assertEquals('primitive', $o->setResponseClass('integer')->getResponseType());
+        $this->assertEquals('primitive', $o->setResponseClass('string')->getResponseType());
+        $this->assertEquals('class', $o->setResponseClass('foo')->getResponseType());
         $this->assertEquals('class', $o->setResponseClass(__CLASS__)->getResponseType());
         $this->assertEquals('model', $o->setResponseClass('Foo')->getResponseType());
     }
@@ -258,6 +261,23 @@ class OperationTest extends \Guzzle\Tests\GuzzleTestCase
         $o = new Operation();
         $this->assertEquals('primitive', $o->getResponseType());
         $this->assertEquals('model', $o->setResponseType('model')->getResponseType());
+    }
+
+    public function testHasAdditionalParameters()
+    {
+        $o = new Operation(array(
+            'additionalParameters' => array(
+                'type' => 'string', 'name' => 'binks'
+            ),
+            'parameters' => array(
+                'foo' => array('type' => 'integer')
+            )
+        ));
+        $this->assertEquals('string', $o->getAdditionalParameters()->getType());
+        $arr = $o->toArray();
+        $this->assertEquals(array(
+            'type' => 'string'
+        ), $arr['additionalParameters']);
     }
 
     /**

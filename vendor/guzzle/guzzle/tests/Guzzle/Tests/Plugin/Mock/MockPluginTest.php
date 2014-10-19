@@ -7,6 +7,7 @@ use Guzzle\Http\EntityBody;
 use Guzzle\Http\Message\Response;
 use Guzzle\Plugin\Mock\MockPlugin;
 use Guzzle\Http\Client;
+use Guzzle\Http\Exception\CurlException;
 
 /**
  * @covers Guzzle\Plugin\Mock\MockPlugin
@@ -107,7 +108,7 @@ class MockPluginTest extends \Guzzle\Tests\GuzzleTestCase
         $response = MockPlugin::getMockFile(__DIR__ . '/../../TestData/mock_response');
         $p->addResponse($response);
 
-        $client = new Client('http://localhost:123/');
+        $client = new Client('http://127.0.0.1:123/');
         $client->getEventDispatcher()->addSubscriber($p, 9999);
         $request = $client->get();
         $request->send();
@@ -118,11 +119,12 @@ class MockPluginTest extends \Guzzle\Tests\GuzzleTestCase
 
     /**
      * @depends testAddsResponseFilesToQueue
+     * @expectedException \OutOfBoundsException
      */
-    public function testUpdateIgnoresWhenEmpty()
+    public function testUpdateThrowsExceptionWhenEmpty()
     {
         $p = new MockPlugin();
-        $p->onRequestCreate(new Event());
+        $p->onRequestBeforeSend(new Event());
     }
 
     /**
@@ -132,7 +134,7 @@ class MockPluginTest extends \Guzzle\Tests\GuzzleTestCase
     {
         $p = new MockPlugin(null, true);
         $p->addResponse(MockPlugin::getMockFile(__DIR__ . '/../../TestData/mock_response'));
-        $client = new Client('http://localhost:123/');
+        $client = new Client('http://127.0.0.1:123/');
         $client->getEventDispatcher()->addSubscriber($p, 9999);
         $request = $client->get();
         $request->send();
@@ -149,7 +151,7 @@ class MockPluginTest extends \Guzzle\Tests\GuzzleTestCase
     public function testStoresMockedRequests()
     {
         $p = new MockPlugin(array(new Response(200), new Response(200)));
-        $client = new Client('http://localhost:123/');
+        $client = new Client('http://127.0.0.1:123/');
         $client->getEventDispatcher()->addSubscriber($p, 9999);
 
         $request1 = $client->get();
@@ -168,7 +170,7 @@ class MockPluginTest extends \Guzzle\Tests\GuzzleTestCase
     {
         $p = new MockPlugin(array(new Response(200)));
         $p->readBodies(true);
-        $client = new Client('http://localhost:123/');
+        $client = new Client('http://127.0.0.1:123/');
         $client->getEventDispatcher()->addSubscriber($p, 9999);
 
         $body = EntityBody::factory('foo');
@@ -176,5 +178,22 @@ class MockPluginTest extends \Guzzle\Tests\GuzzleTestCase
         $request->setBody($body);
         $request->send();
         $this->assertEquals(3, $body->ftell());
+    }
+
+    public function testCanMockBadRequestExceptions()
+    {
+        $client = new Client('http://127.0.0.1:123/');
+        $ex = new CurlException('Foo');
+        $mock = new MockPlugin(array($ex));
+        $client->addSubscriber($mock);
+        $request = $client->get('foo');
+
+        try {
+            $request->send();
+            $this->fail('Did not dequeue an exception');
+        } catch (CurlException $e) {
+            $this->assertSame($e, $ex);
+            $this->assertSame($request, $ex->getRequest());
+        }
     }
 }

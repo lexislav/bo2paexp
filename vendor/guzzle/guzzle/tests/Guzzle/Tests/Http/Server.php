@@ -29,19 +29,13 @@ class Server
     const DEFAULT_PORT = 8124;
     const REQUEST_DELIMITER = "\n----[request]\n";
 
-    /**
-     * @var int Port that the server will listen on
-     */
+    /** @var int Port that the server will listen on */
     private $port;
 
-    /**
-     * @var bool Is the server running
-     */
+    /** @var bool Is the server running */
     private $running = false;
 
-    /**
-     * @var Client
-     */
+    /** @var Client */
     private $client;
 
     /**
@@ -53,35 +47,16 @@ class Server
     {
         $this->port = $port ?: self::DEFAULT_PORT;
         $this->client = new Client($this->getUrl());
-    }
-
-    /**
-     * Destructor to safely shutdown the node.js server if it is still running
-     */
-    public function __destruct()
-    {
-        // Disabled for now
-        if (false && $this->running) {
-            try {
-                $this->stop();
-            } catch (\Exception $e) {}
-        }
+        register_shutdown_function(array($this, 'stop'));
     }
 
     /**
      * Flush the received requests from the server
-     *
-     * @return bool Returns TRUE on success or FALSE on failure
      * @throws RuntimeException
      */
     public function flush()
     {
-        if (!$this->isRunning()) {
-            return false;
-        }
-
-        return $this->client->delete('guzzle-server/requests')
-            ->send()->getStatusCode() == 200;
+        $this->client->delete('guzzle-server/requests')->send();
     }
 
     /**
@@ -91,8 +66,6 @@ class Server
      * on the server will return queued responses in FIFO order.
      *
      * @param array|Response $responses A single or array of Responses to queue
-     *
-     * @return bool Returns TRUE on success or FALSE on failure
      * @throws BadResponseException
      */
     public function enqueue($responses)
@@ -104,24 +77,19 @@ class Server
             if (is_string($response)) {
                 $response = Response::fromMessage($response);
             } elseif (!($response instanceof Response)) {
-                throw new BadResponseException(
-                    'Responses must be strings or implement Response'
-                );
+                throw new BadResponseException('Responses must be strings or implement Response');
             }
 
             $data[] = array(
                 'statusCode'   => $response->getStatusCode(),
                 'reasonPhrase' => $response->getReasonPhrase(),
-                'headers'      => $response->getHeaders()->getAll(),
+                'headers'      => $response->getHeaders()->toArray(),
                 'body'         => $response->getBody(true)
             );
         }
 
         $request = $this->client->put('guzzle-server/responses', null, json_encode($data));
-        $request->removeHeader('Expect');
-        $response = $request->send();
-
-        return $response->getStatusCode() == 200;
+        $request->send();
     }
 
     /**
@@ -133,14 +101,14 @@ class Server
     {
         if ($this->running) {
             return true;
-        } else {
-            $fp = @fsockopen('127.0.0.1', $this->port, $errno, $errstr, 1);
-            if (!$fp) {
-                return false;
-            } else {
-                fclose($fp);
-                return true;
-            }
+        }
+
+        try {
+            $this->client->get('guzzle-server/perf', array(), array('timeout' => 5))->send();
+            $this->running = true;
+            return true;
+        } catch (\Exception $e) {
+            return false;
         }
     }
 
@@ -176,16 +144,12 @@ class Server
      */
     public function getReceivedRequests($hydrate = false)
     {
-        $data = array();
-
-        if ($this->isRunning()) {
-            $response = $this->client->get('guzzle-server/requests')->send();
-            $data = array_filter(explode(self::REQUEST_DELIMITER, $response->getBody(true)));
-            if ($hydrate) {
-                $data = array_map(function($message) {
-                    return RequestFactory::getInstance()->fromMessage($message);
-                }, $data);
-            }
+        $response = $this->client->get('guzzle-server/requests')->send();
+        $data = array_filter(explode(self::REQUEST_DELIMITER, $response->getBody(true)));
+        if ($hydrate) {
+            $data = array_map(function($message) {
+                return RequestFactory::getInstance()->fromMessage($message);
+            }, $data);
         }
 
         return $data;
@@ -197,27 +161,23 @@ class Server
     public function start()
     {
         if (!$this->isRunning()) {
-            exec('node ' . __DIR__ . \DIRECTORY_SEPARATOR . 'server.js ' . $this->port . ' >> /tmp/server.log 2>&1 &');
-            // Wait at most 5 seconds for the server the setup before proceeding
+            exec('node ' . __DIR__ . \DIRECTORY_SEPARATOR
+                . 'server.js ' . $this->port
+                . ' >> /tmp/server.log 2>&1 &');
+            // Wait at most 5 seconds for the server the setup before
+            // proceeding.
             $start = time();
             while (!$this->isRunning() && time() - $start < 5);
-            if (!$this->isRunning()) {
+            if (!$this->running) {
                 throw new RuntimeException(
-                    'Unable to contact server.js.  Have you installed node.js '
-                    . 'v0.5.0+?  The node.js executable, node, must also be in '
-                    . 'your path.'
+                    'Unable to contact server.js. Have you installed node.js v0.5.0+? node must be in your path.'
                 );
             }
         }
-
-        $this->running = true;
     }
 
     /**
      * Stop running the node.js server
-     *
-     * @return bool Returns TRUE on success or FALSE on failure
-     * @throws RuntimeException
      */
     public function stop()
     {
@@ -226,8 +186,6 @@ class Server
         }
 
         $this->running = false;
-
-        return $this->client->delete('guzzle-server')->send()
-            ->getStatusCode() == 200;
+        $this->client->delete('guzzle-server')->send();
     }
 }

@@ -64,8 +64,6 @@ return array(
     'Doctrine\\Common\\' => array($vendorDir . '/doctrine/common/lib'),
     'Composer' => array($vendorDir . '/composer/composer/src'),
     'Codeception' => array($vendorDir . '/codeception/codeception/src'),
-    'Bolt\\Tests' => array($baseDir . '/app/tests'),
-    'Bolt' => array($baseDir . '/app/src'),
     'Behat\\Mink\\Driver' => array($vendorDir . '/behat/mink-selenium2-driver/src', $vendorDir . '/behat/mink-browserkit-driver/src', $vendorDir . '/behat/mink-goutte-driver/src'),
     'Behat\\Mink' => array($vendorDir . '/behat/mink/src'),
 );

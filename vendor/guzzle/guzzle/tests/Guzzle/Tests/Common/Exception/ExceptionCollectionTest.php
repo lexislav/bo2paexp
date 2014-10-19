@@ -20,8 +20,17 @@ class ExceptionCollectionTest extends \Guzzle\Tests\GuzzleTestCase
         $exceptions = $this->getExceptions();
         $e->add($exceptions[0]);
         $e->add($exceptions[1]);
-        $this->assertEquals("Test\nTesting", $e->getMessage());
+        $this->assertContains("(Exception) ./tests/Guzzle/Tests/Common/Exception/ExceptionCollectionTest.php line ", $e->getMessage());
+        $this->assertContains("    Test\n\n    #0 ./", $e->getMessage());
         $this->assertSame($exceptions[0], $e->getFirst());
+    }
+
+    public function testCanSetExceptions()
+    {
+        $ex = new \Exception('foo');
+        $e = new ExceptionCollection();
+        $e->setExceptions(array($ex));
+        $this->assertSame($ex, $e->getFirst());
     }
 
     public function testActsAsArray()
@@ -38,10 +47,20 @@ class ExceptionCollectionTest extends \Guzzle\Tests\GuzzleTestCase
     {
         $e1 = new ExceptionCollection();
         $e1->add(new \Exception("Test"));
-        $e2 = new ExceptionCollection();
+        $e2 = new ExceptionCollection('Meta description!');
         $e2->add(new \Exception("Test 2"));
-
+        $e3 = new ExceptionCollection();
+        $e3->add(new \Exception('Baz'));
+        $e2->add($e3);
         $e1->add($e2);
-        $this->assertEquals("Test\nTest 2", $e1->getMessage());
+        $message = $e1->getMessage();
+        $this->assertContains("(Exception) ./tests/Guzzle/Tests/Common/Exception/ExceptionCollectionTest.php line ", $message);
+        $this->assertContains("\n    Test\n\n    #0 ", $message);
+        $this->assertContains("\n\n(Guzzle\\Common\\Exception\\ExceptionCollection) ./tests/Guzzle/Tests/Common/Exception/ExceptionCollectionTest.php line ", $message);
+        $this->assertContains("\n\n    Meta description!\n\n", $message);
+        $this->assertContains("    (Exception) ./tests/Guzzle/Tests/Common/Exception/ExceptionCollectionTest.php line ", $message);
+        $this->assertContains("\n        Test 2\n\n        #0 ", $message);
+        $this->assertContains("        (Exception) ./tests/Guzzle/Tests/Common/Exception/ExceptionCollectionTest.php line ", $message);
+        $this->assertContains("            Baz\n\n            #0", $message);
     }
 }

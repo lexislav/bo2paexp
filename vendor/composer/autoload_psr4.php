@@ -11,4 +11,6 @@ return array(
     'League\\Flysystem\\' => array($vendorDir . '/rossriley/flysystem53/src'),
     'Bolt\\Thumbs\\Tests\\' => array($vendorDir . '/bolt/thumbs/tests'),
     'Bolt\\Thumbs\\' => array($vendorDir . '/bolt/thumbs/src'),
+    'Bolt\\Tests\\' => array($baseDir . '/tests/Bolt/Tests'),
+    'Bolt\\' => array($baseDir . '/src'),
 );
