@@ -1,6 +1,6 @@
 $pb-bar-height: 10px;
 $pb-icon-size: 60px;
-$pb-bar-color: #4A4A4A;
+$pb-bar-color: #4a4a4a;
 
 .l-section.m-progress-bar {
     padding-top: 60px;
@@ -8,7 +8,7 @@ $pb-bar-color: #4A4A4A;
 }
 
 .m-progress-bar {
-    background: #22D3D3;
+    background: #22d3d3;
     height: 470px;
 
     .row {
@@ -30,6 +30,7 @@ $pb-bar-color: #4A4A4A;
         background-repeat: no-repeat;
         top: 160px;
         left: -34px;
+
     }
 
     .arrow-right {
@@ -74,15 +75,11 @@ $pb-bar-color: #4A4A4A;
         padding: 0;
 
         li {
-
-
             display: block;
             position: absolute;
             width: 130px;
             height: 200px;
-
             color: $oil;
-
             text-align: center;
             line-height: 1.3em;
 
@@ -92,7 +89,6 @@ $pb-bar-color: #4A4A4A;
                     text-decoration: underline;
                 }
             }
-
 
             img {
                 width: $pb-icon-size;
@@ -114,8 +110,6 @@ $pb-bar-color: #4A4A4A;
                 }
                 .m-item--description {
                 }
-
-
             }
 
             &:after {

@@ -4377,7 +4377,7 @@ body {
   padding-bottom: 60px; }
 
 .m-progress-bar {
-  background: #22D3D3;
+  background: #22d3d3;
   height: 470px; }
   .m-progress-bar .row {
     overflow: visible; }
@@ -4414,12 +4414,12 @@ body {
   .m-progress-bar .m-progress-bar--bar-bg {
     height: 10px;
     width: 2400px;
-    border-top: 1px solid #4A4A4A;
-    border-bottom: 1px solid #4A4A4A; }
+    border-top: 1px solid #4a4a4a;
+    border-bottom: 1px solid #4a4a4a; }
   .m-progress-bar .m-progress-bar--bar {
     height: 8px;
     width: 30%;
-    background-color: #4A4A4A; }
+    background-color: #4a4a4a; }
   .m-progress-bar .m-progress-bar--items {
     position: relative;
     display: block;
@@ -4436,7 +4436,7 @@ body {
       text-align: center;
       line-height: 1.3em; }
       .m-progress-bar .m-progress-bar--items li a {
-        color: #4A4A4A; }
+        color: #4a4a4a; }
         .m-progress-bar .m-progress-bar--items li a:hover {
           text-decoration: underline; }
       .m-progress-bar .m-progress-bar--items li img {
@@ -4446,6 +4446,7 @@ body {
         position: absolute;
         bottom: 10px;
         left: 0;
+        width: 100%;
         height: 80px;
         overflow: hidden; }
         .m-progress-bar .m-progress-bar--items li .m-item--summary .m-item--date {
@@ -4455,7 +4456,7 @@ body {
       .m-progress-bar .m-progress-bar--items li:after {
         display: block;
         content: " ";
-        width: 120px;
+        width: 130px;
         height: 28px;
         position: absolute;
         bottom: -28px;
