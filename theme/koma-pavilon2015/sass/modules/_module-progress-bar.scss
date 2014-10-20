@@ -77,6 +77,9 @@ $pb-bar-color: #4A4A4A;
 
             a {
                 color: $pb-bar-color;
+                &:hover {
+                    text-decoration: underline;
+                }
             }
 
             display: block;
@@ -108,9 +111,7 @@ $pb-bar-color: #4A4A4A;
                 .m-item--description {
                 }
 
-                &:hover {
-                    text-decoration: underline;
-                }
+
             }
 
             &:after {

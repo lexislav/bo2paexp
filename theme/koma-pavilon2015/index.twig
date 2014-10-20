@@ -84,18 +84,15 @@
                                     <img class="m-progress-bar--image" src="{{ thumbnail(bodosy.image, 60, 60, fit) }}">
                                 {% endif %}
 
-                                {% if bodosy.related %}
+                                <div class="m-item--summary">
+                                    {% if bodosy.related %}
                                     {% set bodlink = bodosy.related|first %}
                                     <a url="{{ bodlink.link }}" title="{{ bodlink.slug }}">
-                                {% endif %}
-
-                                <div class="m-item--summary">
-                                    <span class="m-item--date">{{ bodosy.poloha|date("d. m. Y") }}</span>
-                                    <span class="m-item--description">{{ bodosy['title_' ~ app.locale] }}</span>
+                                        {% endif %}
+                                        <span class="m-item--date">{{ bodosy.poloha|date("d. m. Y") }}</span>
+                                        <span class="m-item--description">{{ bodosy['title_' ~ app.locale] }}</span>
+                                    {% if bodosy.related %}</a>{% endif %}
                                 </div>
-
-                                {% if bodosy.related %}</a>{% endif %}
-
 
                             </li>
                         {% endfor %}

@@ -4437,6 +4437,8 @@ body {
       line-height: 1.3em; }
       .m-progress-bar .m-progress-bar--items li a {
         color: #4A4A4A; }
+        .m-progress-bar .m-progress-bar--items li a:hover {
+          text-decoration: underline; }
       .m-progress-bar .m-progress-bar--items li img {
         width: 60px;
         height: 60px; }
@@ -4450,8 +4452,6 @@ body {
           display: block;
           font-weight: 800;
           padding-bottom: 4px; }
-        .m-progress-bar .m-progress-bar--items li .m-item--summary:hover {
-          text-decoration: underline; }
       .m-progress-bar .m-progress-bar--items li:after {
         display: block;
         content: " ";
