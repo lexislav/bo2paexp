@@ -4412,14 +4412,14 @@ body {
     width: 100%;
     overflow: hidden !important; }
   .m-progress-bar .m-progress-bar--bar-bg {
-    height: 20px;
+    height: 10px;
     width: 2400px;
-    border-top: 1px solid #000;
-    border-bottom: 1px solid #000; }
+    border-top: 1px solid #4A4A4A;
+    border-bottom: 1px solid #4A4A4A; }
   .m-progress-bar .m-progress-bar--bar {
-    height: 20px;
+    height: 8px;
     width: 30%;
-    background-color: #000; }
+    background-color: #4A4A4A; }
   .m-progress-bar .m-progress-bar--items {
     position: relative;
     display: block;
@@ -4430,18 +4430,26 @@ body {
     .m-progress-bar .m-progress-bar--items li {
       display: block;
       position: absolute;
-      width: 120px;
+      width: 130px;
       height: 200px;
       color: #333333;
       text-align: center;
       line-height: 1.3em; }
+      .m-progress-bar .m-progress-bar--items li a {
+        color: #4A4A4A; }
       .m-progress-bar .m-progress-bar--items li img {
-        width: 84px;
-        height: 84px; }
-      .m-progress-bar .m-progress-bar--items li span {
+        width: 60px;
+        height: 60px; }
+      .m-progress-bar .m-progress-bar--items li .m-item--summary {
         position: absolute;
         bottom: 10px;
-        left: 0; }
+        left: 0;
+        height: 80px;
+        overflow: hidden; }
+        .m-progress-bar .m-progress-bar--items li .m-item--summary .m-item--date {
+          font-weight: 600; }
+        .m-progress-bar .m-progress-bar--items li .m-item--summary:hover {
+          text-decoration: underline; }
       .m-progress-bar .m-progress-bar--items li:after {
         display: block;
         content: " ";

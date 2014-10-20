@@ -1,3 +1,6 @@
+$pb-bar-height: 10px;
+$pb-icon-size: 60px;
+$pb-bar-color: #4A4A4A;
 
 .l-section.m-progress-bar {
     padding-top: 60px;
@@ -35,7 +38,6 @@
         background-image: url("../assets/ikony/nav-next-white.png");
     }
 
-
     h2 {
         @include fnt-primary-headline();
         font-size: rem-calc(40);
@@ -52,16 +54,15 @@
     }
 
     .m-progress-bar--bar-bg {
-        height: 20px;
+        height: $pb-bar-height;
         width: 2400px;
-        border-top: 1px solid #000;
-        border-bottom: 1px solid #000;
+        border-top: 1px solid $pb-bar-color;
+        border-bottom: 1px solid $pb-bar-color;
     }
     .m-progress-bar--bar {
-        height: 20px;
+        height: $pb-bar-height - 2;
         width: 30%;
-        background-color: #000;
-        //border: 1px solid #000;
+        background-color: $pb-bar-color;
     }
 
     .m-progress-bar--items {
@@ -73,9 +74,14 @@
         padding: 0;
 
         li {
+
+            a {
+                color: $pb-bar-color;
+            }
+
             display: block;
             position: absolute;
-            width: 120px;
+            width: 130px;
             height: 200px;
             color: $oil;
 
@@ -83,14 +89,26 @@
             line-height: 1.3em;
 
             img {
-                width: 84px;
-                height: 84px;
+                width: $pb-icon-size;
+                height: $pb-icon-size;
             }
 
-            span {
+            .m-item--summary {
                 position: absolute;
                 bottom: 10px;
                 left: 0;
+                height: 80px;
+                overflow: hidden;
+
+                .m-item--date {
+                    font-weight: 600;
+                }
+                .m-item--description {
+                }
+
+                &:hover {
+                    text-decoration: underline;
+                }
             }
 
             &:after {
