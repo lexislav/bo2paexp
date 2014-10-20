@@ -4447,7 +4447,9 @@ body {
         height: 80px;
         overflow: hidden; }
         .m-progress-bar .m-progress-bar--items li .m-item--summary .m-item--date {
-          font-weight: 600; }
+          display: block;
+          font-weight: 800;
+          padding-bottom: 4px; }
         .m-progress-bar .m-progress-bar--items li .m-item--summary:hover {
           text-decoration: underline; }
       .m-progress-bar .m-progress-bar--items li:after {

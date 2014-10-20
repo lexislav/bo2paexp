@@ -101,7 +101,9 @@ $pb-bar-color: #4A4A4A;
                 overflow: hidden;
 
                 .m-item--date {
-                    font-weight: 600;
+                    display: block;
+                    font-weight: 800;
+                    padding-bottom: 4px;
                 }
                 .m-item--description {
                 }
