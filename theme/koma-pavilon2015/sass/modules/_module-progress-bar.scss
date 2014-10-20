@@ -75,6 +75,17 @@ $pb-bar-color: #4A4A4A;
 
         li {
 
+
+            display: block;
+            position: absolute;
+            width: 130px;
+            height: 200px;
+
+            color: $oil;
+
+            text-align: center;
+            line-height: 1.3em;
+
             a {
                 color: $pb-bar-color;
                 &:hover {
@@ -82,14 +93,6 @@ $pb-bar-color: #4A4A4A;
                 }
             }
 
-            display: block;
-            position: absolute;
-            width: 130px;
-            height: 200px;
-            color: $oil;
-
-            text-align: center;
-            line-height: 1.3em;
 
             img {
                 width: $pb-icon-size;
@@ -100,6 +103,7 @@ $pb-bar-color: #4A4A4A;
                 position: absolute;
                 bottom: 10px;
                 left: 0;
+                width: 100%;
                 height: 80px;
                 overflow: hidden;
 
@@ -117,7 +121,7 @@ $pb-bar-color: #4A4A4A;
             &:after {
                 display: block;
                 content: " ";
-                width: 120px;
+                width: 130px;
                 height: 28px;
                 position: absolute;
                 bottom: -28px;
