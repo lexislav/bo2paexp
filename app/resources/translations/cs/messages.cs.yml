@@ -1,22 +1,21 @@
-# app/resources/translations/cs/messages.cs.yml – generated on 2014-10-20 10:16:51 UTC
-# 27 untranslated strings
+# app/resources/translations/cs/messages.cs.yml – generated on 2014-10-21 14:09:42 UTC
+# 26 untranslated strings
 
-"field.general.allowed-filetypes":  "Povolené typy souborů"
-"field.general.select-from-server":  "Vybrat na serveru"
-"field.general.select-from-stack":  "Vybrat ze Zásobníku"
-"field.geolocation.label.address-lookup":  "Adresa k vyhledávání"
-"field.geolocation.label.latitude":  "Zeměpisná šířka"
-"field.geolocation.label.longitude":  "Zeměpisná délka"
+"field.general.allowed-filetypes":  #
+"field.general.select-from-server":  #
+"field.general.select-from-stack":  #
+"field.geolocation.label.address-lookup":  #
+"field.geolocation.label.latitude":  #
+"field.geolocation.label.longitude":  #
 "field.geolocation.label.marker-placement":  #
-"field.geolocation.matched-address":  "Odpovídající adresa"
-"field.geolocation.placeholder.address":  "Ulice, PSČ, město nebo jiné udání polohy"
+"field.geolocation.matched-address":  #
+"field.geolocation.placeholder.address":  #
 "field.slug.message.set":  #
 "field.slug.message.unlock":  #
 "field.slug.permalink":  #
 "field.video.button.preview":  #
 "field.video.label.preview":  #
 "field.video.label.size":  #
-"field.video.label.url":  #
 "field.video.matched-video":  #
 "field.video.pixel":  #
 "field.video.placeholder.url":  #
@@ -30,7 +29,7 @@
 "page.login.cookies-required":  #
 
 #-----------------------------------------
-# 326 translated strings
+# 327 translated strings
 
 "%contenttypes% overview": "%contenttypes% přehled"
 "%name% № %id%": "%name% č. %id%"
@@ -314,6 +313,10 @@
 "of": "z"
 "old value": "původní hodnota"
 "show all": "zobrazit vše"
+
+field:
+    video:
+        label.url: "URL Adresa videa"
 
 generic:
     noscript:
