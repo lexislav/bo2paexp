@@ -1,6 +1,45 @@
-# app/resources/translations/cs/messages.cs.yml – generated on 2014-10-21 14:09:42 UTC
-# 26 untranslated strings
+# app/resources/translations/cs/messages.cs.yml – generated on 2014-10-21 21:09:42 UTC
+# 69 untranslated strings
 
+"Autor(ři) Pavilonu":  #
+"Autor(ři) expozice":  #
+"Czech pavilion":  #
+"Hodnota":  #
+"Kategorie":  #
+"Kategorie1":  #
+"Korekce polohy na Časové ose":  #
+"Město (EN)":  #
+"Město":  #
+"Nadpis (EN)":  #
+"Nadpis":  #
+"No content found":  "Obsah nenalezen"
+"No content found.":  "Obsah nenalezen"
+"Název (CS)":  #
+"Název (EN)":  #
+"Název proměnné":  #
+"Název":  #
+"Popis bodu časové osy (EN)":  #
+"Popis bodu časové osy":  #
+"Popisek (EN)":  #
+"Popisek":  #
+"Rok konání":  #
+"Rozcestnik":  #
+"Spobory(y) ke stažení":  #
+"Statik":  #
+"Statiky":  #
+"Stitek":  #
+"Stitky":  #
+"Text (CS)":  #
+"Text (EN)":  #
+"Text":  #
+"Téma výstavy (EN)":  #
+"Téma výstavy":  #
+"Téma české expozice (EN)":  #
+"Téma české expozice":  #
+"Ukazatel":  #
+"Vyberte obsah s detailním popisem":  #
+"Vyberte článek":  #
+"Zvýraznit zprávu":  #
 "field.general.allowed-filetypes":  #
 "field.general.select-from-server":  #
 "field.general.select-from-stack":  #
@@ -16,11 +55,15 @@
 "field.video.button.preview":  #
 "field.video.label.preview":  #
 "field.video.label.size":  #
+"field.video.label.url":  #
 "field.video.matched-video":  #
 "field.video.pixel":  #
 "field.video.placeholder.url":  #
 "field.video.preview.button.close":  #
 "field.video.preview.no-url":  #
+"galerie":  #
+"ikona":  #
+"náhledový obrázek":  #
 "page.edit-file.note-related":  #
 "page.edit-users.button.save":  #
 "page.edit-users.title.profile":  #
@@ -29,7 +72,7 @@
 "page.login.cookies-required":  #
 
 #-----------------------------------------
-# 327 translated strings
+# 316 translated strings
 
 "%contenttypes% overview": "%contenttypes% přehled"
 "%name% № %id%": "%name% č. %id%"
@@ -65,19 +108,14 @@
 "Cancel": "Zrušit"
 "Cannot check for updates in read-only mode": "Nelze zkontrolovat aktualizace v režimu pouze pro čtení"
 "Cannot check installed packages in read-only mode": "Nelze zkontrolovat nainstalované balíčky v režimu pouze pro čtení"
-"Categories": "Kategorie"
-"Category": "Kategorie"
 "Change Log": "Změnit záznam"
 "Change status to 'draft'": "Změnit status na 'draft'"
 "Change status to 'held'": "Změnit status na 'held'"
-"Chapter": "Kapitola"
-"Chapters": "Kapitoly"
 "Check again": "Znovu ověřit"
 "Check database": "Ověřit databázi"
 "Check for updates": "Zkontrolovat aktualizace"
 "Checking for available updates (this may take up to 60 seconds)": "Kontrola dostupných aktualizací (toto může trvat až 60 vteřin)"
 "Checking installed packages": "Kontrola nainstalovaných balíčků"
-"Choose an entry": "Vybrat záznam (obsah)"
 "Class:": "Třída:"
 "Clear Activitylog": "Smazat všechny záznamy"
 "Clear cache again": "Znovu vyprázdnit cache"
@@ -231,10 +269,8 @@
 "Search …": "Hledat…"
 "Search": "Hledat"
 "Searching for available updates …": "Vyhledávání dostupných aktualizací..."
-"Select a page": "Vybrat stranu"
 "Select all": "Vybrat vše"
 "Select none": "Odznačit vše"
-"Select zero or more pages": "Vyberte žnádnou, jednu nebo více stran."
 "Select": "Vybrat"
 "Session expires": "Přihlášení ukončeno pro nečinnost."
 "Settings": "Nastavení"
@@ -246,8 +282,6 @@
 "Stack": "Zásobník"
 "Status": "Stav"
 "Status:": "Stav:"
-"Tag": "Štítek"
-"Tags": "Štítky"
 "Taxonomy": "Taxonomie"
 "Thanks": "Děkujeme"
 "The extensions directory (<code>%dir%</code>) does not exist, or it is not writable.": "Adresář rozšíření (<code>%dir%</code>) neexistuje nebo do něj nelze zapisovat."
@@ -260,7 +294,6 @@
 "There are no users present in the system. Please create the first user, which will be granted root privileges.": "V systému nejsou žádní uživatelé. Prosím vytvořte prvního uživatele, kterému budou poskytnuta oprávnění root."
 "This %contenttype% has not been saved yet.": "%contenttype% zatím neuloženo."
 "This %contenttype% was created": "Tento %contenttype% byl vytvořen"
-"This is a checkbox": "Toto je zašrtávací políčko"
 "This record is related to:": "Tento záznam souvisí s:"
 "This website is <a href='%url%' target='_blank' title='Sophisticated, lightweight & simple CMS'>Built with Bolt</a>.": "Tento web běží na <a href='%url%' target='_blank' title='Sophisticated, lightweight & simple CMS'>Bolt</a>."
 "This will install all available updates.": "Tímto se nainstalují všechny dostupné aktualizace."
@@ -313,10 +346,6 @@
 "of": "z"
 "old value": "původní hodnota"
 "show all": "zobrazit vše"
-
-field:
-    video:
-        label.url: "URL Adresa videa"
 
 generic:
     noscript:
