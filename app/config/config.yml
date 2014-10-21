@@ -39,7 +39,7 @@ i18n_locales:
 # All other visitors are presented with a notice that the site is currently offline.
 # The default template file can be found in /app/theme_defaults/ and overridden with
 # this option using your own theme.
-maintenance_mode: false
+maintenance_mode: true
 maintenance_template: maintenance.twig
 
 # The hour of the day for the internal cron task scheduler to run daily, weekly,
@@ -138,7 +138,7 @@ thumbnails:
 # File types that are acceptable for upload in either 'file' fields or through the 'files' screen.
 
 # The following is the default list of file-types that can be uploaded through the 'files' screen.
-accept_file_types: [ twig, html, js, css, scss, gif, jpg, jpeg, png, ico, zip, tgz, txt, md, doc, docx, pdf, epub, xls, xlsx, ppt, pptx, mp3, ogg, wav, m4a, mp4, m4v, ogv, wmv, avi, webm, svg]
+accept_file_types: [ twig, html, js, css, scss, gif, jpg, jpeg, png, ico, zip, tgz, txt, md, doc, docx, pdf, epub, xls, xlsx, ppt, pptx, mp3, ogg, wav, m4a, mp4, m4v, ogv, wmv, avi, webm, svg ]
 
 # Alternatively, if you wish to limit these, uncomment the following list instead;
 # it includes file types that are harder to exploit.
