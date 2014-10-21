@@ -87,7 +87,7 @@
                                 <div class="m-item--summary">
                                     {% if bodosy.related %}
                                     {% set bodlink = bodosy.related|first %}
-                                    <a url="{{ bodlink.link }}" title="{{ bodlink.slug }}">
+                                    <a href="{{ bodlink.link }}" title="{{ bodlink.slug }}">
                                         {% endif %}
                                         <span class="m-item--date">{{ bodosy.poloha|date("d. m. Y") }}</span>
                                         <span class="m-item--description">{{ bodosy['title_' ~ app.locale] }}</span>

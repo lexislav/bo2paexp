@@ -10,7 +10,9 @@
         <nav class="breadcrumbs">
             {% if record.contenttype.name == "Zpravodaj" %}
             <a href="{{paths.root}}{{ app.locale }}/blog">ZRAVODAJ PAVILONU</a>
-            <a class="current" href="#">KATEGORIE</a>
+            {% if record.taxonomy.kategorie is defined %}{% for tag in record.taxonomy.kategorie %}<a href="{{ paths.root }}{{ app.locale }}/kategorie/{{ tag }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</div>
+            </div>
+            {% endif %}
             {% elseif record.contenttype.name == "Historie" %}
             <a href="{{paths.root}}{{ app.locale }}/historie">Historie českých pavilonů EXPO</a>{% endif %}
         </nav>
