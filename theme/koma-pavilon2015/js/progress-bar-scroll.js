@@ -22,7 +22,7 @@ $(function () {
         var iCorrection = iHolder.data("correction");
 
         if (iStamp != null) {
-            console.log("s: " + iStamp);
+            //console.log("s: " + iStamp);
             minStamp = Math.min(minStamp, iStamp);
             maxStamp = Math.max(maxStamp, iStamp);
 
@@ -56,8 +56,9 @@ $(function () {
 
 
     // make dragable
-    $("#drg-progress-bar").scrollLeft( maxWidthOfBar * tsOffset - (pb.width() / 2));
-    Draggable.create("#drg-progress-bar", {
+    pb.scrollLeft( maxWidthOfBar * tsOffset - (pb.width() / 2));
+
+    var dbar = Draggable.create("#drg-progress-bar", {
         type: "scrollLeft",
         edgeResistance: .5,
         throwProps: true,
@@ -69,5 +70,15 @@ $(function () {
             //setPos(this.x);
         }
     });
+
+    $("#drg-left").click(function() {
+        TweenLite.to(pb, .3, {scrollLeft:  (pb.scrollLeft() - 300) });
+        dbar[0].update(true);
+    });
+    $("#drg-right").click(function() {
+        TweenLite.to(pb, .3, {scrollLeft:  (pb.scrollLeft() + 300) });
+        dbar[0].update(true);
+    });
+
 
 });

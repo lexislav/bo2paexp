@@ -4440,8 +4440,8 @@ body {
         .m-progress-bar .m-progress-bar--items li a:hover {
           text-decoration: underline; }
       .m-progress-bar .m-progress-bar--items li img {
-        width: 60px;
-        height: 60px; }
+        width: 48px;
+        height: 48px; }
       .m-progress-bar .m-progress-bar--items li .m-item--summary {
         position: absolute;
         bottom: 10px;
