@@ -32,7 +32,7 @@ timezone: UTC
 i18n_locales:
   - cs
   - en
-  - it
+#  - it
 
 # Set maintenance mode true or false
 # While in maintenance mode, only users of level editor or higher can access the site.
