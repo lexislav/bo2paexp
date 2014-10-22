@@ -1,6 +1,8 @@
 $pb-bar-height: 10px;
-$pb-icon-size: 48px;
+$pb-icon-size: 52px;
 $pb-bar-color: #4a4a4a;
+$pb-bar-text-color: #000;
+
 
 .l-section.m-progress-bar {
     padding-top: 60px;
@@ -79,12 +81,12 @@ $pb-bar-color: #4a4a4a;
             position: absolute;
             width: 130px;
             height: 200px;
-            color: $oil;
+            color: $pb-bar-text-color;
             text-align: center;
             line-height: 1.3em;
 
             a {
-                color: $pb-bar-color;
+                color: $pb-bar-text-color;
                 &:hover {
                     text-decoration: underline;
                 }
@@ -93,6 +95,7 @@ $pb-bar-color: #4a4a4a;
             img {
                 width: $pb-icon-size;
                 height: $pb-icon-size;
+                margin-top: 16px;
             }
 
             .m-item--summary {

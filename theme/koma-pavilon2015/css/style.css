@@ -4766,16 +4766,17 @@ th.hide-for-touch {
       position: absolute;
       width: 130px;
       height: 200px;
-      color: #333333;
+      color: #000;
       text-align: center;
       line-height: 1.3em; }
       .m-progress-bar .m-progress-bar--items li a {
-        color: #4a4a4a; }
+        color: #000; }
         .m-progress-bar .m-progress-bar--items li a:hover {
           text-decoration: underline; }
       .m-progress-bar .m-progress-bar--items li img {
-        width: 48px;
-        height: 48px; }
+        width: 52px;
+        height: 52px;
+        margin-top: 16px; }
       .m-progress-bar .m-progress-bar--items li .m-item--summary {
         position: absolute;
         bottom: 10px;
