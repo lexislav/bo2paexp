@@ -39,7 +39,7 @@ i18n_locales:
 # All other visitors are presented with a notice that the site is currently offline.
 # The default template file can be found in /app/theme_defaults/ and overridden with
 # this option using your own theme.
-maintenance_mode: true
+maintenance_mode: false
 maintenance_template: maintenance.twig
 
 # The hour of the day for the internal cron task scheduler to run daily, weekly,
