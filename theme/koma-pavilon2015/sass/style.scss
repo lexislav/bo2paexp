@@ -67,6 +67,8 @@ $navbar-height: $navbar-height_AB;
 @import "modules/module-content-story";
 @import "modules/module-breadcrumbs";
 @import "modules/module-light-nav";
+@import "modules/module-unsupported-browser";
+
 
 @import "modules/override-clearing";
 @import "modules/override-modal";

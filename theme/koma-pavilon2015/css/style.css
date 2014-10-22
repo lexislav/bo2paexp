@@ -5496,6 +5496,22 @@ aside h2 {
         .m-light-nav.mm-centerd .m-light-nav--wrap {
           min-width: 240px; } }
 
+.m-unsupported-browser {
+  padding-top: 150px;
+  color: #888; }
+  .m-unsupported-browser .m-item--title {
+    font-size: 26px;
+    margin-bottom: 120px; }
+  .m-unsupported-browser .m-item--icons {
+    margin-bottom: 60px; }
+  .m-unsupported-browser ul > li {
+    margin: 0;
+    padding: 0;
+    width: 25%;
+    text-align: center; }
+  .m-unsupported-browser p {
+    margin-bottom: 0.5em; }
+
 .clearing-thumbs {
   width: 100%;
   position: relative; }
