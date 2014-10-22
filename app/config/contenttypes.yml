@@ -17,10 +17,6 @@ zpravodaj:
         featured:
              type: checkbox
              label: Zvýraznit zprávu
-<<<<<<< HEAD
-             default: uncheck
-=======
->>>>>>> fixing some content issues
         text_cs:
             type: html
             height: 300px
