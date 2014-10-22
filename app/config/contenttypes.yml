@@ -17,7 +17,7 @@ zpravodaj:
         featured:
              type: checkbox
              label: Zvýraznit zprávu
-             default: unchecked
+             default: uncheck
         text_cs:
             type: html
             height: 300px
@@ -136,6 +136,10 @@ odkazy:
             type: slug
             uses: nazev_cs
     taxonomy: [ rozcestnik ]
+    listing_records: 60
+    default_status: publish
+    sort: -datepublish
+    recordsperpage: 9
 
 historie:
     name: Historie
