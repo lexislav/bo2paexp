@@ -109,6 +109,7 @@ i18n_homepage:
 pavilonpage:
   path: /{_locale}/o-pavilonu
   defaults: { _controller: 'Bolt\Controllers\Frontend::record', 'contenttypeslug': 'page', 'slug': 'o-pavilonu' }
+  recordslug: page/about
 #  host: 'www.mydomain.org'
 
 # Example override for a specific contenttype
