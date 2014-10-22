@@ -1,6 +1,6 @@
 {% include '_header.twig' %}
 <body class="l-page l-page_blog">
-{% include '_loader.twig' %}
+{# {% include '_loader.twig' %} #}
 {% include '_topbar.twig' with {'menuClasses': 'switchable'} %}
 
 <div class="m-theme mgr-full">
@@ -22,26 +22,7 @@
     </div>
 </div>
 
-
-{% if taxonomytype is defined %}
-    <div class="row">
-        <div class="small-12 columns text-center mgr-half">
-            <h4>
-                {{ __('Overview for') }}
-                {% if taxonomy.options[slug] is defined %}
-                    {{ taxonomy.options[slug] }}
-                {% else %}
-                    {{ slug }}
-                {% endif %}
-            </h4>
-        </div>
-    </div>
-    {# taxonomies are fetched unordered by design. If we specified an order in config.yml, sort them here: #}
-    {% set records = records|order(app.config.get('general/listing_sort')) %}
-{% endif %}
-
-
-    <div class="row mgr-full">
+<div class="row mgr-full">
     <div class="small-12 large-12 columns">
 
 
@@ -53,11 +34,8 @@
                 <a href="{{ paths.root }}">homepage</a>. </p>
         </article>
     </div>
-    </div>
+</div>
 
-<!-- Paginace -->
-{{ pager('', 2, '_zpravodaj_pager.twig') }}
-<!-- Konec paginace  -->
 
 <div class="m-list mm-dark">
 <div class="row">
@@ -112,12 +90,11 @@
 </div>
 
 
-
 {% include '_partners.twig' %}
 {% include '_inc-footer.twig' %}
 
 {% include '_inc-global-scripts.twig' %}
 <!-- page custom JS -->
 
-
-</body>{% include '_footer.twig' %}
+</body>
+{% include '_footer.twig' %}
