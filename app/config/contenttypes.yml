@@ -135,10 +135,10 @@ odkazy:
             type: slug
             uses: nazev_cs
     taxonomy: [ rozcestnik ]
-    listing_records: 60
+    listing_records: 10
     default_status: publish
     sort: -datepublish
-    recordsperpage: 9
+    recordsperpage: 100
 
 historie:
     name: Historie
