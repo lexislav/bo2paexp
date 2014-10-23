@@ -150,11 +150,11 @@ contenttype-default:
 
 contenttypes:
     blog:
-        edit: [ developer, admin, editor, chief-editor ]
-        create: [ developer, admin, editor, chief-editor ]
-        publish: [ developer, admin, editor, chief-editor ]
-        delete: [ developer, admin, chief-editor ]
-        view: [ developer, admin, chief-editor, editor ]
+        edit: [ developer, admin, editor, chief-editor, redactor ]
+        create: [ developer, admin, editor, chief-editor, redactor ]
+        publish: [ developer, admin, editor, chief-editor, redactor ]
+        delete: [ developer, admin, chief-editor, redactor ]
+        view: [ developer, admin, chief-editor, editor, redactor ]
     sponzori:
         edit: [ developer, admin, editor, chief-editor ]
         create: [ developer, admin, editor, chief-editor ]
@@ -197,7 +197,7 @@ contenttypes:
         publish: [ developer, admin, redactor, chief-editor, editor ]
         delete: [ developer, admin, chief-editor, editor ]
         view: [ developer, admin, redactor, chief-editor, editor ]
-    Strany:
+    strany:
         edit: [ developer, admin, root ]
         create: [ developer, admin, root ]
         publish: [ developer, admin, root ]
