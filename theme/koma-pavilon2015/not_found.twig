@@ -46,7 +46,7 @@
         <header>
             <h2>Další články o pavilonu & EXPO2015</h2>
         </header>
-        {% setcontent myc = 'odkazy' where { rozcestnik: 'o-pavilonu' } %}
+        {% setcontent myc = 'odkazy' where { rozcestnik: 'o-pavilonu' } limit 10 %}
         {% for olink in myc %}
             <article class="m-item">
                 <header>
@@ -69,7 +69,7 @@
         <header>
             <h2>Více o modulární architektuře</h2>
         </header>
-        {% setcontent myc = 'odkazy' where { rozcestnik: 'modularni-architektura' } %}
+        {% setcontent myc = 'odkazy' where { rozcestnik: 'modularni-architektura' } limit 10 %}
         {% for olink in myc %}
             <article class="m-item">
                 <header>

@@ -282,7 +282,7 @@ class Users
 
         try {
             // Check if there's already a token stored for this name / IP combo.
-            $query = "SELECT id FROM " . $this->authtokentable . " WHERE username=? AND ip=? AND useragent=?";
+            $query = sprintf('SELECT id FROM %s WHERE username=? AND ip=? AND useragent=?', $this->authtokentable);
             $query = $this->app['db']->getDatabasePlatform()->modifyLimitQuery($query, 1);
             $row = $this->db->executeQuery($query, array($token['username'], $token['ip'], $token['useragent']), array(\PDO::PARAM_STR))->fetch();
 
@@ -346,7 +346,7 @@ class Users
     {
         $this->deleteExpiredSessions();
 
-        $query = "SELECT * FROM " . $this->authtokentable;
+        $query = sprintf('SELECT * FROM %s', $this->authtokentable);
         $sessions = $this->db->fetchAll($query);
 
         return $sessions;
@@ -355,7 +355,7 @@ class Users
     private function deleteExpiredSessions()
     {
         try {
-            $stmt = $this->db->prepare("DELETE FROM " . $this->authtokentable . " WHERE validity < :now");
+            $stmt = $this->db->prepare(sprintf('DELETE FROM %s WHERE validity < :now"', $this->authtokentable));
             $stmt->bindValue("now", date("Y-m-d H:i:s"));
             $stmt->execute();
         } catch (\Doctrine\DBAL\DBALException $e) {
@@ -394,7 +394,7 @@ class Users
         $userslug = makeSlug($user);
 
         // for once we don't use getUser(), because we need the password.
-        $query = "SELECT * FROM " . $this->usertable . " WHERE username=?";
+        $query = sprintf('SELECT * FROM %s WHERE username=?',  $this->usertable);
         $query = $this->app['db']->getDatabasePlatform()->modifyLimitQuery($query, 1);
         $user = $this->db->executeQuery($query, array($userslug), array(\PDO::PARAM_STR))->fetch();
 
@@ -463,9 +463,6 @@ class Users
                 // Oops. User will get a warning on the dashboard about tables that need to be repaired.
             }
 
-            // Take a nap, to prevent brute-forcing. Zzzzz...
-            sleep(1);
-
             return false;
         }
     }
@@ -490,7 +487,7 @@ class Users
 
         // Check if there's already a token stored for this token / IP combo.
         try {
-            $query = "SELECT * FROM " . $this->authtokentable . " WHERE token=? AND ip=? AND useragent=?";
+            $query = sprintf('SELECT * FROM %s WHERE token=? AND ip=? AND useragent=?', $this->authtokentable);
             $query = $this->app['db']->getDatabasePlatform()->modifyLimitQuery($query, 1);
             $row = $this->db->executeQuery($query, array($authtoken, $remoteip, $browser), array(\PDO::PARAM_STR))->fetch();
         } catch (\Doctrine\DBAL\DBALException $e) {
@@ -592,8 +589,6 @@ class Users
                 )
             );
 
-            // echo $mailhtml;
-
             $subject = sprintf("[ Bolt / %s ] Password reset.", $this->app['config']->get('general/sitename'));
 
             $message = \Swift_Message::newInstance()
@@ -613,9 +608,6 @@ class Users
 
         }
 
-        // Take a nap, to prevent brute-forcing. Zzzzz...
-        sleep(1);
-
         return true;
     }
 
@@ -626,7 +618,7 @@ class Users
         $now = date("Y-m-d H:i:s");
 
         // Let's see if the token is valid, and it's been requested within two hours...
-        $query = "SELECT * FROM " . $this->usertable . " WHERE shadowtoken = ? AND shadowvalidity > ?";
+        $query = sprintf('SELECT * FROM %s WHERE shadowtoken = ? AND shadowvalidity > ?', $this->usertable);
         $query = $this->app['db']->getDatabasePlatform()->modifyLimitQuery($query, 1);
         $user = $this->db->executeQuery($query, array($token, $now), array(\PDO::PARAM_STR))->fetch();
 
@@ -737,7 +729,7 @@ class Users
     {
         if (empty($this->users) || !is_array($this->users)) {
 
-            $query = "SELECT * FROM " . $this->usertable;
+            $query = sprintf('SELECT * FROM %s', $this->usertable);
             $this->users = array();
 
             try {
