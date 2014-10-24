@@ -47,7 +47,7 @@
             <h2>Další články o pavilonu & EXPO2015</h2>
         </header>
         {% setcontent myc = 'odkazy' where { rozcestnik: 'o-pavilonu' } limit 10 %}
-        {% for olink in myc %}
+        {% for olink in myc %}{% if olink['nazev_' ~ app.locale] %}
             <article class="m-item">
                 <header>
                     <h1 class="m-item--hed">
@@ -60,7 +60,7 @@
                         <div class="m-item--date">{{ olink['popis_' ~ app.locale] }}</div>
                     </div>
                 </header>
-            </article>
+            </article>{% endif %}
         {% endfor %}
 
     </div>
@@ -70,7 +70,7 @@
             <h2>Více o modulární architektuře</h2>
         </header>
         {% setcontent myc = 'odkazy' where { rozcestnik: 'modularni-architektura' } limit 10 %}
-        {% for olink in myc %}
+        {% for olink in myc %}{% if olink['nazev_' ~ app.locale] %}
             <article class="m-item">
                 <header>
                     <h1 class="m-item--hed">
@@ -84,7 +84,7 @@
                     </div>
                 </header>
             </article>
-        {% endfor %}
+        {% endfor %}{% endif %}
     </div>
 </div>
 </div>
