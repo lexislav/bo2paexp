@@ -68,11 +68,13 @@
 
 <div class="l-section m-progress-bar">
     <div id="drg-progress-bar-bounds" class=" small-12 columns">
-        <div class="row">
+
             <article>
-                <header>
+                <div class="row">
+                <header class="small-12 columns">
                     <h2 class="fnt-primary-headline">Aktuální stav pavilonu</h2>
-                </header>{% setcontent bodyosy = 'ProgressBar' %}
+                </header>
+                </div>{% setcontent bodyosy = 'ProgressBar' %}
                 <div id="drg-progress-bar" class="m-progress-bar--container">
 
                     <ul class="m-progress-bar--items">
@@ -105,8 +107,6 @@
                 <div id="drg-left" class="arrow-left"></div>
                 <div id="drg-right" class="arrow-right"></div>
             </article>
-
-        </div>
 
     </div>
 </div>
