@@ -166,11 +166,11 @@ historie:
         cztema_cs:
             type: text
             label: Téma české expozice
-        autor_pavilonu:
+        autor_pavilonu_cs:
             type: text
             label: Autor(ři) Pavilonu
             postfix: Autory případně oddělte čárkou
-        autor_expozice:
+        autor_expozice_cs:
             type: text
             label: Autor(ři) expozice
             postfix: Autory případně oddělte čárkou
@@ -192,6 +192,14 @@ historie:
         cztema_en:
             type: text
             label: Téma české expozice (EN)
+        autor_pavilonu_en:
+            type: text
+            label: Autor(ři) Pavilonu
+            postfix: Autory případně oddělte čárkou
+        autor_expozice_en:
+            type: text
+            label: Autor(ři) expozice
+            postfix: Autory případně oddělte čárkou
         text_en:
             type: html
             height: 500px
