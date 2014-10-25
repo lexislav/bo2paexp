@@ -161,17 +161,17 @@
     },
     {
         "name": "hautelook/phpass",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "0.3.0",
+        "version_normalized": "0.3.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/hautelook/phpass.git",
-            "reference": "09463d13a673999f3432461e5dbde535766901da"
+            "reference": "da4c2c693aa4e1c616a350015c90af0da82a0fd8"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/hautelook/phpass/zipball/09463d13a673999f3432461e5dbde535766901da",
-            "reference": "09463d13a673999f3432461e5dbde535766901da",
+            "url": "https://api.github.com/repos/hautelook/phpass/zipball/da4c2c693aa4e1c616a350015c90af0da82a0fd8",
+            "reference": "da4c2c693aa4e1c616a350015c90af0da82a0fd8",
             "shasum": ""
         },
         "require": {
@@ -250,17 +250,17 @@
     },
     {
         "name": "ircmaxell/random-lib",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
+        "version": "v1.0.0",
+        "version_normalized": "1.0.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/ircmaxell/RandomLib.git",
-            "reference": "9c6f125fbeb8fcb4647fabed3c0058ec02c531f8"
+            "reference": "0eaad991c1756842f26dfbcbc6effcabb5003d0a"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/ircmaxell/RandomLib/zipball/9c6f125fbeb8fcb4647fabed3c0058ec02c531f8",
-            "reference": "9c6f125fbeb8fcb4647fabed3c0058ec02c531f8",
+            "url": "https://api.github.com/repos/ircmaxell/RandomLib/zipball/0eaad991c1756842f26dfbcbc6effcabb5003d0a",
+            "reference": "0eaad991c1756842f26dfbcbc6effcabb5003d0a",
             "shasum": ""
         },
         "require": {
@@ -268,10 +268,9 @@
             "php": ">=5.3.2"
         },
         "require-dev": {
-            "mikey179/vfsstream": "1.1.*",
-            "phpunit/phpunit": "3.7.*"
+            "mikey179/vfsstream": "1.1.*"
         },
-        "time": "2014-08-28 16:18:54",
+        "time": "2013-07-30 17:40:57",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -296,7 +295,7 @@
             }
         ],
         "description": "A Library For Generating Secure Random Numbers",
-        "homepage": "https://github.com/ircmaxell/RandomLib",
+        "homepage": "https://github.com/ircmaxell/PHP-RandomLib",
         "keywords": [
             "cryptography",
             "random",
@@ -354,77 +353,6 @@
             "transliteration",
             "url",
             "urlify"
-        ]
-    },
-    {
-        "name": "rossriley/flysystem53",
-        "version": "dev-master",
-        "version_normalized": "9999999-dev",
-        "source": {
-            "type": "git",
-            "url": "https://github.com/rossriley/flysystem.git",
-            "reference": "34ac7169b127eff3aa8a8e7048f6ec3caf3fd45c"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://api.github.com/repos/rossriley/flysystem/zipball/34ac7169b127eff3aa8a8e7048f6ec3caf3fd45c",
-            "reference": "34ac7169b127eff3aa8a8e7048f6ec3caf3fd45c",
-            "shasum": ""
-        },
-        "require-dev": {
-            "aws/aws-sdk-php": "~2.4",
-            "dropbox/dropbox-sdk": "~1.1.1",
-            "league/event": "~0.2.0",
-            "league/phpunit-coverage-listener": "~1.1",
-            "mockery/mockery": "~0.9@dev",
-            "phpseclib/phpseclib": "~0.3.5",
-            "phpunit/phpunit": "~4.0",
-            "predis/predis": "~0.8.4",
-            "rackspace/php-opencloud": "~1.9.1",
-            "sabre/dav": "~2.0.2"
-        },
-        "suggest": {
-            "aws/aws-sdk-php": "Allows you to use AWS S3 storage",
-            "dropbox/dropbox-sdk": "Allows you to use Dropbox storage",
-            "league/event": "Required for EventableFilesystem",
-            "phpseclib/phpseclib": "Allows SFTP server storage",
-            "predis/predis": "Allows you to use Predis for caching",
-            "rackspace/php-opencloud": "Allows you to use Rackspace Cloud Files",
-            "sabre/dav": "Enables WebDav support"
-        },
-        "time": "2014-10-11 11:49:20",
-        "type": "library",
-        "extra": {
-            "branch-alias": {
-                "dev-master": "0.5-dev"
-            }
-        },
-        "installation-source": "dist",
-        "autoload": {
-            "psr-4": {
-                "League\\Flysystem\\": "src/"
-            }
-        },
-        "notification-url": "https://packagist.org/downloads/",
-        "license": [
-            "MIT"
-        ],
-        "authors": [
-            {
-                "name": "Frank de Jonge",
-                "email": "info@frenky.net"
-            }
-        ],
-        "description": "Filesystem abstraction, but easy.",
-        "keywords": [
-            "WebDAV",
-            "aws",
-            "dropbox",
-            "filesystem",
-            "ftp",
-            "remote",
-            "s3",
-            "sftp"
         ]
     },
     {
@@ -2696,6 +2624,77 @@
             "silex-provider",
             "whoops",
             "zf2"
+        ]
+    },
+    {
+        "name": "rossriley/flysystem53",
+        "version": "0.5.3",
+        "version_normalized": "0.5.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/rossriley/flysystem.git",
+            "reference": "4cc7495ae84cc05e8ab2d388dacee93cb724f98a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/rossriley/flysystem/zipball/4cc7495ae84cc05e8ab2d388dacee93cb724f98a",
+            "reference": "4cc7495ae84cc05e8ab2d388dacee93cb724f98a",
+            "shasum": ""
+        },
+        "require-dev": {
+            "aws/aws-sdk-php": "~2.4",
+            "dropbox/dropbox-sdk": "~1.1.1",
+            "league/event": "~0.2.0",
+            "league/phpunit-coverage-listener": "~1.1",
+            "mockery/mockery": "~0.9@dev",
+            "phpseclib/phpseclib": "~0.3.5",
+            "phpunit/phpunit": "~4.0",
+            "predis/predis": "~0.8.4",
+            "rackspace/php-opencloud": "~1.9.1",
+            "sabre/dav": "~2.0.2"
+        },
+        "suggest": {
+            "aws/aws-sdk-php": "Allows you to use AWS S3 storage",
+            "dropbox/dropbox-sdk": "Allows you to use Dropbox storage",
+            "league/event": "Required for EventableFilesystem",
+            "phpseclib/phpseclib": "Allows SFTP server storage",
+            "predis/predis": "Allows you to use Predis for caching",
+            "rackspace/php-opencloud": "Allows you to use Rackspace Cloud Files",
+            "sabre/dav": "Enables WebDav support"
+        },
+        "time": "2014-07-25 11:39:02",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "0.5-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "League\\Flysystem\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Frank de Jonge",
+                "email": "info@frenky.net"
+            }
+        ],
+        "description": "Filesystem abstraction, but easy.",
+        "keywords": [
+            "WebDAV",
+            "aws",
+            "dropbox",
+            "filesystem",
+            "ftp",
+            "remote",
+            "s3",
+            "sftp"
         ]
     },
     {

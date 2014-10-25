@@ -7,6 +7,7 @@ use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Escaper;
 use Symfony\Component\Yaml\Exception\ParseException;
 use Symfony\Component\Yaml\Yaml;
+use Bolt\Library as Lib;
 
 /**
  * Handles translation file dependent tasks
@@ -26,11 +27,6 @@ class TranslationFile
      * @var type
      */
     private $domain;
-
-    /**
-     * Requested locale
-     */
-    private $locale;
 
     /**
      * Path to the translation file
@@ -192,12 +188,12 @@ class TranslationFile
                 $token = $tokens[$x];
                 // Found function __()
                 if (is_array($token) && $token[0] == T_STRING && $token[1] == '__') {
-                    // Skip whitespace and comments between "___" and "("
+                    // Skip whitespace and comments between "__" and "("
                     $token = $next();
 
                     // Found "("?
                     if ($x < $num_tokens && !is_array($token) && $token == '(') {
-                        // Skip whitespace and comments between "(___)" and first function argument
+                        // Skip whitespace and comments between "__()" and first function argument
                         $token = $next();
                         // Found String?
                         if (is_array($token) && $token[0] == T_CONSTANT_ENCAPSED_STRING) {
@@ -372,8 +368,6 @@ class TranslationFile
                     $thint = $this->app['translator']->trans($key);
                     if ($thint == $key) {
                         $thint = isset($hinting[$key]) ? $hinting[$key] : '';
-                    } else {
-                        $thint = Escaper::escapeWithDoubleQuotes($thint);
                     }
                     $content .= '#' . ($thint ? ' ' . Escaper::escapeWithDoubleQuotes($thint) : '') . "\n";
                 } else {
@@ -559,18 +553,18 @@ class TranslationFile
 
         // No translations yet: info
         if (!file_exists($this->absPath) && !is_writable(dirname($this->absPath))) {
-            $msg = __(
+            $msg = Lib::__(
                 "The translations file '%s' can't be created. You will have to use your own editor to make modifications to this file.",
                 $msgRepl
             );
             $this->app['session']->getFlashBag()->set('info', $msg);
         // File is not readable: abort
         } elseif (file_exists($this->absPath) && !is_readable($this->absPath)) {
-            $msg = __("The translations file '%s' is not readable.", $msgRepl);
+            $msg = Lib::__("The translations file '%s' is not readable.", $msgRepl);
             $this->app->abort(404, $msg);
         // File is not writeable: warning
         } elseif (!is_writable($this->absPath)) {
-            $msg = __(
+            $msg = Lib::__(
                 "The file '%s' is not writable. You will have to use your own editor to make modifications to this file.",
                 $msgRepl
             );

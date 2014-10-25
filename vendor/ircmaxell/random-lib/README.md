@@ -13,10 +13,8 @@ Usage
 
 A factory is used to get generators of varying strength:
 
-```php
-$factory = new RandomLib\Factory;
-$generator = $factory->getGenerator(new SecurityLib\Strength(SecurityLib\Strength::MEDIUM));
-```
+    $factory = new RandomLib\Factory;
+    $generator = $factory->getGenerator(SecurityLib\Strength::MEDIUM);
 
 A factory can be configured with additional mixers and sources but can be
 used out of the box to create both medium and low strength generators.
@@ -24,9 +22,8 @@ used out of the box to create both medium and low strength generators.
 Convenience methods are provided for creating high, medium, and low
 strength generators. Example:
 
-```php
-$generator = $factory->getMediumStrengthGenerator();
-```
+    $generator = $factory->getMediumStrengthGenerator();
+
 
 #### $factory->getLowStrengthGenerator()
 
@@ -65,17 +62,16 @@ A generator is used to generate random numbers and strings.
 
 Example:
 
-```php
-// Generate a random string that is 32 bytes in length.
-$bytes = $generator->generate(32);
+    // Generate a random string that is 32 bytes in length.
+    $bytes = $generator->generate(32);
 
-// Generate a whole number between 5 and 15.
-$randomInt = $generator->generateInt(5, 15);
+    // Generate a whole number between 5 and 15.
+    $randomInt = $generator->generateInt(5, 15);
 
-// Generate a 32 character string that only contains the letters
-// 'a', 'b', 'c', 'd', 'e', and 'f'.
-$randomString = $generator->generateString(32, 'abcdef');
-```
+    // Generate a 32 character string that only contains the letters
+    // 'a', 'b', 'c', 'd', 'e', and 'f'.
+    $randomString = $generator->generateString(32, 'abcdef');
+
 
 #### $generator->generate($size)
 
@@ -102,19 +98,18 @@ If no character list is specified, the following list of characters is used:
 
 **Examples:**
 
-```php
-// Give the character list 'abcdef':
-print $generator->generateString(32, 'abcdef')."\n";
+    // Give the character list 'abcdef':
+    print $generator->generateString(32, 'abcdef')."\n";
 
-// One would expect to receive output that only contained those
-// characters:
-//
-// adaeabecfbddcdaeedaedfbbcdccccfe
-// adfbfdbfddadbfcbbefebcacbefafffa
-// ceeadbcabecbccacdcaabbdccfadbafe
-// abadcffabdcacdbcbafcaecabafcdbbf
-// dbdbddacdeaceabfaefcbfafebcacdca
-```
+    // One would expect to receive output that only contained those
+    // characters:
+    //
+    // adaeabecfbddcdaeedaedfbbcdccccfe
+    // adfbfdbfddadbfcbbefebcacbefafffa
+    // ceeadbcabecbccacdcaabbdccfadbafe
+    // abadcffabdcacdbcbafcaecabafcdbbf
+    // dbdbddacdeaceabfaefcbfafebcacdca
+
 
 License
 -------
