@@ -67,46 +67,48 @@
 
 
 <div class="l-section m-progress-bar">
-    <div id="drg-progress-bar-bounds" class=" small-12 columns">
+    <div id="drg-progress-bar-bounds" >
 
-            <article>
-                <div class="row">
+        <article>
+            <div class="row">
                 <header class="small-12 columns">
-                    <h2 class="fnt-primary-headline">{{__('Current Condition of the Pavilion')}}</h2>
+                    <h2>{{ __('Current Condition of the Pavilion') }}</h2>
                 </header>
-                </div>{% setcontent bodyosy = 'ProgressBar' %}
-                <div id="drg-progress-bar" class="m-progress-bar--container">
+            </div>
 
-                    <ul class="m-progress-bar--items">
+            {% setcontent bodyosy = 'ProgressBar' %}
+            <div id="drg-progress-bar" class="m-progress-bar--container">
 
-                        {% for bodosy in bodyosy|order('id') %}
-                            <li data-stamp="{{ bodosy.poloha| date('U') }}" data-correction="{{ bodosy.korekce }}" class="mm-full data-item">
+                <ul class="m-progress-bar--items">
 
-                                {% if bodosy.image!="" %}
-                                    <img class="m-progress-bar--image" src="{{ image(bodosy.image) }}">
-                                {% endif %}
+                    {% for bodosy in bodyosy|order('id') %}
+                        <li data-stamp="{{ bodosy.poloha| date('U') }}" data-correction="{{ bodosy.korekce }}" class="mm-full data-item">
 
-                                <div class="m-item--summary">
-                                    {% if bodosy.related %}
-                                    {% set bodlink = bodosy.related|first %}
-                                    <a href="{{ bodlink.link }}" title="{{ bodlink.slug }}">
-                                        {% endif %}
-                                        <span class="m-item--date">{{ bodosy.poloha|date("d. m. Y") }}</span>
-                                        <span class="m-item--description">{{ bodosy['title_' ~ app.locale] }}</span>
+                            {% if bodosy.image!="" %}
+                                <img class="m-progress-bar--image" src="{{ image(bodosy.image) }}">
+                            {% endif %}
+
+                            <div class="m-item--summary">
+                                {% if bodosy.related %}
+                                {% set bodlink = bodosy.related|first %}
+                                <a href="{{ bodlink.link }}" title="{{ bodlink.slug }}">
+                                    {% endif %}
+                                    <span class="m-item--date">{{ bodosy.poloha|date("d. m. Y") }}</span>
+                                    <span class="m-item--description">{{ bodosy['title_' ~ app.locale] }}</span>
                                     {% if bodosy.related %}</a>{% endif %}
-                                </div>
+                            </div>
 
-                            </li>
-                        {% endfor %}
-                    </ul>
+                        </li>
+                    {% endfor %}
+                </ul>
 
-                    <div class="m-progress-bar--bar-bg">
-                        <div class="m-progress-bar--bar"></div>
-                    </div>
+                <div class="m-progress-bar--bar-bg">
+                    <div class="m-progress-bar--bar"></div>
                 </div>
-                <div id="drg-left" class="arrow-left"></div>
-                <div id="drg-right" class="arrow-right"></div>
-            </article>
+            </div>
+            <div id="drg-left" class="arrow-left"><span></span></div>
+            <div id="drg-right" class="arrow-right"><span></span></div>
+        </article>
 
     </div>
 </div>

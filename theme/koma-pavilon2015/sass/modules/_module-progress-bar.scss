@@ -3,14 +3,13 @@ $pb-icon-size: 52px;
 $pb-bar-color: #4a4a4a;
 $pb-bar-text-color: #000;
 
-
 .l-section.m-progress-bar {
     padding-top: 60px;
     padding-bottom: 60px;
 }
 
 .m-progress-bar {
-    background: #22d3d3;
+    background: #f9f9f9;
     height: 470px;
 
     .row {
@@ -24,27 +23,45 @@ $pb-bar-text-color: #000;
 
     .arrow-left,
     .arrow-right {
+        cursor: pointer;
         display: block;
         position: absolute;
-        width: 15px;
-        height: 50px;
-        background-image: url("../assets/ikony/nav-prev-white.png");
-        background-repeat: no-repeat;
-        top: 160px;
-        left: -34px;
+        z-index: 100;
+        top: 130px;
+        left: 0;
+        padding: 20px;
+        background-color: white;
 
+        span {
+            float: right;
+            display: block;
+            width: 15px;
+            height: 50px;
+            background-image: url("../assets/ikony/nav-prev.png");
+            background-repeat: no-repeat;
+
+        }
+        &:hover {
+            span {
+                background-position: left bottom;
+            }
+        }
     }
 
     .arrow-right {
         left: auto;
-        right: -34px;
-        background-image: url("../assets/ikony/nav-next-white.png");
+        right: 0;
+        span {
+            float: left;
+            background-image: url("../assets/ikony/nav-next.png");
+        }
+
     }
 
     h2 {
         @include fnt-primary-headline();
         font-size: rem-calc(40);
-        color: white;
+
         line-height: 1em;
         margin: 0;
         padding: 0;

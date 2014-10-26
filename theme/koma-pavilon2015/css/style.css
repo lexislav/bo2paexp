@@ -4712,32 +4712,42 @@ th.hide-for-touch {
   padding-bottom: 60px; }
 
 .m-progress-bar {
-  background: #22d3d3;
+  background: #f9f9f9;
   height: 470px; }
   .m-progress-bar .row {
     overflow: visible; }
   .m-progress-bar article {
     position: relative; }
   .m-progress-bar .arrow-left, .m-progress-bar .arrow-right {
+    cursor: pointer;
     display: block;
     position: absolute;
-    width: 15px;
-    height: 50px;
-    background-image: url("../assets/ikony/nav-prev-white.png");
-    background-repeat: no-repeat;
-    top: 160px;
-    left: -34px; }
+    z-index: 100;
+    top: 130px;
+    left: 0;
+    padding: 20px;
+    background-color: white; }
+    .m-progress-bar .arrow-left span, .m-progress-bar .arrow-right span {
+      float: right;
+      display: block;
+      width: 15px;
+      height: 50px;
+      background-image: url("../assets/ikony/nav-prev.png");
+      background-repeat: no-repeat; }
+    .m-progress-bar .arrow-left:hover span, .m-progress-bar .arrow-right:hover span {
+      background-position: left bottom; }
   .m-progress-bar .arrow-right {
     left: auto;
-    right: -34px;
-    background-image: url("../assets/ikony/nav-next-white.png"); }
+    right: 0; }
+    .m-progress-bar .arrow-right span {
+      float: left;
+      background-image: url("../assets/ikony/nav-next.png"); }
   .m-progress-bar h2 {
     font-family: "purista-web";
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     font-size: 2.66667rem;
     font-size: 2.66667rem;
-    color: white;
     line-height: 1em;
     margin: 0;
     padding: 0;
