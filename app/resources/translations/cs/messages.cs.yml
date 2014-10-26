@@ -1,20 +1,108 @@
-# app/resources/translations/cs/messages.cs.yml – generated on 2014-10-24 22:31:34 UTC
+# app/resources/translations/cs/messages.cs.yml – generated on 2014-10-26 20:45:10 UTC
 
 # Warning: Translations are in the process of being moved to a new keyword-based translation
-#          at the moment. This is an ongoing process. Translations currently in the
-#          repository are automatically mapped to the new scheme. Be aware that there
-#          can be a race condition between that process and your PR so that it's
-#          eventually neccessary to remap your translations. If you're planning on
+#          at the moment. This is an ongoing process. Translations currently in the 
+#          repository are automatically mapped to the new scheme. Be aware that there 
+#          can be a race condition between that process and your PR so that it's 
+#          eventually neccessary to remap your translations. If you're planning on 
 #          updating your translations, it's best to ask on IRC to time your contribution
 #          in order to prevent merge conflicts.
 
-#  no unused messages
-#  no untranslated messages
+#  26 unused messages
+#  56 untranslated messages
 #  no untranslated keyword based messages
-# 355 translations
+# 336 translations
 # 130 keyword based translations
 
-#--- 355 translations ---------------------------------------------------------
+#--- 26 unused messages -------------------------------------------------------
+
+"Body": "Tělo"
+"Categories": "Kategorie"
+"Category": "Kategorie"
+"Chapter": "Kapitola"
+"Chapters": "Kapitoly"
+"Choose an entry": "Vybrat záznam (obsah)"
+"Date": "Datum"
+"Datetime": "Datum a čas"
+"File": "Soubor"
+"Filelist": "Více souborů"
+"Floatfield": "Číslo s desetinou čárkou"
+"Geolocation": "Zeměpisná poloha"
+"Html": "Html"
+"Imagelist": "Více obrázků"
+"Integerfield": "Číslo"
+"Markdown": "Mardown"
+"Multiselect": "Multivýběr"
+"Select a page": "Vybrat stranu"
+"Select zero or more pages": "Vyberte žnádnou, jednu nebo více stran."
+"Selectentry": "Vybrat záznam"
+"Selectfield": "Vybrat pole"
+"Tag": "Štítek"
+"Tags": "Štítky"
+"Teaser": "Poutač"
+"Textarea": "Textové pole"
+"This is a checkbox": "Toto je zašrtávací políčko"
+
+#--- 56 untranslated messages -------------------------------------------------
+
+"Adresa": #
+"Autor(ři) Pavilonu": #
+"Autor(ři) expozice": #
+"Body_cs": #
+"Body_en": #
+"Hodnota": #
+"Kategorie": #
+"Kategorie1": #
+"Korekce polohy na Časové ose": #
+"Logo": #
+"Manufacturer of the Pavilion": "Dodavatel pavilonu"
+"Město": #
+"Město (EN)": #
+"Nadpis": #
+"Nadpis (EN)": #
+"Nahled": #
+"Nazev_cs": #
+"Nazev_en": #
+"No content found": #
+"No content found.": #
+"Název": #
+"Název (CS)": #
+"Název (EN)": #
+"Název proměnné": #
+"OFFICIAL SITE OF THE EXHIBITION": "OFICIÁLNÍ STRÁNKY VÝSTAVY"
+"Odkaz": #
+"Poloha": #
+"Popis bodu časové osy": #
+"Popis bodu časové osy (EN)": #
+"Popis_cs": #
+"Popis_en": #
+"Popisek": #
+"Popisek (EN)": #
+"Rok konání": #
+"Rozcestnik": #
+"Spobory(y) ke stažení": #
+"Statik": #
+"Statiky": #
+"Stitek": #
+"Stitky": #
+"Text": #
+"Text (CS)": #
+"Text (EN)": #
+"Title_cs": #
+"Title_en": #
+"Téma výstavy": #
+"Téma výstavy (EN)": #
+"Téma české expozice": #
+"Téma české expozice (EN)": #
+"Ukazatel": #
+"Vyberte obsah s detailním popisem": #
+"Vyberte článek": #
+"Zvýraznit zprávu": #
+"galerie": #
+"ikona": #
+"náhledový obrázek": #
+
+#--- 336 translations ---------------------------------------------------------
 
 "%name% № %id%": "%name% č. %id%"
 "%s files could not be deleted. You should delete them manually.": "%s soubory nelze odstranit. Smažte je ručně."
@@ -43,7 +131,6 @@
 "Author:": "Autor:"
 "Before you can start using the theme on your site we need to make a copy to your theme folder.": "Předtím než začnete používat tuto šablonu na vaší stránce, potřebujeme udělat kopii do vaší složky s šablonou."
 "Below are the third party libraries that are used by Bolt.": "Níže jsou uveden knihovny třetích stran použité v Bolt."
-"Body": "Tělo"
 "Bolt - Fatal error.": "Bolt - závažná chyba."
 "Bolt Extension could not be found. Please check at %site% to ensure correct name.": "Rozšíření Boltu se nepodařilo nalézt. Zkuste na webu %site% ověřit správnost názvu."
 "Bolt documentation on Github": "Dokumetace Bolt na Github"
@@ -57,19 +144,14 @@
 "Cancel": "Zrušit"
 "Cannot check for updates in read-only mode": "Nelze zkontrolovat aktualizace v režimu pouze pro čtení"
 "Cannot check installed packages in read-only mode": "Nelze zkontrolovat nainstalované balíčky v režimu pouze pro čtení"
-"Categories": "Kategorie"
-"Category": "Kategorie"
 "Change Log": "Změnit záznam"
 "Change status to 'draft'": "Změnit status na 'draft'"
 "Change status to 'held'": "Změnit status na 'held'"
-"Chapter": "Kapitola"
-"Chapters": "Kapitoly"
 "Check again": "Znovu ověřit"
 "Check database": "Ověřit databázi"
 "Check for updates": "Zkontrolovat aktualizace"
 "Checking for available updates (this may take up to 60 seconds)": "Kontrola dostupných aktualizací (to může trvat i 60 vteřin)"
 "Checking installed packages": "Kontrola nainstalovaných balíčků"
-"Choose an entry": "Vybrat záznam (obsah)"
 "Class:": "Třída:"
 "Clear Activitylog": "Smazat všechny záznamy"
 "Clear cache again": "Znovu vyprázdnit cache"
@@ -94,12 +176,12 @@
 "Create the first user": "Založení prvního uživatele"
 "Created on:": "Vytvořeno:"
 "Current (saved) status:": "Současný (uložený) stav:"
+"Current Condition of the Pavilion": "Aktuální stav pavilonu"
 "Current sessions": "Aktivní přihlášení"
 "Current status:": "Stav:"
+"Czech pavilion": "Český pavilon"
 "Dashboard": "Nástěnka"
 "Database check / update": "Ověření / aktualizace databáze"
-"Date": "Datum"
-"Datetime": "Datum a čas"
 "Default status": "Výchozí stav"
 "Delete %filename%": "Smazat %filename%"
 "Delete %foldername%": "Smazat %foldername%"
@@ -119,16 +201,17 @@
 "Edit": "Upravit"
 "Edit file": "Upravit soubor"
 "Enable %username%": "Povolit %username%"
+"Energy for the Future:": "Energie pro budoucnost:"
 "Everybody": "Všichni"
 "Everything is up to date!": "Vše je aktuální!"
 "Excerpt": "Souhrn"
+"Exhibition Pavilion in Milan": "Výstavní pavilon v Miláně"
 "Expand sidebar": "Roztáhnout postranní lištu"
 "Extend ": "Rozšířit"
 "Extension": "Rozšíření"
 "Extension log": "Záznam rozšíření"
 "Extensions": "Rozšíření"
 "Extras": "Doplňky"
-"File": "Soubor"
 "File '%file%' could not be uploaded (wrong/disallowed file type). Make sure the file extension is one of the following:": "Soubor '%file%' nemohl být nahrán (špatný či nepovolený typo souboru). Zkontrolujte, zda se jedná jeden z povolených typů souboru:"
 "File '%file%' could not be uploaded.": "Soubor '%file%' nemohl být uploadován."
 "File '%file%' was uploaded successfully.": "Soubor '%file%' byl úspěšně umístěn na server."
@@ -137,7 +220,6 @@
 "File '%s' has been saved.": "Soubor '%s' byl uložen."
 "File Management": "Správa souborů"
 "File is not readable!": "Soubor není čitelný!"
-"Filelist": "Více souborů"
 "Files": "Soubory"
 "Files in %s": "Soubory v %s"
 "Files on the stack": "Soubory v Zásobníku"
@@ -147,19 +229,16 @@
 "Filtering": "Filtrování"
 "Filtering …": "Filtrování…"
 "Find": "Vyhledat"
-"Floatfield": "Číslo s desetinou čárkou"
 "Folder '%s' could not be found, or is not readable.": "Složku '%s' nelze nalézt nebo není přístupná ke čtení."
 "Folder permissions insufficient": "Nemáte dostatečné oprávnění k této složce"
 "Folders": "Složky"
 "Full list …": "Kompletní výpis…"
-"Geolocation": "Zeměpisná poloha"
+"Future Space for Children:": "Budoucí prostor pro děti:"
 "Global Permissions": "Globální oprávnění"
-"Html": "Html"
 "IP address": "IP adresa"
 "If there was a Page with 'about' for a slug, it would've been shown here. But there isn't one, so that's why you're seeing this placeholder.": "kdyby zde byla informační strana s trvalým odkazem 'about', zobrazila by se zde. Jenže není. Proto čtete toto hlášení."
 "If you would like to give the theme an alternative name you can add one here.": "Pokud chcete tuto šablonu pojmenovat jinak, jméno můžete přidat zde."
 "Image": "Obrázek"
-"Imagelist": "Více obrázků"
 "Info": "Info"
 "Install a new Extension": "Nainstalovat nové Rozšíření"
 "Install all Packages": "Nainstalovat všechny Balíčky"
@@ -167,7 +246,6 @@
 "Installation complete": "Instalace dokončena"
 "Installing package": "Instalování balíčku"
 "Installing selected package version (this may take up to 60 seconds).": "Instalování vybrané verze balíčku (toto může trvat i 60 vteřin)"
-"Integerfield": "Číslo"
 "Last edited on:": "Upraveno:"
 "Last known IP": "Poslední známá IP adresa"
 "Last seen": "Naposledy přihlášen"
@@ -178,7 +256,6 @@
 "Long messages": "Nápověda"
 "Main configuration": "Hlavní nastavení"
 "Maintenance": "Údržba"
-"Markdown": "Mardown"
 "Menu setup": "Editace menu"
 "Message:": "Zpráva:"
 "Messages": "Prostředí"
@@ -188,7 +265,6 @@
 "Modifications needed:": "Potřebné úpravy:"
 "Modified": "Upraveno"
 "More info/help": "Více informací / nápověda"
-"Multiselect": "Multivýběr"
 "No Stable Versions Available": "Nejsou k dispozici žádné stabilní verze"
 "No Test Versions Available": "Nejsou k dispozici žádné testovací verze"
 "No relations found!": "Nenalezeno žádné související"
@@ -251,13 +327,9 @@
 "Search …": "Hledat…"
 "Searching for available updates …": "Vyhledávání dostupných aktualizací..."
 "Select": "Vybrat"
-"Select a page": "Vybrat stranu"
 "Select all": "Vybrat vše"
 "Select file …": "Vybrat soubor …"
 "Select none": "Odznačit vše"
-"Select zero or more pages": "Vyberte žnádnou, jednu nebo více stran."
-"Selectentry": "Vybrat záznam"
-"Selectfield": "Vybrat pole"
 "Session expires": "Přihlášení ukončeno pro nečinnost."
 "Session resumed.": "Přihlášení bylo obnoveno."
 "Settings": "Nastavení"
@@ -274,12 +346,8 @@
 "Stack": "Zásobník"
 "Status": "Stav"
 "Status:": "Stav:"
-"Tag": "Štítek"
-"Tags": "Štítky"
 "Taxonomy": "Taxonomie"
-"Teaser": "Poutač"
 "Template": "Šablona"
-"Textarea": "Textové pole"
 "Thanks": "Děkujeme"
 "That user does not exist.": "Neexistující uživatel."
 "The activitylog has been cleared.": "Záznam činností byl vymazán."
@@ -304,7 +372,6 @@
 "There are no users in the database. Please create the first user.": "V databázi není žádný uživatel. Vytvořte prosím prvního uživatele."
 "There are no users present in the system. Please create the first user, which will be granted root privileges.": "V systému nejsou žádní uživatelé. Prosím vytvořte prvního uživatele, kterému bude poskytnuto oprávnění root."
 "There should always be at least one 'root' user. You have just been promoted. Congratulations!": "Vždy musí být alespoň jeden uživatel s právy 'root'. Gratulujeme! Právě jste byl/a vybrán/a."
-"This is a checkbox": "Toto je zašrtávací políčko"
 "This record is related to:": "Tento záznam souvisí s:"
 "This website is <a href='%url%' target='_blank' title='Sophisticated, lightweight & simple CMS'>Built with Bolt</a>.": "Tento web běží na <a href='%url%' target='_blank' title='Sophisticated, lightweight & simple CMS'>Bolt</a>."
 "This will install all available updates.": "Tímto se nainstalují všechny dostupné aktualizace."
@@ -362,6 +429,7 @@
 "Your database is now up to date.": "Vaše databáze je nyní aktuální."
 "Your password": "Vaše heslo"
 "and edited": "a upraveno"
+"at EXPO 2015": "EXPO 2015"
 "back to editing": "zpět do editace"
 "by": "od"
 "in:": "v:"
@@ -369,6 +437,7 @@
 "no content …": "žádný obsah …"
 "no title …": "žádný nadpis …"
 "none": "žádný"
+"nursery school": "školka"
 "of": "z"
 "show all": "zobrazit vše"
 

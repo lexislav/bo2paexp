@@ -30,16 +30,16 @@ cs:
 
 
 en:
-  - label: Overview of Czech pavilion
-    title: All the informations about pavilion and stuff
+  - label: Czech Pavilion in Brief
+    title: Basic information about the pavilion and its supplier
     path: en/
-  - label: Look inside the pavilion
-    title: Prohlédněte si pavilon po jednotlivých patrech
+  - label: Tour of the Pavilion
+    title: Explore individual floors of the pavilion
     path: page/o-pavilonu
-  - label: History of czech expo pavilions
-    title: Brief history in context of reuse
+  - label: History of Czech EXPO Pavilions
+    title: Brief history of Czech EXPO pavilions and their fate
     path: en/historie
-  - label: Blog from pavilion
+  - label: Pavilion News
     title: Recent updates from pavilion
     path: en/blog/
     submenu:
@@ -47,13 +47,13 @@ en:
         path: en/blog/
       - label: Exhibitions
         path: en/kategorie/expozice
-      - label: Photogalleries
+      - label: photo gallery
         path: en/kategorie/fotogalerie
-      - label: Pavilon
+      - label: about the Pavilion
         path: en/kategorie/O pavilonu
-#      - label: Rozhovory
+#      - label: interviews
 #        path: cs/kategorie/rozhovory
-      - label: Partners
+      - label: partner information
         path: en/blog/Zpravy partneru
 
 
