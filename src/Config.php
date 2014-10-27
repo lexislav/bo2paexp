@@ -4,6 +4,9 @@ namespace Bolt;
 
 use Bolt\Configuration\LowlevelException;
 use Bolt\Library as Lib;
+use Bolt\Helpers\Arr;
+use Bolt\Helpers\String;
+use Bolt\Translation\Translator as Trans;
 use Symfony\Component\Yaml;
 
 /**
@@ -175,7 +178,7 @@ class Config
         $tempconfig            = $this->parseConfigYaml('config.yml');
         $tempconfiglocal       = $this->parseConfigYaml('config_local.yml');
 
-        $config['general']     = Lib::array_merge_recursive_distinct($tempconfig, $tempconfiglocal);
+        $config['general']     = Arr::mergeRecursiveDistinct($tempconfig, $tempconfiglocal);
         $config['taxonomy']    = $this->parseConfigYaml('taxonomy.yml');
         $tempContentTypes      = $this->parseConfigYaml('contenttypes.yml');
         $config['menu']        = $this->parseConfigYaml('menu.yml');
@@ -208,7 +211,7 @@ class Config
         }
 
         // Merge the array with the defaults. Setting the required values that aren't already set.
-        $config['general'] = Lib::array_merge_recursive_distinct($this->defaultConfig, $config['general']);
+        $config['general'] = Arr::mergeRecursiveDistinct($this->defaultConfig, $config['general']);
 
         // Make sure the cookie_domain for the sessions is set properly.
         if (empty($config['general']['cookies_domain'])) {
@@ -235,7 +238,7 @@ class Config
         }
 
         // Make sure Bolt's mount point is OK:
-        $config['general']['branding']['path'] = '/' . Lib::safeString($config['general']['branding']['path']);
+        $config['general']['branding']['path'] = '/' . String::makeSafe($config['general']['branding']['path']);
 
         // Make sure $config['taxonomy'] is an array. (if the file is empty, YAML parses it as NULL)
         if (empty($config['taxonomy'])) {
@@ -255,10 +258,10 @@ class Config
                 }
             }
             if (!isset($config['taxonomy'][$key]['slug'])) {
-                $config['taxonomy'][$key]['slug'] = strtolower(Lib::safeString($config['taxonomy'][$key]['name']));
+                $config['taxonomy'][$key]['slug'] = strtolower(String::makeSafe($config['taxonomy'][$key]['name']));
             }
             if (!isset($config['taxonomy'][$key]['singular_slug'])) {
-                $config['taxonomy'][$key]['singular_slug'] = strtolower(Lib::safeString($config['taxonomy'][$key]['singular_name']));
+                $config['taxonomy'][$key]['singular_slug'] = strtolower(String::makeSafe($config['taxonomy'][$key]['singular_name']));
             }
             if (!isset($config['taxonomy'][$key]['has_sortorder'])) {
                 $config['taxonomy'][$key]['has_sortorder'] = false;
@@ -269,7 +272,7 @@ class Config
                 $options = array();
                 foreach ($config['taxonomy'][$key]['options'] as $optionkey => $optionvalue) {
                     if (is_numeric($optionkey)) {
-                        $optionkey = Lib::makeSlug($optionvalue);
+                        $optionkey = String::slug($optionvalue);
                     }
                     $options[$optionkey] = $optionvalue;
                 }
@@ -288,7 +291,7 @@ class Config
 
             // If the slug isn't set, and the 'key' isn't numeric, use that as the slug.
             if (!isset($temp['slug']) && !is_numeric($key)) {
-                $temp['slug'] = Lib::makeSlug($key);
+                $temp['slug'] = String::slug($key);
             }
 
             // If neither 'name' nor 'slug' is set, we need to warn the user. Same goes for when
@@ -303,10 +306,10 @@ class Config
             }
 
             if (!isset($temp['slug'])) {
-                $temp['slug'] = Lib::makeSlug($temp['name']);
+                $temp['slug'] = String::slug($temp['name']);
             }
             if (!isset($temp['singular_slug'])) {
-                $temp['singular_slug'] = Lib::makeSlug($temp['singular_name']);
+                $temp['singular_slug'] = String::slug($temp['singular_name']);
             }
             if (!isset($temp['show_on_dashboard'])) {
                 $temp['show_on_dashboard'] = true;
@@ -329,7 +332,7 @@ class Config
             $temp['groups'] = array();
 
             foreach ($tempfields as $key => $value) {
-                $key = str_replace('-', '_', strtolower(Lib::safeString($key, true)));
+                $key = str_replace('-', '_', strtolower(String::makeSafe($key, true)));
                 $temp['fields'][$key] = $value;
 
                 // If field is a "file" type, make sure the 'extensions' are set, and it's an array.
@@ -387,8 +390,8 @@ class Config
             // when adding relations, make sure they're added by their slug. Not their 'name' or 'singular name'.
             if (!empty($temp['relations']) && is_array($temp['relations'])) {
                 foreach ($temp['relations'] as $relkey => $relation) {
-                    if ($relkey != Lib::makeSlug($relkey)) {
-                        $temp['relations'][Lib::makeSlug($relkey)] = $temp['relations'][$relkey];
+                    if ($relkey != String::slug($relkey)) {
+                        $temp['relations'][String::slug($relkey)] = $temp['relations'][$relkey];
                         unset($temp['relations'][$relkey]);
                     }
                 }
@@ -435,7 +438,7 @@ class Config
             foreach ($ct['fields'] as $fieldname => $field) {
                 // Verify that the contenttype doesn't try to add fields that are reserved.
                 if ($fieldname != 'slug' && in_array($fieldname, $this->reservedFieldNames)) {
-                    $error = Lib::__(
+                    $error = Trans::__(
                         'contenttypes.generic.reserved-name',
                         array('%contenttype%' => $key, '%field%' => $fieldname)
                     );
@@ -449,7 +452,7 @@ class Config
                 if (is_array($field) && !empty($field['uses'])) {
                     foreach ($field['uses'] as $useField) {
                         if (!empty($field['uses']) && empty($ct['fields'][$useField]) && !in_array($useField, $this->reservedFieldNames)) {
-                            $error = Lib::__(
+                            $error = Trans::__(
                                 'contenttypes.generic.wrong-use-field',
                                 array('%contenttype%' => $key, '%field%' => $fieldname, '%uses%' => $useField)
                             );
@@ -481,7 +484,7 @@ class Config
 
                 // Make sure the 'type' is in the list of allowed types
                 if (!isset($field['type']) || !$this->fields->has($field['type'])) {
-                    $error = Lib::__(
+                    $error = Trans::__(
                         'contenttypes.generic.no-proper-type',
                         array('%contenttype%' => $key, '%field%' => $fieldname, '%type%' =>
                          $field['type'])
@@ -508,7 +511,7 @@ class Config
         if (!$wrongctype && $this->app['integritychecker']->needsCheck() &&
            (count($this->app['integritychecker']->checkTablesIntegrity()) > 0) &&
             $this->app['users']->getCurrentUsername()) {
-            $msg = Lib::__(
+            $msg = Trans::__(
                 "The database needs to be updated/repaired. Go to 'Settings' > '<a href=\"%link%\">Check Database</a>' to do this now.",
                 array('%link%' => Lib::path('dbcheck'))
             );
@@ -521,7 +524,7 @@ class Config
         foreach ($this->data['taxonomy'] as $key => $taxo) {
             // Show some helpful warnings if slugs or keys are not set correctly.
             if ($taxo['slug'] != $key) {
-                $error = Lib::__(
+                $error = Trans::__(
                     "The identifier and slug for '%taxonomytype%' are the not the same ('%slug%' vs. '%taxonomytype%'). Please edit taxonomy.yml, and make them match to prevent inconsistencies between database storage and your templates.",
                     array('%taxonomytype%' => $key, '%slug%' => $taxo['slug'])
                 );
@@ -535,7 +538,7 @@ class Config
         if (!$this->app['session']->getFlashBag()->has('error')) {
             foreach ($slugs as $slug => $count) {
                 if ($count > 1) {
-                    $error = Lib::__(
+                    $error = Trans::__(
                         "The slug '%slug%' is used in more than one contenttype. Please edit contenttypes.yml, and make them distinct.",
                         array('%slug%' => $slug)
                     );

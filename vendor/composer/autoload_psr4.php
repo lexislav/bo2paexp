@@ -9,6 +9,8 @@ return array(
     'Seld\\JsonLint\\' => array($vendorDir . '/seld/jsonlint/src/Seld/JsonLint'),
     'Monolog\\' => array($vendorDir . '/monolog/monolog/src/Monolog'),
     'League\\Flysystem\\' => array($vendorDir . '/rossriley/flysystem53/src'),
+    'Icecave\\Isolator\\' => array($vendorDir . '/icecave/isolator/src'),
+    'Eloquent\\Pathogen\\' => array($vendorDir . '/eloquent/pathogen/src'),
     'Bolt\\Thumbs\\Tests\\' => array($vendorDir . '/bolt/thumbs/tests'),
     'Bolt\\Thumbs\\' => array($vendorDir . '/bolt/thumbs/src'),
     'Bolt\\Tests\\' => array($baseDir . '/tests/Bolt/Tests'),

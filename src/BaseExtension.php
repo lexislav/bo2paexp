@@ -3,6 +3,7 @@ namespace Bolt;
 
 use Bolt\Extensions\ExtensionInterface;
 use Bolt\Library as Lib;
+use Bolt\Helpers\Arr;
 use Symfony\Component\Console\Command\Command;
 use Composer\Json\JsonFile;
 use utilphp\util;
@@ -51,7 +52,8 @@ abstract class BaseExtension extends \Twig_Extension implements ExtensionInterfa
     private function setBasepath()
     {
         $reflection = new \ReflectionClass($this);
-        $this->basepath = dirname($reflection->getFileName());
+        $basepath = dirname($reflection->getFileName());
+        $this->basepath = $this->app['pathmanager']->create($basepath);
         $this->namespace = basename(dirname($reflection->getFileName()));
     }
 
@@ -270,7 +272,7 @@ abstract class BaseExtension extends \Twig_Extension implements ExtensionInterfa
 
         // Don't error on empty config files
         if (is_array($new_config)) {
-            $this->config = Lib::array_merge_recursive_distinct($this->config, $new_config);
+            $this->config = Arr::mergeRecursiveDistinct($this->config, $new_config);
         }
     }
 

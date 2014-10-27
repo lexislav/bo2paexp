@@ -6,6 +6,9 @@ use Silex;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Bolt\Library as Lib;
+use Bolt\Helpers\String;
+use Bolt\Helpers\Input;
+use Bolt\Translation\Translator as Trans;
 use Bolt\Pager;
 
 /**
@@ -60,7 +63,7 @@ class Frontend
         // the DB, and let's add a new user.
         if (!$app['users']->getUsers()) {
             //!$app['storage']->getIntegrityChecker()->checkUserTableIntegrity() ||
-            $app['session']->getFlashBag()->set('info', Lib::__('There are no users in the database. Please create the first user.'));
+            $app['session']->getFlashBag()->set('info', Trans::__('There are no users in the database. Please create the first user.'));
 
             return Lib::redirect('useredit', array('id' => ''));
         }
@@ -124,7 +127,7 @@ class Frontend
     {
         $contenttype = $app['storage']->getContentType($contenttypeslug);
 
-        $slug = Lib::makeSlug($slug, -1);
+        $slug = String::slug($slug, -1);
 
         // First, try to get it by slug.
         $content = $app['storage']->getContent($contenttype['slug'], array('slug' => $slug, 'returnsingle' => true));
@@ -350,7 +353,7 @@ class Frontend
         } elseif ($request->query->has($context)) {
             $q = $request->get($context);
         }
-        $q = Lib::cleanPostedData($q, false);
+        $q = Input::cleanPostedData($q, false);
 
         $param = Pager::makeParameterId($context);
         /* @var $query \Symfony\Component\HttpFoundation\ParameterBag */

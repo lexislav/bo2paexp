@@ -13,6 +13,7 @@ use Symfony\Component\Filesystem\Filesystem;
 
 use Bolt\Composer\CommandRunner;
 use Bolt\Library as Lib;
+use Bolt\Translation\Translator as Trans;
 
 class Extend implements ControllerProviderInterface, ServiceProviderInterface
 {
@@ -213,6 +214,10 @@ class Extend implements ControllerProviderInterface, ServiceProviderInterface
                 $filesystem->mkdir($destination);
                 $filesystem->mirror($source, $destination);
 
+                if (file_exists($destination . "/config.yml.dist")) {
+                    $filesystem->copy($destination . "/config.yml.dist", $destination . "/config.yml");
+                }
+
                 return new Response($app['translator']->trans('Theme successfully generated. You can now edit it directly from your theme folder.'));
             } catch (\Exception $e) {
                 return new Response($app['translator']->trans('We were unable to generate the theme. It is likely that your theme directory is not writable by Bolt. Check the permissions and try reinstalling.'));
@@ -252,7 +257,7 @@ class Extend implements ControllerProviderInterface, ServiceProviderInterface
 
         // Most of the 'check if user is allowed' happens here: match the current route to the 'allowed' settings.
         if (!$app['users']->isAllowed('extensions')) {
-            $app['session']->getFlashBag()->set('error', Lib::__('You do not have the right privileges to view that page.'));
+            $app['session']->getFlashBag()->set('error', Trans::__('You do not have the right privileges to view that page.'));
 
             return Lib::redirect('dashboard');
         }

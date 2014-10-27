@@ -1,6 +1,8 @@
 <?php
 
 use Bolt\Library as Lib;
+use Bolt\Helpers\Html;
+use Bolt\Translation\Translator as Trans;
 
 class libTest extends \PHPUnit_Framework_TestCase
 {
@@ -71,7 +73,7 @@ class libTest extends \PHPUnit_Framework_TestCase
      */
     public function testTrimText($str, $length, $nbsp, $hellip, $striptags, $expected)
     {
-        $result = Lib::trimText($str, $length, $nbsp, $hellip, $striptags);
+        $result = Html::trimText($str, $length, $nbsp, $hellip, $striptags);
         $this->assertEquals($expected, $result);
     }
 
@@ -85,7 +87,7 @@ class libTest extends \PHPUnit_Framework_TestCase
         } else {
             $ellipseStr = '';
         }
-        $actual = Lib::trimToHTML($html, $length, $ellipseStr, $striptags, $nbsp);
+        $actual = Html::trimToHTML($html, $length, $ellipseStr, $striptags, $nbsp);
         $this->assertEquals($expected, $actual);
     }
 

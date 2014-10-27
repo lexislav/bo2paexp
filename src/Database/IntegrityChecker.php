@@ -15,7 +15,8 @@ use Doctrine\DBAL\Schema\Table;
 use Doctrine\DBAL\Schema\Schema;
 use Doctrine\DBAL\Schema\TableDiff;
 
-use Bolt\Library as Lib;
+use Bolt\Helpers\String;
+use Bolt\Translation\Translator as Trans;
 
 class IntegrityChecker
 {
@@ -490,10 +491,6 @@ class IntegrityChecker
         $cronTable = $schema->createTable($this->prefix . 'cron');
         $cronTable->addColumn("id", "integer", array('autoincrement' => true));
         $cronTable->setPrimaryKey(array("id"));
-        // Note: we're keeping the 'interval' column around for backwards compatibility. We do not use
-        // it anymore, but removing it breaks Doctrine's migration.
-        // @todo: Remove this column, without the migration choking on the reserved word 'interval'.
-        $cronTable->addColumn("interval", "string", array("length" => 16));
         $cronTable->addColumn("interim", "string", array("length" => 16));
         $cronTable->addIndex(array('interim'));
         $cronTable->addColumn("lastrun", "datetime");
@@ -621,7 +618,7 @@ class IntegrityChecker
      */
     protected function getTablename($name)
     {
-        $name = str_replace("-", "_", Lib::makeSlug($name));
+        $name = str_replace("-", "_", String::slug($name));
         $tablename = sprintf("%s%s", $this->prefix, $name);
 
         return $tablename;

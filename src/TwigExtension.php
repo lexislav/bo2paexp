@@ -4,6 +4,9 @@ namespace Bolt;
 
 use Silex;
 use Bolt\Library as Lib;
+use Bolt\Helpers\String;
+use Bolt\Helpers\Html;
+use Bolt\Translation\Translator as Trans;
 
 /**
  * The class for Bolt' Twig tags, functions and filters.
@@ -274,7 +277,7 @@ class TwigExtension extends \Twig_Extension
         }
 
         $output = str_replace(">", "> ", $output);
-        $output = Lib::trimText(strip_tags($output), $length);
+        $output = Html::trimText(strip_tags($output), $length);
 
         return $output;
     }
@@ -391,7 +394,7 @@ class TwigExtension extends \Twig_Extension
      */
     public function slug($str)
     {
-        $slug = Lib::makeSlug($str);
+        $slug = String::slug($str);
 
         return $slug;
     }
@@ -444,7 +447,7 @@ class TwigExtension extends \Twig_Extension
 
     public function decorateTT($str)
     {
-        return Lib::decorateTT($str);
+        return Html::decorateTT($str);
     }
 
     /**
@@ -928,7 +931,7 @@ class TwigExtension extends \Twig_Extension
             $large = $this->thumbnail($filename, $fullwidth, $fullheight, 'r');
 
             if (empty($title)) {
-                $title = sprintf('%s: %s', Lib::__("Image"), $filename);
+                $title = sprintf('%s: %s', Trans::__('Image'), $filename);
             }
 
             $output = sprintf(
@@ -1232,15 +1235,15 @@ class TwigExtension extends \Twig_Extension
         $num_args = func_num_args();
         switch ($num_args) {
             case 5:
-                return Lib::__($args[0], $args[1], $args[2], $args[3], $args[4]);
+                return Trans::__($args[0], $args[1], $args[2], $args[3], $args[4]);
             case 4:
-                return Lib::__($args[0], $args[1], $args[2], $args[3]);
+                return Trans::__($args[0], $args[1], $args[2], $args[3]);
             case 3:
-                return Lib::__($args[0], $args[1], $args[2]);
+                return Trans::__($args[0], $args[1], $args[2]);
             case 2:
-                return Lib::__($args[0], $args[1]);
+                return Trans::__($args[0], $args[1]);
             case 1:
-                return Lib::__($args[0]);
+                return Trans::__($args[0]);
         }
 
         return null;
@@ -1258,7 +1261,7 @@ class TwigExtension extends \Twig_Extension
      */
     public function safeString($str, $strict = false, $extrachars = "")
     {
-        return Lib::safeString($str, $strict, $extrachars);
+        return String::makeSafe($str, $strict, $extrachars);
     }
 
     /**

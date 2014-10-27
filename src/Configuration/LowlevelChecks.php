@@ -2,6 +2,7 @@
 namespace Bolt\Configuration;
 
 use Bolt\Library as Lib;
+use Bolt\Translation\Translator as Trans;
 
 /**
  * A class to perform several 'low level' checks. Since we're doing it (by design)
@@ -128,6 +129,9 @@ class LowlevelChecks
      **/
     public function checkApache()
     {
+        if ($this->disableApacheChecks) {
+            return;
+        }
         if (isset($_SERVER['SERVER_SOFTWARE']) && strpos($_SERVER['SERVER_SOFTWARE'], 'Apache') !== false) {
             if (!is_readable($this->config->getPath('web') . '/.htaccess')) {
                 throw new LowlevelException(
