@@ -1,4 +1,4 @@
-# app/resources/translations/cs/messages.cs.yml – generated on 2014-10-27 08:52:01 UTC
+# app/resources/translations/cs/messages.cs.yml – generated on 2014-10-27 09:39:43 UTC
 
 # Warning: Translations are in the process of being moved to a new keyword-based translation
 #          at the moment. This is an ongoing process. Translations currently in the 
@@ -8,48 +8,20 @@
 #          updating your translations, it's best to ask on IRC to time your contribution
 #          in order to prevent merge conflicts.
 
-#  26 unused messages
-#  55 untranslated messages
+#  no unused messages
+#  58 untranslated messages
 #  no untranslated keyword based messages
-# 338 translations
+# 358 translations
 # 130 keyword based translations
 
-#--- 26 unused messages -------------------------------------------------------
-
-"Body": "Tělo"
-"Categories": "Kategorie"
-"Category": "Kategorie"
-"Chapter": "Kapitola"
-"Chapters": "Kapitoly"
-"Choose an entry": "Vybrat záznam (obsah)"
-"Date": "Datum"
-"Datetime": "Datum a čas"
-"File": "Soubor"
-"Filelist": "Více souborů"
-"Floatfield": "Číslo s desetinou čárkou"
-"Geolocation": "Zeměpisná poloha"
-"Html": "Html"
-"Imagelist": "Více obrázků"
-"Integerfield": "Číslo"
-"Markdown": "Mardown"
-"Multiselect": "Multivýběr"
-"Select a page": "Vybrat stranu"
-"Select zero or more pages": "Vyberte žnádnou, jednu nebo více stran."
-"Selectentry": "Vybrat záznam"
-"Selectfield": "Vybrat pole"
-"Tag": "Štítek"
-"Tags": "Štítky"
-"Teaser": "Poutač"
-"Textarea": "Textové pole"
-"This is a checkbox": "Toto je zašrtávací políčko"
-
-#--- 55 untranslated messages -------------------------------------------------
+#--- 58 untranslated messages -------------------------------------------------
 
 "Adresa": #
 "Autor(ři) Pavilonu": #
 "Autor(ři) expozice": #
 "Body_cs": #
 "Body_en": #
+"Categories:": "Kategorie"
 "Hodnota": #
 "Kategorie": #
 "Kategorie1": #
@@ -62,14 +34,13 @@
 "Nahled": #
 "Nazev_cs": #
 "Nazev_en": #
-"No content found": #
-"No content found.": #
+"No content found": "Nebyl nalezen žádný obsah"
+"No content found.": "nebyl nalezen žádný obsah."
 "Název": #
 "Název (CS)": #
 "Název (EN)": #
 "Název proměnné": #
 "Odkaz": #
-"Pavilion News": "Zpravodaj pavilonu"
 "Poloha": #
 "Popis bodu časové osy": #
 "Popis bodu časové osy (EN)": #
@@ -87,6 +58,8 @@
 "Text": #
 "Text (CS)": #
 "Text (EN)": #
+"Theme of exhibition:": "Téma výstavy:"
+"Theme of the Czech exhibition:": "Téma české expozice:"
 "Title_cs": #
 "Title_en": #
 "Téma výstavy": #
@@ -96,12 +69,13 @@
 "Ukazatel": #
 "Vyberte obsah s detailním popisem": #
 "Vyberte článek": #
+"Year of exhibition:": "Rok konání výstavy:"
 "Zvýraznit zprávu": #
 "galerie": #
 "ikona": #
 "náhledový obrázek": #
 
-#--- 338 translations ---------------------------------------------------------
+#--- 358 translations ---------------------------------------------------------
 
 "%name% № %id%": "%name% č. %id%"
 "%s files could not be deleted. You should delete them manually.": "%s soubory nelze odstranit. Smažte je ručně."
@@ -140,6 +114,7 @@
 "Built-in role, automatically granted to every registered user": "Implicitní oprávnění, automaticky přidělené každému registrovanému uživateli."
 "Built-in role, only valid in the context of a resource, and automatically assigned to the owner of that resource.": "Implicitné oprávnění. Platné pouze v kontextu – autoamticky přiřazeno vlastníkovi zdroje."
 "Built-in superuser role, automatically grants all permissions": "Vestvěné oprávnění superuživatele – jsou přidělena veškerá práva."
+"Built-up area": "zastavěná plocha"
 "Cancel": "Zrušit"
 "Cannot check for updates in read-only mode": "Nelze zkontrolovat aktualizace v režimu pouze pro čtení"
 "Cannot check installed packages in read-only mode": "Nelze zkontrolovat nainstalované balíčky v režimu pouze pro čtení"
@@ -179,6 +154,7 @@
 "Current sessions": "Aktivní přihlášení"
 "Current status:": "Stav:"
 "Czech pavilion": "Český pavilon"
+"Daily visitor rate:": "počet návštěvníků za den:"
 "Dashboard": "Nástěnka"
 "Database check / update": "Ověření / aktualizace databáze"
 "Default status": "Výchozí stav"
@@ -233,7 +209,11 @@
 "Folders": "Složky"
 "Full list …": "Kompletní výpis…"
 "Future Space for Children:": "Budoucí prostor pro děti:"
+"General Partners": "Generální partneři pavilonu"
 "Global Permissions": "Globální oprávnění"
+"Ground area": "plocha pozemku "
+"History of Czech EXPO Pavilions": "Historie českých pavilonů EXPO"
+"Hourly visitor capacity": "kapacita návštěvníků za hodinu"
 "IP address": "IP adresa"
 "If there was a Page with 'about' for a slug, it would've been shown here. But there isn't one, so that's why you're seeing this placeholder.": "kdyby zde byla informační strana s trvalým odkazem 'about', zobrazila by se zde. Jenže není. Proto čtete toto hlášení."
 "If you would like to give the theme an alternative name you can add one here.": "Pokud chcete tuto šablonu pojmenovat jinak, jméno můžete přidat zde."
@@ -254,6 +234,7 @@
 "Logout": "Odhlásit"
 "Long messages": "Nápověda"
 "Main configuration": "Hlavní nastavení"
+"Main partners": "Hlavní partneři"
 "Maintenance": "Údržba"
 "Manufacturer of the Pavilion": "Dodavatel pavilonu"
 "Menu setup": "Editace menu"
@@ -283,20 +264,27 @@
 "Overview for": "Přehled"
 "Owner": "Vlastník"
 "Owner:": "Vlastník:"
+"PAVILION NEWS": "ZPRAVODAJ PAVILONU"
 "Password reset not successful! Either the token was incorrect, or you were too late, or you tried to reset the password from a different IP-address.": "Reset hesla nebylo možné provés! Pokoušíte se o reset z jiné IP adresy, došlo k vypršení časové lhůty apod."
 "Password reset successful! You can now log on with the password that was sent to you via email.": "Nové heslo vám bylo úspěšně zasláno emailem. Použijte ho pro příští přihlášení."
 "Path": "Cesta"
 "Path to image file": "Cesta k souboru obrázku"
 "Path:": "Cesta:"
+"Pavilion News": "Zpravodaj pavilonu"
+"Pavilion assembly time": "doba montáže pavilonu"
+"Pavilion weight": "váha pavilonu"
 "Permalink": "Trvalý odkaz"
 "Permission denied": "Přístup zamítnut"
 "Permissions": "Oprávnění"
+"Photo gallery": "Fotogalerie"
 "Place on stack": "Dát do zásobníku"
+"Place:": "Místo:"
 "Please choose the record you want to link to:": "Zvolte prosím záznam pro vytvoření vazby:"
 "Please enter a new file name": "Prosím zadejte nové jméno souboru"
 "Please enter a new folder name": "Prosím zadejte nové jméno složky"
 "Please log on.": "Přihlašte se, prosím."
 "Please provide a username": "Vyplňte uživatelské jméno, prosím"
+"Pool volume": "objem bazénu"
 "Prefill database": "Naplnit databázi"
 "Preparing to install package …": "Příprava instalace balíčku…"
 "Preparing to remove package …": "Příprava odstranění balíčku…"
@@ -347,10 +335,12 @@
 "Stack": "Zásobník"
 "Status": "Stav"
 "Status:": "Stav:"
+"Steel structure base": "podesta ocelové konstrukce"
 "Taxonomy": "Taxonomie"
 "Template": "Šablona"
 "Thanks": "Děkujeme"
 "That user does not exist.": "Neexistující uživatel."
+"The Pavilion is further supported by": "Pavilon dále podpořili"
 "The activitylog has been cleared.": "Záznam činností byl vymazán."
 "The activitylog has been trimmed.": "Ze záznamu aktivit byla odstraněna jedna strana."
 "The database needs to be updated/repaired. Go to 'Settings' > '<a href=\"%link%\">Check Database</a>' to do this now.": "Databáze potřebuje být aktualizována / opravena. Volbu naleznete v 'Nastavení' > '<a href=\"%link%\">Ověřit databázi</a>'."
@@ -381,6 +371,8 @@
 "Timed publish": "Naplánovat vydání"
 "Tip:": "Tip:"
 "Title": "Nadpis"
+"Total exhibition area": "celková plocha expozic"
+"Total number of visitors:": "celkový počet návštěvníků:"
 "Translations": "Překlady"
 "Trim Activitylog": "Zredukovat záznam aktivit"
 "Try logging in with your ftp-client and make the file readable. Else try to go <a>back</a> to the last page.": "Zkuste se přihlásit pomocí ftp klienta a nastavte atributy souboru pro zápis. Nebo zkuste jít <a>zpět</a> na poslední stranu."
@@ -433,6 +425,7 @@
 "at EXPO 2015": "EXPO 2015"
 "back to editing": "zpět do editace"
 "by": "od"
+"days": "dní"
 "in:": "v:"
 "line": "řádek"
 "no content …": "žádný obsah …"
@@ -441,6 +434,7 @@
 "nursery school": "školka"
 "of": "z"
 "show all": "zobrazit vše"
+"tonnes": "tun"
 
 #--- 130 keyword based translations -------------------------------------------
 

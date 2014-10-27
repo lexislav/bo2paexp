@@ -136,18 +136,18 @@
 
         <div class="row mgr-half m-data-stats">
             <div class="small-12 medium-6 columns fnt-primary-body-m">
-                <div class="lbox"><span class="fnt-boxed-white">520</span> kapacita návštěvníků za hodinu</div>
-                <div class="lbox"><span class="fnt-boxed-white">700 m<sup>2</sup></span> celková plocha expozic
+                <div class="lbox"><span class="fnt-boxed-white">520</span> {{__('Hourly visitor capacity')}}</div>
+                <div class="lbox"><span class="fnt-boxed-white">700 m<sup>2</sup></span> {{__('Total exhibition area')}}
                 </div>
             </div>
             <div class="small-12 medium-6 columns fnt-primary-body-m">
                 {% setcontent numero = 'Čísla' where { id: '1' } %}
                 <div class="rbox">
-                    <span class="fnt-boxed-white">{{ numero.integerfield }}</span>počet návštěvníků za den:
+                    <span class="fnt-boxed-white">{{ numero.integerfield }}</span>{{__('Daily visitor rate:')}}
                 </div>
                 {% setcontent numero = 'Čísla' where { id: '2' } %}
                 <div class="rbox">
-                    <span class="fnt-boxed-black">{{ numero.integerfield }}</span>celkový počet návštěvníků
+                    <span class="fnt-boxed-black">{{ numero.integerfield }}</span>{{__('Total number of visitors:')}}
                 </div>
             </div>
         </div>
@@ -160,12 +160,12 @@
 
         <div class="row">
             <ul class="small-block-grid-2 small-block-grid-3 large-block-grid-6 m-data-table" data-equalizer>
-                <li data-equalizer-watch><span>1360 m<sup>2</sup></span>plocha pozemku</li>
-                <li data-equalizer-watch><span>540 m<sup>2</sup></span>zastavěná plocha</li>
-                <li data-equalizer-watch><span>420 tun </span>váha pavilonu</li>
-                <li data-equalizer-watch><span>60 tun</span>podesta ocelové konstrukce</li>
-                <li data-equalizer-watch><span>37 m<sup>3</sup></span>objem bazénu</li>
-                <li data-equalizer-watch><span>135 dní</span>doba montáže pavilonu</li>
+                <li data-equalizer-watch><span>1360 m<sup>2</sup></span>{{__('Ground area')}}</li>
+                <li data-equalizer-watch><span>540 m<sup>2</sup></span>{{__('Built-up area')}}</li>
+                <li data-equalizer-watch><span>420 {{__('tonnes')}}</span>{{__('Pavilion weight')}}</li>
+                <li data-equalizer-watch><span>60 {{__('tonnes')}}</span>{{__('Steel structure base')}}</li>
+                <li data-equalizer-watch><span>37 m<sup>3</sup></span>{{__('Pool volume')}}</li>
+                <li data-equalizer-watch><span>135 {{__('days')}}</span>{{__('Pavilion assembly time')}}</li>
             </ul>
         </div>
     </article>

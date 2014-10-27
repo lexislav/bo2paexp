@@ -9,12 +9,12 @@
     <div class="small-12 columns">
         <nav class="breadcrumbs">
             {% if record.contenttype.name == "Zpravodaj" %}
-            <a href="{{paths.root}}{{ app.locale }}/blog">ZRAVODAJ PAVILONU</a>
+            <a href="{{paths.root}}{{ app.locale }}/blog">{{__('PAVILION NEWS')}}</a>
             {% if record.taxonomy.kategorie is defined %}{% for tag in record.taxonomy.kategorie %}<a href="{{ paths.root }}{{ app.locale }}/kategorie/{{ tag }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</div>
             </div>
             {% endif %}
             {% elseif record.contenttype.name == "Historie" %}
-            <a href="{{paths.root}}{{ app.locale }}/historie">Historie českých pavilonů EXPO</a>{% endif %}
+            <a href="{{paths.root}}{{ app.locale }}/historie">{{__('History of Czech EXPO Pavilions')}}</a>{% endif %}
         </nav>
     </div>
 </div>
@@ -104,7 +104,7 @@
     {% if record.imagelist %}
     <div class="xm-gallery mgr-double">
         <div class="row">
-            <h5 class="small-12 columns">Fotogalerie</h5>
+            <h5 class="small-12 columns">{{__('Photo gallery')}}</h5>
                 <ul class="clearing-thumbs" data-clearing>
             {% for imago in record.imagelist %}
                    <li><a href="{{ imago.filename|image }}" alt="{{imago.title}}"><img data-caption="{{imago.title}}" src="{{imago.filename|thumbnail(280,210, crop) }}"></a></li>
@@ -123,7 +123,7 @@
     {% if record.video!="" %}
     <div class="row">
         <div class="small-12 small-centered columns mgr-full">
-            <h5>Videa</h5>
+            <h5>Video</h5>
 
             <div class="flex-video widescreen vimeo">
                 {{ record.video.responsive }}
