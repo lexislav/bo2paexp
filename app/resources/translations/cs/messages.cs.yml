@@ -1,4 +1,4 @@
-# app/resources/translations/cs/messages.cs.yml – generated on 2014-10-27 10:06:33 UTC
+# app/resources/translations/cs/messages.cs.yml – generated on 2014-10-27 10:34:25 UTC
 
 # Warning: Translations are in the process of being moved to a new keyword-based translation
 #          at the moment. This is an ongoing process. Translations currently in the 
@@ -11,14 +11,16 @@
 #   1 unused messages
 #  52 untranslated messages
 #  no untranslated keyword based messages
-# 369 translations
+# 376 translations
 # 130 keyword based translations
 
+#--- 1 unused messages --------------------------------------------------------
+
+"More about Modular Construction ": #
 
 #--- 52 untranslated messages -------------------------------------------------
 
 "Adresa": #
-"Autor(ři) Pavilonu": # "Pavilion's author(s)"
 "Autor(ři) expozice": #
 "Body_cs": #
 "Body_en": #
@@ -46,6 +48,7 @@
 "Popis_en": #
 "Popisek": #
 "Popisek (EN)": #
+"Published:": "Datum vydání:"
 "Rok konání": #
 "Rozcestnik": #
 "Soubory(y) ke stažení": #
@@ -70,7 +73,7 @@
 "ikona": #
 "náhledový obrázek": #
 
-#--- 369 translations ---------------------------------------------------------
+#--- 376 translations ---------------------------------------------------------
 
 "%name% № %id%": "%name% č. %id%"
 "%s files could not be deleted. You should delete them manually.": "%s soubory nelze odstranit. Smažte je ručně."
@@ -98,7 +101,10 @@
 "An error occurred.": "Došlo k nějaké chybě."
 "Anonymous": "Anonymous"
 "Are you sure you want to delete %username%?": "Určitě chcete odstranit %username%?"
+"Author(s) of Pavilion:": "Autor(ři) pavilonu:"
+"Author(s) of exhibition:": "Autor(ři) expozice"
 "Author:": "Autor:"
+"Autor(ři) Pavilonu": "Pavilion's author(s)"
 "Before you can start using the theme on your site we need to make a copy to your theme folder.": "Předtím než začnete používat tuto šablonu na vaší stránce, potřebujeme udělat kopii do vaší složky s šablonou."
 "Below are the third party libraries that are used by Bolt.": "Níže jsou uveden knihovny třetích stran použité v Bolt."
 "Bolt - Fatal error.": "Bolt - závažná chyba."
@@ -169,6 +175,7 @@
 "Disable %username%": "Zablokovat %username%"
 "Do you really want to delete %foldername%?": "Opravdu chcete smazat složku %foldername%?"
 "Done!": "Hotovo!"
+"Downloads:": "Soubory ke stažení:"
 "Draft": "Koncept"
 "Duplicate %filename%": "Duplikovat %filename%"
 "Edit": "Upravit"
@@ -245,6 +252,8 @@
 "Modifications made to the database:": "Změny provedené v databázi:"
 "Modifications needed:": "Potřebné úpravy:"
 "Modified": "Upraveno"
+"More about Modular Construction": "Více o modulární architektuře"
+"More articles about Pavilion & EXPO2015": "Další články o pavilonu & EXPO2015"
 "More info/help": "Více informací / nápověda"
 "No Stable Versions Available": "Nejsou k dispozici žádné stabilní verze"
 "No Test Versions Available": "Nejsou k dispozici žádné testovací verze"
@@ -299,6 +308,7 @@
 "Published": "Publikováno"
 "Published on:": "Publikováno:"
 "Read more": "Více"
+"Read more:": "Čtěte také:"
 "Related content": "Související obsah"
 "Related content:": "Související obsah"
 "Relationships": "Související obsah"

@@ -137,7 +137,7 @@
     </div>
     <div class="small-12 medium-6 large-5 xlarge-4 columns">
         <header>
-            <h2>Další články o pavilonu & EXPO2015</h2>
+            <h2>{{__('More articles about Pavilion & EXPO2015')}}</h2>
         </header>
         {% setcontent myc = 'odkazy' where { rozcestnik: 'o-pavilonu' } limit 10 %}
         {% for olink in myc %}{% if olink['nazev_' ~ app.locale]!="" %}
@@ -160,7 +160,7 @@
 
     <div class="small-12 medium-6 large-5 xlarge-4 xlarge-offset-1 columns">
         <header>
-            <h2>Více o modulární architektuře</h2>
+            <h2>{{__('More about Modular Construction')}}</h2>
         </header>
         {% setcontent myc = 'odkazy' where { rozcestnik: 'modularni-architektura' } limit 10 %}
         {% for olink in myc %}{% if olink['nazev_' ~ app.locale]!="" %}
