@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # app/resources/translations/cs/messages.cs.yml – generated on 2014-10-27 10:34:25 UTC
+=======
+# app/resources/translations/cs/messages.cs.yml – generated on 2014-10-27 10:40:15 UTC
+>>>>>>> překlad šablon finiš
 
 # Warning: Translations are in the process of being moved to a new keyword-based translation
 #          at the moment. This is an ongoing process. Translations currently in the 
@@ -8,9 +12,10 @@
 #          updating your translations, it's best to ask on IRC to time your contribution
 #          in order to prevent merge conflicts.
 
-#   1 unused messages
-#  52 untranslated messages
+#  no unused messages
+#  51 untranslated messages
 #  no untranslated keyword based messages
+<<<<<<< HEAD
 # 376 translations
 # 130 keyword based translations
 
@@ -19,6 +24,12 @@
 "More about Modular Construction ": #
 
 #--- 52 untranslated messages -------------------------------------------------
+=======
+# 377 translations
+# 130 keyword based translations
+
+#--- 51 untranslated messages -------------------------------------------------
+>>>>>>> překlad šablon finiš
 
 "Adresa": #
 "Autor(ři) expozice": #
@@ -73,7 +84,11 @@
 "ikona": #
 "náhledový obrázek": #
 
+<<<<<<< HEAD
 #--- 376 translations ---------------------------------------------------------
+=======
+#--- 377 translations ---------------------------------------------------------
+>>>>>>> překlad šablon finiš
 
 "%name% № %id%": "%name% č. %id%"
 "%s files could not be deleted. You should delete them manually.": "%s soubory nelze odstranit. Smažte je ručně."
@@ -307,6 +322,7 @@
 "Publish selected": "Publikovat vybrané"
 "Published": "Publikováno"
 "Published on:": "Publikováno:"
+"Published:": "Datum vydání:"
 "Read more": "Více"
 "Read more:": "Čtěte také:"
 "Related content": "Související obsah"
