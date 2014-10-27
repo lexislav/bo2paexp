@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-# app/resources/translations/cs/messages.cs.yml – generated on 2014-10-27 10:34:25 UTC
-=======
-# app/resources/translations/cs/messages.cs.yml – generated on 2014-10-27 10:40:15 UTC
->>>>>>> překlad šablon finiš
+# app/resources/translations/cs/messages.cs.yml – generated on 2014-10-27 11:30:23 UTC
 
 # Warning: Translations are in the process of being moved to a new keyword-based translation
 #          at the moment. This is an ongoing process. Translations currently in the 
@@ -13,23 +9,12 @@
 #          in order to prevent merge conflicts.
 
 #  no unused messages
-#  51 untranslated messages
+#  53 untranslated messages
 #  no untranslated keyword based messages
-<<<<<<< HEAD
-# 376 translations
+# 375 translations
 # 130 keyword based translations
 
-#--- 1 unused messages --------------------------------------------------------
-
-"More about Modular Construction ": #
-
-#--- 52 untranslated messages -------------------------------------------------
-=======
-# 377 translations
-# 130 keyword based translations
-
-#--- 51 untranslated messages -------------------------------------------------
->>>>>>> překlad šablon finiš
+#--- 53 untranslated messages -------------------------------------------------
 
 "Adresa": #
 "Autor(ři) expozice": #
@@ -59,7 +44,6 @@
 "Popis_en": #
 "Popisek": #
 "Popisek (EN)": #
-"Published:": "Datum vydání:"
 "Rok konání": #
 "Rozcestnik": #
 "Soubory(y) ke stažení": #
@@ -70,6 +54,8 @@
 "Text": #
 "Text (CS)": #
 "Text (EN)": #
+"The database needs to be updated/repaired. Go to 'Settings' > '<a href=\"%link%\">Check Database</a>' to do this now.": #
+"The field %field% has been changed to \"%newValue%\"": #
 "Title_cs": #
 "Title_en": #
 "Téma výstavy": #
@@ -84,11 +70,7 @@
 "ikona": #
 "náhledový obrázek": #
 
-<<<<<<< HEAD
-#--- 376 translations ---------------------------------------------------------
-=======
-#--- 377 translations ---------------------------------------------------------
->>>>>>> překlad šablon finiš
+#--- 375 translations ---------------------------------------------------------
 
 "%name% № %id%": "%name% č. %id%"
 "%s files could not be deleted. You should delete them manually.": "%s soubory nelze odstranit. Smažte je ručně."
@@ -372,9 +354,7 @@
 "The Pavilion is further supported by": "Pavilon dále podpořili"
 "The activitylog has been cleared.": "Záznam činností byl vymazán."
 "The activitylog has been trimmed.": "Ze záznamu aktivit byla odstraněna jedna strana."
-"The database needs to be updated/repaired. Go to 'Settings' > '<a href=\"%link%\">Check Database</a>' to do this now.": "Databáze potřebuje být aktualizována / opravena. Volbu naleznete v 'Nastavení' > '<a href=\"%link%\">Ověřit databázi</a>'."
 "The extensions directory (<code>%dir%</code>) does not exist, or it is not writable.": "Adresář rozšíření (<code>%dir%</code>) neexistuje nebo do něj nelze zapisovat."
-"The field %field% has been changed to \"%newValue%\"": "Pole %field% bylo změněno na \"%newValue%\""
 "The file '%s' doesn't exist, or is not readable.": "Soubor '%s' neexistuje nebo nelze přečíst."
 "The file '%s' is not writable. You will have to use your own editor to make modifications to this file.": "Soubor '%s' nelze zapsat. Pro úpravu souboru budete muset použít vlastní editor."
 "The folder '%s' could not be found, or is not readable.": "Složka '%s' není k nalezení nebo nelze přečíst."
@@ -474,7 +454,7 @@ component:
     changelog-detail:
         by: "od"
         field: "pole"
-        no-comment: "\"Bez komentářů\""
+        no-comment: "Bez komentářů"
         value-new: "nová hodnota"
         value-old: "původní hodnota"
     changelog-pager:
@@ -514,34 +494,34 @@ contenttypes:
 
 field:
     general:
-        allowed-filetypes: "\"Povolené typy souborů\""
+        allowed-filetypes: "Povolené typy souborů"
         select-from-server: "Vybrat na serveru"
         select-from-stack: "Vybrat ze Zásobníku"
     geolocation:
         label:
-            address-lookup: "\"Vyhledání adresy\""
+            address-lookup: "Vyhledání adresy"
             latitude: "Zeměpisná šířka"
             longitude: "Zeměpisná délka"
-            marker-placement: "\"Umístění značky\""
+            marker-placement: "Umístění značky"
         matched-address: "Odpovídající adresa:"
         placeholder:
-            address: "\"Ulice, PSČ, město nebo jiné označení polohy\""
+            address: "Ulice, PSČ, město nebo jiné označení polohy"
     slug:
         message:
-            set: "\"Nastavit trvalý odkaz na:\""
-            unlock: "\"Jste si jisti, že chcete upravit trvalý odkaz? Můžeto ovlivnit již existující vazby. \""
+            set: "Nastavit trvalý odkaz na:"
+            unlock: "Jste si jisti, že chcete upravit trvalý odkaz? Můžeto ovlivnit již existující vazby."
         permalink: "Trvalý odkaz"
     video:
         button:
             preview: "Náhled"
         label:
-            preview: "\"Náhled obrázku\""
+            preview: "Náhled obrázku"
             size: "Velikost"
-            url: "\"URL adresa videa\""
-        matched-video: "\"Odpovídající video\""
-        pixel: "\"pixel\""
+            url: "URL adresa videa"
+        matched-video: "Odpovídající video"
+        pixel: "pixel"
         placeholder:
-            url: "\"URL videa na Youtube, Vimeo nabo jiném video webu\""
+            url: "URL videa na Youtube, Vimeo nabo jiném video webu"
         preview:
             button.close: "Zavřít"
             no-url: "Nebyla zadána URL adresa videa, není co ukázat."
@@ -570,7 +550,7 @@ page:
             revert: "Zrušit změny"
             save: "Uložit"
         confirm-revert: "Určitě chcete zahodit provedené úpravy? Budou ztraceny, pokud je neuložíte."
-        note-related: "\"Upozornění: tento soubor má související soubory:\""
+        note-related: "Upozornění: tento soubor má související soubory:"
         path: "Cesta:"
         title:
             edit: "Upravit soubor"
@@ -586,7 +566,7 @@ page:
             no: "ne"
             yes: "ano"
         button:
-            save: "\"Uložit uživatele\""
+            save: "Uložit uživatele"
         error:
             displayname-used: "Uživatelské jméno již existuje. Zvolte si jiné."
             email-used: "Tato emailová adresa je již používána. Zvolte jinou."
@@ -617,18 +597,18 @@ page:
             password-confirm: "Potvrdit Vaše heslo"
             username: "Zvolte uživatelské jméno, pouze malými písmeny"
         title:
-            create: "\"Vytvořit nového uživatele\""
-            edit: "\"Upravit uživatele\""
-            profile: "\"Profil\""
-        user-create: "\"K vytvoření nového uživatele použijte tento formulář. Heslo je povinné.\""
-        user-edit: "\"Pro upravení uživatele použijte formulář. Heslo nevyplňujte, pokud si nepřejete heslo změnit..\""
+            create: "Vytvořit nového uživatele"
+            edit: "Upravit uživatele"
+            profile: "Profil"
+        user-create: "K vytvoření nového uživatele použijte tento formulář. Heslo je povinné."
+        user-edit: "Pro upravení uživatele použijte formulář. Heslo nevyplňujte, pokud si nepřejete heslo změnit."
     login:
         button:
             back: "Zpět na přihlášení"
             forgot-password: "Zapomněl jsem své heslo…"
             log-on: "Přihlásit se"
             reset-password: "Resetovat heslo"
-        cookies-required: "\"Upozornění: Pro přihlášení k administraci je zapotřebí cookies. Prosím, povolte si cookies ve svém prohlížeči..\""
+        cookies-required: "Upozornění: Pro přihlášení k administraci je zapotřebí cookies. Prosím, povolte si cookies ve svém prohlížeči."
         label:
             password: "Heslo"
             username: "Uživatelské jméno"
@@ -636,7 +616,7 @@ page:
         password-show: "Zobrazit"
         placeholder:
             password: "Vaše uživatelské jméno"
-        title: "\"Přihlášení do Boltu\""
+        title: "Přihlášení do Boltu"
 
 panel:
     latest-activity:
