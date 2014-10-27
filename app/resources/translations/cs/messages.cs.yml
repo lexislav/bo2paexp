@@ -1,4 +1,4 @@
-# app/resources/translations/cs/messages.cs.yml – generated on 2014-10-26 20:45:10 UTC
+# app/resources/translations/cs/messages.cs.yml – generated on 2014-10-27 08:52:01 UTC
 
 # Warning: Translations are in the process of being moved to a new keyword-based translation
 #          at the moment. This is an ongoing process. Translations currently in the 
@@ -9,9 +9,9 @@
 #          in order to prevent merge conflicts.
 
 #  26 unused messages
-#  56 untranslated messages
+#  55 untranslated messages
 #  no untranslated keyword based messages
-# 336 translations
+# 338 translations
 # 130 keyword based translations
 
 #--- 26 unused messages -------------------------------------------------------
@@ -43,7 +43,7 @@
 "Textarea": "Textové pole"
 "This is a checkbox": "Toto je zašrtávací políčko"
 
-#--- 56 untranslated messages -------------------------------------------------
+#--- 55 untranslated messages -------------------------------------------------
 
 "Adresa": #
 "Autor(ři) Pavilonu": #
@@ -55,7 +55,6 @@
 "Kategorie1": #
 "Korekce polohy na Časové ose": #
 "Logo": #
-"Manufacturer of the Pavilion": "Dodavatel pavilonu"
 "Město": #
 "Město (EN)": #
 "Nadpis": #
@@ -69,8 +68,8 @@
 "Název (CS)": #
 "Název (EN)": #
 "Název proměnné": #
-"OFFICIAL SITE OF THE EXHIBITION": "OFICIÁLNÍ STRÁNKY VÝSTAVY"
 "Odkaz": #
+"Pavilion News": "Zpravodaj pavilonu"
 "Poloha": #
 "Popis bodu časové osy": #
 "Popis bodu časové osy (EN)": #
@@ -102,7 +101,7 @@
 "ikona": #
 "náhledový obrázek": #
 
-#--- 336 translations ---------------------------------------------------------
+#--- 338 translations ---------------------------------------------------------
 
 "%name% № %id%": "%name% č. %id%"
 "%s files could not be deleted. You should delete them manually.": "%s soubory nelze odstranit. Smažte je ručně."
@@ -256,6 +255,7 @@
 "Long messages": "Nápověda"
 "Main configuration": "Hlavní nastavení"
 "Maintenance": "Údržba"
+"Manufacturer of the Pavilion": "Dodavatel pavilonu"
 "Menu setup": "Editace menu"
 "Message:": "Zpráva:"
 "Messages": "Prostředí"
@@ -274,6 +274,7 @@
 "None": "není"
 "Not published": "Nepublikováno"
 "Note:": "není"
+"OFFICIAL SITE OF THE EXHIBITION": "OFICIÁLNÍ STRÁNKY VÝSTAVY"
 "Omnisearch": "Vyhledávání"
 "Options": "Možnosti"
 "Order: %sort%": "Pořadí: %sort%"
