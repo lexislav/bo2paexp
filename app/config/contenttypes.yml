@@ -47,7 +47,7 @@ zpravodaj:
             type: filelist
             group: Soubory
             extensions: [ doc, docx, pdf, xls, xlsx, ods, odt ]
-            label: Spobory(y) ke stažení
+            label: Soubory(y) ke stažení
     relations:
         zpravodaj:
             multiple: true

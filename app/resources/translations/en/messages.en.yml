@@ -1,20 +1,139 @@
-# app/resources/translations/en/messages.en.yml – generated on 2014-10-24 21:30:19 UTC
+# app/resources/translations/en/messages.en.yml – generated on 2014-10-27 09:42:38 UTC
 
 # Warning: Translations are in the process of being moved to a new keyword-based translation
-#          at the moment. This is an ongoing process. Translations currently in the
-#          repository are automatically mapped to the new scheme. Be aware that there
-#          can be a race condition between that process and your PR so that it's
-#          eventually neccessary to remap your translations. If you're planning on
+#          at the moment. This is an ongoing process. Translations currently in the 
+#          repository are automatically mapped to the new scheme. Be aware that there 
+#          can be a race condition between that process and your PR so that it's 
+#          eventually neccessary to remap your translations. If you're planning on 
 #          updating your translations, it's best to ask on IRC to time your contribution
 #          in order to prevent merge conflicts.
 
-#  no unused messages
-#  no untranslated messages
+#  26 unused messages
+#  87 untranslated messages
 #  no untranslated keyword based messages
-# 355 translations
+# 329 translations
 # 130 keyword based translations
 
-#--- 355 translations ---------------------------------------------------------
+#--- 26 unused messages -------------------------------------------------------
+
+"Body": "Body"
+"Categories": "Categories"
+"Category": "Category"
+"Chapter": "Chapter"
+"Chapters": "Chapters"
+"Choose an entry": "Choose an entry"
+"Date": "Date"
+"Datetime": "Datetime"
+"File": "File"
+"Filelist": "Filelist"
+"Floatfield": "Floatfield"
+"Geolocation": "Geolocation"
+"Html": "Html"
+"Imagelist": "Imagelist"
+"Integerfield": "Integerfield"
+"Markdown": "Markdown"
+"Multiselect": "Multiselect"
+"Select a page": "Select a page"
+"Select zero or more pages": "Select zero or more pages"
+"Selectentry": "Selectentry"
+"Selectfield": "Selectfield"
+"Tag": "Tag"
+"Tags": "Tags"
+"Teaser": "Teaser"
+"Textarea": "Textarea"
+"This is a checkbox": "This is a checkbox"
+
+#--- 87 untranslated messages -------------------------------------------------
+
+"Adresa": #
+"Autor(ři) Pavilonu": "Pavilion's author(s)"
+"Autor(ři) expozice": #
+"Body_cs": #
+"Body_en": #
+"Built-up area": #
+"Categories:": #
+"Current Condition of the Pavilion": #
+"Czech pavilion": #
+"Daily visitor rate:": #
+"Energy for the Future:": #
+"Exhibition Pavilion in Milan": #
+"Future Space for Children:": #
+"General Partners": #
+"Ground area": #
+"History of Czech EXPO Pavilions": #
+"Hodnota": #
+"Hourly visitor capacity": #
+"Kategorie": #
+"Kategorie1": #
+"Korekce polohy na Časové ose": #
+"Logo": #
+"Main partners": #
+"Manufacturer of the Pavilion": #
+"Město": #
+"Město (EN)": #
+"Nadpis": #
+"Nadpis (EN)": #
+"Nahled": #
+"Nazev_cs": #
+"Nazev_en": #
+"No content found": #
+"No content found.": #
+"Název": #
+"Název (CS)": #
+"Název (EN)": #
+"Název proměnné": #
+"OFFICIAL SITE OF THE EXHIBITION": #
+"Odkaz": #
+"PAVILION NEWS": #
+"Pavilion News": #
+"Pavilion assembly time": #
+"Pavilion weight": #
+"Photo gallery": #
+"Place:": #
+"Poloha": #
+"Pool volume": #
+"Popis bodu časové osy": #
+"Popis bodu časové osy (EN)": #
+"Popis_cs": #
+"Popis_en": #
+"Popisek": #
+"Popisek (EN)": #
+"Rok konání": #
+"Rozcestnik": #
+"Spobory(y) ke stažení": #
+"Statik": #
+"Statiky": #
+"Steel structure base": #
+"Stitek": #
+"Stitky": #
+"Text": #
+"Text (CS)": #
+"Text (EN)": #
+"The Pavilion is further supported by": #
+"Theme of exhibition:": #
+"Theme of the Czech exhibition:": #
+"Title_cs": #
+"Title_en": #
+"Total exhibition area": #
+"Total number of visitors:": #
+"Téma výstavy": #
+"Téma výstavy (EN)": #
+"Téma české expozice": #
+"Téma české expozice (EN)": #
+"Ukazatel": #
+"Vyberte obsah s detailním popisem": #
+"Vyberte článek": #
+"Year of exhibition:": #
+"Zvýraznit zprávu": #
+"at EXPO 2015": #
+"days": #
+"galerie": #
+"ikona": #
+"nursery school": #
+"náhledový obrázek": #
+"tonnes": #
+
+#--- 329 translations ---------------------------------------------------------
 
 "%name% № %id%": "%name% № %id%"
 "%s files could not be deleted. You should delete them manually.": "%s files could not be deleted. You should delete them manually."
@@ -43,7 +162,6 @@
 "Author:": "Author:"
 "Before you can start using the theme on your site we need to make a copy to your theme folder.": "Before you can start using the theme on your site we need to make a copy to your theme folder."
 "Below are the third party libraries that are used by Bolt.": "Below are the third party libraries that are used by Bolt."
-"Body": "Body"
 "Bolt - Fatal error.": "Bolt - Fatal error."
 "Bolt Extension could not be found. Please check at %site% to ensure correct name.": "Bolt Extension could not be found. Please check at %site% to ensure correct name."
 "Bolt documentation on Github": "Bolt documentation on Github"
@@ -57,19 +175,14 @@
 "Cancel": "Cancel"
 "Cannot check for updates in read-only mode": "Cannot check for updates in read-only mode"
 "Cannot check installed packages in read-only mode": "Cannot check installed packages in read-only mode"
-"Categories": "Categories"
-"Category": "Category"
 "Change Log": "Change Log"
 "Change status to 'draft'": "Change status to 'draft'"
 "Change status to 'held'": "Change status to 'held'"
-"Chapter": "Chapter"
-"Chapters": "Chapters"
 "Check again": "Check again"
 "Check database": "Check database"
 "Check for updates": "Check for updates"
 "Checking for available updates (this may take up to 60 seconds)": "Checking for available updates (this may take up to 60 seconds)"
 "Checking installed packages": "Checking installed packages"
-"Choose an entry": "Choose an entry"
 "Class:": "Class:"
 "Clear Activitylog": "Clear Activitylog"
 "Clear cache again": "Clear cache again"
@@ -98,8 +211,6 @@
 "Current status:": "Current status:"
 "Dashboard": "Dashboard"
 "Database check / update": "Database check / update"
-"Date": "Date"
-"Datetime": "Datetime"
 "Default status": "Default status"
 "Delete %filename%": "Delete %filename%"
 "Delete %foldername%": "Delete %foldername%"
@@ -128,7 +239,6 @@
 "Extension log": "Extension log"
 "Extensions": "Extensions"
 "Extras": "Extras"
-"File": "File"
 "File '%file%' could not be uploaded (wrong/disallowed file type). Make sure the file extension is one of the following:": "File '%file%' could not be uploaded (wrong/disallowed file type). Make sure the file extension is one of the following:"
 "File '%file%' could not be uploaded.": "File '%file%' could not be uploaded."
 "File '%file%' was uploaded successfully.": "File '%file%' was uploaded successfully."
@@ -137,7 +247,6 @@
 "File '%s' has been saved.": "File '%s' has been saved."
 "File Management": "File Management"
 "File is not readable!": "File is not readable!"
-"Filelist": "Filelist"
 "Files": "Files"
 "Files in %s": "Files in %s"
 "Files on the stack": "Files on the stack"
@@ -147,19 +256,15 @@
 "Filtering": "Filtering"
 "Filtering …": "Filtering …"
 "Find": "Find"
-"Floatfield": "Floatfield"
 "Folder '%s' could not be found, or is not readable.": "Folder '%s' could not be found, or is not readable."
 "Folder permissions insufficient": "Folder permissions insufficient"
 "Folders": "Folders"
 "Full list …": "Full list …"
-"Geolocation": "Geolocation"
 "Global Permissions": "Global Permissions"
-"Html": "Html"
 "IP address": "IP address"
 "If there was a Page with 'about' for a slug, it would've been shown here. But there isn't one, so that's why you're seeing this placeholder.": "If there was a Page with 'about' for a slug, it would've been shown here. But there isn't one, so that's why you're seeing this placeholder."
 "If you would like to give the theme an alternative name you can add one here.": "If you would like to give the theme an alternative name you can add one here."
 "Image": "Image"
-"Imagelist": "Imagelist"
 "Info": "Info"
 "Install a new Extension": "Install a new Extension"
 "Install all Packages": "Install all Packages"
@@ -167,7 +272,6 @@
 "Installation complete": "Installation complete"
 "Installing package": "Installing package"
 "Installing selected package version (this may take up to 60 seconds).": "Installing selected package version (this may take up to 60 seconds)."
-"Integerfield": "Integerfield"
 "Last edited on:": "Last edited on:"
 "Last known IP": "Last known IP"
 "Last seen": "Last seen"
@@ -178,7 +282,6 @@
 "Long messages": "Long messages"
 "Main configuration": "Main configuration"
 "Maintenance": "Maintenance"
-"Markdown": "Markdown"
 "Menu setup": "Menu setup"
 "Message:": "Message:"
 "Messages": "Messages"
@@ -188,7 +291,6 @@
 "Modifications needed:": "Modifications needed:"
 "Modified": "Modified"
 "More info/help": "More info/help"
-"Multiselect": "Multiselect"
 "No Stable Versions Available": "No Stable Versions Available"
 "No Test Versions Available": "No Test Versions Available"
 "No relations found!": "No relations found!"
@@ -251,13 +353,9 @@
 "Search …": "Search …"
 "Searching for available updates …": "Searching for available updates …"
 "Select": "Select"
-"Select a page": "Select a page"
 "Select all": "Select all"
 "Select file …": "Select file …"
 "Select none": "Select none"
-"Select zero or more pages": "Select zero or more pages"
-"Selectentry": "Selectentry"
-"Selectfield": "Selectfield"
 "Session expires": "Session expires"
 "Session resumed.": "Session resumed."
 "Settings": "Settings"
@@ -274,12 +372,8 @@
 "Stack": "Stack"
 "Status": "Status"
 "Status:": "Status:"
-"Tag": "Tag"
-"Tags": "Tags"
 "Taxonomy": "Taxonomy"
-"Teaser": "Teaser"
 "Template": "Template"
-"Textarea": "Textarea"
 "Thanks": "Thanks"
 "That user does not exist.": "That user does not exist."
 "The activitylog has been cleared.": "The activitylog has been cleared."
@@ -304,7 +398,6 @@
 "There are no users in the database. Please create the first user.": "There are no users in the database. Please create the first user."
 "There are no users present in the system. Please create the first user, which will be granted root privileges.": "There are no users present in the system. Please create the first user, which will be granted root privileges."
 "There should always be at least one 'root' user. You have just been promoted. Congratulations!": "There should always be at least one 'root' user. You have just been promoted. Congratulations!"
-"This is a checkbox": "This is a checkbox"
 "This record is related to:": "This record is related to:"
 "This website is <a href='%url%' target='_blank' title='Sophisticated, lightweight & simple CMS'>Built with Bolt</a>.": "This website is <a href='%url%' target='_blank' title='Sophisticated, lightweight & simple CMS'>Built with Bolt</a>."
 "This will install all available updates.": "This will install all available updates."

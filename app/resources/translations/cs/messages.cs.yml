@@ -1,4 +1,4 @@
-# app/resources/translations/cs/messages.cs.yml – generated on 2014-10-27 09:39:43 UTC
+# app/resources/translations/cs/messages.cs.yml – generated on 2014-10-27 10:06:33 UTC
 
 # Warning: Translations are in the process of being moved to a new keyword-based translation
 #          at the moment. This is an ongoing process. Translations currently in the 
@@ -8,20 +8,20 @@
 #          updating your translations, it's best to ask on IRC to time your contribution
 #          in order to prevent merge conflicts.
 
-#  no unused messages
-#  58 untranslated messages
+#   1 unused messages
+#  52 untranslated messages
 #  no untranslated keyword based messages
-# 358 translations
+# 369 translations
 # 130 keyword based translations
 
-#--- 58 untranslated messages -------------------------------------------------
+
+#--- 52 untranslated messages -------------------------------------------------
 
 "Adresa": #
-"Autor(ři) Pavilonu": #
+"Autor(ři) Pavilonu": # "Pavilion's author(s)"
 "Autor(ři) expozice": #
 "Body_cs": #
 "Body_en": #
-"Categories:": "Kategorie"
 "Hodnota": #
 "Kategorie": #
 "Kategorie1": #
@@ -34,8 +34,6 @@
 "Nahled": #
 "Nazev_cs": #
 "Nazev_en": #
-"No content found": "Nebyl nalezen žádný obsah"
-"No content found.": "nebyl nalezen žádný obsah."
 "Název": #
 "Název (CS)": #
 "Název (EN)": #
@@ -50,7 +48,7 @@
 "Popisek (EN)": #
 "Rok konání": #
 "Rozcestnik": #
-"Spobory(y) ke stažení": #
+"Soubory(y) ke stažení": #
 "Statik": #
 "Statiky": #
 "Stitek": #
@@ -58,8 +56,6 @@
 "Text": #
 "Text (CS)": #
 "Text (EN)": #
-"Theme of exhibition:": "Téma výstavy:"
-"Theme of the Czech exhibition:": "Téma české expozice:"
 "Title_cs": #
 "Title_en": #
 "Téma výstavy": #
@@ -69,13 +65,12 @@
 "Ukazatel": #
 "Vyberte obsah s detailním popisem": #
 "Vyberte článek": #
-"Year of exhibition:": "Rok konání výstavy:"
 "Zvýraznit zprávu": #
 "galerie": #
 "ikona": #
 "náhledový obrázek": #
 
-#--- 358 translations ---------------------------------------------------------
+#--- 369 translations ---------------------------------------------------------
 
 "%name% № %id%": "%name% č. %id%"
 "%s files could not be deleted. You should delete them manually.": "%s soubory nelze odstranit. Smažte je ručně."
@@ -86,6 +81,7 @@
 "A password reset link has been sent to '%user%'.": "Odkaz na obnovení hesla byl odeslán '%user%'."
 "About": "O"
 "About Bolt": "Co je Bolt"
+"About the pavilion": "O pavilonu"
 "Actions": "Nástroje"
 "Actions for Users": "Akce pro Uživatele"
 "Activity log": "Záznam aktivit"
@@ -95,6 +91,7 @@
 "Add some sample <a href='%url%' class='btn btn-tertiary'>Records with Loripsum text</a>": "Přidat ukázku <a href='%url%' class='btn btn-tertiary'>Záznam s Lorem ipsum</a>"
 "Added to <tt>%key%</tt> '%title%'": "Přidáno do <tt>%key%</tt> '%title%'"
 "Alas, no about!": "Běda, žádná info strana!"
+"All": "Vše"
 "All content types": "Všechny typy obsahu"
 "All users": "Všichni uživatelé"
 "Alt": "Alt"
@@ -118,6 +115,7 @@
 "Cancel": "Zrušit"
 "Cannot check for updates in read-only mode": "Nelze zkontrolovat aktualizace v režimu pouze pro čtení"
 "Cannot check installed packages in read-only mode": "Nelze zkontrolovat nainstalované balíčky v režimu pouze pro čtení"
+"Categories:": "Kategorie"
 "Change Log": "Změnit záznam"
 "Change status to 'draft'": "Změnit status na 'draft'"
 "Change status to 'held'": "Změnit status na 'held'"
@@ -181,6 +179,7 @@
 "Everything is up to date!": "Vše je aktuální!"
 "Excerpt": "Souhrn"
 "Exhibition Pavilion in Milan": "Výstavní pavilon v Miláně"
+"Exhibitions": "Výstavy"
 "Expand sidebar": "Roztáhnout postranní lištu"
 "Extend ": "Rozšířit"
 "Extension": "Rozšíření"
@@ -225,6 +224,7 @@
 "Installation complete": "Instalace dokončena"
 "Installing package": "Instalování balíčku"
 "Installing selected package version (this may take up to 60 seconds).": "Instalování vybrané verze balíčku (toto může trvat i 60 vteřin)"
+"Interviews": "Rozhovory"
 "Last edited on:": "Upraveno:"
 "Last known IP": "Poslední známá IP adresa"
 "Last seen": "Naposledy přihlášen"
@@ -248,6 +248,8 @@
 "More info/help": "Více informací / nápověda"
 "No Stable Versions Available": "Nejsou k dispozici žádné stabilní verze"
 "No Test Versions Available": "Nejsou k dispozici žádné testovací verze"
+"No content found": "Nebyl nalezen žádný obsah"
+"No content found.": "nebyl nalezen žádný obsah."
 "No relations found!": "Nenalezeno žádné související"
 "No results found for '%search%'. Please try another search.": "Pro '%search%' nebyly nalezeny žádné výsledky. Zkuste to jinak."
 "No such action for content.": "Pro obsah není tato akce možná."
@@ -265,6 +267,7 @@
 "Owner": "Vlastník"
 "Owner:": "Vlastník:"
 "PAVILION NEWS": "ZPRAVODAJ PAVILONU"
+"Partner information": "Informace partnerů"
 "Password reset not successful! Either the token was incorrect, or you were too late, or you tried to reset the password from a different IP-address.": "Reset hesla nebylo možné provés! Pokoušíte se o reset z jiné IP adresy, došlo k vypršení časové lhůty apod."
 "Password reset successful! You can now log on with the password that was sent to you via email.": "Nové heslo vám bylo úspěšně zasláno emailem. Použijte ho pro příští přihlášení."
 "Path": "Cesta"
@@ -359,6 +362,8 @@
 "The versions listed below are compatible with the version of Bolt you are using. Since they are unstable versions, we recommend you <strong>do not</strong> use these on production systems.": "Verze uvedené níže jsou kompatibilní s verzí Boltu, kterou používáte. Jelikož jsou to nestabilní verze doporučujeme, abyste je <strong>nepoužívali<strong> pro ostré instalace."
 "The versions listed below are marked as stable releases by the developer and are compatible with the version of Bolt you are currently using.": "Verze uvedené níže jsou označeny jako stabilní vydání vyvojářem a jsou komptatibilní s verzí Boltu kterou současně požíváte."
 "Theme Installation Complete": "Istalace šablony dokončena"
+"Theme of exhibition:": "Téma výstavy:"
+"Theme of the Czech exhibition:": "Téma české expozice:"
 "There are no items on the Stack, yet.": "V Zásobníku nejsou zatím žádné položky."
 "There are no users in the database. Please create the first user.": "V databázi není žádný uživatel. Vytvořte prosím prvního uživatele."
 "There are no users present in the system. Please create the first user, which will be granted root privileges.": "V systému nejsou žádní uživatelé. Prosím vytvořte prvního uživatele, kterému bude poskytnuto oprávnění root."
@@ -406,6 +411,7 @@
 "View/edit Templates": "Zobrazit / upravit Šablony"
 "View/install Extensions": "Zobrazit / Instalovat Rozšíření"
 "Written by <em>%name%</em> on %date%": "Vytvořeno <em>%name%</em> %date%"
+"Year of exhibition:": "Rok konání výstavy:"
 "You can discover new extensions by visiting": "Nová rozšíření objevíte navštívením"
 "You can now start using the installed extension, documentation and implementation instructions can be found using the link below.": "Můžete začít používat nainstalované rozšíření. Dokumentaci a instrukce k použití zobrazíte pomocí linku níže."
 "You do not have the right privileges to create a new record.": "Nemáte oprávnění pro vytvoření nového záznamu."

@@ -9,13 +9,18 @@
             <h1 class="m-item--hed">{{__('Pavilion News')}}</h1>
 
             <div class="m-item--meta">
-                <ul class="inline-list">
-                    <li class="mm-active"><a href="{{ paths.root }}{{ app.locale }}/blog">Vše</a></li>
-                    {% for category in config.get('taxonomy/kategorie/options') %}
+                    {#{% for category in config.get('taxonomy/kategorie/options') %}
                         <li>
                             <a href="{{ paths.root }}{{ app.locale }}/kategorie/{{ category }}">{{ category }}</a>
                         </li>
-                    {% endfor %}
+                    {% endfor %}#}
+                <ul class="inline-list">
+                    <li class=""><a href="{{ paths.root }}{{ app.locale }}/blog">{{__('All')}}</a></li>
+                    <li class=""><a href="{{ paths.root }}{{ app.locale }}/kategorie/Expozice">{{__('Exhibitions')}}</a></li>
+                    <li class=""><a href="{{ paths.root }}{{ app.locale }}/kategorie/Fotogalerie">{{__('Photo gallery')}}</a></li>
+                    <li class=""><a href="{{ paths.root }}{{ app.locale }}/kategorie/O%20pavilonu">{{__('About the pavilion')}}</a></li>
+                    <li class=""><a href="{{ paths.root }}{{ app.locale }}/kategorie/Zprávy%20partnerů">{{__('Partner information')}}</a></li>
+                    <!-- <li class=""><a href="{{ paths.root }}{{ app.locale }}/kategorie/Rozhovory">{{__('Interviews')}}</a></li> -->
                 </ul>
             </div>
         </div>
@@ -29,7 +34,7 @@
             <h4>
                 {{ __('Overview for') }}
                 {% if taxonomy.options[slug] is defined %}
-                    {{ taxonomy.options[slug] }}
+                    {{ taxonomy.options['slug_' ~ app.locale] }}
                 {% else %}
                     {{ slug }}
                 {% endif %}
@@ -135,7 +140,7 @@
             <h2>Další články o pavilonu & EXPO2015</h2>
         </header>
         {% setcontent myc = 'odkazy' where { rozcestnik: 'o-pavilonu' } limit 10 %}
-        {% for olink in myc %}
+        {% for olink in myc %}{% if olink['nazev_' ~ app.locale]!="" %}
             <article class="m-item">
                 <header>
                     <h1 class="m-item--hed">
@@ -148,7 +153,7 @@
                         <div class="m-item--date">{{ olink['popis_' ~ app.locale] }}</div>
                     </div>
                 </header>
-            </article>
+            </article>{% endif %}
         {% endfor %}
 
     </div>
@@ -158,7 +163,7 @@
             <h2>Více o modulární architektuře</h2>
         </header>
         {% setcontent myc = 'odkazy' where { rozcestnik: 'modularni-architektura' } limit 10 %}
-        {% for olink in myc %}
+        {% for olink in myc %}{% if olink['nazev_' ~ app.locale]!="" %}
             <article class="m-item">
                 <header>
                     <h1 class="m-item--hed">
@@ -171,7 +176,7 @@
                         <div class="m-item--date">{{ olink['popis_' ~ app.locale] }}</div>
                     </div>
                 </header>
-            </article>
+            </article>{% endif %}
         {% endfor %}
     </div>
 </div>
