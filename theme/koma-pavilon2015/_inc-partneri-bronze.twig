@@ -11,7 +11,7 @@
     {% if sponzor.related %}
         <a href="{{ sponzor.related }}">
         {% else %}
-        <a href="http://{{ sponzor.odkaz }}">
+        <a href="http://{{ sponzor.odkaz }}" target="_blank">
     {% endif %}
         <article class="small-6 medium-4 large-2 columns m-partner {% if loop.last %}end{% endif %}">
             <header>

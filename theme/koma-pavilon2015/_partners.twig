@@ -19,7 +19,7 @@
                         {% if sponzor.odkaz %}
                             {% set partnerLink = sponzor.odkaz %}
                         {% endif %}
-                        <a href="{{ partnerLink }}">
+                        <a href="http://{{ partnerLink }} target="_blank"">
                             {% if sponzor.image!="" %}<img class="m-item--image" src="{{ thumbnail(sponzor.logo, 280,210, fit) }}" />{% endif %}
                             <h1 class="m-item--hed">{{ sponzor['nazev_' ~ app.locale] }}</h1>
                             <div class="m-item--description">{{ sponzor['popis_' ~ app.locale] }}</div>
@@ -53,7 +53,7 @@
                         {% if sponzor.odkaz %}
                             {% set partnerLink = sponzor.odkaz %}
                         {% endif %}
-                        <a href="{{ partnerLink }}">
+                        <a href="http://{{ partnerLink }}" target="_blank">
                             <article class="m-partner">
                                 <header>
                                     {% if sponzor.image!="" %}<img class="m-item--image" src="{{ thumbnail(sponzor.logo, 197,148, fit) }}" />{% endif %}
