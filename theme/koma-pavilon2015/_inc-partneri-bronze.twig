@@ -8,22 +8,18 @@
 </div>
 <div class="row">
 {% endif %}
-    {% if sponzor.related %}
-        <a href="{{ sponzor.related }}">
-        {% else %}
-        <a href="http://{{ sponzor.odkaz }}" target="_blank">
-    {% endif %}
-        <article class="small-6 medium-4 large-2 columns m-partner {% if loop.last %}end{% endif %}">
-            <header>
-                <div class="m-item--image">
-                    {% if sponzor.image!="" %}
-                        <img class="m-item--image" src="{{ thumbnail(sponzor.logo, 100,75, fit)}}" />
-                    {% endif %}
-                </div>
-                <h1 class="m-item--hed"><a href="">{{ sponzor['nazev_' ~ app.locale] }}</a></h1>
-            </header>
-        </article>             
-                
+    <article class="small-6 medium-4 large-2 columns m-partner {% if loop.last %}end{% endif %}">
+        {% if sponzor.related %}<a href="{{ sponzor.related }}">{% else %}<a href="http://{{ sponzor.odkaz }}" target="_blank">{% endif %}
+        <header>
+            <div class="m-item--image">
+                {% if sponzor.image!="" %}
+                    <img class="m-item--image" src="{{ thumbnail(sponzor.logo, 100,75, fit)}}" />
+                {% endif %}
+            </div>
+            <h1 class="m-item--hed">{{ sponzor['nazev_' ~ app.locale] }}</h1>
+        </header>
+        </a>
+    </article>        
 {% if loop.last %}
 </div>
 {% endif %}
