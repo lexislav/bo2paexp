@@ -1,4 +1,4 @@
-<section class="modals">  
+<section class="modals">
 {% setcontent modaly = 'modaly' where { statiky: taxonomie } %}
 {% for modal in modaly %}
 {% if modal.image %}
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </article>
-        <a class="close-reveal-modal">&#215;</a>
+        <a class="close-reveal-modal"></a>
     </div>
 {% else %}
     <div id="{{modal.slug}}" class="reveal-modal xfixed tiny m-modal" data-reveal>
@@ -46,7 +46,7 @@
                 </div>
             </div>
         </article>
-        <a class="close-reveal-modal">&#215;</a>
+        <a class="close-reveal-modal"></a>
     </div>
 {% endif %}
 {% endfor %}
