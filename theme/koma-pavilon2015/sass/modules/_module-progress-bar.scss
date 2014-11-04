@@ -125,7 +125,7 @@ $pb-bar-text-color: #000;
 
                 .m-item--date {
                     display: block;
-                    font-weight: 800;
+                    @include fnt-primary-bold();
                     padding-bottom: 4px;
                 }
                 .m-item--description {

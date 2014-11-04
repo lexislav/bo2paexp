@@ -5,8 +5,8 @@
     padding-top: $base-spacing;
 
     header > h2 {
+        @include fnt-primary-bold();
         font-size: rem-calc(18);
-        font-weight: 600;
         text-decoration: underline;
         margin-bottom: $base-spacing / 2;
     }

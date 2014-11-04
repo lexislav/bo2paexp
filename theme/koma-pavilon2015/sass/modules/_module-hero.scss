@@ -38,8 +38,7 @@
     }
 
     .m-item--meta {
-        @include fnt-secondary-regular();
-        font-weight: 300;
+        @include fnt-secondary-light();
         position: relative;
         display: block;
 

@@ -81,13 +81,13 @@
     }
 
     .m-nav--logo {
-        @include fnt-primary-body-m();
+        @include fnt-primary-medium();
         font-size: rem-calc(16);
         float: left;
         line-height: $navbar-height_AB;
 
         strong {
-            font-weight: 600;
+            @include fnt-primary-bold();
         }
 
         @media #{size(B)} {
@@ -196,16 +196,15 @@
             margin-bottom: $base-spacing / 2;
 
             li {
-                @include fnt-secondary-headline();
+                @include fnt-secondary-medium();
                 font-size: rem-calc(14);
-                font-weight: 500;
                 display: block;
                 float: left;
 
                 @media #{size(B)} {
 
-                font-size: rem-calc(16);
-                    }
+                    font-size: rem-calc(16);
+                }
 
                 &:before {
                     content: "/";
@@ -268,8 +267,7 @@
     .m-item--hed {
 
         a {
-
-            font-weight: 600;
+            @include fnt-primary-bold();
             font-size: rem-calc(20);
 
             text-align: left;
@@ -281,18 +279,15 @@
             }
 
             @media #{size(B)} {
-
-            font-size: rem-calc(32);
-                }
+                font-size: rem-calc(32);
+            }
         }
     }
 
     .m-item--description p {
-        @include fnt-secondary-headline();
+        @include fnt-secondary-medium();
         font-size: rem-calc(16);
-        font-weight: 500;
     }
-
 
 }
 

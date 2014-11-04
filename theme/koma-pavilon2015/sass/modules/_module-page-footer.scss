@@ -7,16 +7,17 @@
     background-size: cover;
     background-position: top center;
 
-    @include fnt-primary-headline();
+    @include fnt-primary-bold();
     font-size: rem-calc(16);
     color: white;
 
     h5 {
+        @include fnt-primary-bold();
         color: white;
         border-bottom: 1px dotted white;
         font-size: rem-calc(16);
         padding-bottom: 4px;
-        font-weight: 600;
+
 
         text-shadow: 0 1px 1px rgba(0, 0, 0, .8);
         margin-bottom: $base-spacing / 2;
@@ -28,8 +29,8 @@
 
 
     .m-page-footer--copyright {
+
         font-size: rem-calc(14);
-        font-weight: 400;
         background-color: #000;
         line-height: 30px;
         padding: $base-spacing/3;
