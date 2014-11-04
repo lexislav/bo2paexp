@@ -27,11 +27,8 @@
 @mixin fnt-secondary-headline() {
     @include fnt-secondary-light();
     font-size: rem-calc(24);
-
-    &.fnt-white {
-        font-weight: 300; // bolder for white
-    }
 }
+
 .fnt-secondary-headline {
     @include fnt-secondary-headline();
 }
@@ -47,8 +44,6 @@
 .fnt-secondary-headline-mid {
     @include fnt-secondary-headline-mid();
 }
-
-
 
 // body
 
