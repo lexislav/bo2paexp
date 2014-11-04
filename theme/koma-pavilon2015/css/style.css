@@ -5572,7 +5572,11 @@ aside h2 {
 .reveal-modal .close-reveal-modal, .reveal-modal dialog {
   width: 50px;
   height: 50px;
-  background-image: url("../assets/ikony/nav-close.png"); }
+  background-image: url("../assets/ikony/nav-close.png");
+  background-position: top;
+  background-repeat: no-repeat; }
+  .reveal-modal .close-reveal-modal:hover, .reveal-modal dialog {
+    background-position: bottom; }
 
 .reveal-modal .close-reveal-modal, .reveal-modal dialog, .reveal-modal.fixed .close-reveal-modal, .reveal-modal.fixed dialog.fixed {
   top: 20px;
