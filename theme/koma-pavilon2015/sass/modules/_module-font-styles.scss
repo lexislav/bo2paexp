@@ -12,8 +12,6 @@
     @include fnt-primary-headline();
 }
 
-
-
 @mixin fnt-primary-headline-small() {
     @include fnt-primary-medium();
     font-size: rem-calc(20);
