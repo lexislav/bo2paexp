@@ -1,4 +1,3 @@
-
 //
 // check modal section in _settings.scss first !!!
 //
@@ -12,13 +11,12 @@
     }
 }
 
-
 .reveal-modal,
 .reveal-modal.fixed {
 
     // close button
     .close-reveal-modal {
-        top:20px;
+        top: 20px;
         right: 20px;
         width: 50px;
         height: 50px;
@@ -36,3 +34,19 @@
     }
 }
 
+.touch .reveal-modal {
+
+    &.tiny,
+    &.small {
+        position: fixed;
+        top: 20px !important;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        margin: auto;
+        z-index: 5000;
+        width: auto;
+        height: auto;
+        //overflow: auto;
+    }
+}
