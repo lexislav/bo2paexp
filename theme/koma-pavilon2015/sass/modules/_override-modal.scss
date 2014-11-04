@@ -32,6 +32,13 @@
         height: 50px;
 
         background-image: url("../assets/ikony/nav-close.png");
+        background-position: top;
+        background-repeat: no-repeat;
+
+        &:hover {
+            background-position: bottom;
+        }
+
     }
 
 }
