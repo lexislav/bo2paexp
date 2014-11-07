@@ -18,7 +18,7 @@ var overlayRight = content.find(".overlay");
 var contentImage = content.find("img");
 var dragger = root.find(".dragger");
 var dragButton = dragger.find(".drag-button");
-var dragButtonMidOffset = (dragButton.width() / 2);
+var dragButtonMidOffset = 48; // (dragButton.width() / 2);
 var cover = root.find(".cover");
 var rootWidth;
 var rootHeight;
@@ -43,6 +43,7 @@ if(isTouch) {
 function setSize() {
     console.log("setsize");
 
+
     rootWidth = root.width();
     rootHeight = root.height();
     skewOffset = Math.tan(Math.radians(skewAngle)) * rootHeight;
@@ -57,20 +58,29 @@ function setSize() {
     dragger.css('margin-left', - skewOffsetMid);
 
     // drag button positon
-    tb = ((draggerButtonBottomOffset / Math.sin(Math.radians(90 - skewAngle)))) * Math.cos(Math.radians(90 - skewAngle));
+    var tb = ((draggerButtonBottomOffset / Math.sin(Math.radians(90 - skewAngle)))) * Math.cos(Math.radians(90 - skewAngle));
+
     dragButton.css('top', (dragger.height() - draggerButtonBottomOffset));
+    console.log(tb + " x " + dragButtonMidOffset);
     dragButton.css('left', tb - dragButtonMidOffset);
 
     // inner content
     inner.width(rootWidth);
-    inner.transition({ skewX: '-' + skewAngle + 'deg', delay: 100 });
-    inner.css('margin-left', - skewOffsetMid); // skew compensate
+    //inner.transition({ skewX: '-' + skewAngle + 'deg', delay: 100 });
+    inner.css('-ms-transform', 'skewX('+(- skewAngle)+'deg)');
+    inner.css('-webkit-transform', 'skewX('+(- skewAngle)+'deg)');
+    inner.css('transform', 'skewX('+(- skewAngle)+'deg)');
 
+    inner.css('margin-left', - skewOffsetMid); // skew compensate
     content.width(rootWidth + skewOffset);
     content.height(rootHeight);
     content.css('margin-left', skewOffsetMid); // skew compensate
     contentImage.width(rootWidth + skewOffset);
-    content.transition({ skewX: skewAngle + 'deg', delay: 100 });
+    //content.transition({ skewX: skewAngle + 'deg', delay: 100 });
+
+    content.css('-ms-transform', 'skewX('+skewAngle+'deg)');
+    content.css('-webkit-transform', 'skewX('+skewAngle+'deg)');
+    content.css('transform', 'skewX('+skewAngle+'deg)');
 
 }
 
