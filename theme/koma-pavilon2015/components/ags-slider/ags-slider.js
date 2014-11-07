@@ -41,7 +41,7 @@ if(isTouch) {
 }
 
 function setSize() {
-    console.log("setsize");
+    //console.log("setsize");
 
 
     rootWidth = root.width();
@@ -61,7 +61,7 @@ function setSize() {
     var tb = ((draggerButtonBottomOffset / Math.sin(Math.radians(90 - skewAngle)))) * Math.cos(Math.radians(90 - skewAngle));
 
     dragButton.css('top', (dragger.height() - draggerButtonBottomOffset));
-    console.log(tb + " x " + dragButtonMidOffset);
+    //console.log(tb + " x " + dragButtonMidOffset);
     dragButton.css('left', tb - dragButtonMidOffset);
 
     // inner content
@@ -91,14 +91,14 @@ function setPos(dragPos) {
 
     // background overlay transition
     if(!isTouch) {
-        console.log("notouch");
+        //console.log("notouch");
         overlayLeft.css("opacity", perc - 0.3);
         overlayRight.css("opacity", (1 - perc) -0.3);
     }
 }
 
 function doneResizing() {
-    console.log("res" + currentPos);
+    //console.log("res" + currentPos);
     setSize();
     setPos(currentPos);
     //$("#angle-slider > .dragger").css("left", currentPos);
