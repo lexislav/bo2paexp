@@ -36,10 +36,11 @@
 }
 
 .l-section.m-section_partner {
-
     &.mm-gold {
     }
     &.mm-silver {
+        border-top: 1px solid #e5e5e5;
+        padding-top: $base-spacing * 0.80;
     }
 
 }

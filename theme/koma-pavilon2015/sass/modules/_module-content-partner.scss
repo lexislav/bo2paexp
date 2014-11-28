@@ -5,9 +5,19 @@
 
     .m-item--image {
         margin-bottom: $base-spacing / 3;
+        background-color: transparent;
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 120px;
+        width: 100%;
+
     }
     .m-item--hed {
         @include fnt-primary-body-m();
+        //border-top: 1px dashed #ccc;
+        //padding-top: 20px;
+        //margin-top: 10px;
         font-weight: bold;
     }
     .m-item--description {
