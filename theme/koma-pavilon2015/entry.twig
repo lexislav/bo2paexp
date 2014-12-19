@@ -133,6 +133,20 @@
     </div>
     {% endif %}
 
+    <!-- Soubory ke stažení -->
+    {% if record.filelist %}
+    <div class="row">
+        <div class="small-12 columns">
+            <h5 >{{__('Files to download')}}</h5>
+            <p>
+            {% for filan in record.filelist %}
+                <a href="{{paths.root}}files/{{ filan.filename }}" alt="{{filan.title}}">{{ filan.title }}</a>{% if not loop.last %} <br/> {% endif %}{{ dump(filan) }}
+            {% endfor %}
+            </p>
+        </div><br/>
+    </div>
+    {% endif %}
+
 </article>
 </div>
 

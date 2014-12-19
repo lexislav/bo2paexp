@@ -1,4 +1,4 @@
-# app/resources/translations/cs/messages.cs.yml – generated on 2014-10-27 11:30:23 UTC
+# app/resources/translations/cs/messages.cs.yml – generated on 2014-12-18 15:20:02 UTC
 
 # Warning: Translations are in the process of being moved to a new keyword-based translation
 #          at the moment. This is an ongoing process. Translations currently in the 
@@ -8,18 +8,25 @@
 #          updating your translations, it's best to ask on IRC to time your contribution
 #          in order to prevent merge conflicts.
 
-#  no unused messages
-#  53 untranslated messages
+#   3 unused messages
+#  57 untranslated messages
 #  no untranslated keyword based messages
-# 375 translations
+# 372 translations
 # 130 keyword based translations
 
-#--- 53 untranslated messages -------------------------------------------------
+#--- 3 unused messages --------------------------------------------------------
+
+"Stable Versions": "Stabilní Verze"
+"Theme Installation Complete": "Istalace šablony dokončena"
+"Unstable Test Versions": "Nestabilní testovací verze"
+
+#--- 57 untranslated messages -------------------------------------------------
 
 "Adresa": #
 "Autor(ři) expozice": #
 "Body_cs": #
 "Body_en": #
+"Files to download": "Soubory ke stažení"
 "Hodnota": #
 "Kategorie": #
 "Kategorie1": #
@@ -47,6 +54,7 @@
 "Rok konání": #
 "Rozcestnik": #
 "Soubory(y) ke stažení": #
+"Stable versions": #
 "Statik": #
 "Statiky": #
 "Stitek": #
@@ -56,6 +64,7 @@
 "Text (EN)": #
 "The database needs to be updated/repaired. Go to 'Settings' > '<a href=\"%link%\">Check Database</a>' to do this now.": #
 "The field %field% has been changed to \"%newValue%\"": #
+"Theme installation complete": #
 "Title_cs": #
 "Title_en": #
 "Téma výstavy": #
@@ -63,6 +72,7 @@
 "Téma české expozice": #
 "Téma české expozice (EN)": #
 "Ukazatel": #
+"Unstable test versions": #
 "Vyberte obsah s detailním popisem": #
 "Vyberte článek": #
 "Zvýraznit zprávu": #
@@ -70,7 +80,7 @@
 "ikona": #
 "náhledový obrázek": #
 
-#--- 375 translations ---------------------------------------------------------
+#--- 372 translations ---------------------------------------------------------
 
 "%name% № %id%": "%name% č. %id%"
 "%s files could not be deleted. You should delete them manually.": "%s soubory nelze odstranit. Smažte je ručně."
@@ -342,7 +352,6 @@
 "Slug:": "Odkaz v URL:"
 "Something went wrong": "Něco je špatně"
 "Sophisticated, lightweight & simple CMS": "Sofistikovaný, rychlý a jednoduchý redakční systém"
-"Stable Versions": "Stabilní Verze"
 "Stack": "Zásobník"
 "Status": "Stav"
 "Status:": "Stav:"
@@ -367,7 +376,6 @@
 "The translations file '%s' is not readable.": "Soubor s překladem '%s' není čitelný."
 "The versions listed below are compatible with the version of Bolt you are using. Since they are unstable versions, we recommend you <strong>do not</strong> use these on production systems.": "Verze uvedené níže jsou kompatibilní s verzí Boltu, kterou používáte. Jelikož jsou to nestabilní verze doporučujeme, abyste je <strong>nepoužívali<strong> pro ostré instalace."
 "The versions listed below are marked as stable releases by the developer and are compatible with the version of Bolt you are currently using.": "Verze uvedené níže jsou označeny jako stabilní vydání vyvojářem a jsou komptatibilní s verzí Boltu kterou současně požíváte."
-"Theme Installation Complete": "Istalace šablony dokončena"
 "Theme of exhibition:": "Téma výstavy:"
 "Theme of the Czech exhibition:": "Téma české expozice:"
 "There are no items on the Stack, yet.": "V Zásobníku nejsou zatím žádné položky."
@@ -388,7 +396,6 @@
 "Trim Activitylog": "Zredukovat záznam aktivit"
 "Try logging in with your ftp-client and make the file readable. Else try to go <a>back</a> to the last page.": "Zkuste se přihlásit pomocí ftp klienta a nastavte atributy souboru pro zápis. Nebo zkuste jít <a>zpět</a> na poslední stranu."
 "Types": "Typy"
-"Unstable Test Versions": "Nestabilní testovací verze"
 "Update the database": "Aktualizovat databázi"
 "Updates": "Aktualizace"
 "Upload": "Nahrát"
