@@ -19,7 +19,7 @@ class Content implements \ArrayAccess
     public $contenttype;
 
     // The last time we weight a searchresult
-    private $last_weight = 0;
+    private $lastWeight = 0;
 
     public function __construct(Silex\Application $app, $contenttype = '', $values = '')
     {
@@ -37,12 +37,12 @@ class Content implements \ArrayAccess
                     }
 
                     // add support for taxonomy default value when options is set
-                    $default_value = $this->app['config']->get('taxonomy/' . $taxonomytype . '/default');
+                    $defaultValue = $this->app['config']->get('taxonomy/' . $taxonomytype . '/default');
                     $options = $this->app['config']->get('taxonomy/' . $taxonomytype . '/options');
                     if (isset($options) &&
-                            isset($default_value) &&
-                            array_search($default_value, array_keys($options)) !== false ) {
-                            $this->setTaxonomy($taxonomytype, $default_value);
+                            isset($defaultValue) &&
+                            array_search($defaultValue, array_keys($options)) !== false ) {
+                            $this->setTaxonomy($taxonomytype, $defaultValue);
                             $this->sortTaxonomy();
                     }
                 }
@@ -113,35 +113,12 @@ class Content implements \ArrayAccess
             $this->setValue($key, $value);
         }
 
-        $now = date("Y-m-d H:i:s");
-
-        if (!isset($this->values['datecreated']) ||
-            !preg_match("/(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})/", $this->values['datecreated'])) {
-            $this->values['datecreated'] = $now;
-        }
-
-        if (!isset($this->values['datepublish']) || ($this->values['datepublish'] < "1971-01-01 01:01:01") ||
-            !preg_match("/(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})/", $this->values['datepublish'])) {
-            $this->values['datepublish'] = $now;
-        }
-
-        if (!isset($this->values['datechanged']) || ($this->values['datepublish'] < "1971-01-01 01:01:01") ||
-            !preg_match("/(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})/", $this->values['datechanged'])) {
-            $this->values['datechanged'] = $now;
-        }
-
-        if (!isset($this->values['datedepublish']) ||
-            !preg_match("/(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})/", $this->values['datecreated'])) {
-            // Not all DB-engines can handle a date like '0000-00-00', so we pick a safe date, that's far enough in the past.
-            $this->values['datedepublish'] = "1900-01-01 00:00:00";
-        }
-
         // If default status is set in contentttype..
         if (empty($this->values['status'])) {
             $this->values['status'] = $this->contenttype['default_status'];
         }
 
-        $serialized_field_types = array(
+        $serializedFieldTypes = array(
             'geolocation',
             'imagelist',
             'image',
@@ -154,9 +131,9 @@ class Content implements \ArrayAccess
         );
         // Check if the values need to be unserialized, and pre-processed.
         foreach ($this->values as $key => $value) {
-            if (in_array($this->fieldtype($key), $serialized_field_types)) {
+            if (in_array($this->fieldtype($key), $serializedFieldTypes)) {
                 if (!empty($value) && is_string($value) && (substr($value, 0, 2) == "a:" || $value[0] === '[' || $value[0] === '{')) {
-                    $unserdata = @Lib::smart_unserialize($value);
+                    $unserdata = @Lib::smartUnserialize($value);
                     if ($unserdata !== false) {
                         $this->values[$key] = $unserdata;
                     }
@@ -193,12 +170,10 @@ class Content implements \ArrayAccess
                 $this->values[$key] = $video;
             }
 
-            // Make sure 'date' and 'datetime' don't end in " :00".
-            if ($this->fieldtype($key) == "datetime") {
-                if (strpos($this->values[$key], ":") === false) {
-                    $this->values[$key] = trim($this->values[$key]) . " 00:00:00";
+            if ($this->fieldtype($key) == "date" || $this->fieldtype($key) == "datetime") {
+                if ($this->values[$key] === "") {
+                    $this->values[$key] = null;
                 }
-                $this->values[$key] = str_replace(" :00", " 00:00", $this->values[$key]);
             }
 
         }
@@ -208,7 +183,7 @@ class Content implements \ArrayAccess
     {
         // Check if the value need to be unserialized..
         if (is_string($value) && substr($value, 0, 2) == "a:") {
-            $unserdata = @Lib::smart_unserialize($value);
+            $unserdata = @Lib::smartUnserialize($value);
             if ($unserdata !== false) {
                 $value = $unserdata;
             }
@@ -230,10 +205,15 @@ class Content implements \ArrayAccess
             return;
         }
 
-        if ($key == 'datecreated' || $key == 'datechanged' || $key == 'datepublish' || $key == 'datedepublish') {
+        if (in_array($key, array('datecreated', 'datechanged', 'datepublish', 'datedepublish'))) {
             if (!preg_match("/(\d{4})-(\d{2})-(\d{2}) (\d{2}):(\d{2}):(\d{2})/", $value)) {
-                // @todo Try better date-parsing, instead of just setting it to 'now'..
-                $value = date("Y-m-d H:i:s");
+                // @todo Try better date-parsing, instead of just setting it to
+                // 'now' (or 'the past' for datedepublish)
+                if ($key == 'datedepublish') {
+                    $value = null;
+                } else {
+                    $value = date('Y-m-d H:i:s');
+                }
             }
         }
 
@@ -274,15 +254,6 @@ class Content implements \ArrayAccess
                 $values['status'] = "draft";
             }
         }
-
-        // If we set a 'publishdate' in the future, and the status is 'published', set it to 'timed' instead.
-        if ($values['datepublish'] > date("Y-m-d H:i:s") && $values['status'] == "published") {
-            $values['status'] = "timed";
-        }
-
-        // Get the taxonomies from the POST-ed values. We don't support 'order' for taxonomies that
-        // can have multiple values.
-        // @todo use $this->setTaxonomy() for this
 
         if (!empty($values['taxonomy'])) {
             foreach ($values['taxonomy'] as $taxonomytype => $value) {
@@ -438,7 +409,7 @@ class Content implements \ArrayAccess
         }
 
         // Make sure sortorder is set correctly;
-        if ($this->app['config']->get('taxonomy/' . $taxonomytype . '/has_sortorder') == false) {
+        if ($this->app['config']->get('taxonomy/' . $taxonomytype . '/has_sortorder') === false) {
             $sortorder = false;
         } else {
             $sortorder = (int) $sortorder;
@@ -536,10 +507,10 @@ class Content implements \ArrayAccess
             'name' => $name
         );
 
-        $has_sortorder = $this->app['config']->get('taxonomy/' . $taxonomytype . '/has_sortorder');
+        $hasSortOrder = $this->app['config']->get('taxonomy/' . $taxonomytype . '/has_sortorder');
 
         // Only set the sortorder, if the contenttype has a taxonomy that has sortorder
-        if ($has_sortorder !== false) {
+        if ($hasSortOrder !== false) {
             $this->group['order'] = (int) $sortorder;
         }
 
@@ -834,8 +805,12 @@ class Content implements \ArrayAccess
                     // Special case, if we need to have a date
                     $params[$fieldName] = substr($this->values[$fieldName], 0, 10);
                 } elseif (isset($this->taxonomy[$fieldName])) {
-                    // turn something like '/chapters/meta' to 'meta'
-                    $params[$fieldName] = array_pop(explode('/', array_shift(array_keys($this->taxonomy[$fieldName]))));
+                    // Turn something like '/chapters/meta' to 'meta'. Note: we use
+                    // two temp vars here, to prevent "Only variables should be passed
+                    // by reference"-notices.
+                    $tempKeys = array_keys($this->taxonomy[$fieldName]);
+                    $tempValues = explode('/', array_shift($tempKeys));
+                    $params[$fieldName] = array_pop($tempValues);
                 } elseif (isset($this->values[$fieldName])) {
                     $params[$fieldName] = $this->values[$fieldName];
                 } else {
@@ -944,16 +919,22 @@ class Content implements \ArrayAccess
             if (!empty($filtercontenttype) && ($contenttype != $filtercontenttype)) {
                 continue; // Skip other contenttypes, if we requested a specific type.
             }
-            foreach ($ids as $id) {
-                if (!empty($filterid) && ($id != $filterid)) {
-                    continue; // Skip other ids, if we requested a specific id.
-                }
 
-                $record = $this->app['storage']->getContent($contenttype . '/' . $id);
+            $params = array('hydrate' => true);
+            $where = array('id' => implode(" || ", $ids));
+            $dummy = false;
 
-                if (!empty($record)) {
-                    $records[] = $record;
-                }
+            $tempResult = $this->app['storage']->getContent($contenttype, $params, $dummy, $where);
+
+            if (empty($tempResult)) {
+                continue; // Go ahead if content not found.
+            }
+
+            // Variable $temp_result can be an array of object.
+            if (is_array($tempResult)) {
+                $records = array_merge($records, $tempResult);
+            } else {
+                $records[] = $tempResult;
             }
         }
 
@@ -1008,11 +989,19 @@ class Content implements \ArrayAccess
 
             if (!empty($this->contenttype['fields'])) {
                 foreach ($this->contenttype['fields'] as $key => $field) {
-                    if (in_array($field['type'], array('text', 'html', 'textarea', 'markdown'))
-                        && isset($this->values[$key])
-                        && !in_array($key, array('title', 'name')) ) {
+                    // Skip empty fields, and fields called 'title' or 'name'..
+                    if (!isset($this->values[$key]) || in_array($key, array('title', 'name'))) {
+                        continue;
+                    }
+                    // add 'text', 'html' and 'textarea' fields.
+                    if (in_array($field['type'], array('text', 'html', 'textarea'))) {
                         $excerptParts[] = $this->values[$key];
                     }
+                    // add 'markdown' field
+                    if ($field['type'] === 'markdown') {
+                        $excerptParts[] = \ParsedownExtra::instance()->text($this->values[$key]);
+                    }
+
                 }
             }
 
@@ -1056,16 +1045,18 @@ class Content implements \ArrayAccess
                 // Completely remove style and script blocks
                 $maid = new \Maid\Maid(
                     array(
+                        'output-format' => 'html',
                         'allowed-tags' => array('a', 'b', 'br', 'hr', 'h1', 'h2', 'h3', 'h4', 'p', 'strong', 'em', 'i', 'u', 'strike', 'ul', 'ol', 'li', 'img'),
-                        'output-format' => 'html'
+                        'allowed-attribs' => array('id', 'class', 'name', 'value', 'href', 'src')
                     )
                 );
+
                 $result .= $maid->clean($this->values[$field]);
             }
         }
 
         if ($excerptLength > 0) {
-            $result .= Html::trimText($result, $excerptLength, false, true, false);
+            $result .= Html::trimText($result, $excerptLength);
         }
 
         return '<![CDATA[ ' . $result . ' ]]>';
@@ -1082,28 +1073,28 @@ class Content implements \ArrayAccess
      */
     private function weighQueryText($subject, $complete, $words, $max)
     {
-        $low_subject = mb_strtolower(trim($subject));
+        $lowSubject = mb_strtolower(trim($subject));
 
-        if ($low_subject == $complete) {
+        if ($lowSubject == $complete) {
             // a complete match is 100% of the maximum
             return round((100 / 100) * $max);
         }
-        if (strstr($low_subject, $complete)) {
+        if (strstr($lowSubject, $complete)) {
             // when the whole query is found somewhere is 70% of the maximum
             return round((70 / 100) * $max);
         }
 
-        $word_matches = 0;
-        $cnt_words    = count($words);
-        for ($i = 0; $i < $cnt_words; $i++) {
-            if (strstr($low_subject, $words[$i])) {
-                $word_matches++;
+        $wordMatches = 0;
+        $cntWords = count($words);
+        for ($i = 0; $i < $cntWords; $i++) {
+            if (strstr($lowSubject, $words[$i])) {
+                $wordMatches++;
             }
         }
-        if ($word_matches > 0) {
+        if ($wordMatches > 0) {
             // marcel: word matches are maximum of 50% of the maximum per word
             // xiao: made (100/100) instead of (50/100).
-            return round(($word_matches / $cnt_words) * (100 / 100) * $max);
+            return round(($wordMatches / $cntWords) * (100 / 100) * $max);
         }
 
         return 0;
@@ -1118,12 +1109,12 @@ class Content implements \ArrayAccess
     {
         // This could be more configurable
         // (see also Storage->searchSingleContentType)
-        $searchable_types = array('text', 'textarea', 'html', 'markdown');
+        $searchableTypes = array('text', 'textarea', 'html', 'markdown');
 
         $fields = array();
 
         foreach ($this->contenttype['fields'] as $key => $config) {
-            if (in_array($config['type'], $searchable_types)) {
+            if (in_array($config['type'], $searchableTypes)) {
                 $fields[$key] = isset($config['searchweight']) ? $config['searchweight'] : 50;
             }
         }
@@ -1131,9 +1122,9 @@ class Content implements \ArrayAccess
         foreach ($this->contenttype['fields'] as $config) {
 
             if ($config['type'] == 'slug') {
-                foreach ($config['uses'] as $ptr_field) {
-                    if (isset($fields[$ptr_field])) {
-                        $fields[$ptr_field] = 100;
+                foreach ($config['uses'] as $ptrField) {
+                    if (isset($fields[$ptrField])) {
+                        $fields[$ptrField] = 100;
                     }
                 }
             }
@@ -1171,25 +1162,25 @@ class Content implements \ArrayAccess
      */
     public function weighSearchResult($query)
     {
-        static $contenttype_fields = null;
-        static $contenttype_taxonomies = null;
+        static $contenttypeFields = null;
+        static $contenttypeTaxonomies = null;
 
         $ct = $this->contenttype['slug'];
-        if ((is_null($contenttype_fields)) || (!isset($contenttype_fields[$ct]))) {
+        if ((is_null($contenttypeFields)) || (!isset($contenttypeFields[$ct]))) {
             // Should run only once per contenttype (e.g. singlular_name)
-            $contenttype_fields[$ct] = $this->getFieldWeights();
-            $contenttype_taxonomies[$ct] = $this->getTaxonomyWeights();
+            $contenttypeFields[$ct] = $this->getFieldWeights();
+            $contenttypeTaxonomies[$ct] = $this->getTaxonomyWeights();
         }
 
         $weight = 0;
 
         // Go over all field, and calculate the overall weight.
-        foreach ($contenttype_fields[$ct] as $key => $field_weight) {
-            $weight += $this->weighQueryText($this->values[$key], $query['use_q'], $query['words'], $field_weight);
+        foreach ($contenttypeFields[$ct] as $key => $fieldWeight) {
+            $weight += $this->weighQueryText($this->values[$key], $query['use_q'], $query['words'], $fieldWeight);
         }
 
         // Go over all taxonomies, and calculate the overall weight.
-        foreach ($contenttype_taxonomies[$ct] as $key => $taxonomy) {
+        foreach ($contenttypeTaxonomies[$ct] as $key => $taxonomy) {
 
             // skip empty taxonomies.
             if (empty($this->taxonomy[$key])) {
@@ -1198,14 +1189,14 @@ class Content implements \ArrayAccess
             $weight += $this->weighQueryText(implode(' ', $this->taxonomy[$key]), $query['use_q'], $query['words'], $taxonomy);
         }
 
-        $this->last_weight = $weight;
+        $this->lastWeight = $weight;
     }
 
     /**
      */
     public function getSearchResultWeight()
     {
-        return $this->last_weight;
+        return $this->lastWeight;
     }
 
     /**

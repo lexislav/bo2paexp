@@ -2,8 +2,7 @@
  * Override button styles
  */
 .btn {
-    font-size: 14px;
-    font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 13px;
     font-weight: normal !important;
     border-radius: 3px;
 }
@@ -327,20 +326,6 @@ ul.dropdown-menu li a.nolink {
  * End of styles for pagination
  */
 
-
-.modal-backdrop, .modal-backdrop.fade.in {
-    opacity: 0.5;
-}
-
-.modal-wide {
-    width: 660px;
-    margin-left: -330px;
-}
-
-.modal .btn {
-    padding-left: 20px;
-    padding-right: 20px;
-}
 
 
 @if $columnborders {

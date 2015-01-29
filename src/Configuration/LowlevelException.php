@@ -69,6 +69,7 @@ EOM;
         $info = self::$info;
 
         $output = str_replace('%error_title%', 'Bolt - Fatal Error', $html);
+        $message = nl2br($message);
         $output = str_replace('%error%', $message, $output);
         $output = str_replace('%info%', $info, $output);
 
@@ -85,11 +86,9 @@ EOM;
         }
 
         echo $output;
-
-        die();
     }
 
-    public static function catchFatalErrors($app)
+    public static function catchFatalErrors()
     {
         // Get last error, if any
         $error = error_get_last();
@@ -97,22 +96,25 @@ EOM;
         if (($error['type'] == E_ERROR || $error['type'] == E_PARSE)) {
             $html = self::$html;
 
+            // Get the application object
+            $app = \Bolt\Configuration\ResourceManager::getApp();
+
             // Detect if we're being called from a core, an extension or vendor
-            $isBoltCoreError  = strpos($error['file'], $app['resources']->getPath('rootpath') . '/app');
-            $isVendorError    = strpos($error['file'], $app['resources']->getPath('rootpath') . '/vendor');
+            $isBoltCoreError  = strpos($error['file'], $app['resources']->getPath('rootpath') . 'src');
+            $isVendorError    = strpos($error['file'], $app['resources']->getPath('rootpath') . 'vendor');
             $isExtensionError = strpos($error['file'], $app['resources']->getPath('extensions'));
 
-            // Assembe error trace
+            // Assemble error trace
             $errorblock  = '<code>Error: ' . $error['message'] . '</code><br>';
             $errorblock .= '<code>File:  ' . $error['file'] . '</code><br>';
             $errorblock .= '<code>Line:  ' . $error['line'] . '</code><br><br>';
 
             if ($isBoltCoreError === 0) {
-                $html = str_replace('%error_title%', 'Bolt Core - Fatal Error', $html);
+                $html = str_replace('%error_title%', 'PHP Fatal Error: Bolt Core', $html);
                 $html = str_replace('%info%', '', $html);
                 $message = $errorblock;
             } elseif ($isVendorError === 0) {
-                $html = str_replace('%error_title%', 'Bolt Vendor Library - Fatal Error', $html);
+                $html = str_replace('%error_title%', 'PHP Fatal Error: Vendor Library', $html);
                 $html = str_replace('%info%', '', $html);
                 $message = $errorblock;
             } elseif ($isExtensionError === 0) {
@@ -121,20 +123,27 @@ EOM;
                 $parts = explode(DIRECTORY_SEPARATOR, $base);
 
                 $package = $parts[0] . '/' . $parts[1];
-                $delete = 'extensions/vendor' . DIRECTORY_SEPARATOR . $parts[0] . DIRECTORY_SEPARATOR . $parts[1];
+                $delete = 'extensions' . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR . $parts[0] . DIRECTORY_SEPARATOR . $parts[1];
 
-                $html = str_replace('%error_title%', 'Bolt Extensions - Fatal Error', $html);
-                $html = str_replace('%info%', '<p>' . $app['translator']->trans('You will only be able to continue by manually deleting the extension that is installed at:') . "</p><code>$delete</code><br><br>", $html);
-                $message  = $app['translator']->trans("<h4>There is a fatal error in the '$package' extension loaded on your Bolt Installation.<h4>");
+                $html = str_replace('%error_title%', 'PHP Fatal Error: Bolt Extensions', $html);
+                $html = str_replace(
+                    '%info%',
+                    '<p>You will only be able to continue by manually deleting the extension that is installed at:</p>' .
+                    '<code>' . $delete . '</code><br><br>',
+                    $html
+                );
+                $message  = '<h4>There is a fatal error in the \'' . $package . '\' extension ' .
+                    'loaded on your Bolt Installation.<h4>';
                 $message .= $errorblock;
 
             } else {
                 // Unknown
-                $html = str_replace('%error_title%', 'Bolt - Fatal Error', $html);
+                $html = str_replace('%error_title%', 'PHP Fatal Error: Bolt Generic', $html);
                 $html = str_replace('%info%', '', $html);
                 $message = $errorblock;
             }
 
+            $message = nl2br($message);
             $html = str_replace('%error%', $message, $html);
             echo str_replace($app['resources']->getPath('rootpath'), '', $html);
         }

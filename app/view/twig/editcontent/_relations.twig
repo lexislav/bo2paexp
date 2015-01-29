@@ -24,7 +24,7 @@
 
             {# Prefix #}
             {% if relation.prefix is defined and relation.prefix is not empty %}
-                <div class='prefix'>
+                <div class="prefix">
                     {{ relation.prefix|markdown }}
                 </div>
             {% endif %}
@@ -82,7 +82,7 @@
 
             {# Postfix #}
             {% if relation.postfix is defined and relation.postfix is not empty %}
-                <div class='postfix'>
+                <div class="postfix">
                     {{ relation.postfix|markdown }}
                 </div>
             {% endif %}
@@ -101,7 +101,7 @@
             <p>{{ __('This record is related to:') }}</p>
             <table class="table table-striped dashboardlisting">
                 {% for id in ids %}
-                    {% setcontent record = reltype~'/'~id %}
+                    {% setcontent record = reltype ~ '/' ~ id %}
                     {% if record %}
                         {% set editable = isallowed('edit', record) %}
                         {% include ['_sub/_listing.twig'] with {'excerptlength': 280, 'thumbsize': 54, 'compact': true, 'content': record} %}

@@ -65,7 +65,7 @@ class Log
     public function add($message, $level = 1, $content = false, $code = '')
     {
         // If debug is not enabled, don't log anything below lvl3.
-        if ($this->app['debug'] == false && $level < 3) {
+        if ($this->app['debug'] === false && $level < 3) {
             return;
         }
 
@@ -246,14 +246,13 @@ class Log
 
         } else {
 
-            // mysql
+            // mysql and pgsql the same
             $query = sprintf(
                 'TRUNCATE %s;',
                 $this->tablename
             );
 
         }
-        // @todo: handle postgres (and other non mysql) database syntax
 
         $this->app['db']->executeQuery($query);
     }

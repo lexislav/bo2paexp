@@ -31,7 +31,6 @@ class LowlevelChecks
         $this->config = $config;
     }
 
-
     public function removeCheck($check)
     {
         if (in_array($check, $this->checks)) {
@@ -193,7 +192,7 @@ class LowlevelChecks
             throw new LowlevelException('The selected database type is not supported.');
         }
 
-        if (isset($cfg['memory']) && $cfg['memory'] == true) {
+        if (isset($cfg['memory']) && $cfg['memory'] === true) {
             return;
         }
 

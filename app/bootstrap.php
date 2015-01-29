@@ -29,7 +29,7 @@ return call_user_func(
 
         require_once __DIR__ . '/../src/Configuration/LowlevelException.php';
 
-        if (! $isLoadChainOk) {
+        if (!$isLoadChainOk) {
             throw new LowlevelException('Include load.php, not bootstrap.php');
         }
 
@@ -65,6 +65,9 @@ return call_user_func(
                 "you've installed the required components with Composer."
             );
         }
+
+        // Register a PHP shutdown function to catch fatal error
+        register_shutdown_function(array('\Bolt\Configuration\LowlevelException', 'catchFatalErrors'));
 
         /**
          * @var $config Configuration\ResourceManager

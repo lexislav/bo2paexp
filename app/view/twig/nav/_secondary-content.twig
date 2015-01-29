@@ -5,7 +5,7 @@
         {% set sub_view = {
             icon: contenttype.icon_many|default(contenttype.show_in_menu ? 'fa:files-o' : 'fa:th-list'),
             label: __('contenttypes.generic.view', {'%contenttypes%': contenttype.slug}),
-            link: path('overview', { 'contenttypeslug': slug })
+            link: path('overview', {'contenttypeslug': slug})
         } %}
         {% set sub_new = {
             icon: 'fa:plus',
@@ -18,7 +18,7 @@
         {# Contenttypes, where show_in_menu is set true #}
         {% if contenttype.show_in_menu %}
 
-            {% setcontent records = slug limit 4 nohydrate %}
+            {% setcontent records = slug limit 4 nohydrate orderby '-datechanged' %}
             {% for record in records %}
                 {% set sub = sub|merge([
                     {
@@ -29,8 +29,10 @@
                 ]) %}
             {% endfor %}
 
+            {% set label = __(['contenttypes', contenttype.slug, 'name', 'plural'], {DEFAULT: contenttype.name}) %}
             {% set active = (page_nav == 'Content/*' and context.contenttype.slug|default == slug) %}
-            {{ nav.submenu(contenttype.icon_many|default(''), contenttype.name, sub, active, true) }}
+
+            {{ nav.submenu(contenttype.icon_many|default(''), label, sub, active, true) }}
 
         {# Contenttypes, where show_in_menu is set false #}
         {% else %}

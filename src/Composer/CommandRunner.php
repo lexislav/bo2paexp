@@ -2,15 +2,26 @@
 namespace Bolt\Composer;
 
 use Silex;
+use Symfony\Component\Console\Input\StringInput;
+use Symfony\Component\Console\Output\BufferedOutput;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Composer\Console\Application as ComposerApp;
+use Guzzle\Http\Client as GuzzleClient;
+use Guzzle\Http\Exception\RequestException;
 use Bolt\Library as Lib;
+use Bolt\Translation\Translator as Trans;
 
 class CommandRunner
 {
-    public $wrapper;
+    /**
+     * @var \Composer\Console\Application
+     */
+    public $composerapp;
+    public $offline = false;
     public $messages = array();
     public $lastOutput;
     public $packageFile;
+    public $installer;
     public $basedir;
 
     public function __construct(Silex\Application $app, $packageRepo = null, $readWriteMode = false)
@@ -19,14 +30,19 @@ class CommandRunner
         $this->app = $app;
 
         $this->basedir = $app['resources']->getPath('extensions');
-        $this->logfile = $app['resources']->getPath('cachepath') . "/composer_log";
+        $this->logfile = $app['resources']->getPath('cachepath') . '/composer_log';
         $this->packageRepo = $packageRepo;
-        $this->packageFile = $app['resources']->getPath('root') . '/extensions/composer.json';
+        $this->packageFile = $this->basedir . '/composer.json';
+        $this->installer = $this->basedir . '/installer.php';
 
         // Set up composer
         if ($readWriteMode) {
             $this->setup();
+            $this->copyInstaller();
+        } else {
+            $this->offline = true;
         }
+
     }
 
     public function check()
@@ -149,7 +165,7 @@ class CommandRunner
     }
 
     /**
-     * @param string $format sprintf-style format string.
+     * @param string      $format sprintf-style format string.
      * @param string, ... $params one or more parameters to interpolate into the format
      */
     protected function execute()
@@ -178,11 +194,17 @@ class CommandRunner
         // @see https://github.com/composer/composer/issues/2146#issuecomment-35478940
         putenv("DYLD_LIBRARY_PATH=''");
 
-        $command .= ' -d ' . $this->basedir . ' -n --no-ansi';
+        $command .= ' -d "' . $this->basedir . '" -n --no-ansi';
         $this->writeLog('command', $command);
 
-        $output = new \Symfony\Component\Console\Output\BufferedOutput();
-        $responseCode = $this->wrapper->run($command, $output);
+        // Create an InputInterface object to pass to Composer
+        $command = new StringInput($command);
+
+        // Create the output buffer
+        $output = new BufferedOutput();
+
+        // Execute the Composer task
+        $responseCode = $this->composerapp->run($command, $output);
 
         if ($responseCode == 0) {
             $outputText = $output->fetch();
@@ -237,14 +259,14 @@ class CommandRunner
         }
 
         // flatten the composer array one level to make working easier
-        $initialized_extensions = array();
+        $initializedExtensions = array();
         foreach ($this->app['extensions']->composer as $val) {
-            $initialized_extensions += $val;
+            $initializedExtensions += $val;
         }
 
         // For Bolt, we also need to know if the extension has a 'README' and a 'config.yml' file.
         // Note we only do this for successfully loaded extensions.
-        if (isset($initialized_extensions[$name])) {
+        if (isset($initializedExtensions[$name])) {
             $paths = $this->app['resources']->getPaths();
 
             if (is_readable($paths['extensionspath'] . '/vendor/' . $pack['name'] . '/README.md')) {
@@ -268,13 +290,12 @@ class CommandRunner
             }
 
             // as a bonus we add the extension title to the pack
-            $pack['title'] = $initialized_extensions[$name]['name'];
-            $pack['authors'] = $initialized_extensions[$name]['json']['authors'];
+            $pack['title'] = $initializedExtensions[$name]['name'];
+            $pack['authors'] = $initializedExtensions[$name]['json']['authors'];
         }
 
         return $pack;
     }
-
 
     public function clearLog()
     {
@@ -318,14 +339,20 @@ class CommandRunner
 
     private function setup()
     {
+        $httpOk = array(200, 301, 302);
+
         umask(0000);
         putenv('COMPOSER_HOME=' . $this->app['resources']->getPath('cache') . '/composer');
 
         // Since we output JSON most of the time, we do _not_ want notices or warnings.
-        // Set the error reporting before initializing the wrapper, to suppress them.
+        // Set the error reporting before initializing Composer, to suppress them.
         $oldErrorReporting = error_reporting(E_ERROR);
 
-        $this->wrapper = \evidev\composer\Wrapper::create($this->app['resources']->getPath('cache') . '/composer');
+        // Create the Composer application object
+        $this->composerapp = new ComposerApp();
+
+        // Don't automatically exit after a command execution
+        $this->composerapp->setAutoExit(false);
 
         // re-set error reporting to the value it should be.
         error_reporting($oldErrorReporting);
@@ -334,32 +361,48 @@ class CommandRunner
             $this->execute('init');
         }
 
+        // Check to see if composer.json is writable
         if (is_file($this->packageFile) && !is_writable($this->packageFile)) {
             $this->messages[] = sprintf(
                 "The file '%s' is not writable. You will not be able to use this feature without changing the permissions.",
                 $this->packageFile
             );
+
+            $this->offline = true;
+        }
+
+        // Ping the extensions server to confirm connection
+        $response = $this->ping($this->app['extend.site'], 'ping', true);
+        if (! in_array($response, $httpOk)) {
+            $this->messages[] = $this->app['extend.site'] . ' is unreachable.';
+
+            $this->offline = true;
+        }
+
+        if ($this->offline) {
+            $this->messages[] = 'Unable to install/update extensions!';
+
+            return false;
         }
 
         $this->execute('config repositories.bolt composer ' . $this->app['extend.site'] . 'satis/');
         $jsonfile = file_get_contents($this->packageFile);
         $json = json_decode($jsonfile);
         $json->repositories->packagist = false;
-        $json->{'minimum-stability'} = "dev";
+        $json->{'minimum-stability'} = $this->app['config']->get('general/extensions/stability', 'stable');
         $json->{'prefer-stable'} = true;
+        $json->config = array('discard-changes' => true, 'preferred-install' => 'dist');
         $basePackage = "bolt/bolt";
         $json->provide = new \stdClass();
         $json->provide->$basePackage = $this->app['bolt_version'];
         $json->scripts = array(
-            'post-package-install' => "Bolt\\Composer\\ScriptHandler::extensions",
-            'post-package-update' => "Bolt\\Composer\\ScriptHandler::extensions"
+            'post-package-install' => "Bolt\\Composer\\ExtensionInstaller::handle",
+            'post-package-update' => "Bolt\\Composer\\ExtensionInstaller::handle"
         );
 
         $pathToWeb = $this->app['resources']->findRelativePath($this->app['resources']->getPath('extensions'), $this->app['resources']->getPath('web'));
-        $pathToRoot = $this->app['resources']->findRelativePath($this->app['resources']->getPath('extensions'), $this->app['resources']->getPath('root'));
         $json->extra = array('bolt-web-path' => $pathToWeb);
-        $json->autoload = array('files' => array($pathToRoot . "/vendor/autoload.php"));
-
+        $json->autoload = array('files' => array("installer.php"));
 
         // Write out the file, but only if it's actually changed, and if it's writable.
         if ($jsonfile !== json_encode($json, 128 | 64)) {
@@ -370,11 +413,51 @@ class CommandRunner
             $json = json_decode((file_get_contents($this->packageRepo)));
             $this->available = $json->packages;
         } catch (\Exception $e) {
-            $this->messages[] = sprintf(
-                $this->app['translator']->trans("The Bolt extensions Repo at %s is currently unavailable. Check your connection and try again shortly."),
-                $this->packageRepo
+            $this->messages[] = Trans::__(
+                'The Bolt extensions Repo at %repository% is currently unavailable. Check your connection and try again shortly.',
+                array('%repository%' => $this->packageRepo)
             );
             $this->available = array();
+        }
+    }
+
+    private function copyInstaller()
+    {
+        $class = new \ReflectionClass("Bolt\\Composer\\ExtensionInstaller");
+        $filename = $class->getFileName();
+        copy($filename, $this->installer);
+    }
+
+    /**
+     * Ping site to see if we have a valid connection and it is responding correctly
+     *
+     * @param  string        $site
+     * @param  string        $uri
+     * @param  boolean|array $addquery
+     * @return boolean
+     */
+    private function ping($site, $uri = '', $addquery = false)
+    {
+        $www = isset($_SERVER['SERVER_SOFTWARE']) ? $_SERVER['SERVER_SOFTWARE'] : 'unknown';
+        if ($addquery) {
+            $query = array(
+                'bolt_ver'  => $this->app['bolt_version'],
+                'bolt_name' => $this->app['bolt_name'],
+                'php'       => phpversion(),
+                'www'       => $www
+            );
+        } else {
+            $query = array();
+        }
+
+        $this->guzzleclient = new GuzzleClient($site);
+
+        try {
+            $response = $this->guzzleclient->head($uri, null, array('query' => $query))->send();
+
+            return $response->getStatusCode();
+        } catch (RequestException $e) {
+            return false;
         }
     }
 }
