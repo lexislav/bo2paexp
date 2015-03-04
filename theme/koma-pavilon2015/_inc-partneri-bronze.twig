@@ -15,7 +15,7 @@
             <a href="http://{{ sponzor.odkaz }}" target="_blank">
         {% endif %}
             <header>
-                <div class="m-item--image" {% if sponzor.image!="" %}style="background-image: url( {{ thumbnail(sponzor.logo, 100,75, fit) }});"{% endif %}></div>
+                <div class="m-item--image" {% if sponzor.image!="" %}style="background-image: url( {{ thumbnail(sponzor.logo, 174,120, fit) }});"{% endif %}></div>
                 <h1 class="m-item--hed">{{ sponzor['nazev_' ~ app.locale] }}</h1>
             </header>
             </a>
