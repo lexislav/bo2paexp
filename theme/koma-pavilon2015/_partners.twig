@@ -56,7 +56,7 @@
                         <a href="http://{{ partnerLink }}" target="_blank">
                             <article class="m-partner">
                                 <header>
-                                    {% if sponzor.image!="" %}<div class="m-item--image" style="background-image: url({{ thumbnail(sponzor.logo, 197,148, fit) }});"></div>{% endif %}
+                                    {% if sponzor.image!="" %}<div class="m-item--image" style="background-image: url({{ thumbnail(sponzor.logo, 280,120, crop) }});"></div>{% endif %}
                                     <h1 class="m-item--hed">{{ sponzor['nazev_' ~ app.locale] }}</h1>
                                     <div class="m-item--description">{{ sponzor['popis_' ~ app.locale] }}</div>
                                 </header>
