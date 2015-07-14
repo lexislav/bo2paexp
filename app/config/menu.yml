@@ -7,7 +7,7 @@ cs:
     path: cs/
   - label: Prohlídka pavilonu
     title: Prohlédněte si pavilon po jednotlivých patrech
-    path: page/o-pavilonu
+    path: cs/page/o-pavilonu
     submenu:
       - label: Schéma pater pavilonu
         path: page/o-pavilonu
