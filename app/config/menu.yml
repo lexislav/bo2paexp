@@ -8,6 +8,11 @@ cs:
   - label: Prohlídka pavilonu
     title: Prohlédněte si pavilon po jednotlivých patrech
     path: page/o-pavilonu
+    submenu:
+      - label: Schéma pater pavilonu
+        path: page/o-pavilonu
+      - label: Virtuální prohlídka pavilonu
+        path: page/o-pavilonu
   - label: Historie českých expo pavilonů
     title: Stručná historie českých pavilonů a jejich osudů
     path: cs/historie
