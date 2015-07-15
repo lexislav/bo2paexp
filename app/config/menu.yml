@@ -7,12 +7,12 @@ cs:
     path: cs/
   - label: Prohlídka pavilonu
     title: Prohlédněte si pavilon po jednotlivých patrech
-    path: cs/page/o-pavilonu
+    path: cs/o-pavilonu
     submenu:
       - label: Schéma pater pavilonu
-        path: page/o-pavilonu
+        path: cs/o-pavilonu
       - label: Virtuální prohlídka pavilonu
-        path: page/o-pavilonu
+        path: cs/virtualni-prohlidka
   - label: Historie českých expo pavilonů
     title: Stručná historie českých pavilonů a jejich osudů
     path: cs/historie
@@ -40,7 +40,12 @@ en:
     path: en/
   - label: Tour of the Pavilion
     title: Explore individual floors of the pavilion
-    path: page/o-pavilonu
+    path: en/o-pavilonu
+    submenu:
+      - label: Explore individual floors of the pavilion
+        path: en/o-pavilonu
+      - label: Virtual Pano tour
+        path: en/virtualni-prohlidka
   - label: History of Czech EXPO Pavilions
     title: Brief history of Czech EXPO pavilions and their fate
     path: en/historie
