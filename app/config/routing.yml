@@ -112,6 +112,11 @@ pavilonpage:
   recordslug: page/about
 #  host: 'www.mydomain.org'
 
+virtualtourpage:
+  path: /{_locale}/virtualni-prohlidka
+  defaults: { _controller: 'Bolt\Controllers\Frontend::record', 'contenttypeslug': 'page', 'slug': 'virtualni-prohlidka' }
+  recordslug: page/virtualni-prohlidka
+
 # Example override for a specific contenttype
 
 #pagebinding:
