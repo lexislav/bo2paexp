@@ -32,7 +32,7 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="format-detection" content="address=no" />
 
-    <title>{% if record.title is defined %}{{ record.title|striptags }} | {% endif %}{{ app.config.get('general/sitename') }}{% if record.title is not defined and app.config.get('general/payoff') %} | {{ app.config.get('general/payoff') }}{% endif %}</title>
+    <title>{% if record.title is defined %}{{ record['title_' ~ app.locale]|striptags }} | {% endif %}{{ app.config.get('general/sitename') }}{% if record.title is not defined and app.config.get('general/payoff') %} | {{ app.config.get('general/payoff') }}{% endif %}</title>
     <meta name="description" content="Microsite věnovaný českému pavilonu na světové výstavě EXPO2015. Microsite about czech pavilion at EXPO2015.">
     <meta name="keywords" content="modulární, architektura, stavba, expo, expo2015, koma, koma modular, bazén">
     <meta name="author" content="Alexandr Hudeček, Michal Hotovec">
