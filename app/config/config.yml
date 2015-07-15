@@ -39,7 +39,7 @@ theme: koma-pavilon2015
 #
 # This can be done as [nl_NL, Dutch_Netherlands] when specifying multiple
 # locales, ensure the first is a standard locale.
-locale: cs
+locale: cs_CZ
 timezone: UTC
 i18n_locales:
   - cs
