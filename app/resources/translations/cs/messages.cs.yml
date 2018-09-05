@@ -1,37 +1,60 @@
-# app/resources/translations/cs/messages.cs.yml – generated on 2014-12-18 15:20:02 UTC
+# app/resources/translations/cs/messages.cs.yml – generated on 2016-02-16 14:51:34 UTC
 
 # Warning: Translations are in the process of being moved to a new keyword-based translation
 #          at the moment. This is an ongoing process. Translations currently in the 
 #          repository are automatically mapped to the new scheme. Be aware that there 
 #          can be a race condition between that process and your PR so that it's 
-#          eventually neccessary to remap your translations. If you're planning on 
+#          eventually necessary to remap your translations. If you're planning on 
 #          updating your translations, it's best to ask on IRC to time your contribution
 #          in order to prevent merge conflicts.
 
-#   3 unused messages
-#  57 untranslated messages
-#  no untranslated keyword based messages
-# 372 translations
-# 130 keyword based translations
+#  no unused messages
+# 148 untranslated messages
+#  13 untranslated keyword based messages
+# 355 translations
+# 128 keyword based translations
 
-#--- 3 unused messages --------------------------------------------------------
+#--- 148 untranslated messages ------------------------------------------------
 
-"Stable Versions": "Stabilní Verze"
-"Theme Installation Complete": "Istalace šablony dokončena"
-"Unstable Test Versions": "Nestabilní testovací verze"
-
-#--- 57 untranslated messages -------------------------------------------------
-
+"Add some sample <a href='%url%' class='btn btn-default'>Records with Loripsum text</a>": #
 "Adresa": #
+"Are you sure you want to delete %FILENAME%?": #
 "Autor(ři) expozice": #
 "Body_cs": #
 "Body_en": #
-"Files to download": "Soubory ke stažení"
+"Clear Change Log": #
+"Clear System Log": #
+"Close editor": #
+"Config": #
+"Copy to theme folder": #
+"Copying theme assets …": #
+"Depublish date is in the past. Change the status if you want to depublish now": #
+"Detected Bolt version change to <b>%VERSION%</b>, and the cache has been cleared. Please <a href=\"%URI%\">check the database</a>, if you haven't done so already.": #
+"Do you really want to delete %FOLDERNAME%?": #
+"Edit Roles and Permissions": #
+"Extend %boltname%": #
+"Extensions loading has been disabled by an administrator in the %config% file. ": #
+"Failed to send password request. Please check the email settings.": #
+"Field “%FIELD_NAME%”:": #
+"File '%s' could not be saved, because the form wasn't valid.": #
+"Has to be a floating point number!": #
+"Hints:": #
 "Hodnota": #
+"Id": #
+"Install Package": #
+"Install This Version": #
+"Invalid menu path (%PATH%) set in menu.yml. Does not match any configured contenttypes or routes.": #
+"Invalid menu path (%PATH%) set in menu.yml. Probably should be a link: instead!": #
+"Is required or needs to match a pattern!": #
+"Is required!": #
+"KOMA Modular, Vizovice": "KOMA Modular, Vizovice"
 "Kategorie": #
 "Kategorie1": #
+"Keyword …": #
 "Korekce polohy na Časové ose": #
+"Live Edit": #
 "Logo": #
+"Malformed JSON response. Ensure no debugging or other code is being added to the response": #
 "Město": #
 "Město (EN)": #
 "Nadpis": #
@@ -39,11 +62,22 @@
 "Nahled": #
 "Nazev_cs": #
 "Nazev_en": #
+"New Bolt site has been set up": #
+"No Bolt Extensions installed.": #
+"No files in the list, yet.": #
+"No images in the list, yet.": #
+"No such user.": #
+"No theme name found. Theme is not generated.": #
+"Not yet installed.": #
 "Název": #
 "Název (CS)": #
 "Název (EN)": #
 "Název proměnné": #
 "Odkaz": #
+"Other content": #
+"Please confirm that you want to remove this extension?": #
+"Please enter a new file name!": #
+"Please enter a new folder name!": #
 "Poloha": #
 "Popis bodu časové osy": #
 "Popis bodu časové osy (EN)": #
@@ -51,36 +85,103 @@
 "Popis_en": #
 "Popisek": #
 "Popisek (EN)": #
+"Readme": #
+"Remove selected": #
 "Rok konání": #
 "Rozcestnik": #
+"Running update …": #
 "Soubory(y) ke stažení": #
 "Stable versions": #
 "Statik": #
 "Statiky": #
 "Stitek": #
 "Stitky": #
+"System cURL library doesn't support TLS, or the Certificate Authority setup has not been completed (%ERROR%). See http://curl.haxx.se/docs/sslcerts.htmlfor more details. Downgrading to HTTP.": #
+"Testing connection to extension server failed: %errormessage%": #
 "Text": #
 "Text (CS)": #
 "Text (EN)": #
-"The database needs to be updated/repaired. Go to 'Settings' > '<a href=\"%link%\">Check Database</a>' to do this now.": #
+"The Bolt extensions Repo at %repository% is currently unavailable. Check your connection and try again shortly.": #
+"The Bolt extensions file '%composerjson%' isn't readable.": #
+"The change log has been cleared.": #
+"The change log has been trimmed.": #
+"The database needs to be updated/repaired. Go to 'Configuration' > '<a href=\"%link%\">Check Database</a>' to do this now.": #
+"The extensions directory (<code>%dir%</code>) does not exist, or it is not writable. ": #
 "The field %field% has been changed to \"%newValue%\"": #
+"The system log has been cleared.": #
+"The system log has been trimmed.": #
+"The value has to be at least “%MINVAL%”!": #
+"The value must not be greater than “%MAXVAL%”!": #
 "Theme installation complete": #
+"Theme successfully generated. You can now edit it directly from your theme folder.": #
+"There are no saved changes, yet.": #
+"There was an error uploading the file.\\nMake sure that the file type is of:\\n%typelist%": #
+"This template adds new fields. Save, then refresh to see these changes.": #
+"This will overwrite any existing files! Are you sure?": #
+"Thumbnail": #
+"Time in 24h/12h format": #
 "Title_cs": #
 "Title_en": #
+"Trim Change Log": #
+"Trim System Log": #
 "Téma výstavy": #
 "Téma výstavy (EN)": #
 "Téma české expozice": #
 "Téma české expozice (EN)": #
 "Ukazatel": #
+"Uninstall": #
+"Unique Alias": #
 "Unstable test versions": #
+"Update Package": #
+"Upload not allowed": #
+"Uploading": #
+"Users & Permissions": #
+"Versions": #
+"View Roles": #
 "Vyberte obsah s detailním popisem": #
 "Vyberte článek": #
+"Warning": #
+"We were unable to generate the theme. It is likely that your theme directory is not writable by Bolt. Check the permissions and try reinstalling.": #
+"You cannot '%s' yourself.": #
+"You do not have the right privileges to edit that user.": #
+"You do not have the right privileges to upload.": #
+"You have unfinished changes on this page. If you continue without saving, you will lose these changes.": #
+"You may lose some of your template fields with this change. Go to the template section and note down the values before doing this.": #
 "Zvýraznit zprávu": #
+"cURL experienced an error: %errormessage%": #
+"filtered by <em>'%filter%'</em>": #
 "galerie": #
+"general.about": #
+"general.about-bolt": #
+"general.bolt-documentation-on-github": #
+"general.bolt-on-github": #
+"general.thanks": #
 "ikona": #
+"logs.activity-log": #
+"logs.change-log": #
+"logs.system-log": #
 "náhledový obrázek": #
+"or": #
+"users.actions-for-users": #
+"users.your-password": #
 
-#--- 372 translations ---------------------------------------------------------
+#--- 13 untranslated keyword based messages -----------------------------------
+
+"contenttypes.generic.group.meta": # "Obecné informace & metadata"
+"contenttypes.generic.group.relations": # "Související obsah"
+"contenttypes.generic.group.taxonomy": # "Taxonomie"
+"contenttypes.generic.group.ungrouped": # "bez zařazení"
+"contenttypes.generic.recent-changes-one": #
+"field.geolocation.title-pin": #
+"menu.configuration.routing": #
+"page.edit-users.error.password-different-username": #
+"page.edit-users.message.change-self": #
+"panel.latest-activity.change": #
+"panel.latest-activity.created": #
+"panel.latest-activity.deleted": #
+"panel.latest-activity.system": #
+
+#--- 355 translations ---------------------------------------------------------
 
 "%name% № %id%": "%name% č. %id%"
 "%s files could not be deleted. You should delete them manually.": "%s soubory nelze odstranit. Smažte je ručně."
@@ -89,16 +190,11 @@
 "(no group)": "(nez zařazení do skupiny)"
 "(none)": "(nic)"
 "A password reset link has been sent to '%user%'.": "Odkaz na obnovení hesla byl odeslán '%user%'."
-"About": "O"
-"About Bolt": "Co je Bolt"
 "About the pavilion": "O pavilonu"
 "Actions": "Nástroje"
-"Actions for Users": "Akce pro Uživatele"
-"Activity log": "Záznam aktivit"
 "Add a brief, optional comment to describe what's changed.": "Přidat stručný, volitelný komentář k provedeným změnám."
 "Add a comment:": "Přidat komentář"
 "Add a new extension using the form below.": "Přidat rozšíření pomocí formuláře níže"
-"Add some sample <a href='%url%' class='btn btn-tertiary'>Records with Loripsum text</a>": "Přidat ukázku <a href='%url%' class='btn btn-tertiary'>Záznam s Lorem ipsum</a>"
 "Added to <tt>%key%</tt> '%title%'": "Přidáno do <tt>%key%</tt> '%title%'"
 "Alas, no about!": "Běda, žádná info strana!"
 "All": "Vše"
@@ -108,6 +204,11 @@
 "An error occurred.": "Došlo k nějaké chybě."
 "Anonymous": "Anonymous"
 "Are you sure you want to delete %username%?": "Určitě chcete odstranit %username%?"
+"Are you sure you want to remove these images?": "Určitě chcetet odstranit tyto obrázky?"
+"Are you sure you want to remove this file?": "Určitě chcetet odstranit tento soubor?"
+"Are you sure you want to remove this image?": "Určitě chcetet odstranit tento obrázek?"
+"Are you sure you wish to delete these records? There is no undo.": "Určitě chcetet odstranit tyto záznamy? Krok nelze vrátit."
+"Are you sure you wish to delete this record? There is no undo.": "Určitě chcetet odstranit tento záznam? Krok nelze vrátit."
 "Author(s) of Pavilion:": "Autor(ři) pavilonu:"
 "Author(s) of exhibition:": "Autor(ři) expozice"
 "Author:": "Autor:"
@@ -116,8 +217,6 @@
 "Below are the third party libraries that are used by Bolt.": "Níže jsou uveden knihovny třetích stran použité v Bolt."
 "Bolt - Fatal error.": "Bolt - závažná chyba."
 "Bolt Extension could not be found. Please check at %site% to ensure correct name.": "Rozšíření Boltu se nepodařilo nalézt. Zkuste na webu %site% ověřit správnost názvu."
-"Bolt documentation on Github": "Dokumetace Bolt na Github"
-"Bolt on Github": "Bolt na Github"
 "Browse Versions": "Projít sotupné verze"
 "Browser / platform": "Prohlížeč / Operační systém"
 "Built-in role, automatically granted at all times, even if no user is logged in": "Implicitní oprávnění, přidělená automaticky i v případě, že není uživatel zalogován."
@@ -143,7 +242,6 @@
 "Clear filter": "Smazat filtr"
 "Clear sort/filter": "Zrušit třídění/filtr"
 "Clear the cache": "Vyprázdnit cache"
-"Clear the current log": "Vymazat stávající záznam (log)"
 "Click to change current status.": "Klikni pro změnu stavu."
 "Code:": "Kód:"
 "Collapse sidebar": "Skrýt postranní lištu"
@@ -180,9 +278,7 @@
 "Detail template": "Detail šablony"
 "Details": "Podrobnosti"
 "Disable %username%": "Zablokovat %username%"
-"Do you really want to delete %foldername%?": "Opravdu chcete smazat složku %foldername%?"
 "Done!": "Hotovo!"
-"Downloads:": "Soubory ke stažení:"
 "Draft": "Koncept"
 "Duplicate %filename%": "Duplikovat %filename%"
 "Edit": "Upravit"
@@ -195,9 +291,7 @@
 "Exhibition Pavilion in Milan": "Výstavní pavilon v Miláně"
 "Exhibitions": "Výstavy"
 "Expand sidebar": "Roztáhnout postranní lištu"
-"Extend ": "Rozšířit"
 "Extension": "Rozšíření"
-"Extension log": "Záznam rozšíření"
 "Extensions": "Rozšíření"
 "Extras": "Doplňky"
 "File '%file%' could not be uploaded (wrong/disallowed file type). Make sure the file extension is one of the following:": "Soubor '%file%' nemohl být nahrán (špatný či nepovolený typo souboru). Zkontrolujte, zda se jedná jeden z povolených typů souboru:"
@@ -211,17 +305,16 @@
 "Files": "Soubory"
 "Files in %s": "Soubory v %s"
 "Files on the stack": "Soubory v Zásobníku"
+"Files to download": "Soubory ke stažení"
 "Filesize": "Velikost souboru"
 "Fill the database with Dummy Content": "Vyplnit databázi náhodným obsahem"
 "Filter": "Filtr"
 "Filtering": "Filtrování"
-"Filtering …": "Filtrování…"
 "Find": "Vyhledat"
 "Folder '%s' could not be found, or is not readable.": "Složku '%s' nelze nalézt nebo není přístupná ke čtení."
 "Folder permissions insufficient": "Nemáte dostatečné oprávnění k této složce"
 "Folders": "Složky"
 "Full list …": "Kompletní výpis…"
-"Future Space for Children:": "Budoucí prostor pro děti:"
 "General Partners": "Generální partneři pavilonu"
 "Global Permissions": "Globální oprávnění"
 "Ground area": "plocha pozemku "
@@ -259,6 +352,7 @@
 "Modifications made to the database:": "Změny provedené v databázi:"
 "Modifications needed:": "Potřebné úpravy:"
 "Modified": "Upraveno"
+"Modular architecture center": "Centrum modulární architektury"
 "More about Modular Construction": "Více o modulární architektuře"
 "More articles about Pavilion & EXPO2015": "Další články o pavilonu & EXPO2015"
 "More info/help": "Více informací / nápověda"
@@ -277,7 +371,6 @@
 "Omnisearch": "Vyhledávání"
 "Options": "Možnosti"
 "Order: %sort%": "Pořadí: %sort%"
-"Other contenttypes": "Další typy obsahu"
 "Overview": "Přehled"
 "Overview for": "Přehled"
 "Owner": "Vlastník"
@@ -299,7 +392,6 @@
 "Place on stack": "Dát do zásobníku"
 "Place:": "Místo:"
 "Please choose the record you want to link to:": "Zvolte prosím záznam pro vytvoření vazby:"
-"Please enter a new file name": "Prosím zadejte nové jméno souboru"
 "Please enter a new folder name": "Prosím zadejte nové jméno složky"
 "Please log on.": "Přihlašte se, prosím."
 "Please provide a username": "Vyplňte uživatelské jméno, prosím"
@@ -323,7 +415,6 @@
 "Rename %foldername%": "Přejmenovat %foldername%"
 "Roles": "Práva"
 "Roles and Permissions": "Nastavení oprávnění"
-"Routing setup": "Nastavení routingu"
 "Run all Updates": "Spustit všechny aktualizace"
 "Run update check": "Spustit kontrolu aktualizací"
 "Running install of all packages …": "Probíhá instalace všech balíčků..."
@@ -358,12 +449,8 @@
 "Steel structure base": "podesta ocelové konstrukce"
 "Taxonomy": "Taxonomie"
 "Template": "Šablona"
-"Thanks": "Děkujeme"
 "That user does not exist.": "Neexistující uživatel."
 "The Pavilion is further supported by": "Pavilon dále podpořili"
-"The activitylog has been cleared.": "Záznam činností byl vymazán."
-"The activitylog has been trimmed.": "Ze záznamu aktivit byla odstraněna jedna strana."
-"The extensions directory (<code>%dir%</code>) does not exist, or it is not writable.": "Adresář rozšíření (<code>%dir%</code>) neexistuje nebo do něj nelze zapisovat."
 "The file '%s' doesn't exist, or is not readable.": "Soubor '%s' neexistuje nebo nelze přečíst."
 "The file '%s' is not writable. You will have to use your own editor to make modifications to this file.": "Soubor '%s' nelze zapsat. Pro úpravu souboru budete muset použít vlastní editor."
 "The folder '%s' could not be found, or is not readable.": "Složka '%s' není k nalezení nebo nelze přečíst."
@@ -415,7 +502,6 @@
 "Username or password not correct. Please check your input.": "Uživatelské jméno nebo heslo není správně."
 "Users": "Uživatelé"
 "Version": "Verze"
-"Version:": "Verze:"
 "Video": "Video"
 "View (saved version) on site": "Zobrazit uloženou verzi na webu"
 "View on site": "Zobrazit na webu"
@@ -439,7 +525,6 @@
 "Your account is disabled. Sorry about that.": "Je nám líto, ale Váš účet byl zablokován."
 "Your database is already up to date.": "Vaše databáze je již aktualizována."
 "Your database is now up to date.": "Vaše databáze je nyní aktuální."
-"Your password": "Vaše heslo"
 "and edited": "a upraveno"
 "at EXPO 2015": "EXPO 2015"
 "back to editing": "zpět do editace"
@@ -450,18 +535,16 @@
 "no content …": "žádný obsah …"
 "no title …": "žádný nadpis …"
 "none": "žádný"
-"nursery school": "školka"
 "of": "z"
 "show all": "zobrazit vše"
 "tonnes": "tun"
 
-#--- 130 keyword based translations -------------------------------------------
+#--- 128 keyword based translations -------------------------------------------
 
 component:
     changelog-detail:
         by: "od"
         field: "pole"
-        no-comment: "Bez komentářů"
         value-new: "nová hodnota"
         value-old: "původní hodnota"
     changelog-pager:
@@ -558,7 +641,6 @@ page:
             save: "Uložit"
         confirm-revert: "Určitě chcete zahodit provedené úpravy? Budou ztraceny, pokud je neuložíte."
         note-related: "Upozornění: tento soubor má související soubory:"
-        path: "Cesta:"
         title:
             edit: "Upravit soubor"
             view: "Zobrazit soubor"
