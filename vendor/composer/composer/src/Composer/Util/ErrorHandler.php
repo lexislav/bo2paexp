@@ -36,8 +36,8 @@ class ErrorHandler
      */
     public static function handle($level, $message, $file, $line)
     {
-        // respect error_reporting being disabled
-        if (!error_reporting()) {
+        // error code is not included in error_reporting
+        if (!(error_reporting() & $level)) {
             return;
         }
 
@@ -58,6 +58,7 @@ class ErrorHandler
                     if (isset($a['line'], $a['file'])) {
                         return '<warning> '.$a['file'].':'.$a['line'].'</warning>';
                     }
+
                     return null;
                 }, array_slice(debug_backtrace(), 2))));
             }
@@ -65,13 +66,14 @@ class ErrorHandler
     }
 
     /**
-     * Register error handler
+     * Register error handler.
      *
-     * @static
+     * @param IOInterface|null $io
      */
     public static function register(IOInterface $io = null)
     {
         set_error_handler(array(__CLASS__, 'handle'));
+        error_reporting(E_ALL | E_STRICT);
         self::$io = $io;
     }
 }

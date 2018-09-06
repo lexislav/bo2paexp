@@ -12,7 +12,6 @@
 namespace PHPExif\Adapter;
 
 use PHPExif\Exif;
-use DateTime;
 
 /**
  * PHP Exif Native Reader Adapter
@@ -70,7 +69,7 @@ class Native extends AdapterAbstract
      *
      * @var array
      */
-    protected $iptcMapping  = array(
+    protected $iptcMapping = array(
         'title'     => '2#005',
         'keywords'  => '2#025',
         'copyright' => '2#116',
@@ -96,7 +95,7 @@ class Native extends AdapterAbstract
      * Setter for the EXIF sections
      *
      * @param array $sections List of EXIF sections
-     * @return \PHPExif\Reader Current instance for chaining
+     * @return \PHPExif\Adapter\Native Current instance for chaining
      */
     public function setRequiredSections(array $sections)
     {
@@ -109,7 +108,7 @@ class Native extends AdapterAbstract
      * Adds an EXIF section to the list
      *
      * @param string $section
-     * @return \PHPExif\Reader Current instance for chaining
+     * @return \PHPExif\Adapter\Native Current instance for chaining
      */
     public function addRequiredSection($section)
     {
@@ -124,7 +123,7 @@ class Native extends AdapterAbstract
      * Define if the thumbnail should be included into the EXIF data or not
      *
      * @param boolean $value
-     * @return \PHPExif\Reader Current instance for chaining
+     * @return \PHPExif\Adapter\Native Current instance for chaining
      */
     public function setIncludeThumbnail($value)
     {
@@ -147,7 +146,7 @@ class Native extends AdapterAbstract
      * Define if the sections should be parsed as arrays
      *
      * @param boolean $value
-     * @return \PHPExif\Reader Current instance for chaining
+     * @return \PHPExif\Adapter\Native Current instance for chaining
      */
     public function setSectionsAsArrays($value)
     {
@@ -170,8 +169,7 @@ class Native extends AdapterAbstract
      * Reads & parses the EXIF data from given file
      *
      * @param string $file
-     * @return \PHPExif\Exif Instance of Exif object with data
-     * @throws \RuntimeException If the EXIF data could not be read
+     * @return \PHPExif\Exif|boolean Instance of Exif object with data
      */
     public function getExifFromFile($file)
     {
@@ -187,9 +185,7 @@ class Native extends AdapterAbstract
         );
 
         if (false === $data) {
-            throw new \RuntimeException(
-                sprintf('Could not read EXIF data from file %1$s', $file)
-            );
+            return false;
         }
 
         $xmpData = $this->getIptcData($file);

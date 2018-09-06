@@ -13,6 +13,8 @@
 namespace Composer;
 
 use Composer\Json\JsonFile;
+use Composer\Spdx\SpdxLicenses;
+use Composer\CaBundle\CaBundle;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Process\Process;
 use Seld\PharUtils\Timestamps;
@@ -32,8 +34,8 @@ class Compiler
     /**
      * Compiles composer into a single phar file
      *
-     * @throws \RuntimeException
      * @param  string            $pharFile The full path to the file to create
+     * @throws \RuntimeException
      */
     public function compile($pharFile = 'composer.phar')
     {
@@ -95,14 +97,15 @@ class Compiler
         $finder = new Finder();
         $finder->files()
             ->name('*.json')
-            ->in(__DIR__ . '/../../res')
+            ->in(__DIR__.'/../../res')
+            ->in(SpdxLicenses::getResourcesDir())
             ->sort($finderSort)
         ;
 
         foreach ($finder as $file) {
             $this->addFile($phar, $file, false);
         }
-        $this->addFile($phar, new \SplFileInfo(__DIR__ . '/../../vendor/seld/cli-prompt/res/hiddeninput.exe'), false);
+        $this->addFile($phar, new \SplFileInfo(__DIR__ . '/../../vendor/symfony/console/Resources/bin/hiddeninput.exe'), false);
 
         $finder = new Finder();
         $finder->files()
@@ -114,8 +117,12 @@ class Compiler
             ->exclude('docs')
             ->in(__DIR__.'/../../vendor/symfony/')
             ->in(__DIR__.'/../../vendor/seld/jsonlint/')
-            ->in(__DIR__.'/../../vendor/seld/cli-prompt/')
             ->in(__DIR__.'/../../vendor/justinrainbow/json-schema/')
+            ->in(__DIR__.'/../../vendor/composer/spdx-licenses/')
+            ->in(__DIR__.'/../../vendor/composer/semver/')
+            ->in(__DIR__.'/../../vendor/composer/ca-bundle/')
+            ->in(__DIR__.'/../../vendor/composer/xdebug-handler/')
+            ->in(__DIR__.'/../../vendor/psr/')
             ->sort($finderSort)
         ;
 
@@ -127,11 +134,16 @@ class Compiler
         $this->addFile($phar, new \SplFileInfo(__DIR__.'/../../vendor/composer/autoload_namespaces.php'));
         $this->addFile($phar, new \SplFileInfo(__DIR__.'/../../vendor/composer/autoload_psr4.php'));
         $this->addFile($phar, new \SplFileInfo(__DIR__.'/../../vendor/composer/autoload_classmap.php'));
+        $this->addFile($phar, new \SplFileInfo(__DIR__.'/../../vendor/composer/autoload_files.php'));
         $this->addFile($phar, new \SplFileInfo(__DIR__.'/../../vendor/composer/autoload_real.php'));
+        $this->addFile($phar, new \SplFileInfo(__DIR__.'/../../vendor/composer/autoload_static.php'));
         if (file_exists(__DIR__.'/../../vendor/composer/include_paths.php')) {
             $this->addFile($phar, new \SplFileInfo(__DIR__.'/../../vendor/composer/include_paths.php'));
         }
         $this->addFile($phar, new \SplFileInfo(__DIR__.'/../../vendor/composer/ClassLoader.php'));
+
+        $this->addFile($phar, new \SplFileInfo(CaBundle::getBundledCaBundlePath()), false);
+
         $this->addComposerBin($phar);
 
         // Stubs
@@ -152,10 +164,24 @@ class Compiler
         $util->save($pharFile, \Phar::SHA1);
     }
 
+    /**
+     * @param  \SplFileInfo $file
+     * @return string
+     */
+    private function getRelativeFilePath($file)
+    {
+        $realPath = $file->getRealPath();
+        $pathPrefix = dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR;
+
+        $pos = strpos($realPath, $pathPrefix);
+        $relativePath = ($pos !== false) ? substr_replace($realPath, '', $pos, strlen($pathPrefix)) : $realPath;
+
+        return strtr($relativePath, '\\', '/');
+    }
+
     private function addFile($phar, $file, $strip = true)
     {
-        $path = strtr(str_replace(dirname(dirname(__DIR__)).DIRECTORY_SEPARATOR, '', $file->getRealPath()), '\\', '/');
-
+        $path = $this->getRelativeFilePath($file);
         $content = file_get_contents($file);
         if ($strip) {
             $content = $this->stripWhitespace($content);

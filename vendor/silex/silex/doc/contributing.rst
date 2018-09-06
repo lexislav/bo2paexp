@@ -14,11 +14,7 @@ contribute a provider, just follow these steps:
 
 * `Send a pull request
   <https://help.github.com/articles/creating-a-pull-request>`_, to the correct
-  `target branch`_.
-
-If you have a big change or would like to discuss something,
-please join us on the `mailing list
-<http://groups.google.com/group/silex-php>`_.
+  target branch (1.3 for bug fixes, master for new features).
 
 .. note::
 
