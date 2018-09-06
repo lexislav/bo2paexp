@@ -24,3 +24,38 @@ categories:
     behaves_like: categories
     multiple: true
     options: [ news, events, movies, music, books, life, love, fun ]
+
+
+#Pavilon EXPO2105 taxonomy
+
+kategorie:
+    name: Kategorie
+    slug: kategorie
+    singular_name: Kategorie1
+    singular_slug: kategorie1
+    behaves_like: categories
+    multiple: true
+    options: { expozice: "Expozice", fotogalerie: "Fotogalerie", pavilon: "O pavilonu", rozhovory: "Rozhovory", partneri: "Zprávy partnerů" }
+    listing_template: zpravodaj.twig
+
+stitky:
+    slug: stitky
+    singular_slug: stitek
+    behaves_like: tags
+    #listing_template: tag-listing.twig #custom template
+
+statiky:
+    slug: statiky
+    singular_slug: statik
+    behaves_like: categories
+    multiple: true
+    options: { homepage: "Domácí strana", pavilon: "O pavilonu", historie: "Historie", blog: "Zpravodaj" }
+    has_sortorder: true
+
+rozcestnik:
+    slug: rozcestnik
+    singular_slug: ukazatel
+    behaves_like: grouping
+    multiple: false
+    options: { o-pavilonu: "Další články o pavilonu", modularni-architektura: "Více o modulární výstavbě" }
+    has_sortorder: true
