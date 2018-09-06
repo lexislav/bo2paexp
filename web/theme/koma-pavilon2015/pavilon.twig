@@ -1,0 +1,633 @@
+{% include '_header.twig' %}
+<body class="l-page l-page_pavilon">
+{% include '_loader.twig' %}
+{% include '_topbar.twig' with {'menuClasses': 'switchable'} %}
+
+<div class="l-schema m-schema">
+    <div class="m-schema--decoration mm-top"></div>
+    <div class="m-schema--decoration mm-bottom"><i>scroll down</i></div>
+    <div class="m-schema--frame">
+        <div class="m-schema--left">
+
+
+            <div class="m-schema--label label1" data-anchor-target="#animAnchor2" data-center="opacity:1;z-index:100" data-top="opacity:0; z-index:0">
+                {% setcontent blok = 'bloky' where { id: '15' } %}
+                <h2 class="m-item--hed">
+                    <strong>{{ blok['title_' ~ app.locale] }}</strong> {{ blok['body_' ~ app.locale] }}</h2>
+                {% setcontent blok = 'bloky' where { id: '16' } %}
+                <div class="m-item--description">
+                    {{ blok['body_' ~ app.locale] }}
+                    {% if blok.related %}
+                        {% set relatedmodals = blok.related() %}
+                        {% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <ul class="mm-blue">
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '17' } %}
+                            <span>1.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '18' } %}
+                            <span>2.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '19' } %}
+                            <span>3.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '20' } %}
+                            <span>4.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="m-schema--label label2" data-anchor-target="#animAnchor3" data-bottom="opacity:0;z-index:1" data-center="opacity:1;z-index:100" data-top="opacity:0;z-index:1">{% setcontent blok = 'bloky' where { id: '21' } %}
+                <h2 class="m-item--hed">
+                    <strong>{{ blok['title_' ~ app.locale] }}</strong> {{ blok['body_' ~ app.locale] }}
+                </h2>{% setcontent blok = 'bloky' where { id: '22' } %}
+
+                <div class="m-item--description">{{ blok['body_' ~ app.locale] }}
+                    {% if blok.related %}
+                        {% set relatedmodals = blok.related() %}
+                        {% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
+                        {% endfor %}
+                    {% endif %}</div>
+                <ul class="mm-red">
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '23' } %}
+                            <span>5.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '24' } %}
+                            <span>6.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '25' } %}
+                            <span>7.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+
+                </ul>
+            </div>
+
+
+            <div class="m-schema--label label3" data-anchor-target="#animAnchor4" data-bottom="opacity:0;z-index:1" data-center="opacity:1;z-index:100" data-top="opacity:0;z-index:1">{% setcontent blok = 'bloky' where { id: '26' } %}
+                <h2 class="m-item--hed">
+                    <strong>{{ blok['title_' ~ app.locale] }}</strong> {{ blok['body_' ~ app.locale] }}
+                </h2>{% setcontent blok = 'bloky' where { id: '27' } %}
+
+                <div class="m-item--description">{{ blok['body_' ~ app.locale] }}
+                    {% if blok.related %}
+                        {% set relatedmodals = blok.related() %}
+                        {% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
+                        {% endfor %}
+                    {% endif %}</div>
+                <ul class="mm-green">
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '28' } %}
+                            <span>8.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '29' } %}
+                            <span>9.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '30' } %}
+                            <span>10.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+
+                </ul>
+            </div>
+
+
+            <div class="m-schema--label label4" data-anchor-target="#animAnchor5" data-bottom="opacity:0;z-index:1" data-center="opacity:1;z-index:100">{% setcontent blok = 'bloky' where { id: '31' } %}
+                <h2 class="m-item--hed">
+                    <strong>{{ blok['title_' ~ app.locale] }}</strong> {{ blok['body_' ~ app.locale] }}
+                </h2>{% setcontent blok = 'bloky' where { id: '32' } %}
+
+                <div class="m-item--description">{{ blok['body_' ~ app.locale] }}
+                    {% if blok.related %}
+                        {% set relatedmodals = blok.related() %}
+                        {% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
+                        {% endfor %}
+                    {% endif %}</div>
+                <ul class="mm-yellow">
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '33' } %}
+                            <span>11.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '34' } %}
+                            <span>12.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+        <div class="m-schema--right">
+            <div class="m-schema--slides">
+                <div class="m-schema--image np1"></div>
+                <div class="m-schema--image np2" data-anchor-target="#animAnchor2" data-bottom="opacity:0;" data-center="opacity:1;" data-top="opacity:0;"></div>
+                <div class="m-schema--image np3" data-anchor-target="#animAnchor3" data-bottom="display:none" data-center="opacity:0;display:block" data-top="opacity:1;"></div>
+                <div class="m-schema--image np4" data-anchor-target="#animAnchor3" data-bottom="transform:translate(0px,-600px)" data-center="opacity:1;transform:translate(0px,0px)" data-top="opacity:0;transform:translate(0px,0px)"></div>
+                <div class="m-schema--image np6" data-anchor-target="#animAnchor4" data-bottom="transform:translate(0px,-600px)" data-center="opacity:1;transform:translate(0px,0px)"></div>
+                <div class="m-schema--image np7" data-anchor-target="#animAnchor5" data-bottom="transform:translate(0px,-600px)" data-center="transform:translate(0px,0px)"></div>
+                <div class="m-schema--overlay"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="skrollr-body">
+
+<div class="m-carousel">
+    <div class="m-carousel--item">
+        <div class="m-item--image" style="background-image: url('{{ paths.theme }}/assets/pavilon/pp01_slideshow_model_{{ random(2) }}.jpg');"></div>
+
+        <div class="orbit-caption">
+            {% setcontent blok = 'bloky' where { id: '14' } %}
+            <div class="m-item--hed">{{ blok['title_' ~ app.locale] }}</div>
+            <div class="m-item--description fnt-primary-body-m" style="margin-top: 200px;">
+                {{ blok['body_' ~ app.locale] }}
+            </div>
+
+        </div>
+        <div class="m-carousel--arrow-down">
+            <img src="{{ paths.theme }}/assets/ikony/arrow-down.png" alt="" />
+        </div>
+    </div>
+</div>
+
+
+<div class="m-schema-spacer"></div>
+<div class="m-schema-control" id="animAnchor2"><span>a2</span></div>
+<div class="m-schema-spacer"></div>
+<div class="m-schema-control" id="animAnchor3"><span>a3</span></div>
+<div class="m-schema-spacer"></div>
+<div class="m-schema-control" id="animAnchor4"><span>a4</span></div>
+<div class="m-schema-spacer"></div>
+<div class="m-schema-control" id="animAnchor5"><span>a5</span></div>
+<div class="m-schema-spacer-half"></div>
+
+
+<div class="skrollr-wrap">
+
+<div class="m-schema mm-mobile">
+    <div class="row">
+
+        <div class="m-item--section">
+
+
+            <div class="m-schema--label label1">
+                {% setcontent blok = 'bloky' where { id: '15' } %}
+                <h2 class="m-item--hed">
+                    <strong>{{ blok['title_' ~ app.locale] }}</strong> {{ blok['body_' ~ app.locale] }}</h2>
+                {% setcontent blok = 'bloky' where { id: '16' } %}
+
+                <div class="m-item--description">
+                    {{ blok['body_' ~ app.locale] }}
+                    {% if blok.related %}
+                        {% set relatedmodals = blok.related() %}
+                        {% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div>
+                    <img src="{{ paths.theme }}assets/pavilon_schema-sm/p0-2_ground-floor-pool-pavilon-schema.png" alt="" />
+                </div>
+                <ul class="mm-blue">
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '17' } %}
+                            <span>1.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '18' } %}
+                            <span>2.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '19' } %}
+                            <span>3.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '20' } %}
+                            <span>4.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="m-item--section">
+            <div class="m-schema--label label2">{% setcontent blok = 'bloky' where { id: '21' } %}
+                <h2 class="m-item--hed">
+                    <strong>{{ blok['title_' ~ app.locale] }}</strong> {{ blok['body_' ~ app.locale] }}
+                </h2>{% setcontent blok = 'bloky' where { id: '22' } %}
+
+                <div class="m-item--description">{{ blok['body_' ~ app.locale] }}
+                    {% if blok.related %}
+                        {% set relatedmodals = blok.related() %}
+                        {% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
+                        {% endfor %}
+                    {% endif %}</div>
+                <div>
+                    <img src="{{ paths.theme }}assets/pavilon_schema-sm/p1-2_first-floor-pavilon-schema.png" alt="" />
+                </div>
+                <ul class="mm-red">
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '23' } %}
+                            <span>5.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '24' } %}
+                            <span>6.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '25' } %}
+                            <span>7.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="m-item--section">
+            <div class="m-schema--label label3">{% setcontent blok = 'bloky' where { id: '26' } %}
+                <h2 class="m-item--hed">
+                    <strong>{{ blok['title_' ~ app.locale] }}</strong> {{ blok['body_' ~ app.locale] }}
+                </h2>{% setcontent blok = 'bloky' where { id: '27' } %}
+
+                <div class="m-item--description">{{ blok['body_' ~ app.locale] }}
+                    {% if blok.related %}
+                        {% set relatedmodals = blok.related() %}
+                        {% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
+                        {% endfor %}
+                    {% endif %}</div>
+                <div>
+                    <img src="{{ paths.theme }}assets/pavilon_schema-sm/p2-2_second-floor-pavilon-schema.png" alt="" />
+                </div>
+                <ul class="mm-green">
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '28' } %}
+                            <span>8.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '29' } %}
+                            <span>9.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '30' } %}
+                            <span>10.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="m-item--section">
+            <div class="m-schema--label label4">{% setcontent blok = 'bloky' where { id: '31' } %}
+                <h2 class="m-item--hed">
+                    <strong>{{ blok['title_' ~ app.locale] }}</strong> {{ blok['body_' ~ app.locale] }}
+                </h2>{% setcontent blok = 'bloky' where { id: '32' } %}
+
+                <div class="m-item--description">{{ blok['body_' ~ app.locale] }}
+                    {% if blok.related %}
+                        {% set relatedmodals = blok.related() %}
+                        {% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
+                        {% endfor %}
+                    {% endif %}</div>
+                <div>
+                    <img src="{{ paths.theme }}assets/pavilon_schema-sm/p3-1_roof-garden-pavilon-schema.png" alt="" />
+                </div>
+                <ul class="mm-yellow">
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '33' } %}
+                            <span>11.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+                    <li>
+                        <h3>{% setcontent blok = 'bloky' where { id: '34' } %}
+                            <span>12.</span>{{ blok['title_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}{% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>{% endfor %}{% endif %}</i>
+                        </h3>
+
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- expozice / virtuální prohlídka-->
+<div class="l-section m-section_pavilondark mm-dark">
+    <article>
+
+        <div class="row">
+            {% setcontent blok = 'bloky' where { id: '35' } %}
+            <header class="small-12 large-9 columns">
+                <h1 class="fnt-primary-headline fnt-white">{{ blok['title_' ~ app.locale] }}</h1>
+            </header>
+        </div>
+
+        <div class="row m-item--meta">
+            <div class="m-item--summary">
+                <div class="small-12  large-8 xlarge-6 columns">
+                    <div class="m-item--copy">
+                        <div class="fnt-secondary-headline fnt-white fnt-shadow">
+                            {{ blok['body_' ~ app.locale] }}
+                            {% if blok.related %}
+                                {% set relatedmodals = blok.related() %}
+                                {% for related in relatedmodals|order('id') %}
+                                    <i class="m-icon i-info " data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="small-12 medium-3 large-4 columns">
+                    <nav>
+                        <a href="{{ paths.root }}{{ app.locale }}/virtualni-prohlidka" title="{{ blok['body_' ~ app.locale] }}"><i class="m-icon mm-white i-arrow x4 "></i></a>
+                    </nav>
+                </footer>
+
+            </div>
+        </div>
+    </article>
+</div>
+
+
+<div class="row l-section">
+    <div class="small-12 large-6 columns">
+        <article class="m-story">
+            <header>
+                <div class="small-12 columns">
+                    {% setcontent blok = 'bloky' where { id: '36' } %}
+                    <h1 class="m-item--hed">{{ blok['title_' ~ app.locale] }}</h1>
+                </div>
+                <div class=" small-12 xlarge-4 columns">
+                    <div class="m-item--image">
+                        <img src="{{ paths.theme }}assets/pavilon/budouci_podoba_pavilonu_jako_plovarna.jpg" alt="" />
+                    </div>
+                </div>
+                <div class="small-12 xlarge-7 columns">
+                    <div class="m-item--description">
+                        <p>{{ blok['body_' ~ app.locale] }}{% if blok.related %}{% set relatedmodals = blok.related() %}
+                                {% for related in relatedmodals|order('id') %}
+                                    <i class="m-icon i-info xs" data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
+                                {% endfor %}
+                            {% endif %}
+                        </p>
+                    </div>
+                </div>
+                <div class="small-1 columns"></div>
+
+            </header>
+        </article>
+    </div>
+
+    <div class="small-12 large-6 columns">
+
+        <article class="m-story">
+            <header>
+                <div class="small-12 columns">{% setcontent blok = 'bloky' where { id: '37' } %}
+                    <h1 class="m-item--hed">{{ blok['title_' ~ app.locale] }}</h1>
+                </div>
+                <div class="small-12 xlarge-4 columns">
+                    <div class="m-item--image">
+                        <img src="{{ paths.theme }}assets/pavilon/city_modul_statue.jpg" alt="" />
+                    </div>
+                </div>
+                <div class="small-12 xlarge-7 columns end">
+                    <div class="m-item--description">
+                        <p>{{ blok['body_' ~ app.locale] }}</p>
+                    </div>
+                    <div class="visible-phone">
+                         <a href="{{ paths.root }}{{ app.locale }}/historie" title="Historie českých pavilonů EXPO"><i class="m-icon i-arrow x2"><span>more</span></i></a>
+                    </div>
+                </div>
+            </header>
+        </article>
+
+    </div>
+</div>
+
+{% include "_inc-za-konceptem.twig" with {'backClass':'mm-dark'} %}
+{% include '_inc-zpravodaj-section.twig' %}
+{% include '_partners.twig' %}
+{% include '_inc-footer.twig' %}
+
+</div>
+</div>
+
+
+<!-- modals -->
+{% include '_inc-modals-content.twig' with {'taxonomie': 'O pavilonu'} %}
+{% include '_inc-global-scripts.twig' %}
+<!-- page custom JS -->
+
+<script type="text/javascript" src="{{ paths.theme }}components/slick/slick/slick.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        var canInitSkrollr = false;
+        var skr = null;
+
+        function checkDisplay() {
+
+            if (isTouch) {
+                $(".m-carousel > .m-carousel--item").css('height', 680);
+                $(".m-carousel").css('height', 680);
+
+                if ($(window).width() > 800) {
+                    canInitSkrollr = true;
+                }
+
+            } else {
+                canInitSkrollr = true;
+                $(".m-carousel").css('height', 'auto');
+                $(".m-carousel > .m-carousel--item").css('height', $(window).height());
+
+                if ($(window).width() < 800) {
+                    canInitSkrollr = false;
+                }
+            }
+        }
+
+
+        function manageDisplay() {
+            if (canInitSkrollr) {
+
+                $(".m-schema.mm-mobile").css('display', 'none');
+                $(".l-schema.m-schema").css('display', 'block');
+
+                $(".m-schema-spacer").each(function () {
+                    var el = $(this);
+                    el.css('display','block');
+                    el.css('height', $(window).height() * 0.76);
+                });
+
+                $(".m-schema-spacer-half").each(function () {
+                    var el = $(this);
+                    el.css('display','block');
+                    el.css('height', ($(window).height() * 0.76) * 0.5);
+                });
+
+                console.log("skr");
+
+                skr = null;
+
+                skr = skrollr.init({
+                    smoothScrolling: false,
+                    mobileDeceleration: 0.01
+                });
+
+
+            } else {
+                $(".m-schema.mm-mobile").css('display', 'block');
+                $(".m-schema-spacer").each(function () {
+                    var el = $(this);
+                    el.css('display','none');
+
+                });
+
+                $(".m-schema-spacer-half").each(function () {
+                    var el = $(this);
+                    el.css('display','none');
+                });
+            }
+        }
+
+        $(window).resize(function () {
+            if (!isTouch) {
+                $(".m-carousel > .m-carousel--item").css('height', $(window).height());
+            }
+
+            checkDisplay();
+            manageDisplay();
+
+        });
+
+        checkDisplay();
+        manageDisplay();
+
+
+
+
+        // debug
+        //$('#myModal').foundation('reveal', 'open');
+
+    });
+
+
+</script>
+
+{% include '_inc-loader-scripts.twig' %}
+</body>{% include '_footer.twig' %}

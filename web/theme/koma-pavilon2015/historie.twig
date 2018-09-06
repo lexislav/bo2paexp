@@ -1,0 +1,125 @@
+{% include '_header.twig' %}
+<body class="l-page l-page_history">
+{% include '_loader.twig' %}
+{% include '_topbar.twig' with {'menuClasses': 'switchable'} %}
+
+<div class="m-carousel">
+
+    <div class="m-carousel--item">
+        <div class="m-item--image" style="background-image: url('{{ paths.theme }}assets/historie/he_slideshow-expo-history-01.jpg');"></div>
+
+        <div class="orbit-caption">
+            {% setcontent blok = 'bloky' where { id: '38' } %}
+            <div class="m-item--hed">{{ blok['title_' ~ app.locale] }}</div>
+            <div class="m-item--description fnt-primary-body-m" style="margin-top: 200px;">
+                {{ blok['body_' ~ app.locale] }}
+            </div>
+
+        </div>
+        <div class="m-carousel--arrow-down">
+            <img src="{{ paths.theme }}/assets/ikony/arrow-down.png" alt="" />
+        </div>
+    </div>
+
+    <div class="m-carousel--item">
+        <div class="m-item--image" style="background-image: url('{{ paths.theme }}assets/historie/he_slideshow-expo-history-02.jpg');"></div>
+
+        <div class="orbit-caption">
+            {% setcontent blok = 'bloky' where { id: '38' } %}
+            <div class="m-item--hed">{{ blok['title_' ~ app.locale] }}</div>
+            <div class="m-item--description fnt-primary-body-m" style="margin-top: 200px;">
+                {{ blok['body_' ~ app.locale] }}
+            </div>
+
+        </div>
+        <div class="m-carousel--arrow-down">
+            <img src="{{ paths.theme }}/assets/ikony/arrow-down.png" alt="" />
+        </div>
+    </div>
+
+    <div class="m-carousel--item">
+        <div class="m-item--image" style="background-image: url('{{ paths.theme }}assets/historie/he_slideshow-expo-history-03.jpg');"></div>
+
+        <div class="orbit-caption">
+            {% setcontent blok = 'bloky' where { id: '38' } %}
+            <div class="m-item--hed">{{ blok['title_' ~ app.locale] }}</div>
+            <div class="m-item--description fnt-primary-body-m" style="margin-top: 200px;">
+                {{ blok['body_' ~ app.locale] }}
+            </div>
+
+        </div>
+        <div class="m-carousel--arrow-down">
+            <img src="{{ paths.theme }}/assets/ikony/arrow-down.png" alt="" />
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    {% for record in records %}
+        <div class="small-12 medium-4 large-3 columns {% if loop.last %}end{% endif %}">
+            <div class="m-story mm-history">
+                <header>
+                    <div class="m-item--image" style="background-image: url('{% if record.image!="" %}{{ thumbnail(record.image) }}{% endif %}')">
+                        <a href="{{ record.link }}">
+                            {% if record.image!="" %}
+                                <img src="{{ thumbnail(record.image) }}" alt="">
+                            {% else %}
+                                <img src="{{ paths.theme }}assets/no_image_thumb_blue.svg" alt="Article has no image attached" />
+                            {% endif %}
+                        </a>
+                    </div>
+                    <div class="m-item--summary">
+                        <h1 class="m-item--hed">{{ record.rok }}</h1>
+
+                        <div class="m-item--description">{{ record['mesto_' ~ app.locale ] }}</div>
+                    </div>
+                </header>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+
+
+
+{% include '_partners.twig' %}
+{% include '_inc-footer.twig' %}
+
+{% include '_inc-global-scripts.twig' %}
+
+<!-- page custom JS -->
+
+<script type="text/javascript" src="{{ paths.theme }}components/slick/slick/slick.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        if (isTouch) {
+            $(".m-carousel > .m-carousel--item").css('height', 680);
+            $(".m-carousel").css('height', 680);
+        } else {
+            $(".m-carousel").css('height', 'auto');
+            $(".m-carousel > .m-carousel--item").css('height', $(window).height() *.75);
+        }
+
+
+        $(window).resize(function () {
+            if (!isTouch) {
+                $(".m-carousel > .m-carousel--item").css('height', $(window).height() *.75);
+            }
+        });
+
+        $('.m-carousel').slick({
+            autoplay: true,
+            speed: 500,
+            fade: true,
+            cssEase: 'linear'
+        });
+
+    });
+</script>
+
+{% include '_inc-loader-scripts.twig' %}
+</body>
+{% include '_footer.twig' %}

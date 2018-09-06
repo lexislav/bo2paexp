@@ -1,0 +1,71 @@
+<!-- partners gold -->
+{% setcontent sponzors = 'sponzori/first/2' where { stitky: 'gold' } %}
+{% for sponzor in sponzors %}
+    {% if loop.first %}
+        <div class="l-section m-section_partner mm-gold mm-dark">
+
+            <header class="clearfix mgr-full row">
+                <div class="small-12 columns">
+                    <h1 class="fnt-primary-headline">{{__('General Partners')}}</h1>
+                </div>
+            </header>
+
+            <div class="row l-partner_large">
+            {% endif %}
+
+                <article class="small-6 columns m-partner">
+                    <header>
+                        {% set partnerLink = sponzor.related %}
+                        {% if sponzor.odkaz %}
+                            {% set partnerLink = sponzor.odkaz %}
+                        {% endif %}
+                        <a href="http://{{ partnerLink }} target="_blank"">
+                            {% if sponzor.image!="" %}<img class="m-item--image" src="{{ thumbnail(sponzor.logo, 280,210, fit) }}" />{% endif %}
+                            <h1 class="m-item--hed">{{ sponzor['nazev_' ~ app.locale] }}</h1>
+                            <div class="m-item--description">{{ sponzor['popis_' ~ app.locale] }}</div>
+                        </a>
+                    </header>
+                </article>
+
+            {% if loop.last %}
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}
+<!-- end partners gold -->
+
+<!-- partners silver -->
+{% setcontent sponzors = 'sponzori/first/6' where { stitky: 'silver' } %}
+{% for sponzor in sponzors %}
+    {% if loop.first %}
+        <div class="l-section m-section_partner mm-silver">
+
+            <header class="clearfix mgr-third row">
+                <div class="small-12 columns">
+                    <h1>{{__('Main partners')}}</h1>
+                </div>
+            </header>
+            <div class="row l-partner_xsmall">
+                <ul class="small-block-grid-2 medium-block-grid-2 large-block-grid-4">
+                {% endif %}
+                    <li>
+                        {% set partnerLink = sponzor.related %}
+                        {% if sponzor.odkaz %}
+                            {% set partnerLink = sponzor.odkaz %}
+                        {% endif %}
+                        <a href="http://{{ partnerLink }}" target="_blank">
+                            <article class="m-partner">
+                                <header>
+                                    {% if sponzor.image!="" %}<div class="m-item--image" style="background-image: url({{ thumbnail(sponzor.logo, 280,120, crop) }});"></div>{% endif %}
+                                    <h1 class="m-item--hed">{{ sponzor['nazev_' ~ app.locale] }}</h1>
+                                    <div class="m-item--description">{{ sponzor['popis_' ~ app.locale] }}</div>
+                                </header>
+                            </article>
+                        </a>
+                    </li>
+                {% if loop.last %}
+                </ul>
+            </div>
+        </div>
+    {% endif %}
+{% endfor %}

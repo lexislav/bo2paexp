@@ -1,0 +1,25 @@
+.m-unsupported-browser {
+
+    padding-top: 150px;
+    color: #888;
+    .m-item--title {
+        font-size: 26px;
+        margin-bottom: 120px;
+    }
+
+    .m-item--icons {
+        margin-bottom: 60px;
+    }
+
+    ul > li {
+        margin: 0;
+        padding: 0;
+        width: 25%;
+        text-align: center;
+    }
+
+    p {
+        margin-bottom: 0.5em;
+    }
+
+}

@@ -1,0 +1,105 @@
+{% include '_header.twig' %}
+<body class="l-page l-page_blog">
+{# {% include '_loader.twig' %} #}
+{% include '_topbar.twig' with {'menuClasses': 'switchable'} %}
+
+<div class="m-theme mgr-full">
+    <div class="row">
+        <div class="small-12 columns">
+            <h1 class="m-item--hed">Zpravodaj Pavilonu</h1>
+
+            <div class="m-item--meta">
+                    {#{% for category in config.get('taxonomy/kategorie/options') %}
+                        <li>
+                            <a href="{{ paths.root }}{{ app.locale }}/kategorie/{{ category }}">{{ category }}</a>
+                        </li>
+                    {% endfor %}#}
+                <ul class="inline-list">
+                    <li class=""><a href="{{ paths.root }}{{ app.locale }}/blog">{{__('All')}}</a></li>
+                    <li class=""><a href="{{ paths.root }}{{ app.locale }}/kategorie/Expozice">{{__('Exhibitions')}}</a></li>
+                    <li class=""><a href="{{ paths.root }}{{ app.locale }}/kategorie/Fotogalerie">{{__('Photo gallery')}}</a></li>
+                    <li class=""><a href="{{ paths.root }}{{ app.locale }}/kategorie/O%20pavilonu">{{__('About the pavilion')}}</a></li>
+                    <li class=""><a href="{{ paths.root }}{{ app.locale }}/kategorie/Zprávy%20partnerů">{{__('Partner information')}}</a></li>
+                    <!-- <li class=""><a href="{{ paths.root }}{{ app.locale }}/kategorie/Rozhovory">{{__('Interviews')}}</a></li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mgr-full">
+    <div class="small-12 large-12 columns">
+
+
+        <article>
+            <h2>{{ __("No content found.") }}</h2>
+
+            <p>
+                Unfortunately, no content could be found. Try another page, or go to the
+                <a href="{{ paths.root }}{{app.locale}}">Homepage</a>. </p>
+        </article>
+    </div>
+</div>
+
+
+<div class="m-list mm-dark">
+<div class="row">
+    <div class="small-12 medium-12 large-2 xlarge-3 columns mgr-half text-center">
+        <img src="{{ paths.theme }}/assets/ikony/web-ikona.svg" alt="" />
+    </div>
+    <div class="small-12 medium-6 large-5 xlarge-4 columns">
+        <header>
+            <h2>{{__('More articles about Pavilion & EXPO2015')}}</h2>
+        </header>
+        {% setcontent myc = 'odkazy' where { rozcestnik: 'o-pavilonu' } limit 10 %}
+        {% for olink in myc %}{% if olink['nazev_' ~ app.locale]!="" %}
+            <article class="m-item">
+                <header>
+                    <h1 class="m-item--hed">
+                        <a href="http://{{ olink.adresa }}" title="{{ olink['nazev_' ~ app.locale] }}" target="_new">
+                            {{ olink['nazev_' ~ app.locale] }}
+                        </a>
+                    </h1>
+
+                    <div class="m-item--meta">
+                        <div class="m-item--date">{{ olink['popis_' ~ app.locale] }}</div>
+                    </div>
+                </header>
+            </article>{% endif %}
+        {% endfor %}
+
+    </div>
+
+    <div class="small-12 medium-6 large-5 xlarge-4 xlarge-offset-1 columns">
+        <header>
+            <h2>{{__('More about Modular Construction')}}</h2>
+        </header>
+        {% setcontent myc = 'odkazy' where { rozcestnik: 'modularni-architektura' } limit 10 %}
+        {% for olink in myc %}{% if olink['nazev_' ~ app.locale]!="" %}
+            <article class="m-item">
+                <header>
+                    <h1 class="m-item--hed">
+                        <a href="http://{{ olink.adresa }}" title="{{ olink['nazev_' ~ app.locale] }}" target="_new">
+                            {{ olink['nazev_' ~ app.locale] }}
+                        </a>
+                    </h1>
+
+                    <div class="m-item--meta">
+                        <div class="m-item--date">{{ olink['popis_' ~ app.locale] }}</div>
+                    </div>
+                </header>
+            </article>{% endif %}
+        {% endfor %}
+    </div>
+</div>
+</div>
+
+
+{% include '_partners.twig' %}
+{% include '_inc-footer.twig' %}
+
+{% include '_inc-global-scripts.twig' %}
+<!-- page custom JS -->
+
+</body>
+{% include '_footer.twig' %}

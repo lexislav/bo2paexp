@@ -1,0 +1,215 @@
+.l-section {
+    @include clearfix();
+
+    // section base padding
+    padding-top: $base-spacing;
+    padding-bottom: $base-spacing;
+    h1 {
+        margin-top: -0.2em;
+    }
+    &.mm-dark {
+        background-color: #d8d8d8;
+    }
+    &.mm-bluish {
+        background-color: rgba(165, 192, 233, 0.32);
+    }
+}
+
+// basic section overides
+
+.l-section.m-section_pavilon {
+}
+
+.l-section.m-progress-bar {
+}
+
+.l-section.m-section_paviloninfo {
+}
+
+.l-section.m-section_pavilondark {
+}
+
+.l-section.m-section_text {
+}
+
+.l-section.m-section_grid {
+}
+
+.l-section.m-section_partner {
+    &.mm-gold {
+    }
+    &.mm-silver {
+        border-top: 1px solid #e5e5e5;
+        padding-top: $base-spacing * 0.80;
+    }
+
+}
+
+.m-section_pavilon {
+
+    .padded {
+        padding-right: 60px;
+    }
+
+    h1, h2 {
+        @include fnt-secondary-headline();
+        font-size: rem-calc(26);
+        @media #{size(B)} {
+
+            font-size: rem-calc(36);
+        }
+    }
+
+    h2 {
+        font-size: rem-calc(18);
+        line-height: 1.5em;
+        @media #{size(B)} {
+            font-size: rem-calc(24);
+
+        }
+    }
+
+    h3 {
+        @include fnt-secondary-headline-mid();
+    }
+
+}
+
+.m-section_partner {
+    &.mm-gold {
+    }
+    &.mm-silver {
+        & > header h1 {
+            @include fnt-primary-medium();
+            font-size: rem-calc(20);
+            text-decoration: underline;
+        }
+
+    }
+}
+
+.m-section_pavilondark {
+    height: 520px;
+    background-position: 0% 0%;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-image: url('../assets/pavilon/pp02_czech-expo-pavilion_virtual-tour.jpg');
+
+    article {
+        @include clearfix();
+        height: 100%;
+        position: relative;
+        .m-item--meta {
+            height: 100%;
+            position: relative;
+            margin-bottom: 0;
+        }
+        .m-item--summary {
+            position: absolute;
+            bottom: 60px;
+            margin-bottom: 0;
+
+            nav {
+                text-align: right;
+            }
+
+        }
+
+    }
+}
+
+.touch .m-section_pavilondark {
+    background-position: top right !important;
+    background-attachment: local;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 420px;
+    width: 100%;
+    .m-item--summary {
+        position: absolute;
+        bottom: 80px;
+        margin-bottom: 0;
+
+    }
+}
+
+// text section
+
+.m-data-stats {
+
+    @media #{$small-up} {
+        .rbox,
+        .lbox {
+            text-align: center;
+            margin-bottom: 20px;
+            span {
+                text-align: center;
+                display: block;
+            }
+        }
+    }
+
+    @media #{$large-up} {
+
+        .rbox,
+        .lbox {
+            height: 60px;
+            line-height: 60px;
+            display: block;
+            vertical-align: middle;
+            span {
+                margin: 0;
+                margin-top: 10px;
+            }
+        }
+        .rbox {
+            text-align: right;
+            span {
+                float: right;
+                margin-left: 10px;
+            }
+        }
+        .lbox {
+            text-align: left;
+            span {
+                float: left;
+                margin-right: 10px;
+            }
+        }
+    }
+
+}
+
+.m-data-table {
+
+    @include fnt-secondary-headline-mid();
+    text-align: center;
+    text-transform: none;
+
+    li {
+        margin-top: 30px;
+
+        @include box-sizing(border-box);
+        border-right: 2px dotted lighten($koma, 30%);
+        padding: 0 20px;
+        padding-top: 10px;
+        min-height: 100px;
+        &:last-of-type {
+            border: none;
+        }
+    }
+
+    span {
+        font-size: rem-calc(24);
+        display: block;
+        line-height: 1.1em;
+        margin-bottom: 10px;
+        sup {
+            font-size: rem-calc(14);
+        }
+    }
+}
+
+

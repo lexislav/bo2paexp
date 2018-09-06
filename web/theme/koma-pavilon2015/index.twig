@@ -1,0 +1,286 @@
+{% include '_header.twig' %}
+<body class="l-page l-page_home">
+{% include '_loader.twig' %}
+{% include '_topbar.twig' with {'menuClasses': 'switchable'} %}
+{% include '_angle-slider.twig' %}
+
+<div class="l-section m-section_pavilon">
+
+    <div class="row">
+        <div class="small-12 large-6 columns">
+            {% setcontent blok = 'bloky' where { id: '1' } %}
+            <h1>
+                {{ blok['title_' ~ app.locale] }}
+            </h1>
+        </div>
+        <div class="small-12 medium-10 large-6 columns mgr-third">
+            <h2>{{ blok['body_' ~ app.locale] }}{% if blok.related %}
+                    {% set relatedmodals = blok.related() %}
+                    {% for related in relatedmodals|order('id') %}
+                        <i class="m-icon i-info " data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
+                    {% endfor %}
+                {% endif %}</h2>
+        </div>
+        <div class="small-12 columns mgr-half">
+            <img src="{{ paths.theme }}/assets/pavilon-skica.png" alt="" />
+        </div>
+
+        <div class="small-12 large-4 columns ">
+            {% setcontent blok = 'bloky' where { id: '2' } %}
+            <h3>{{ blok['title_' ~ app.locale] }}
+                {% if blok.related %}
+                    {% set relatedmodals = blok.related() %}
+                    {% for related in relatedmodals|order('id') %}
+                        <i class="m-icon xs i-info " data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
+                    {% endfor %}
+                {% endif %}</h3>
+
+            <p>{{ blok['body_' ~ app.locale] }}</p>
+        </div>
+
+        <div class="small-12 medium-6 large-4 columns ">
+            {% setcontent blok = 'bloky' where { id: '3' } %}
+            <h3>{{ blok['title_' ~ app.locale] }}
+                {% if blok.related %}
+                    {% set relatedmodals = blok.related() %}
+                    {% for related in relatedmodals|order('id') %}
+                        <i class="m-icon xs i-info " data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
+                    {% endfor %}
+                {% endif %}</h3>
+
+            <p>{{ blok['body_' ~ app.locale] }}</p>
+        </div>
+        <div class="small-12 medium-6 large-4 columns ">
+            {% setcontent blok = 'bloky' where { id: '4' } %}
+            <h3>{{ blok['title_' ~ app.locale] }}
+                {% if blok.related %}
+                    {% set relatedmodals = blok.related() %}
+                    {% for related in relatedmodals|order('id') %}
+                        <i class="m-icon xs i-info " data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
+                    {% endfor %}
+                {% endif %}</h3>
+            {{ blok['body_' ~ app.locale] }}
+        </div>
+    </div>
+
+</div>
+
+
+<div class="l-section m-progress-bar">
+    <div id="drg-progress-bar-bounds" >
+
+        <article>
+            <div class="row">
+                <header class="small-12 columns">
+                    <h2>{{ __('Current Condition of the Pavilion') }}</h2>
+                </header>
+            </div>
+
+            {% setcontent bodyosy = 'ProgressBar' %}
+            <div id="drg-progress-bar" class="m-progress-bar--container">
+
+                <ul class="m-progress-bar--items">
+
+                    {% for bodosy in bodyosy|order('id') %}
+                        <li data-stamp="{{ bodosy.poloha| date('U') }}" data-correction="{{ bodosy.korekce }}" class="mm-full data-item">
+
+                            {% if bodosy.image!="" %}
+                                <img class="m-progress-bar--image" src="{{ image(bodosy.image) }}">
+                            {% endif %}
+
+                            <div class="m-item--summary">
+                                {% if bodosy.related %}
+                                {% set bodlink = bodosy.related|first %}
+                                <a href="{{ bodlink.link }}" title="{{ bodlink.slug }}">
+                                    {% endif %}
+                                    <span class="m-item--date">{{ bodosy.poloha|date("d. m. Y") }}</span>
+                                    <span class="m-item--description">{{ bodosy['title_' ~ app.locale] }}</span>
+                                    {% if bodosy.related %}</a>{% endif %}
+                            </div>
+
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <div class="m-progress-bar--bar-bg">
+                    <div class="m-progress-bar--bar"></div>
+                </div>
+            </div>
+            <div id="drg-left" class="arrow-left"><span></span></div>
+            <div id="drg-right" class="arrow-right"><span></span></div>
+        </article>
+
+    </div>
+</div>
+
+<div class="l-section m-section_paviloninfo">
+    <article>
+        <header class="row mgr-full">
+            <div class="small-12 large-5 columns">
+                {% setcontent blok = 'bloky' where { id: '5' } %}
+                <h1 class="fnt-primary-headline">
+                    {{ blok['title_' ~ app.locale] }}
+                </h1>
+            </div>
+            <div class="small-12 large-7 columns">
+                <h3 class="fnt-secondary-headline">{{ blok['body_' ~ app.locale] }}
+                    {% if blok.related %}
+                        {% set relatedmodals = blok.related() %}
+                        {% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info " data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
+                        {% endfor %}
+                    {% endif %}
+                </h3>
+            </div>
+        </header>
+
+        <div class="row mgr-half m-data-stats">
+            <div class="small-12 medium-6 columns fnt-primary-body-m">
+                <div class="lbox"><span class="fnt-boxed-white">520</span> {{__('Hourly visitor capacity')}}</div>
+                <div class="lbox"><span class="fnt-boxed-white">700 m<sup>2</sup></span> {{__('Total exhibition area')}}
+                </div>
+            </div>
+            <div class="small-12 medium-6 columns fnt-primary-body-m">
+                {% setcontent numero = 'Čísla' where { id: '1' } %}
+                <div class="rbox">
+                    <span class="fnt-boxed-white">{{ numero.integerfield }}</span>{{__('Daily visitor rate:')}}
+                </div>
+                {% setcontent numero = 'Čísla' where { id: '2' } %}
+                <div class="rbox">
+                    <span class="fnt-boxed-black">{{ numero.integerfield }}</span>{{__('Total number of visitors:')}}
+                </div>
+            </div>
+        </div>
+
+        <div class="row mgr-half">
+            <div class="small-12 columns">
+                <img src="{{ paths.theme }}/assets/pavilon-2.png" alt="" />
+            </div>
+        </div>
+
+        <div class="row">
+            <ul class="small-block-grid-2 small-block-grid-3 large-block-grid-6 m-data-table" data-equalizer>
+                <li data-equalizer-watch><span>1360 m<sup>2</sup></span>{{__('Ground area')}}</li>
+                <li data-equalizer-watch><span>540 m<sup>2</sup></span>{{__('Built-up area')}}</li>
+                <li data-equalizer-watch><span>420 {{__('tonnes')}}</span>{{__('Pavilion weight')}}</li>
+                <li data-equalizer-watch><span>60 {{__('tonnes')}}</span>{{__('Steel structure base')}}</li>
+                <li data-equalizer-watch><span>37 m<sup>3</sup></span>{{__('Pool volume')}}</li>
+                <li data-equalizer-watch><span>135 {{__('days')}}</span>{{__('Pavilion assembly time')}}</li>
+            </ul>
+        </div>
+    </article>
+
+</div>
+
+<div class="l-section m-section_pavilondark mm-dark" style="background-image: url({{ paths.theme }}/assets/homepage/hp04_pavilon_at_night.jpg);">
+    <article>
+
+        <div class="row">
+            {% setcontent blok = 'bloky' where { id: '6' } %}
+            <header class="small-12 large-6 columns">
+                <h1 class="fnt-primary-headline fnt-white">{{ blok['title_' ~ app.locale] }}</h1>
+            </header>
+        </div>
+
+        <div class="row m-item--meta">
+            <div class="m-item--summary">
+                <div class="small-12 medium-9 large-6 columns">
+                    <div class="m-item--copy">
+                        <div class="fnt-secondary-headline fnt-white fnt-shadow">
+                            {{ blok['body_' ~ app.locale] }}
+                            {% if blok.related %}
+                                {% set relatedmodals = blok.related() %}
+                                {% for related in relatedmodals|order('id') %}
+                                    <i class="m-icon i-info " data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
+                <footer class="small-12 medium-3 large-4 columns">
+                    <nav>
+                        <a href="{{ app.locale }}/o-pavilonu" title="Pavilon"><i class="m-icon mm-white i-arrow x4 "></i></a>
+                    </nav>
+                </footer>
+
+            </div>
+        </div>
+    </article>
+</div>
+
+{% include "_inc-za-konceptem.twig" %}
+
+<!-- výhody -->
+<div class=" l-section m-section_text mm-bluish">
+    <article class="row">
+        <header class="clearfix mgr-full">
+            <div class="small-12 large-5 columns">
+                {% setcontent blok = 'bloky' where { id: '10' } %}
+                <h1 class="fnt-primary-headline">{{ blok['title_' ~ app.locale] }}</h1>
+            </div>
+            <div class="small-12 large-7 columns">
+                <h3 class="fnt-secondary-headline">{{ blok['body_' ~ app.locale] }}
+                    {% if blok.related %}
+                        {% set relatedmodals = blok.related() %}
+                        {% for related in relatedmodals|order('id') %}
+                            <i class="m-icon i-info " data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
+                        {% endfor %}
+                    {% endif %}</h3>
+            </div>
+        </header>
+
+        <div class="small-12 medium-6 large-4  columns ">
+            {% setcontent blok = 'bloky' where { id: '11' } %}
+            <h3 class="fnt-secondary-headline-mid icon-outside i-clock">{{ blok['title_' ~ app.locale] }}{% if blok.related %}
+                    {% set relatedmodals = blok.related() %}
+                    {% for related in relatedmodals|order('id') %}
+                        <i class="m-icon i-info " data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
+                    {% endfor %}
+                {% endif %}</h3>
+
+            <p>{{ blok['body_' ~ app.locale] }} </p>
+        </div>
+
+        <div class="small-12 medium-6 large-4  columns ">
+            {% setcontent blok = 'bloky' where { id: '12' } %}
+            <h3 class="fnt-secondary-headline-mid icon-outside i-bulb ">{{ blok['title_' ~ app.locale] }}{% if blok.related %}
+                    {% set relatedmodals = blok.related() %}
+                    {% for related in relatedmodals|order('id') %}
+                        <i class="m-icon i-info " data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
+                    {% endfor %}
+                {% endif %}</h3>
+
+            <p>{{ blok['body_' ~ app.locale] }}</p>
+        </div>
+        <div class="small-12 small-12 large-4  columns">
+            {% setcontent blok = 'bloky' where { id: '13' } %}
+            <h3 class="fnt-secondary-headline-mid icon-outside i-elegant">{{ blok['title_' ~ app.locale] }}{% if blok.related %}
+                    {% set relatedmodals = blok.related() %}
+                    {% for related in relatedmodals|order('id') %}
+                        <i class="m-icon i-info " data-reveal-id="{{ related.slug }}"><span>moreinfo</span></i>
+                    {% endfor %}
+                {% endif %}</h3>
+
+            <p>{{ blok['body_' ~ app.locale] }}</p>
+        </div>
+    </article>
+</div>
+
+{% include '_inc-zpravodaj-section.twig' %}
+
+
+<!-- Modals -->
+{% include '_inc-modals-content.twig' with {'taxonomie': 'Domácí strana'} %}
+
+{% include '_partners.twig' %}
+{% include '_inc-footer.twig' %}
+{% include '_inc-global-scripts.twig' %}
+<!-- page custom JS -->
+
+<script src="{{ paths.theme }}components/ags-slider/ags-slider.js"></script>
+<script src="{{ paths.theme }}js/progress-bar-scroll.js"></script>
+
+
+{% include '_inc-loader-scripts.twig' %}
+</body>{% include '_footer.twig' %}

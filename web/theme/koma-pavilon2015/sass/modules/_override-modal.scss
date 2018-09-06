@@ -1,0 +1,84 @@
+//
+// check modal section in _settings.scss first !!!
+//
+
+.reveal-modal {
+    &.fixed {
+        position: fixed;
+        top: 10% !important;
+        bottom: 10%;
+        margin: auto;
+    }
+
+    &.tiny {
+        @media #{size(B)} {
+            width: 60%;
+            }
+        @media #{size(D)} {
+            width: 40%;
+            }
+    }
+    &.small {
+        @media #{size(B)} {
+            width: 80%;
+        }
+        @media #{size(D)} {
+            width: 60%;
+        }
+    }
+
+    .close-reveal-modal {
+        width: 50px;
+        height: 50px;
+
+        background-image: url("../assets/ikony/nav-close.png");
+        background-position: top;
+        background-repeat: no-repeat;
+
+        &:hover {
+            background-position: bottom;
+        }
+
+    }
+
+}
+
+.reveal-modal,
+.reveal-modal.fixed {
+
+    // close button
+    .close-reveal-modal {
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+        vertical-align: middle;
+        overflow: hidden;
+        font-size: 50px;
+        line-height: 50px;
+
+        &:hover {
+            color: $color-koma-red;
+        }
+    }
+}
+
+.touch .reveal-modal {
+
+    &.tiny,
+    &.small {
+        position: fixed;
+        top: 20px !important;
+        bottom: 20px;
+        left: 20px;
+        right: 20px;
+        margin: auto;
+        z-index: 5000;
+        width: auto;
+        height: auto;
+        //overflow: auto;
+    }
+}

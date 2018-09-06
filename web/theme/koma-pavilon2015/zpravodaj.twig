@@ -1,0 +1,204 @@
+{% include '_header.twig' %}
+<body class="l-page l-page_blog">
+{% include '_loader.twig' %}
+{% include '_topbar.twig' with {'menuClasses': 'switchable'} %}
+
+<div class="m-theme mgr-full">
+    <div class="row">
+        <div class="small-12 columns">
+            <h1 class="m-item--hed">{{__('Pavilion News')}}</h1>
+
+            <div class="m-item--meta">
+                    {#{% for category in config.get('taxonomy/kategorie/options') %}
+                        <li>
+                            <a href="{{ paths.root }}{{ app.locale }}/kategorie/{{ category }}">{{ category }}</a>
+                        </li>
+                    {% endfor %}#}
+                <ul class="inline-list">
+                    <li class=""><a href="{{ paths.root }}{{ app.locale }}/blog">{{__('All')}}</a></li>
+                    <li class=""><a href="{{ paths.root }}{{ app.locale }}/kategorie/Expozice">{{__('Exhibitions')}}</a></li>
+                    <li class=""><a href="{{ paths.root }}{{ app.locale }}/kategorie/Fotogalerie">{{__('Photo gallery')}}</a></li>
+                    <li class=""><a href="{{ paths.root }}{{ app.locale }}/kategorie/O%20pavilonu">{{__('About the pavilion')}}</a></li>
+                    <li class=""><a href="{{ paths.root }}{{ app.locale }}/kategorie/Zprávy%20partnerů">{{__('Partner information')}}</a></li>
+                    <!-- <li class=""><a href="{{ paths.root }}{{ app.locale }}/kategorie/Rozhovory">{{__('Interviews')}}</a></li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% if taxonomytype is defined %}
+    <div class="row">
+        <div class="small-12 columns text-center mgr-half">
+            <h4>
+                {{ __('Overview for') }}
+                {% if taxonomy.options[slug] is defined %}
+                    {{ taxonomy.options['slug_' ~ app.locale] }}
+                {% else %}
+                    {{ slug }}
+                {% endif %}
+            </h4>
+        </div>
+    </div>
+    {# taxonomies are fetched unordered by design. If we specified an order in config.yml, sort them here: #}
+    {% set records = records|order(app.config.get('general/listing_sort')) %}
+{% endif %}
+
+{% for record in records %}
+
+    {% if loop.index == 1 %}
+
+    <div class="row mgr-full">
+    <div class="small-12 large-6 columns">
+        <article class="m-blog-item mm-subhero {% if record.featured %}mm-featured{% endif %}">
+            <header>
+                <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">
+                    <div class="m-item--image">
+                        {% if record.image!="" %}
+                            <img src="{{ thumbnail(record.image, 600, 420, crop) }}" alt="">
+                        {% else %}
+                            <img src="{{ paths.theme }}assets/no_image_thumb_blue_slim.svg" />
+                        {% endif %}</div>
+                    <h1 class="m-item--hed">
+                        <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">{{ record['title_' ~ app.locale] }}</a>
+                    </h1>
+
+                    {% if record.taxonomy.kategorie is defined %}
+                        <div class="m-item--meta">
+                            <div class="m-item--section">
+                                {% for tag in record.taxonomy.kategorie %}
+                                <a href="{{ paths.root }}{{ app.locale }}/kategorie/{{ tag }}">
+                                    {{ tag }}</a>{% if not loop.last %}, {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+                </a>
+            </header>
+        </article>
+    </div>
+
+    {% elseif loop.index == 2 %}
+        <div class="small-12 large-6 columns">
+            <article class="m-blog-item mm-subhero {% if record.featured %}mm-featured{% endif %}">
+                <header>
+                    <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">
+                        <div class="m-item--image">
+                            {% if record.image!="" %}
+                                <img src="{{ thumbnail(record.image, 600, 420, crop) }}" alt="">
+                            {% else %}
+                                <img src="{{ paths.theme }}assets/no_image_thumb_blue_slim.svg" />
+                            {% endif %}</div>
+                        <h1 class="m-item--hed">
+                            <a href="{{ record.link }}" title="{{ record['title_' ~ app.locale] }}">{{ record['title_' ~ app.locale] }}</a>
+                        </h1>
+
+                        {% if record.taxonomy.kategorie is defined %}
+                            <div class="m-item--meta">
+                                {% for cat in record.taxonomy.kategorie %}
+                                <a href="{{ paths.root }}{{ app.locale }}/kategorie/{{ cat }}" class="m-item--section">
+                                    {{ cat }}</a>{% if not loop.last %}, {% endif %}
+                                {% endfor %}</div>
+                        {% endif %}
+                    </a>
+                </header>
+            </article>
+        </div>
+    </div>
+    {% elseif loop.index == 3 %}
+    <div class="row">
+        {% if record.image!="" %}
+            {% include '_inc-blog-post-small.twig' %}
+        {% else %}
+            {% include '_inc-blog-post-small.twig' %}
+        {% endif %}
+    {% elseif loop.index > 3 %}
+        {% if record.image!="" %}
+            {% include '_inc-blog-post-small.twig' %}
+        {% else %}
+            {% include '_inc-blog-post-small.twig' %}
+        {% endif %}
+    {% endif %}
+    {% if loop.last %}
+        </div>
+    {% endif %}
+
+    {% else %}
+            <article>
+                <h2>{{ __("No content found.") }}</h2>
+
+                <p>
+                    Unfortunately, no content could be found. Try another page, or go to the
+                    <a href="{{ paths.root }}">homepage</a>. </p>
+            </article>
+    {% endfor %}
+    </div>
+
+<!-- Paginace -->
+{{ pager('', 2, '_zpravodaj_pager.twig') }}
+<!-- Konec paginace  -->
+
+<div class="m-list mm-dark">
+<div class="row">
+    <div class="small-12 medium-12 large-2 xlarge-3 columns mgr-half text-center">
+        <img src="{{ paths.theme }}/assets/ikony/web-ikona.svg" alt="" />
+    </div>
+    <div class="small-12 medium-6 large-5 xlarge-4 columns">
+        <header>
+            <h2>{{__('More articles about Pavilion & EXPO2015')}}</h2>
+        </header>
+        {% setcontent myc = 'odkazy' where { rozcestnik: 'o-pavilonu' } limit 10 %}
+        {% for olink in myc %}{% if olink['nazev_' ~ app.locale]!="" %}
+            <article class="m-item">
+                <header>
+                    <h1 class="m-item--hed">
+                        <a href="http://{{ olink.adresa }}" title="{{ olink['nazev_' ~ app.locale] }}" target="_new">
+                            {{ olink['nazev_' ~ app.locale] }}
+                        </a>
+                    </h1>
+
+                    <div class="m-item--meta">
+                        <div class="m-item--date">{{ olink['popis_' ~ app.locale] }}</div>
+                    </div>
+                </header>
+            </article>{% endif %}
+        {% endfor %}
+
+    </div>
+
+    <div class="small-12 medium-6 large-5 xlarge-4 xlarge-offset-1 columns">
+        <header>
+            <h2>{{__('More about Modular Construction')}}</h2>
+        </header>
+        {% setcontent myc = 'odkazy' where { rozcestnik: 'modularni-architektura' } limit 10 %}
+        {% for olink in myc %}{% if olink['nazev_' ~ app.locale]!="" %}
+            <article class="m-item">
+                <header>
+                    <h1 class="m-item--hed">
+                        <a href="http://{{ olink.adresa }}" title="{{ olink['nazev_' ~ app.locale] }}" target="_new">
+                            {{ olink['nazev_' ~ app.locale] }}
+                        </a>
+                    </h1>
+
+                    <div class="m-item--meta">
+                        <div class="m-item--date">{{ olink['popis_' ~ app.locale] }}</div>
+                    </div>
+                </header>
+            </article>{% endif %}
+        {% endfor %}
+    </div>
+</div>
+</div>
+
+
+
+{% include '_partners.twig' %}
+{% include '_inc-footer.twig' %}
+
+{% include '_inc-global-scripts.twig' %}
+<!-- page custom JS -->
+
+{% include '_inc-loader-scripts.twig' %}
+</body>
+{% include '_footer.twig' %}

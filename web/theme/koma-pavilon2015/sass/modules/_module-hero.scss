@@ -1,0 +1,123 @@
+
+
+
+.m-theme {
+    background-image: url("../assets/zpravodaj/zp01_header_construction.jpg");
+    background-position: center center;
+    background-size: cover;
+    height: 472px;
+    color: white;
+    position: relative;
+
+    & > .row {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        max-width: none;
+    }
+
+    .m-item--hed,
+    .m-item--meta {
+        color: white;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.9);
+    }
+
+    .m-item--hed {
+        text-align: center;
+        margin-top: 140px;
+        margin-bottom: 30px;
+        font-size: rem-calc(36);
+
+        @media #{size(B)} {
+            margin-top: 170px;
+            margin-bottom: 10px;
+            font-size: rem-calc(64);
+            font-weight: 400;
+        }
+
+    }
+
+    .m-item--meta {
+        @include fnt-secondary-light();
+        position: relative;
+        display: block;
+
+        > ul {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            li {
+
+                display: block;
+                float: none;
+                text-align: center;
+                padding: 0;
+                margin: 0;
+
+                @media #{size(B)} {
+                    margin: 0;
+                    padding: 0 2px;
+                    float: left;
+
+                    &:first-of-type {
+                        a:before {
+                            display: none;
+                        }
+                    }
+                }
+
+                @media #{size(C)} {
+                    padding: 0 6px;
+                    }
+
+                &.mm-active {
+                    color: $color-koma-red;
+                    text-decoration: underline;
+                    a {
+                        color: $color-koma-red;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        @media #{size(B)} {
+            margin-left: 50%;
+            margin-right: -50%;
+            display: inline-block;
+
+            > ul {
+                width: auto;
+                @include transform(translateX(-50%));
+                li {
+                    text-align: left;
+                }
+            }
+        }
+
+        a {
+            font-size: rem-calc(18);
+            font-weight: 400;
+            color: white;
+            &:hover {
+                color: white;
+                text-decoration: underline;
+            }
+
+            @media #{size(B)} {
+                font-size: rem-calc(16);
+                &:before {
+                    content: "/";
+                    display: inline-block;
+                    width: 10px;
+                }
+            }
+            @media #{size(C)} {
+                font-size: rem-calc(18);
+                &:before {
+                    width: 16px;
+                }
+            }
+        }
+    }
+}

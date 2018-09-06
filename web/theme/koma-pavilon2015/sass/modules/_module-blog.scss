@@ -1,0 +1,133 @@
+// optimize
+.m-blog-item {
+
+    margin-bottom: $base-spacing / 2;
+    position: relative;
+
+    .m-item--hed {
+        @include fnt-primary-body-m();
+
+        padding: 8px 16px;
+        padding-bottom: 12px;
+        background: #fbfbfb;
+        margin: 0;
+        height: 92px;
+        overflow: hidden;
+
+        a {
+            display: block;
+            width: 100%;
+            color: $koma;
+        }
+        @media #{size(B)} {
+            font-size: rem-calc(16);
+        }
+        @media #{size(D)} {
+            font-size: rem-calc(18);
+        }
+    }
+
+    .m-item--image {
+        width: 100%;
+        height: auto;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50% 50%;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    .m-item--meta {
+        @include fnt-secondary-headline();
+        font-weight: 400;
+        position: absolute;
+        top: 14px;
+        left: 14px;
+
+        font-size: rem-calc(14);
+
+        display: block;
+        background-color: #000;
+
+        color: white;
+        text-transform: uppercase;
+        padding: 4px 8px;
+
+        a {
+            color: white;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+    }
+
+    &:hover {
+        a {
+            color: white;
+        }
+        .m-item--hed {
+            background-color: $color-koma-red;
+            color: white;
+        }
+    }
+
+    &.mm-subhero {
+
+        max-height: 420px;
+        overflow: hidden;
+
+        .m-item--hed {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+
+            height: auto;
+
+
+            font-size: rem-calc(16);
+            color: white;
+            background-color: rgba(0, 0, 0, .56);
+
+            a {
+                color: white;
+
+            }
+
+            @media #{size(B)} {
+                font-size: rem-calc(18);
+                }
+            @media #{size(D)} {
+                font-size: rem-calc(20);
+            }
+        }
+
+        .m-item--meta {
+            font-size: rem-calc(15);
+        }
+
+        &:hover {
+            .m-item--hed {
+                background-color: $color-koma-red;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &.mm-featured {
+        .m-item--meta {
+            background-color: $color-koma-red;
+
+            color: white;
+            a:hover {
+                text-decoration: underline;
+            }
+
+        }
+    }
+
+}

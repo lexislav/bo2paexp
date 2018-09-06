@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html class="lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html class="lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="{{ htmllang() }}"><!--<![endif]-->
+
+<head>
+
+    <!--[if lt IE 9]>
+    <script>
+        window.location = 'http://www.pavilon-expo2015.cz/cs/page/unsupported-browser';
+    </script>
+    <![endif]-->
+
+    <meta charset="UTF-8">
+    <meta http-equiv="cleartype" content="on" />
+
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="640" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+    <link rel="shortcut icon" href="{{ paths.theme }}assets/favicon.ico" type="image/vnd.microsoft.icon" />
+    <link rel="apple-touch-icon" href="{{ paths.theme }}assets/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="{{ paths.theme }}assets/apple-touch-icon-57x57-precomposed.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="{{ paths.theme }}assets/apple-touch-icon-72x72-precomposed.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="{{ paths.theme }}assets/apple-touch-icon-114x114-precomposed.png" />
+
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="format-detection" content="address=no" />
+
+    <title>{% if record.title is defined %}{{ record.title|striptags }} | {% endif %}{{ app.config.get('general/sitename') }}{% if record.title is not defined and app.config.get('general/payoff') %} | {{ app.config.get('general/payoff') }}{% endif %}</title>
+    <meta name="description" content="Microsite věnovaný českému pavilonu na světové výstavě EXPO2015. Microsite about czech pavilion at EXPO2015.">
+    <meta name="keywords" content="modulární, architektura, stavba, expo, expo2015, koma, koma modular, bazén">
+    <meta name="author" content="Alexandr Hudeček, Michal Hotovec">
+    <link rel=”author” href=”www.odoka.cz“/>
+    <meta name="generator" content="Bolt CMS 2.0">
+    <meta property=”og:title” content=”Český pavilon EXPO2015”/>
+
+    <script src="{{ paths.theme }}js/cust-modernizr.js"></script>
+    <script src="{{ paths.theme }}components/jquery.min.js"></script>
+    <script src="{{ paths.theme }}components/jquery-migrate-1.2.1.min.js"></script>
+
+    <!-- drag support -->
+    <script src="{{ paths.theme }}components/TweenLite.min.js"></script>
+    <script src="{{ paths.theme }}components/Draggable.min.js"></script>
+    <script src="{{ paths.theme }}components/CSSPlugin.min.js"></script>
+    <script src="{{ paths.theme }}components/ThrowPropsPlugin.min.js"></script>
+
+    <script type="text/javascript" src="{{ paths.theme }}components/skrollr/skrollr.min.js"></script>
+
+    <script src="//use.typekit.net/lvu2xcm.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+
+    <link rel="stylesheet" href="{{ paths.theme }}css/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{ paths.theme }}components/slick/slick/slick.css"/>
+
+</head>
