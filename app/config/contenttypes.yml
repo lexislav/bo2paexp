@@ -1,3 +1,375 @@
+zpravodaj:
+    name: Zpravodaj
+    singular_name: Článek
+    slug: blog
+    singular_slug: clanek
+    description: |
+      Zpravodaj je informačním kanálem pavilonu, jsou zde publikovány všechny možné informace o pavilonu.
+    fields:
+        title_cs:
+            type: text
+            class: large
+            group: Texty
+            label: Název (CS)
+        slug:
+            type: slug
+            uses: title_cs
+        featured:
+             type: checkbox
+             label: Zvýraznit zprávu
+        text_cs:
+            type: html
+            height: 300px
+            label: Text (CS)
+        title_en:
+            type: text
+            class: large
+            group: (EN)
+            label: Název (EN)
+        text_en:
+            type: html
+            height: 300px
+            label: Text (EN)
+        image:
+            type: image
+            group: Média
+            extensions: [ gif, jpg, png, jpeg ]
+            label: náhledový obrázek
+            postfix: minimální velikost 620x465px | Název souboru bez českých znaků a mezer! Povolené typy souborů: gif, png, jpg, jpeg
+        video:
+            type: video
+        imagelist:
+            type: imagelist
+            extensions: [ gif, jpg, png, jpeg ]
+            label: galerie
+            postfix: ideální velikost 1280x960 | minimální velikost 1024x768px | název souboru bez českých znaků a mezer! Povolené typy souborů: gif, png, jpg, jpeg
+        filelist:
+            type: filelist
+            group: Soubory
+            extensions: [ doc, docx, pdf, xls, xlsx, ods, odt ]
+            label: Soubory(y) ke stažení
+    relations:
+        zpravodaj:
+            multiple: true
+            label: Vyberte článek
+            order: -id
+            format: "{{ item.title|escape }} <span>(№ {{ item.id }})</span>"
+    taxonomy: [ kategorie ]
+    show_on_dashboard: true
+    default_status: concept
+    searchable: true
+    record_template: entry.twig
+    listing_template: zpravodaj.twig
+    listing_records: 14
+    recordsperpage: 14
+    sort: -datepublish
+    icon: cubes
+    icon_singular: cube
+
+sponzori:
+    name: Sponzori
+    singular_name: Sponzor
+    description: |
+    Seznam partnerů pavilonu. Třídí se pomocí štítků: Zlatý, Stříbrný, Bronzový
+    fields:
+        nazev_cs:
+            type: text
+            class: large
+            group: Obsah
+        slug:
+            type: slug
+            uses: nazev_cs
+        popis_cs:
+            type: textarea
+            postfix: Velmi krátký popis partnera - objeví se pod logem.
+        odkaz:
+            type: text
+            class: large
+            postfix: Vlozte webovou adresu partnera
+        logo:
+            type: image
+            extensions: [ gif, png, tif ]
+            postfix: UPOZORNĚNÍ: Upravte logo aby mělo průhledné pozadí !!!  Logo musí být vystředěné na plátně o velikosti 280x210 !!!  
+        nazev_en:
+            type: text
+            class: large
+            group: (EN)
+        popis_en:
+            type: textarea
+            postfix: Velmi krátký popis partnera - objeví se pod logem.
+    relations:
+        zpravodaj:
+            multiple: false
+            label: Vyberte článek
+            order: -id
+            format: "{{ item.title|escape }} <span>(№ {{ item.id }})</span>"
+    taxonomy: [ stitky ]
+    default_status: published
+
+odkazy:
+    name: Odkazy
+    singular_name: Odkaz
+    fields:
+        nazev_cs:
+            type: text
+            class: large
+            group: Obsah
+        popis_cs:
+            type: text
+            class: large
+            label: Popisek
+            postfix: velmi krátký údaj např. datum publikace, název periodika, odděleno čárkami
+        adresa:
+            type: text
+            postfix: Adresa URL
+        nazev_en:
+            type: text
+            class: large
+            group: (EN)
+        popis_en:
+            type: text
+            class: large
+            label: Popisek (EN)
+            postfix: velmi krátký údaj např. datum publikace, název periodika, odděleno čárkami
+        slug:
+            type: slug
+            uses: nazev_cs
+    taxonomy: [ rozcestnik ]
+    listing_records: 10
+    default_status: publish
+    sort: -datepublish
+    recordsperpage: 100
+
+historie:
+    name: Historie
+    singular_name: historie
+    description: |
+      Historie pavilonů EXPO
+    fields:
+        title_cs:
+            type: text
+            class: large
+            group: Texty (CS)
+            label: Název
+        slug:
+            type: slug
+            uses: title_cs
+        rok:
+            type: text
+            label: Rok konání
+        mesto_cs:
+            type: text
+            label: Město
+        tema_cs:
+            type: text
+            label: Téma výstavy
+        cztema_cs:
+            type: text
+            label: Téma české expozice
+        autor_pavilonu_cs:
+            type: text
+            label: Autor(ři) Pavilonu
+            postfix: Autory případně oddělte čárkou
+        autor_expozice_cs:
+            type: text
+            label: Autor(ři) expozice
+            postfix: Autory případně oddělte čárkou
+        text_cs:
+            type: html
+            height: 500px
+            label: Text
+        title_en:
+            type: text
+            class: large
+            group: (EN)
+            label: Název (EN)
+        mesto_en:
+            type: text
+            label: Město (EN)
+        tema_en:
+            type: text
+            label: Téma výstavy (EN)
+        cztema_en:
+            type: text
+            label: Téma české expozice (EN)
+        autor_pavilonu_en:
+            type: text
+            label: Autor(ři) Pavilonu
+            postfix: Autory případně oddělte čárkou
+        autor_expozice_en:
+            type: text
+            label: Autor(ři) expozice
+            postfix: Autory případně oddělte čárkou
+        text_en:
+            type: html
+            height: 500px
+            label: Text (EN)
+        nahled:
+            type: image
+            group: media
+        imagelist:
+            type: imagelist
+            extensions: [ gif, jpg, png, jpeg ]
+            label: galerie
+            postfix: ideální velikost 1280x960 | minimální velikost 1024x768px | název souboru bez českých znaků a mezer! Povolené typy souborů: gif, png, jpg, jpeg
+    record_template: entry.twig
+    listing_template: historie.twig
+    listing_records: 60
+    default_status: publish
+    sort: -datepublish
+    recordsperpage: 60
+    show_on_dashboard: false
+
+
+bloky:
+    name: Bloky
+    singular_name: Blok
+    description: |
+      Bloky slouží k uchování částí statických onepagerů.  
+    fields:
+        title_cs:
+            type: text
+            class: large
+            group: Texty
+            label: Nadpis
+        slug:
+            type: slug
+            uses: title_cs
+        body_cs:
+            type: textarea
+            height: 300px
+            label: Text
+        title_en:
+            type: text
+            class: large
+            group: (EN)
+            label: Nadpis (EN)    
+        body_en:
+            type: textarea
+            height: 300px
+            label: Text (EN)
+    relations:
+        modaly:
+            multiple: false
+            label: Vyberte obsah s detailním popisem
+            order: -id
+            format: "{{ item.title|escape }} <span>(№ {{ item.id }})</span>"
+    taxonomy: [ statiky ]
+    show_on_dashboard: false
+    default_status: publish
+    searchable: false
+    recordsperpage: 100
+
+modaly:
+    name: Modaly
+    singular_name: Modal
+    description: |
+      Modaly se starají o obsah vyskakovacích okýnek,
+    fields:
+        title_cs:
+            type: text
+            class: large
+            group: Texty
+        slug:
+            type: slug
+            uses: title_cs
+        body_cs:
+            type: html
+            height: 300px
+        image:
+            type: image
+        title_en:
+            type: text
+            class: large
+            group: (EN)
+        body_en:
+            type: html
+            height: 300px
+    taxonomy: [ statiky ]
+    show_on_dashboard: false
+    record_template: entry.twig
+    listing_template: listing.twig
+    listing_records: 10
+    default_status: publish
+    recordsperpage: 10
+
+
+Numbers:
+    name: Čísla
+    singular_name: číslo
+    fields:
+        title:
+            type: text
+            class: large
+            label: Název proměnné
+        slug:
+            type: slug
+        integerfield:
+             type: integer
+             label: Hodnota
+    show_on_dashboard: false
+
+
+ProgressBar:
+    name: Časová osa
+    singular_name: Bod časové osy
+    fields:
+        title_cs:
+            type: text
+            class: large
+            label: Popis bodu časové osy
+            group: Bod na časové ose
+        slug:
+            type: slug
+        poloha:
+            type: date
+        korekce:
+            type: integer
+            label: Korekce polohy na Časové ose    
+        image:
+            type: image
+            label: ikona
+            extensions: [ gif, png, svg ]
+            postfix: ikona 60x60px, povolené formáty png, gif, svg
+        title_en:
+            type: text
+            class: large
+            label: Popis bodu časové osy (EN)
+            group: (EN)
+    relations:
+        zpravodaj:
+            multiple: false
+            label: Vyberte článek
+            order: -id
+            format: "{{ item.title|escape }} <span>(№ {{ item.id }})</span>"
+    show_on_dashboard: false
+    default_status: publish
+    recordsperpage: 100
+
+
+Strany:
+    name: Pages
+    singular_name: Page
+    description: |
+      Slouží k prezentaci onepagerů (pavilon).
+    fields:
+        title_cs:
+            type: text
+            class: large
+            group: Obsah
+        title_en:
+            type: text
+            class: large
+        slug:
+            type: slug
+            uses: title_cs
+        template:
+            type: templateselect
+            filter: '*.twig'
+    recordsperpage: 100
+    show_on_dashboard: false
+
+
 # This file defines the contenttypes on the website. See the documentation for
 # details: https://docs.bolt.cm/contenttypes/intro
 
@@ -52,8 +424,8 @@ homepage:
 # together.
 
 pages:
-    name: Pages
-    singular_name: Page
+    name: BoltPages
+    singular_name: BoltPage
     fields:
         title:
             type: text
