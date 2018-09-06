@@ -1,11 +1,4 @@
 extensions:
     - Bundle\Site\CustomisationExtension
-
 paths:
-    cache: app/cache
-    config: app/config
-    database: app/database
-    web: web
-    themebase: web/theme
-    files: web/files
-    view: web/bolt-public/view
+    web: '%site%/web'
