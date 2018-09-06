@@ -6,8 +6,10 @@
 #
 # If you're trying out Bolt, just keep it set to SQLite for now.
 database:
-    driver: sqlite
-    databasename: bolt
+    driver: mysql
+    databasename: pavilonexpo2015
+    username: pavilonexpo2015
+    password: ffca8b05
 
 # The name of the website
 sitename: A sample site
