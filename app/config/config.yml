@@ -12,15 +12,15 @@ database:
     password: ffca8b05
 
 # The name of the website
-sitename: A sample site
-payoff: The amazing payoff goes here
+sitename: Český pavilon EXPO2015
+payoff: Špička české modulární výstavby
 
 # The theme to use.
 #
 # Don't edit the provided templates directly, because they _will_ get updated
 # in next releases. If you wish to modify a default theme, copy its folder, and
 # change the name here accordingly.
-theme: base-2018
+theme: koma-pavilon2015
 
 # The locale that'll be used by the application. If no locale is set the
 # fallback locale is 'en_GB'. For available options, see:
@@ -31,7 +31,12 @@ theme: base-2018
 #
 # This can be done as [nl_NL, Dutch_Netherlands] when specifying multiple
 # locales, ensure the first is a standard locale.
-locale: en_GB
+#locale: en_GB
+locale: cs
+timezone: UTC
+i18n_locales:
+  - cs
+  - en
 
 # Set the timezone to be used on the website. For a list of valid timezone
 # settings, see: http://php.net/manual/en/timezones.php
@@ -52,7 +57,7 @@ locale: en_GB
 #       website, be sure to check for a config.yml file in your theme's folder.
 #       If a template is set there, it will override the setting here.
 maintenance_mode: false
-maintenance_template: maintenance_default.twig
+maintenance_template: maintenance.twig
 
 # The hour of the day for the internal cron task scheduler to run daily, weekly,
 # monthly and yearly jobs.
@@ -81,14 +86,14 @@ cron_hour: 3
 # Note: If you've changed the filename, and your changes do not show up on
 #       the website, be sure to check for a theme.yml file in your theme's
 #       folder. If a template is set there, it will override the setting here.
-homepage: homepage/1
+homepage: page/1
 homepage_template: index.twig
 
 # The default content for the 404 page. Can be an (array of) template names or
 # identifiers for records, which will be tried until a match is found.
 #
 # Note: The record specified in this parameter must be set to 'published'.
-notfound: [ not-found.twig, block/404-not-found ]
+notfound: [ page/not-found, not-found.twig, block/404-not-found ]
 
 # The default template and amount of records to use for listing-pages on the
 # site.
@@ -129,7 +134,7 @@ taxonomy_sort: DESC
 # Note: If you've changed the filename, and your changes do not show up on the
 #       website, be sure to check for a config.yml file in your theme's folder.
 #       If a template is set there, it will override the setting here.
-search_results_template: search.twig
+search_results_template: listing.twig
 search_results_records: 10
 
 # Add jQuery to the rendered HTML, whether or not it's added by an extension.
@@ -198,14 +203,16 @@ changelog:
 # Note: If you change these values, you might need to clear the cache before
 #       they show up.
 thumbnails:
-    default_thumbnail: [ 160, 120 ]
+    default_thumbnail: [ 280, 210 ]
     default_image: [ 1000, 750 ]
     quality: 80
     cropping: crop
     notfound_image: bolt_assets://img/default_notfound.png
+    #view/img/default_notfound.png
     error_image: bolt_assets://img/default_error.png
+    #view/img/default_error.png
     save_files: false
-    allow_upscale: false
+    allow_upscale: true
     exif_orientation: true
     only_aliases: false
 #    browser_cache_time: 2592000
@@ -250,10 +257,10 @@ accept_file_types: [ twig, html, js, css, scss, gif, jpg, jpeg, png, ico, zip, t
 # it will only be accessible through the value set in 'path'.
 # Keep the path simple: lowercase only, no extra slashes or other special
 # characters.
-# branding:
-#     name: SuperCMS
-#     path: /admin
-#     provided_by: [ supercool@example.org, "Supercool Webdesign Co." ]
+branding:
+    name: KOMA Pavilon
+    path: /admin
+    provided_by: [ studio@odoka.cz, "Creative Workhouse" ]
 #     news_source: http://news.example.org
 #     news_variable: news
 
@@ -297,7 +304,7 @@ debuglog:
 # responsibility not to break the layout.
 wysiwyg:
     images: false            # Allow users to insert images in the content.
-    anchor: false            # Adds a button to create internal anchors to link to.
+    anchor: true            # Adds a button to create internal anchors to link to.
     tables: false            # Adds a button to insert and modify tables in the content.
     fontcolor: false         # Allow users to mess around with font coloring.
     align: false             # Adds buttons for 'align left', 'align right', etc.
